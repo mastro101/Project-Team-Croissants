@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IPlayer : MonoBehaviour {
+public interface IPlayer
+{
+    GameObject gameObject { get; }   
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    float MovementSpeed { get; set; }
+    void PlayerInput();
+
 }
+
