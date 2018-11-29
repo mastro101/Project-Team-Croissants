@@ -19,7 +19,7 @@ public class Rocket : EnemyBase
     }
 
     [SerializeField]
-    IPlayer playerToFollow;
+    BasePlayer playerToFollow;
     public override IPlayer PlayerToFollow
     {
         get

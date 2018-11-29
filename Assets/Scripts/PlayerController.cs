@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PlayerController : BasePlayer
 {
-
+    [SerializeField]
     float movementSpeed;
 
     public override float MovementSpeed
     {
         get
         {
-            return base.MovementSpeed;
+            return movementSpeed;
         }
 
         set
         {
-            base.MovementSpeed = value;
+            movementSpeed = value;
         }
     }
 

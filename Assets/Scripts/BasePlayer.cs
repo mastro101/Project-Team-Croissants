@@ -6,7 +6,7 @@ public abstract class BasePlayer : MonoBehaviour, IPlayer
 {
 
 
-    public virtual float MovementSpeed { get; set; }
+    public abstract float MovementSpeed { get; set; }
 
     public void PlayerInput()
     {

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public interface IPlayer
 {
-    GameObject gameObject { get; }   
+    GameObject gameObject { get; }
+    Transform transform { get; }
 
     float MovementSpeed { get; set; }
     void PlayerInput();

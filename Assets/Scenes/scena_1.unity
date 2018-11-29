@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964128, b: 0.5748176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 669745806}
   - component: {fileID: 669745805}
   - component: {fileID: 669745804}
+  - component: {fileID: 669745808}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -193,12 +194,25 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 669745803}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.7, y: 0, z: 0}
+  m_LocalPosition: {x: -5.73, y: 0, z: -4.79}
   m_LocalScale: {x: 0.5625, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &669745808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669745803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5244372508ad4634d9d77ef439a50ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+  playerToFollow: {fileID: 1040762745}
 --- !u!1 &861159427
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be41263fa8ff59b47a86b5fff0df7b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 8
 --- !u!1 &1051955850
 GameObject:
   m_ObjectHideFlags: 0
