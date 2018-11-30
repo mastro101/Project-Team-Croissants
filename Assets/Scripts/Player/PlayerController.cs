@@ -4,9 +4,31 @@ using UnityEngine;
 
 public class PlayerController : BasePlayer
 {
+    // Provvisorio
+    [SerializeField]
+    BasePlayer otherPlayer;
+
+    [SerializeField]
+    int id;
+    public override int ID
+    {
+        get
+        {
+            return id;
+        }
+    }
+
+    [SerializeField]
+    KeyCode up;
+    [SerializeField]
+    KeyCode left;
+    [SerializeField]
+    KeyCode down;
+    [SerializeField]
+    KeyCode right;
+
     [SerializeField]
     float movementSpeed;
-
     public override float MovementSpeed
     {
         get
@@ -27,30 +49,31 @@ public class PlayerController : BasePlayer
 
     public override void PlayerInput()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(left))
         {
             transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
-
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(right))
         {
             transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
-
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(up))
         {
             transform.position += new Vector3(0, 0, movementSpeed * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(down))
         {
             transform.position += new Vector3(0, 0,-movementSpeed * Time.deltaTime);
         }
 
     }
 
-    
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<IEnemy>() != null)
+            otherPlayer.AddPoint(1);
+    }
 }
