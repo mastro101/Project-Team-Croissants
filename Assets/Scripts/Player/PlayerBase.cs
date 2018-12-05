@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public abstract class BasePlayer : MonoBehaviour, IPlayer
+public abstract class PlayerBase : MonoBehaviour, IPlayer
 {
     public abstract int ID { get; }
 
@@ -17,7 +17,8 @@ public abstract class BasePlayer : MonoBehaviour, IPlayer
         set
         {
             points = value;
-            playerPoint.text = "Player " + ID + " have " + Points + " Points";
+            if (playerPoint != null)
+                playerPoint.text = "Player " + ID + " have " + Points + " Points";
         }
     }
 

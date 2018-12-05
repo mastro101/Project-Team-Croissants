@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : BasePlayer
+public class PlayerController : PlayerBase
 {
     // Provvisorio
     [SerializeField]
-    BasePlayer otherPlayer;
+    PlayerBase otherPlayer;
 
     [SerializeField]
     int id;
@@ -44,7 +44,7 @@ public class PlayerController : BasePlayer
 
     private void Update()
     {
-        PlayerInput();
+        //PlayerInput();
     }
 
     public override void PlayerInput()
