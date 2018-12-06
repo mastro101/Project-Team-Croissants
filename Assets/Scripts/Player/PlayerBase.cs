@@ -18,7 +18,7 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
         {
             points = value;
             if (playerPoint != null)
-                playerPoint.text = "Player " + ID + " have " + Points + " Points";
+                playerPoint.text = "Player " + ID + " has " + points + " Points";
         }
     }
 
@@ -27,6 +27,9 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
 
     public abstract float MovementSpeed { get; set; }
 
+    /// <summary>
+    /// Contiene i comandi del Player
+    /// </summary>
     public virtual void PlayerInput()
     {
 

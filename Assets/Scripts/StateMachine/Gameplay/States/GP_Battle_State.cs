@@ -13,11 +13,44 @@ namespace StateMachine.Gameplay
             }
         }
 
+        public override void Enter()
+        {
+            base.Enter();
+            context.Enemy.PlayerToFollow = context.FollowedPlayer;
+            context.Enemy.HitPlayer += AddPoint;
+        }
+
         public override void Tick()
         {
             base.Tick();
-            context.Players[0].PlayerInput();
-            context.Players[1].PlayerInput();
+            context.Enemy.Movement();
+            context.FollowedPlayer.PlayerInput();
+            context.RunnerPlayer.PlayerInput();
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+            context.Enemy.HitPlayer -= AddPoint;
+        }
+
+        void AddPoint(IPlayer player)
+        {
+            Debug.Log("AddPoint");
+            
+
+            if (player == context.FollowedPlayer)
+            {
+                context.FollowedPlayer.AddPoint(1);
+            }
+
+            if (player == context.RunnerPlayer)
+            {
+                context.RunnerPlayer.AddPoint(1);
+            }
+
+            // Esci dallo stato
+            context.BaseExitState();
         }
     }
 }

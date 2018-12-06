@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlayerController : PlayerBase
 {
-    // Provvisorio
-    [SerializeField]
-    PlayerBase otherPlayer;
 
     [SerializeField]
     int id;
@@ -69,11 +66,5 @@ public class PlayerController : PlayerBase
             transform.position += new Vector3(0, 0,-movementSpeed * Time.deltaTime);
         }
 
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<IEnemy>() != null)
-            otherPlayer.AddPoint(1);
     }
 }
