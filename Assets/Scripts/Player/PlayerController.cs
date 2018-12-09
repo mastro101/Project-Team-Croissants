@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : PlayerBase
 {
@@ -44,27 +45,34 @@ public class PlayerController : PlayerBase
         //PlayerInput();
     }
 
+    double speed;
     public override void PlayerInput()
     {
-        if (Input.GetKey(left))
+        speed = MovementSpeed * Time.deltaTime;
+
+        if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
         {
-            transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
+            speed = speed / Math.Sqrt(2);
         }
 
-        if (Input.GetKey(right))
+        if (Input.GetKey(left))
         {
-            transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
+            transform.position += Vector3.left * (float)speed;
+        }
+        else if (Input.GetKey(right))
+        {
+            transform.position += Vector3.right * (float)speed;
         }
 
         if (Input.GetKey(up))
         {
-            transform.position += new Vector3(0, 0, movementSpeed * Time.deltaTime);
+            transform.position += Vector3.forward * (float)speed;
         }
-
-        if (Input.GetKey(down))
+        else if (Input.GetKey(down))
         {
-            transform.position += new Vector3(0, 0,-movementSpeed * Time.deltaTime);
+            transform.position += Vector3.back * (float)speed;
         }
+        
 
     }
 }
