@@ -12,5 +12,11 @@ namespace StateMachine.Gameplay
                 return "SetUP";
             }
         }
+
+        public override void Enter()
+        {
+            base.Enter();
+            context.BaseExitState();
+        }
     }
 }
