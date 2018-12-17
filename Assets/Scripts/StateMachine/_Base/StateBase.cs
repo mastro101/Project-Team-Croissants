@@ -12,17 +12,17 @@ namespace StateMachine
 
         public virtual void Enter()
         {
-
+            Debug.Log("Enter: " + stateName);
         }
 
         public virtual void Tick()
         {
-
+            Debug.Log("On: " + stateName);
         }
 
         public virtual void Exit()
         {
-
+            Debug.Log("Exit: " + stateName);
         }
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

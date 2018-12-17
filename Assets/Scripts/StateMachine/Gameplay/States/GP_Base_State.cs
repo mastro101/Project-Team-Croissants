@@ -18,19 +18,19 @@ namespace StateMachine.Gameplay
         public override void Enter()
         {
             base.Enter();
-            Debug.Log("Enter: " + stateName);
+
         }
 
         public override void Tick()
         {
             base.Tick();
-            Debug.Log("On: " + stateName);
+
         }
 
         public override void Exit()
         {
             base.Exit();
-            Debug.Log("Exit: " + stateName);
+            
         }
     }
 }
