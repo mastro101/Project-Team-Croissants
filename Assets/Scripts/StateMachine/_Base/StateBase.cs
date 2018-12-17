@@ -8,6 +8,8 @@ namespace StateMachine
     {
         public abstract IState Setup(IStateMachineContext _context);
 
+        protected abstract string stateName { get; }
+
         public virtual void Enter()
         {
 

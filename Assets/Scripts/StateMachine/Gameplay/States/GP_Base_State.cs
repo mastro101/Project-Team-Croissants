@@ -7,7 +7,7 @@ namespace StateMachine.Gameplay
     {
         protected GameplaySMContext context;
 
-        protected abstract string stateName { get; }
+        
 
         public override IState Setup(IStateMachineContext _context)
         {
