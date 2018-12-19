@@ -21,9 +21,9 @@ namespace StateMachine.Gameplay
                 Enemy = enemy,
                 FollowedPlayer = followedPlayer,
                 RunnerPlayer = runnerPlayer,
-                RunnerPlayerPosition = runnerPosition,
+                RunnerPlayerTransform = runnerPosition,
                 FollowedPlayerTransform = followedPosition,
-                EnemyPosition = enemyPosition,
+                EnemyTransform = enemyPosition,
                 BaseExitState = goNext,
             };
             base.Start();
@@ -39,7 +39,7 @@ namespace StateMachine.Gameplay
     {
         public IEnemy Enemy;
         public IPlayer FollowedPlayer , RunnerPlayer;
-        public Transform RunnerPlayerPosition, FollowedPlayerTransform, EnemyPosition;
+        public Transform RunnerPlayerTransform, FollowedPlayerTransform, EnemyTransform;
         /// <summary>
         /// Delegato chiamato per uscire da uno stato con una sola uscita o con un'uscita di default
         /// </summary>

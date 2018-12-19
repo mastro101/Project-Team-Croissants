@@ -23,9 +23,12 @@ namespace StateMachine.Gameplay
             context.RunnerPlayer = oldFollowedPlayer;
             context.Enemy.PlayerToFollow = context.FollowedPlayer;
             // Riposiziona i player nei loro punti iniziali
-            context.FollowedPlayer.transform.position = context.FollowedPlayerTransform.position;
-            context.RunnerPlayer.transform.position = context.RunnerPlayerPosition.position;
-            context.Enemy.transform.position = context.EnemyPosition.position;
+            if (context.FollowedPlayerTransform != null)
+                context.FollowedPlayer.transform.position = context.FollowedPlayerTransform.position;
+            if (context.RunnerPlayerTransform != null)
+                context.RunnerPlayer.transform.position = context.RunnerPlayerTransform.position;
+            if (context.EnemyTransform != null)
+                context.Enemy.transform.position = context.EnemyTransform.position;
             //Esci dallo stato
             context.BaseExitState();
         }
