@@ -8,14 +8,11 @@ namespace StateMachine.Player
     
     public class PlayerSM : StateMachineBase {
 
-        [SerializeField]
-        IPlayer player;
-
         protected override void Start()
         {
             currentContext = new PlayerSMContext()
             {
-                Player = player,
+                Player = gameObject.GetComponent<IPlayer>(),
                 ExitState = GoNext,
             };
             base.Start();

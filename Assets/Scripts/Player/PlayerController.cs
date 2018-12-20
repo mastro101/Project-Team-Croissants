@@ -3,18 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerController : PlayerBase
+[RequireComponent(typeof(IPlayer))]
+public class PlayerController : MonoBehaviour
 {
-
-    [SerializeField]
-    int id;
-    public override int ID
-    {
-        get
-        {
-            return id;
-        }
-    }
+    IPlayer player;
 
     [SerializeField]
     KeyCode up;
@@ -24,32 +16,28 @@ public class PlayerController : PlayerBase
     KeyCode down;
     [SerializeField]
     KeyCode right;
-
     [SerializeField]
-    float movementSpeed;
-    public override float MovementSpeed
-    {
-        get
-        {
-            return movementSpeed;
-        }
+    KeyCode jump;
+    [SerializeField]
+    KeyCode dash;
 
-        set
-        {
-            movementSpeed = value;
-        }
-    }
+    public Transform groundDetector;
 
-    private void Update()
+    private void Awake()
     {
-        //PlayerInput();
+        player = gameObject.GetComponent<IPlayer>();
     }
 
     double speed;
-    public override void PlayerInput()
-    {
-        speed = MovementSpeed * Time.deltaTime;
+    RaycastHit hitGround;
 
+    /// <summary>
+    /// Contiene i comandi del Player
+    /// </summary>
+    public void PlayerInput()
+    {
+        speed = player.MovementSpeed * Time.deltaTime;
+        // Movimento del player
         if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
         {
             speed = speed / Math.Sqrt(2);
@@ -73,6 +61,33 @@ public class PlayerController : PlayerBase
             transform.position += Vector3.back * (float)speed;
         }
         
+        // Input per il salto
+        if (Input.GetKeyDown(jump))
+        {
+            player.SM.SetBool("Jump", true);
+        }
 
+        // Input per il dash
+        if (Input.GetKeyDown(dash))
+        {
+            player.SM.SetTrigger("Dash");
+        }
+    }
+
+    public void Jump()
+    {
+        player.rigidbody.AddForce(Vector3.up * player.JumpForce);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision != null)
+        {
+            player.SM.SetBool("Jump", false);
+        }
+        else
+        {
+            
+        }
     }
 }

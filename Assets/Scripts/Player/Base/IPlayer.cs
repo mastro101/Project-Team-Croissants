@@ -6,14 +6,12 @@ public interface IPlayer
 {
     GameObject gameObject { get; }
     Transform transform { get; }
+    Rigidbody rigidbody { get; }
+    Animator SM { get; }
     int ID { get; }
     int Points { get; set; }
     float MovementSpeed { get; set; }
-
-    /// <summary>
-    /// Contiene i comandi del Player
-    /// </summary>
-    void PlayerInput();
+    float JumpForce { get; }
 
     /// <summary>
     /// Aggiunge <paramref name="_point"/> Punti al Player

@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(Animator))]
 public abstract class PlayerBase : MonoBehaviour, IPlayer
 {
+    public Animator SM { get { return GetComponent<Animator>(); } }
+
+    public new Rigidbody rigidbody { get { return GetComponent<Rigidbody>(); } }
+
     public abstract int ID { get; }
 
     protected int points;
@@ -25,15 +30,13 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     [SerializeField]
     TextMeshProUGUI playerPoint;
 
-    public abstract float MovementSpeed { get; set; }
+    [SerializeField]
+    float movementSpeed;
+    public virtual float MovementSpeed { get { return movementSpeed; } set { movementSpeed = value; } }
 
-    /// <summary>
-    /// Contiene i comandi del Player
-    /// </summary>
-    public virtual void PlayerInput()
-    {
-
-    }
+    [SerializeField]
+    float jumpForce;
+    public virtual float JumpForce { get { return jumpForce; } }
 
     public virtual void AddPoint(int _point)
     {

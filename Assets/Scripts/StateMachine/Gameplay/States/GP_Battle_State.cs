@@ -13,19 +13,27 @@ namespace StateMachine.Gameplay
             }
         }
 
+        PlayerController followedPlayerController, runnerPlayerController;
+
         public override void Enter()
         {
             base.Enter();
             context.Enemy.PlayerToFollow = context.FollowedPlayer;
             context.Enemy.HitPlayer += AddPoint;
+            if (context.FollowedPlayer != null)
+                followedPlayerController = context.FollowedPlayer.gameObject.GetComponent<PlayerController>();
+            if (context.RunnerPlayer != null)
+                runnerPlayerController = context.RunnerPlayer.gameObject.GetComponent<PlayerController>();
         }
 
         public override void Tick()
         {
             base.Tick();
             context.Enemy.Movement();
-            context.FollowedPlayer.PlayerInput();
-            context.RunnerPlayer.PlayerInput();
+            if (followedPlayerController != null)
+                followedPlayerController.PlayerInput();
+            if (runnerPlayerController != null)
+                runnerPlayerController.PlayerInput();
         }
 
         public override void Exit()
