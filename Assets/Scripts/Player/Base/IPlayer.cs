@@ -11,7 +11,7 @@ public interface IPlayer
     int ID { get; }
     int Points { get; set; }
     float MovementSpeed { get; set; }
-    float JumpForce { get; }
+    //float JumpForce { get; }
 
     /// <summary>
     /// Aggiunge <paramref name="_point"/> Punti al Player

@@ -22,14 +22,17 @@ GameObject:
   - component: {fileID: 33228881778600724}
   - component: {fileID: 23818951902439552}
   - component: {fileID: 136227544369423748}
-  - component: {fileID: 114976937170555358}
   - component: {fileID: 54710709632833186}
+  - component: {fileID: 95249325848392362}
+  - component: {fileID: 114295593865272084}
+  - component: {fileID: 114711275416076472}
+  - component: {fileID: 114976937170555358}
   m_Layer: 0
   m_Name: Player (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4995018824901154
 Transform:
@@ -101,6 +104,48 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!95 &95249325848392362
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1597820675320534}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 950b3ae8386db454c9f651985a99c1b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114295593865272084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1597820675320534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab75ace2f64ebf4a9662c22672e42f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114711275416076472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1597820675320534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dbc5961b5ec0642bee04f0cee55890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPoint: {fileID: 0}
+  movementSpeed: 8
 --- !u!114 &114976937170555358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,13 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be41263fa8ff59b47a86b5fff0df7b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPoint: {fileID: 0}
-  id: 2
   up: 273
   left: 276
   down: 274
   right: 275
-  movementSpeed: 8
+  dash: 0
+  groundDetector: {fileID: 0}
 --- !u!136 &136227544369423748
 CapsuleCollider:
   m_ObjectHideFlags: 1

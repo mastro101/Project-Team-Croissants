@@ -23,23 +23,29 @@ namespace StateMachine.Player
             base.Enter();
             playerController = context.Player.gameObject.GetComponent<PlayerController>();
             playerController.Jump();
-            rayGround = new Ray(playerController.groundDetector.position, Vector3.down);
+            //if (playerController.groundDetector.position != null)
+            //{
+            //    rayGround = new Ray(playerController.groundDetector.position, Vector3.down);
+            //}
         }
 
         public override void Tick()
         {
             base.Tick();
-            if (Physics.Raycast(playerController.groundDetector.position, Vector3.down, out hitGround, 1f))
-            {
-                Debug.Log(hitGround.collider.name);
-                Debug.DrawRay(playerController.groundDetector.position, Vector3.down, Color.blue);
-
-                if (hitGround.collider != null)
-                {
-                    //context.Player.SM.SetBool("Jump", false);
-                    Debug.Log("Jump effettuato");
-                }
-            }
+            //if (playerController.groundDetector.position != null)
+            //{
+            //    if (Physics.Raycast(playerController.groundDetector.position, Vector3.down, out hitGround, 1f))
+            //    {
+            //        Debug.Log(hitGround.collider.name);
+            //        Debug.DrawRay(playerController.groundDetector.position, Vector3.down, Color.blue);
+            //
+            //        if (hitGround.collider != null)
+            //        {
+            //            //context.Player.SM.SetBool("Jump", false);
+            //            Debug.Log("Jump effettuato");
+            //        }
+            //    }
+            //}
         }
     }
 }

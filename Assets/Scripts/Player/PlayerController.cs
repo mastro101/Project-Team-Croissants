@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     KeyCode down;
     [SerializeField]
     KeyCode right;
-    [SerializeField]
-    KeyCode jump;
+    //[SerializeField]
+    //KeyCode jump;
     [SerializeField]
     KeyCode dash;
 
@@ -61,11 +61,11 @@ public class PlayerController : MonoBehaviour
             transform.position += Vector3.back * (float)speed;
         }
         
-        // Input per il salto
-        if (Input.GetKeyDown(jump))
-        {
-            player.SM.SetBool("Jump", true);
-        }
+        //// Input per il salto
+        //if (Input.GetKeyDown(jump))
+        //{
+        //    player.SM.SetBool("Jump", true);
+        //}
 
         // Input per il dash
         if (Input.GetKeyDown(dash))
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        player.rigidbody.AddForce(Vector3.up * player.JumpForce);
+        //player.rigidbody.AddForce(Vector3.up * player.JumpForce);
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -34,9 +34,9 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     float movementSpeed;
     public virtual float MovementSpeed { get { return movementSpeed; } set { movementSpeed = value; } }
 
-    [SerializeField]
-    float jumpForce;
-    public virtual float JumpForce { get { return jumpForce; } }
+    //[SerializeField]
+    //float jumpForce;
+    //public virtual float JumpForce { get { return jumpForce; } }
 
     public virtual void AddPoint(int _point)
     {
