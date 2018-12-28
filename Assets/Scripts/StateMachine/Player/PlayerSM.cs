@@ -14,6 +14,7 @@ namespace StateMachine.Player
             {
                 Player = gameObject.GetComponent<IPlayer>(),
                 ExitState = GoNext,
+                PlayerController = GetComponent<PlayerController>(),
             };
             base.Start();
         }
@@ -28,5 +29,6 @@ namespace StateMachine.Player
     {
         public Action ExitState;
         public IPlayer Player;
+        public PlayerController PlayerController;
     }
 }

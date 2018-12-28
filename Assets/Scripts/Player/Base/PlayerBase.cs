@@ -38,6 +38,16 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     //float jumpForce;
     //public virtual float JumpForce { get { return jumpForce; } }
 
+    [SerializeField]
+    float dashDistance;
+    public virtual float DashDistance { get { return dashDistance; } set { dashDistance = value; } }
+
+    [SerializeField]
+    float dashDuration;
+    public virtual float DashDuration { get { return dashDuration; }  }
+
+
+
     public virtual void AddPoint(int _point)
     {
         Points += _point;

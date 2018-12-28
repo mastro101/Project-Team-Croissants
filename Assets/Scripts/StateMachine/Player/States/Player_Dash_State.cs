@@ -12,5 +12,11 @@ namespace StateMachine.Player
                 return context.Player.ToString() + " Dash";
             }
         }
+
+        public override void Tick()
+        {
+            base.Tick();
+            context.PlayerController.Dash();
+        }
     }
 }

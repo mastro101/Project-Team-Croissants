@@ -11,6 +11,8 @@ public interface IPlayer
     int ID { get; }
     int Points { get; set; }
     float MovementSpeed { get; set; }
+    float DashDistance { get; set; }
+    float DashDuration { get; }
     //float JumpForce { get; }
 
     /// <summary>

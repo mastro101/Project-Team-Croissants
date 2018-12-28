@@ -13,10 +13,6 @@ public abstract class EnemyBase : MonoBehaviour, IEnemy
     float rotationSpeed;
     public virtual float RotationSpeed { get { return rotationSpeed; } set { rotationSpeed = value; } }
 
-    void OnGUI()
-    {
-        rotationSpeed = EditorGUI.Slider(new Rect(0, 0, 1, 1), rotationSpeed, 0, 1);
-    }
 
     public abstract IPlayer PlayerToFollow { get; set; }
 

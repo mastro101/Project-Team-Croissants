@@ -74,9 +74,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Dash()
+    {
+        transform.position += transform.forward * (player.DashDistance * Time.deltaTime);
+        
+    }
+
+
     public void Jump()
     {
-        //player.rigidbody.AddForce(Vector3.up * player.JumpForce);
+        // player.rigidbody.AddForce(Vector3.up * player.JumpForce);
     }
 
     private void OnCollisionEnter(Collision collision)
