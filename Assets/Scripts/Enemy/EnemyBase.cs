@@ -1,9 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
 public abstract class EnemyBase : MonoBehaviour, IEnemy
 {
-    public abstract float MovementSpeed { get; set; }
+    [SerializeField]
+    float movementSpeed;
+    public virtual float MovementSpeed { get { return movementSpeed; } set { movementSpeed = value; } }
+
+    [Range(0f, 1f)]
+    [SerializeField]
+    float rotationSpeed;
+    public virtual float RotationSpeed { get { return rotationSpeed; } set { rotationSpeed = value; } }
+
+    void OnGUI()
+    {
+        rotationSpeed = EditorGUI.Slider(new Rect(0, 0, 1, 1), rotationSpeed, 0, 1);
+    }
 
     public abstract IPlayer PlayerToFollow { get; set; }
 

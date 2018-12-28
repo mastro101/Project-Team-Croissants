@@ -7,6 +7,7 @@ public interface IEnemy {
     GameObject gameObject { get; }
     Transform transform { get; }
 	float MovementSpeed { get; set; }
+    float RotationSpeed { get; set; }
     IPlayer PlayerToFollow { get; set; }
 
     /// <summary>

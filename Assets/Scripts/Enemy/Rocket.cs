@@ -1,24 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
 public class Rocket : EnemyBase
 {
-    [SerializeField]
-    float movementSpeed;
-    public override float MovementSpeed
-    {
-        get
-        {
-            return movementSpeed;
-        }
-
-        set
-        {
-            movementSpeed = value;
-        }
-    }
-
-
     IPlayer playerToFollow;
     public override IPlayer PlayerToFollow
     {
@@ -35,7 +20,12 @@ public class Rocket : EnemyBase
     private void Update()
     {
         if (PlayerToFollow != null)
-            transform.LookAt(PlayerToFollow.transform);
+        {
+            Vector3 targetPos = PlayerToFollow.transform.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(targetPos);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, RotationSpeed);
+            //transform.LookAt(PlayerToFollow.transform);
+        }
     }
 
     float speed;
@@ -43,7 +33,10 @@ public class Rocket : EnemyBase
     {
         speed = MovementSpeed * Time.deltaTime;
         if (PlayerToFollow != null)
-            transform.position = Vector3.MoveTowards(transform.position, PlayerToFollow.transform.position, speed);
+        {
+            transform.position += transform.forward * speed;
+            //transform.position = Vector3.MoveTowards(transform.position, PlayerToFollow.transform.position, speed);
+        }
     }
 
 
