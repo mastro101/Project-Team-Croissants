@@ -243,12 +243,27 @@ Prefab:
     - target: {fileID: 114371582804191160, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
         type: 2}
       propertyPath: dashDistance
-      value: 2
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 54544052965124706, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
         type: 2}
       propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114371582804191160, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
+        type: 2}
+      propertyPath: dashDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114338218211383146, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 114371582804191160, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
+        type: 2}
+      propertyPath: dashCooldown
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db1c4d3b6225b5a4898fbc0c2e063ae1, type: 2}

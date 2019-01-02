@@ -6,6 +6,12 @@ using System;
 [RequireComponent(typeof(IPlayer))]
 public class PlayerController : MonoBehaviour
 {
+    [HideInInspector]
+    public bool canMove = true;
+
+    float cooldownDashTimer;
+
+
     IPlayer player;
 
     [SerializeField]
@@ -45,51 +51,54 @@ public class PlayerController : MonoBehaviour
         speed = player.MovementSpeed * Time.deltaTime;
         Direction = new Vector3(HorizzontalAxis, 0, VerticalAxis);
         player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction), rotationSpeed);
-        
+
 
         // Movimento del player
-        if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
-        {
-            speed = speed / Math.Sqrt(2);
-        }
-
-        if (!Input.GetKey(up) && !Input.GetKey(left) && !Input.GetKey(down) && !Input.GetKey(right))
+        if (canMove == true)
         {
 
-        }
-        else
-        {
-            if (Input.GetKey(left))
+            if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
             {
-                transform.position += Vector3.left * (float)speed;
-                HorizzontalAxis = -1;
+                speed = speed / Math.Sqrt(2);
             }
-            else if (Input.GetKey(right))
+
+            if (!Input.GetKey(up) && !Input.GetKey(left) && !Input.GetKey(down) && !Input.GetKey(right))
             {
-                transform.position += Vector3.right * (float)speed;
-                HorizzontalAxis = 1;
+
             }
             else
             {
-                HorizzontalAxis = 0;
-            }
+                if (Input.GetKey(left))
+                {
+                    transform.position += Vector3.left * (float)speed;
+                    HorizzontalAxis = -1;
+                }
+                else if (Input.GetKey(right))
+                {
+                    transform.position += Vector3.right * (float)speed;
+                    HorizzontalAxis = 1;
+                }
+                else
+                {
+                    HorizzontalAxis = 0;
+                }
 
-            if (Input.GetKey(up))
-            {
-                transform.position += Vector3.forward * (float)speed;
-                VerticalAxis = 1;
-            }
-            else if (Input.GetKey(down))
-            {
-                transform.position += Vector3.back * (float)speed;
-                VerticalAxis = -1;
-            }
-            else
-            {
-                VerticalAxis = 0;
+                if (Input.GetKey(up))
+                {
+                    transform.position += Vector3.forward * (float)speed;
+                    VerticalAxis = 1;
+                }
+                else if (Input.GetKey(down))
+                {
+                    transform.position += Vector3.back * (float)speed;
+                    VerticalAxis = -1;
+                }
+                else
+                {
+                    VerticalAxis = 0;
+                }
             }
         }
-
         //// Input per il salto
         //if (Input.GetKeyDown(jump))
         //{
@@ -97,9 +106,14 @@ public class PlayerController : MonoBehaviour
         //}
 
         // Input per il dash
-        if (Input.GetKeyDown(dash))
+        if (Input.GetKeyDown(dash) && cooldownDashTimer == 0)
         {
+            cooldownDashTimer += Time.deltaTime;
             player.SM.SetTrigger("Dash");
+            if(cooldownDashTimer >= player.DashCooldown)
+            {
+                cooldownDashTimer = 0;
+            } 
         }
     }
 

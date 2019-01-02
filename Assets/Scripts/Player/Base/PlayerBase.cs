@@ -44,7 +44,11 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
 
     [SerializeField]
     float dashDuration;
-    public virtual float DashDuration { get { return dashDuration; }  }
+    public virtual float DashDuration { get { return dashDuration; } }
+
+    [SerializeField]
+    float dashCooldown;
+    public virtual float DashCooldown { get { return DashCooldown; } set { DashCooldown = value; } }
 
 
 

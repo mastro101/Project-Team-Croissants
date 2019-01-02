@@ -13,6 +13,7 @@ public interface IPlayer
     float MovementSpeed { get; set; }
     float DashDistance { get; set; }
     float DashDuration { get; }
+    float DashCooldown { get; }
     //float JumpForce { get; }
 
     /// <summary>
