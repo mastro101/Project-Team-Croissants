@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     KeyCode dash;
 
+    [Range(0f, 1f)]
+    [SerializeField]
+    float rotationSpeed;
+
     public Transform groundDetector;
 
     private void Awake()
@@ -29,7 +33,9 @@ public class PlayerController : MonoBehaviour
     }
 
     double speed;
-    RaycastHit hitGround;
+
+    float HorizzontalAxis, VerticalAxis;
+    Vector3 Direction;
 
     /// <summary>
     /// Contiene i comandi del Player
@@ -37,30 +43,53 @@ public class PlayerController : MonoBehaviour
     public void PlayerInput()
     {
         speed = player.MovementSpeed * Time.deltaTime;
+        Direction = new Vector3(HorizzontalAxis, 0, VerticalAxis);
+        player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction), rotationSpeed);
+        
+
         // Movimento del player
         if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
         {
             speed = speed / Math.Sqrt(2);
         }
 
-        if (Input.GetKey(left))
+        if (!Input.GetKey(up) && !Input.GetKey(left) && !Input.GetKey(down) && !Input.GetKey(right))
         {
-            transform.position += Vector3.left * (float)speed;
+
         }
-        else if (Input.GetKey(right))
+        else
         {
-            transform.position += Vector3.right * (float)speed;
+            if (Input.GetKey(left))
+            {
+                transform.position += Vector3.left * (float)speed;
+                HorizzontalAxis = -1;
+            }
+            else if (Input.GetKey(right))
+            {
+                transform.position += Vector3.right * (float)speed;
+                HorizzontalAxis = 1;
+            }
+            else
+            {
+                HorizzontalAxis = 0;
+            }
+
+            if (Input.GetKey(up))
+            {
+                transform.position += Vector3.forward * (float)speed;
+                VerticalAxis = 1;
+            }
+            else if (Input.GetKey(down))
+            {
+                transform.position += Vector3.back * (float)speed;
+                VerticalAxis = -1;
+            }
+            else
+            {
+                VerticalAxis = 0;
+            }
         }
 
-        if (Input.GetKey(up))
-        {
-            transform.position += Vector3.forward * (float)speed;
-        }
-        else if (Input.GetKey(down))
-        {
-            transform.position += Vector3.back * (float)speed;
-        }
-        
         //// Input per il salto
         //if (Input.GetKeyDown(jump))
         //{
