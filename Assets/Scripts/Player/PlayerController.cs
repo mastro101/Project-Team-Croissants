@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
 
     float cooldownDashTimer;
-
+    bool canDash = true;
 
     IPlayer player;
 
@@ -106,14 +106,21 @@ public class PlayerController : MonoBehaviour
         //}
 
         // Input per il dash
-        if (Input.GetKeyDown(dash) && cooldownDashTimer == 0)
+        if (Input.GetKeyDown(dash) && canDash == true)
+        {
+            player.SM.SetTrigger("Dash");
+            canDash = false;
+        }
+
+        if (canDash == false)
         {
             cooldownDashTimer += Time.deltaTime;
-            player.SM.SetTrigger("Dash");
-            if(cooldownDashTimer >= player.DashCooldown)
+            if (cooldownDashTimer >= player.DashCooldown)
             {
                 cooldownDashTimer = 0;
+                canDash = true;
             } 
+
         }
     }
 
