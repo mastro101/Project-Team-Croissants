@@ -31,6 +31,7 @@ public class Rocket : EnemyBase
     float speed;
     public override void Movement()
     {
+        base.Movement();
         speed = MovementSpeed * Time.deltaTime;
         if (PlayerToFollow != null)
         {

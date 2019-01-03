@@ -7,7 +7,7 @@ public class PlayerTwo : PlayerBase
     {
         get
         {
-            return 1;
+            return 2;
         }
     }
 }

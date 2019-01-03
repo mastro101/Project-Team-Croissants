@@ -13,10 +13,9 @@ public abstract class EnemyBase : MonoBehaviour, IEnemy
     float rotationSpeed;
     public virtual float RotationSpeed { get { return rotationSpeed; } set { rotationSpeed = value; } }
 
+    public virtual IPlayer PlayerToFollow { get; set; }
 
-    public abstract IPlayer PlayerToFollow { get; set; }
-
-    public abstract void Movement();
+    public virtual void Movement() { }
 
     /// <summary>
     /// Evento attivato quando colpisce un Player

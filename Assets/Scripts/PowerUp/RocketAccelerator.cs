@@ -5,15 +5,44 @@ public class RocketAccelerator : PowerUpBase
 {
     [SerializeField]
     float addedSpeed;
+    EnemyBase[] enemies;
+    Rocket rocket;
 
-    public override void Effect(IPlayer _player)
+    private void Awake()
     {
-        Rocket rocket;
-        if (_player.ID == 2)
+        enemies = FindObjectsOfType<EnemyBase>();
+    }
+    private void Start()
+    {
+        foreach (EnemyBase enemy in enemies)
         {
-            rocket = FindObjectOfType<Rocket>();
-            rocket.MovementSpeed += addedSpeed;
-            Debug.Log(rocket.MovementSpeed);
+            enemy.HitPlayer += spawn;
+        }
+        rocket = FindObjectOfType<Rocket>();
+    }
+
+    void spawn(IPlayer player)
+    {
+        OnSpawn();
+    }
+
+    public override void OnTake(IPlayer player)
+    {
+        base.OnTake(player);
+        if (player != rocket.PlayerToFollow)
+        {
+            collider.enabled = false;
+            meshRenderer.enabled = false;
         }
     }
+
+    
+    public override void Effect(IPlayer _player)
+    {
+        if (_player != rocket.PlayerToFollow)
+        {            
+            rocket.MovementSpeed += addedSpeed;
+        }
+    }
+
 }

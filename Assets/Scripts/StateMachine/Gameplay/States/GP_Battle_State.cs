@@ -19,7 +19,11 @@ namespace StateMachine.Gameplay
         {
             base.Enter();
             context.Enemy.PlayerToFollow = context.FollowedPlayer;
-            context.Enemy.HitPlayer += AddPoint;
+            foreach (IEnemy enemy in context.Enemies)
+            {
+                Debug.Log(enemy.gameObject.name);
+                enemy.HitPlayer += AddPoint;
+            }
             if (context.FollowedPlayer != null)
                 followedPlayerController = context.FollowedPlayer.gameObject.GetComponent<PlayerController>();
             if (context.RunnerPlayer != null)
@@ -39,7 +43,10 @@ namespace StateMachine.Gameplay
         public override void Exit()
         {
             base.Exit();
-            context.Enemy.HitPlayer -= AddPoint;
+            foreach (IEnemy enemy in context.Enemies)
+            {
+                enemy.HitPlayer -= AddPoint;
+            }
         }
 
         void AddPoint(IPlayer player)

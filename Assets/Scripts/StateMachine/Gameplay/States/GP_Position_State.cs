@@ -29,6 +29,8 @@ namespace StateMachine.Gameplay
                 context.RunnerPlayer.transform.position = context.RunnerPlayerTransform.position;
             if (context.EnemyTransform != null)
                 context.Enemy.transform.position = context.EnemyTransform.position;
+            // Resetta variabili
+            context.Enemy.MovementSpeed = context.EnemyStarterSpeed;
             //Esci dallo stato
             context.BaseExitState();
         }

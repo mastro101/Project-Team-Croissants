@@ -3,6 +3,9 @@ using System.Collections;
 
 public interface IPowerUp
 {
+    Collider collider { get; }
+    MeshRenderer meshRenderer { get; }
     void Effect(IPlayer player);
-    void OnTake();
+    void OnSpawn();
+    void OnTake(IPlayer player);
 }
