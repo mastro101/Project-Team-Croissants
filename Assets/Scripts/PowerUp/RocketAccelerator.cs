@@ -45,4 +45,15 @@ public class RocketAccelerator : PowerUpBase
         }
     }
 
+    //GIRA GIRA
+    private void Update()
+    {
+        giragira();
+    }
+
+    void giragira()
+    {
+        transform.Rotate(new Vector3 (15, 30, 45) * Time.deltaTime);
+    }
+
 }

@@ -10,7 +10,7 @@ public class Restart : MonoBehaviour {
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
-            SceneManager.LoadScene("scena_1");
+            SceneManager.LoadScene("ProgrammerScene");
 
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
