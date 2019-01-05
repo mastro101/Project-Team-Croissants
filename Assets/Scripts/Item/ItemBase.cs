@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class PowerUpBase : MonoBehaviour , IPowerUp
+public abstract class ItemBase : MonoBehaviour , IItem
 {
     public Collider collider { get { return GetComponent<Collider>(); } }
 
@@ -9,15 +9,27 @@ public abstract class PowerUpBase : MonoBehaviour , IPowerUp
 
     public abstract void Effect(IPlayer _player);
 
+    EnemyBase[] enemies;
+
+    protected virtual void Awake()
+    {
+        enemies = FindObjectsOfType<EnemyBase>();
+    }
+
+    protected virtual void Start()
+    {
+        foreach (EnemyBase enemy in enemies)
+        {
+            enemy.HitPlayer += OnSpawn;
+        }
+    }
+
     /// <summary>
     /// Chiamato quando finisce un round
     /// </summary>
-    public virtual void OnSpawn()
+    public virtual void OnSpawn(IPlayer player)
     {
-        if (!collider.enabled)
-            collider.enabled = true;
-        if (!meshRenderer.enabled)
-            meshRenderer.enabled = true;
+        
     }
 
     /// <summary>
@@ -26,7 +38,7 @@ public abstract class PowerUpBase : MonoBehaviour , IPowerUp
     /// <param name="_player"></param>
     public virtual void OnTake(IPlayer player)
     {
-        
+
     }
 
     protected virtual void OnTriggerEnter(Collider other)
@@ -34,8 +46,8 @@ public abstract class PowerUpBase : MonoBehaviour , IPowerUp
         IPlayer player = other.GetComponent<IPlayer>();
         if (player != null)
         {
-            Effect(player);
             OnTake(player);
+            Effect(player);
         }
     }
 }

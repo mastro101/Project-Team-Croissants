@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     [HideInInspector]
     public bool canMove = true;
+    [HideInInspector]
+    public Vector3 Direction;
 
     float cooldownDashTimer;
     bool canDash = true;
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
     double speed;
 
     float HorizzontalAxis, VerticalAxis;
-    Vector3 Direction;
+
 
     /// <summary>
     /// Contiene i comandi del Player
