@@ -1079,15 +1079,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1253205538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1442c9f009269db4fb338293100e3b52, type: 3}
+  m_Script: {fileID: 11500000, guid: 944871a9c7eb73d41a8ee0bef82b1667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1253205538}
-  StartingPosition: {x: 0, y: 0, z: 0}
-  firstTransition: {x: 0, y: 0, z: 0}
-  distance: 2
-  lerpTime: 2
-  currentLerpTime: -3
+  StartPos: {x: 0, y: 0, z: 0}
+  EndPos: {x: 0, y: 0, z: 0}
+  distancebetween: 1
+  lerptimer: 1
+  currentLerpTimer: 0
 --- !u!1 &1254434559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1099,6 @@ GameObject:
   - component: {fileID: 1254434562}
   - component: {fileID: 1254434561}
   - component: {fileID: 1254434560}
-  - component: {fileID: 1254434564}
   - component: {fileID: 1254434565}
   m_Layer: 0
   m_Name: TopLeft
@@ -1176,23 +1175,6 @@ Transform:
   m_Father: {fileID: 1065276310}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1254434564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1254434559}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1442c9f009269db4fb338293100e3b52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wall: {fileID: 1254434559}
-  StartingPosition: {x: 0, y: 0, z: 0}
-  firstTransition: {x: 0, y: 0, z: 0}
-  distance: 2
-  lerpTime: 2
-  currentLerpTime: -3
 --- !u!114 &1254434565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,14 +1183,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1254434559}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d00c8ed2ea90d7947a09aa15567b2754, type: 3}
+  m_Script: {fileID: 11500000, guid: a9a9f48636de1d94a958876a2851d4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1254434559}
   StartPos: {x: 0, y: 0, z: 0}
-  EndPos: {x: 10, y: 10, z: 10}
-  distancebetween: 5
-  lerptimer: 5
+  EndPos: {x: 0, y: 0, z: 0}
+  distancebetween: 1
+  lerptimer: 1
   currentLerpTimer: 0
 --- !u!1 &1338172697
 GameObject:
@@ -1221,7 +1203,7 @@ GameObject:
   - component: {fileID: 1338172700}
   - component: {fileID: 1338172699}
   - component: {fileID: 1338172698}
-  - component: {fileID: 1338172702}
+  - component: {fileID: 1338172703}
   m_Layer: 0
   m_Name: BottomRight
   m_TagString: Untagged
@@ -1297,7 +1279,7 @@ Transform:
   m_Father: {fileID: 1065276310}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1338172702
+--- !u!114 &1338172703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1305,15 +1287,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1338172697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdff95de28eca7a48a3c1ebc30d83626, type: 3}
+  m_Script: {fileID: 11500000, guid: 007c95ed4c975e744bda963e6ff97a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1338172697}
-  StartingPosition: {x: 0, y: 0, z: 0}
-  firstTransition: {x: 0, y: 0, z: 0}
-  distance: 2
-  lerpTime: 2
-  currentLerpTime: -3
+  StartPos: {x: 0, y: 0, z: 0}
+  EndPos: {x: 0, y: 0, z: 0}
+  distancebetween: 1
+  lerptimer: 1
+  currentLerpTimer: 0
 --- !u!1001 &1414618525
 Prefab:
   m_ObjectHideFlags: 0
@@ -1509,15 +1491,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1813235975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdff95de28eca7a48a3c1ebc30d83626, type: 3}
+  m_Script: {fileID: 11500000, guid: d00c8ed2ea90d7947a09aa15567b2754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1813235975}
-  StartingPosition: {x: 0, y: 0, z: 0}
-  firstTransition: {x: 0, y: 0, z: 0}
-  distance: 6
-  lerpTime: 1
-  currentLerpTime: -6
+  StartPos: {x: 0, y: 0, z: 0}
+  EndPos: {x: 0, y: 0, z: 0}
+  distancebetween: 1
+  lerptimer: 1
+  currentLerpTimer: 0
 --- !u!1 &1831095977
 GameObject:
   m_ObjectHideFlags: 0

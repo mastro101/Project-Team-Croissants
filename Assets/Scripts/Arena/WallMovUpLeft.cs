@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallMovUp : MonoBehaviour
+public class WallMovUpLeft : MonoBehaviour
 {
 
 
@@ -21,7 +21,7 @@ public class WallMovUp : MonoBehaviour
     private void Start()
     {
         StartPos = wall.transform.position;
-        EndPos = wall.transform.position + new Vector3(0, 0, 1) * distancebetween;
+        EndPos = wall.transform.position + new Vector3(-1, 0, -1) * distancebetween;
     }
 
     private void Update()
