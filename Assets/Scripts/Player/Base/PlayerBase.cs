@@ -65,4 +65,9 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     {
         return originalSpeed;
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        
+    }
 }

@@ -9,7 +9,7 @@ public class ArenaSplit : MonoBehaviour
     Vector3 oldUpLeft, oldUpRight, oldDownLeft, oldDownRight;
 
     [SerializeField]
-    float timeToSplit;
+    float EndSplitTime;
     [SerializeField]
     float distance;
 
@@ -19,7 +19,7 @@ public class ArenaSplit : MonoBehaviour
     Tween[] tween = new Tween[4];
 
     /// <summary>
-    /// separa l'arena verticalmente
+    /// separa l'arena verticalmente e successivamente sopra e sotto
     /// </summary>
     /// <returns></returns>
     public IEnumerator MoveRL()
@@ -28,11 +28,11 @@ public class ArenaSplit : MonoBehaviour
         {
             yield return new WaitForSeconds(waitTime);
             // move left
-            tween[0] = upLeft.DOMove(Vector3.left * distance, timeToSplit).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
-            tween[1] = downLeft.DOMove(Vector3.left * distance, timeToSplit).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
+            tween[0] = upLeft.DOMove(Vector3.left * distance, EndSplitTime).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
+            tween[1] = downLeft.DOMove(Vector3.left * distance, EndSplitTime).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
             // move right
-            tween[2] = upRight.DOMove(Vector3.right * distance, timeToSplit).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
-            tween[3] = downRight.DOMove(Vector3.right * distance, timeToSplit).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
+            tween[2] = upRight.DOMove(Vector3.right * distance, EndSplitTime).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
+            tween[3] = downRight.DOMove(Vector3.right * distance, EndSplitTime).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
             StartCoroutine(MoveUD());            
         }
     }
@@ -56,6 +56,9 @@ public class ArenaSplit : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resetta animazioni e posizioni dei pezzi dell'arena
+    /// </summary>
     public void Setup()
     {
         StopAllCoroutines();
@@ -75,12 +78,12 @@ public class ArenaSplit : MonoBehaviour
         {
             yield return new WaitForSeconds(waitTime);
             // move up
-            tween[0] = upLeft.DOMove(Vector3.forward * distance, timeToSplit).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
-            tween[1] = upRight.DOMove(Vector3.forward * distance, timeToSplit).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
+            tween[0] = upLeft.DOMove(Vector3.forward * distance, EndSplitTime).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
+            tween[1] = upRight.DOMove(Vector3.forward * distance, EndSplitTime).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
 
             // move down
-            tween[2] = downLeft.DOMove(Vector3.back * distance, timeToSplit).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
-            tween[3] = downRight.DOMove(Vector3.back * distance, timeToSplit).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
+            tween[2] = downLeft.DOMove(Vector3.back * distance, EndSplitTime).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
+            tween[3] = downRight.DOMove(Vector3.back * distance, EndSplitTime).SetRelative().SetAutoKill(false).SetEase(Ease.Linear);
         }
     }
 }
