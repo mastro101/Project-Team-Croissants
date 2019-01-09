@@ -50,10 +50,19 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     float dashCooldown;
     public virtual float DashCooldown { get { return dashCooldown; } set { dashCooldown = value; } }
 
-
-
     public virtual void AddPoint(int _point)
     {
         Points += _point;
+    }
+
+    protected float originalSpeed;
+    protected virtual void Start()
+    {
+        originalSpeed = MovementSpeed;
+    }
+
+    public float GetOriginalSpeed()
+    {
+        return originalSpeed;
     }
 }

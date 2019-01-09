@@ -27,6 +27,7 @@ namespace StateMachine.Gameplay
                 EnemyTransform = enemyPosition,
                 BaseExitState = goNext,
                 EnemyStarterSpeed = enemy.MovementSpeed,
+                Arena = FindObjectOfType<ArenaSplit>(),
             };
             base.Start();
         }
@@ -48,5 +49,6 @@ namespace StateMachine.Gameplay
         /// </summary>
         public Action BaseExitState;
         public float EnemyStarterSpeed;
+        public ArenaSplit Arena;
     }
 }

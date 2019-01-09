@@ -357,36 +357,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114338218211383146, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
-        type: 2}
-      propertyPath: dash
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 114371582804191160, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
-        type: 2}
-      propertyPath: dashDistance
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 54544052965124706, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
-        type: 2}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114371582804191160, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
-        type: 2}
-      propertyPath: dashDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114338218211383146, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
-        type: 2}
-      propertyPath: rotationSpeed
-      value: 0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 114371582804191160, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
-        type: 2}
-      propertyPath: dashCooldown
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db1c4d3b6225b5a4898fbc0c2e063ae1, type: 2}
   m_IsPrefabAsset: 0
@@ -995,7 +965,6 @@ GameObject:
   - component: {fileID: 1253205541}
   - component: {fileID: 1253205540}
   - component: {fileID: 1253205539}
-  - component: {fileID: 1253205543}
   m_Layer: 0
   m_Name: BottomLeft
   m_TagString: Untagged
@@ -1071,23 +1040,6 @@ Transform:
   m_Father: {fileID: 1065276310}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1253205543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1253205538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 944871a9c7eb73d41a8ee0bef82b1667, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wall: {fileID: 1253205538}
-  StartPos: {x: 0, y: 0, z: 0}
-  EndPos: {x: 0, y: 0, z: 0}
-  distancebetween: 1
-  lerptimer: 1
-  currentLerpTimer: 0
 --- !u!1 &1254434559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1051,6 @@ GameObject:
   - component: {fileID: 1254434562}
   - component: {fileID: 1254434561}
   - component: {fileID: 1254434560}
-  - component: {fileID: 1254434565}
   m_Layer: 0
   m_Name: TopLeft
   m_TagString: Untagged
@@ -1175,23 +1126,53 @@ Transform:
   m_Father: {fileID: 1065276310}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1254434565
+--- !u!1 &1261791798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1261791799}
+  - component: {fileID: 1261791800}
+  m_Layer: 0
+  m_Name: Arena
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1261791799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261791798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1850304367}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1261791800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1254434559}
+  m_GameObject: {fileID: 1261791798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a9f48636de1d94a958876a2851d4e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bb925d9819591545b15ee213104fbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wall: {fileID: 1254434559}
-  StartPos: {x: 0, y: 0, z: 0}
-  EndPos: {x: 0, y: 0, z: 0}
-  distancebetween: 1
-  lerptimer: 1
-  currentLerpTimer: 0
+  upLeft: {fileID: 1254434563}
+  upRight: {fileID: 1813235979}
+  downLeft: {fileID: 1253205542}
+  downRight: {fileID: 1338172701}
+  timeToSplit: 10
+  distance: 1
+  waitTime: 10
 --- !u!1 &1338172697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1184,6 @@ GameObject:
   - component: {fileID: 1338172700}
   - component: {fileID: 1338172699}
   - component: {fileID: 1338172698}
-  - component: {fileID: 1338172703}
   m_Layer: 0
   m_Name: BottomRight
   m_TagString: Untagged
@@ -1279,23 +1259,6 @@ Transform:
   m_Father: {fileID: 1065276310}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1338172703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1338172697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007c95ed4c975e744bda963e6ff97a55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wall: {fileID: 1338172697}
-  StartPos: {x: 0, y: 0, z: 0}
-  EndPos: {x: 0, y: 0, z: 0}
-  distancebetween: 1
-  lerptimer: 1
-  currentLerpTimer: 0
 --- !u!1001 &1414618525
 Prefab:
   m_ObjectHideFlags: 0
@@ -1333,31 +1296,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4995018824901154, guid: 74c13faede5ef2446919ee58a73bbc26, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114976937170555358, guid: 74c13faede5ef2446919ee58a73bbc26,
-        type: 2}
-      propertyPath: rotationSpeed
-      value: 0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 114976937170555358, guid: 74c13faede5ef2446919ee58a73bbc26,
-        type: 2}
-      propertyPath: dash
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 114711275416076472, guid: 74c13faede5ef2446919ee58a73bbc26,
-        type: 2}
-      propertyPath: dashDistance
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 114711275416076472, guid: 74c13faede5ef2446919ee58a73bbc26,
-        type: 2}
-      propertyPath: dashDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114711275416076472, guid: 74c13faede5ef2446919ee58a73bbc26,
-        type: 2}
-      propertyPath: dashCooldown
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1407,7 +1345,6 @@ GameObject:
   - component: {fileID: 1813235978}
   - component: {fileID: 1813235977}
   - component: {fileID: 1813235976}
-  - component: {fileID: 1813235980}
   m_Layer: 0
   m_Name: TopRight
   m_TagString: Untagged
@@ -1483,23 +1420,6 @@ Transform:
   m_Father: {fileID: 1065276310}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1813235980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1813235975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d00c8ed2ea90d7947a09aa15567b2754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wall: {fileID: 1813235975}
-  StartPos: {x: 0, y: 0, z: 0}
-  EndPos: {x: 0, y: 0, z: 0}
-  distancebetween: 1
-  lerptimer: 1
-  currentLerpTimer: 0
 --- !u!1 &1831095977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1478,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1128039323}
+  - {fileID: 1261791799}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

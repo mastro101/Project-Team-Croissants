@@ -31,6 +31,9 @@ namespace StateMachine.Gameplay
                 context.Enemy.transform.position = context.EnemyTransform.position;
             // Resetta variabili
             context.Enemy.MovementSpeed = context.EnemyStarterSpeed;
+            // Resetta Arena
+            if (context.Arena != null)
+                context.Arena.Setup();
             //Esci dallo stato
             context.BaseExitState();
         }

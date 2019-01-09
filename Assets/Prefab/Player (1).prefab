@@ -40,8 +40,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281071913104320}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9892564, y: 4.7954545, z: 0.19347954}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3474488, y: 3.14, z: 2.0572367}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -133,11 +133,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be41263fa8ff59b47a86b5fff0df7b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
+  Direction: {x: 0, y: 0, z: 0}
   up: 119
   left: 97
   down: 115
   right: 100
-  dash: 0
+  dash: 32
+  rotationSpeed: 0.36
   groundDetector: {fileID: 0}
 --- !u!114 &114371582804191160
 MonoBehaviour:
@@ -152,6 +155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPoint: {fileID: 0}
   movementSpeed: 8
+  dashDistance: 16
+  dashDuration: 0.5
+  dashCooldown: 2
 --- !u!114 &114539207462540506
 MonoBehaviour:
   m_ObjectHideFlags: 1

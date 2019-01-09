@@ -28,6 +28,8 @@ namespace StateMachine.Gameplay
                 followedPlayerController = context.FollowedPlayer.gameObject.GetComponent<PlayerController>();
             if (context.RunnerPlayer != null)
                 runnerPlayerController = context.RunnerPlayer.gameObject.GetComponent<PlayerController>();
+            if (context.Arena != null)
+                context.Arena.StartCoroutine(context.Arena.MoveRL());
         }
 
         public override void Tick()

@@ -40,8 +40,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1597820675320534}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4161916, y: 4.368901, z: 1.2808027}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.623009, y: 2.43, z: 3.784669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -146,6 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPoint: {fileID: 0}
   movementSpeed: 8
+  dashDistance: 16
+  dashDuration: 0.5
+  dashCooldown: 2
 --- !u!114 &114976937170555358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,11 +160,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be41263fa8ff59b47a86b5fff0df7b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
+  Direction: {x: 0, y: 0, z: 0}
   up: 273
   left: 276
   down: 274
   right: 275
-  dash: 0
+  dash: 305
+  rotationSpeed: 0.36
   groundDetector: {fileID: 0}
 --- !u!136 &136227544369423748
 CapsuleCollider:
