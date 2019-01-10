@@ -14,6 +14,7 @@ public interface IPlayer
     float DashDistance { get; set; }
     float DashDuration { get; }
     float DashCooldown { get; }
+    float OriginalSpeed { get; }
     //float JumpForce { get; }
 
     /// <summary>

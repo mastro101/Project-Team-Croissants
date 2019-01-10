@@ -49,6 +49,7 @@ namespace StateMachine.Gameplay
             {
                 enemy.HitPlayer -= AddPoint;
             }
+            context.InvokeEndBattle();
         }
 
         void AddPoint(IPlayer player)

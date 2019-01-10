@@ -55,7 +55,9 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
         Points += _point;
     }
 
-    protected float originalSpeed;
+    float originalSpeed;
+    public float OriginalSpeed { get { return originalSpeed; } }
+
     protected virtual void Start()
     {
         originalSpeed = MovementSpeed;

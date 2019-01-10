@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using StateMachine.Gameplay;
 
 public abstract class ItemBase : MonoBehaviour , IItem
 {
@@ -11,23 +12,23 @@ public abstract class ItemBase : MonoBehaviour , IItem
 
     EnemyBase[] enemies;
 
+    protected GameplaySM gameplaySM;
+
     protected virtual void Awake()
     {
         enemies = FindObjectsOfType<EnemyBase>();
+        gameplaySM = FindObjectOfType<GameplaySM>();
     }
 
     protected virtual void Start()
     {
-        foreach (EnemyBase enemy in enemies)
-        {
-            enemy.HitPlayer += OnSpawn;
-        }
+        gameplaySM.endBattle += OnSpawn;
     }
 
     /// <summary>
     /// Chiamato quando finisce un round
     /// </summary>
-    public virtual void OnSpawn(IPlayer player)
+    public virtual void OnSpawn()
     {
         
     }

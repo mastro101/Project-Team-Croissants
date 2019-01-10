@@ -8,6 +8,6 @@ public interface IItem
     Collider collider { get; }
     MeshRenderer meshRenderer { get; }
     void Effect(IPlayer player);
-    void OnSpawn(IPlayer player);
+    void OnSpawn();
     void OnTake(IPlayer player);
 }

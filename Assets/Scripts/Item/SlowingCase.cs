@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class SlowingCase : ItemBase
 {
     [SerializeField]
     GameObject slowingObject;
+    [SerializeField]
+    float ExpandValue;
+
     Transform slowingSpawn;
+
 
     Vector3 directionFall;
     Vector3 oldPosition;
@@ -19,9 +24,11 @@ public class SlowingCase : ItemBase
         slowingSpawn = gameObject.GetComponentInChildren<Transform>();
     }
 
-    public override void OnSpawn(IPlayer player)
+
+
+    public override void OnSpawn()
     {
-        base.OnSpawn(player);
+        base.OnSpawn();
         collider.enabled = true;
         transform.rotation = oldRotation;
         transform.position = oldPosition;
@@ -33,11 +40,13 @@ public class SlowingCase : ItemBase
         collider.enabled = false;
         directionFall = player.gameObject.GetComponent<PlayerController>().Direction;
         transform.rotation = Quaternion.LookRotation(directionFall);
-        transform.Rotate(90, 0, 0);
+        transform.DORotate(new Vector3(90, 0, 0), 0.5f).SetRelative();
     }
 
+    GameObject slowing;
     public override void Effect(IPlayer _player)
     {
-        Instantiate (slowingObject, slowingSpawn);
+        slowing = Instantiate(slowingObject, slowingSpawn.position, Quaternion.LookRotation(directionFall));
+        slowing.transform.DOScaleZ(ExpandValue, 1);
     }
 }

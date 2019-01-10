@@ -14,6 +14,10 @@ namespace StateMachine.Gameplay
         [SerializeField]
         Transform runnerPosition, followedPosition, enemyPosition;
 
+
+        public event GamplayStateEvent.EndState endBattle;
+
+
         protected override void Start()
         {
             currentContext = new GameplaySMContext()
@@ -28,6 +32,7 @@ namespace StateMachine.Gameplay
                 BaseExitState = goNext,
                 EnemyStarterSpeed = enemy.MovementSpeed,
                 Arena = FindObjectOfType<ArenaSplit>(),
+                InvokeEndBattle = invokeEndBattle,
             };
             base.Start();
         }
@@ -35,6 +40,14 @@ namespace StateMachine.Gameplay
         void goNext()
         {
             SM.SetTrigger("Exit");
+        }
+
+        void invokeEndBattle()
+        {
+            if (endBattle != null)
+            {
+                endBattle();
+            }
         }
     }
 
@@ -50,5 +63,11 @@ namespace StateMachine.Gameplay
         public Action BaseExitState;
         public float EnemyStarterSpeed;
         public ArenaSplit Arena;
+        public Action InvokeEndBattle;
+    }
+
+    public class GamplayStateEvent
+    {
+        public delegate void EndState();
     }
 }
