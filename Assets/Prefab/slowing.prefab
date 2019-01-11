@@ -36,6 +36,8 @@ GameObject:
   - component: {fileID: 4810451123674718}
   - component: {fileID: 33377116233713242}
   - component: {fileID: 23683596516397042}
+  - component: {fileID: 114541531871993362}
+  - component: {fileID: 65349900521371280}
   m_Layer: 0
   m_Name: SM_Pozza
   m_TagString: Untagged
@@ -112,3 +114,27 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1940409285986550}
   m_Mesh: {fileID: 4300000, guid: 0c0182d54b843274d99bafab5bc70210, type: 3}
+--- !u!65 &65349900521371280
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1940409285986550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 27.137978, y: 0.30315158, z: 27.137983}
+  m_Center: {x: 0, y: 0.15157579, z: 0}
+--- !u!114 &114541531871993362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1940409285986550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44dae1f87f7e353428a4215fcb620e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  second: 2
