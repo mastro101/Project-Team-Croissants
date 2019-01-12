@@ -59,12 +59,12 @@ namespace StateMachine.Gameplay
 
             if (player == context.FollowedPlayer)
             {
-                context.FollowedPlayer.AddPoint(1);
+                context.RunnerPlayer.AddPoint(1);
             }
 
             if (player == context.RunnerPlayer)
             {
-                context.RunnerPlayer.AddPoint(1);
+                context.FollowedPlayer.AddPoint(1);
             }
 
             // Esci dallo stato

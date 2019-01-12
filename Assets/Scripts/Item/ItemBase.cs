@@ -8,6 +8,10 @@ public abstract class ItemBase : MonoBehaviour , IItem
 
     public MeshRenderer meshRenderer { get { return GetComponent<MeshRenderer>(); } }
 
+    /// <summary>
+    /// Chiamato per attivare l'effetto dell'oggetto preso
+    /// </summary>
+    /// <param name="_player"></param>
     public abstract void Effect(IPlayer _player);
 
     EnemyBase[] enemies;
@@ -42,6 +46,10 @@ public abstract class ItemBase : MonoBehaviour , IItem
 
     }
 
+    /// <summary>
+    /// Di base uando viene toccato da un player si attiva OnTake e Effect
+    /// </summary>
+    /// <param name="other"></param>
     protected virtual void OnTriggerEnter(Collider other)
     {
         IPlayer player = other.GetComponent<IPlayer>();
