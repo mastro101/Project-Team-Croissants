@@ -12,6 +12,8 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
 
     public abstract int ID { get; }
 
+    public abstract string Name { get; }
+
     protected int points;
     public virtual int Points
     {
@@ -23,7 +25,7 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
         {
             points = value;
             if (playerPoint != null)
-                playerPoint.text = "Player " + ID + " has " + points + " Points";
+                playerPoint.text = Name + " has " + points + " Points";
         }
     }
 
@@ -48,7 +50,13 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
 
     [SerializeField]
     float dashCooldown;
-    public virtual float DashCooldown { get { return dashCooldown; } set { dashCooldown = value; } }
+    public virtual float DashCooldown { get { return dashCooldown; } }
+
+    [SerializeField]
+    float abilityCooldown;
+    public virtual float AbilityCooldown { get { return abilityCooldown; } }
+
+    public abstract void Ability();
 
     public virtual void AddPoint(int _point)
     {

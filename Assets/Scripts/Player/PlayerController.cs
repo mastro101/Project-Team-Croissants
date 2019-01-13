@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     float cooldownDashTimer;
     bool canDash = true;
+    bool canAbility = true;
 
     IPlayer player;
 
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour
     //KeyCode jump;
     [SerializeField]
     KeyCode dash;
+    [SerializeField]
+    KeyCode ability;
 
     [Range(0f, 1f)]
     [SerializeField]
@@ -66,10 +69,11 @@ public class PlayerController : MonoBehaviour
 
             if (!Input.GetKey(up) && !Input.GetKey(left) && !Input.GetKey(down) && !Input.GetKey(right))
             {
-
+                player.SM.SetBool("Run", false);
             }
             else
             {
+                player.SM.SetBool("Run", true);
                 if (Input.GetKey(left))
                 {
                     transform.position += Vector3.left * (float)speed;
@@ -122,16 +126,25 @@ public class PlayerController : MonoBehaviour
                 cooldownDashTimer = 0;
                 canDash = true;
             } 
+        }
 
+        if (Input.GetKeyDown(ability) && !player.SM.GetBool("Ability") && canAbility)
+        {
+            player.SM.SetBool("Ability", true);
+            StartCoroutine(CounterCoolDownAbility());
         }
     }
 
     public void Dash()
     {
-        transform.position += transform.forward * (player.DashDistance * Time.deltaTime);
-        
+        transform.position += transform.forward * (player.DashDistance * Time.deltaTime);        
     }
 
+    IEnumerator CounterCoolDownAbility()
+    {
+        yield return new WaitForSeconds(player.AbilityCooldown);
+        canAbility = true;
+    }
 
     public void Jump()
     {
