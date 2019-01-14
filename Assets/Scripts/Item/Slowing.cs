@@ -5,12 +5,15 @@ public class Slowing : ItemBase
 {
     [SerializeField]
     float second = 2;
+    [Range(0, 100)]
+    [SerializeField]
+    int PercentSlow;
 
     public override void Effect(IPlayer _player)
     {
         if (_player.gameObject.GetComponent<BuffPlayer>() == null)
         {
-            _player.gameObject.AddComponent<BuffPlayer>().SetBuff(StatusCondiction.Slow, (_player.MovementSpeed / 100) * 20, second);
+            _player.gameObject.AddComponent<BuffPlayer>().SetBuff(StatusCondiction.Slow, (_player.MovementSpeed / 100) * PercentSlow, second);
         }
         else
         {
