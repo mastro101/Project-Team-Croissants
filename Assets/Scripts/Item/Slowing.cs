@@ -21,7 +21,7 @@ public class Slowing : ItemBase
             if (buff.statusCondiction == StatusCondiction.Slow)
                 buff.RestartCorutine(second);
             else
-                _player.gameObject.AddComponent<BuffPlayer>().SetBuff(StatusCondiction.Slow, (_player.MovementSpeed / 100) * 20, second);
+                _player.gameObject.AddComponent<BuffPlayer>().SetBuff(StatusCondiction.Slow, (_player.MovementSpeed / 100) * PercentSlow, second);
         }
     }
 
