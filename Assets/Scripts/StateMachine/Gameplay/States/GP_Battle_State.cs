@@ -55,7 +55,8 @@ namespace StateMachine.Gameplay
         void AddPoint(IPlayer player)
         {
             Debug.Log("AddPoint");
-            
+            context.FollowedPlayer.SM.SetTrigger("GameOver");
+            context.RunnerPlayer.SM.SetTrigger("GameOver");
 
             if (player == context.FollowedPlayer)
             {

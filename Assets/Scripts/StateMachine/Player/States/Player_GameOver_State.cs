@@ -12,5 +12,12 @@ namespace StateMachine.Player
                 return context.Player.ToString() + " GameOver";
             }
         }
+
+        public override void Enter()
+        {
+            base.Enter();
+            context.PlayerController.ResetCooldown();
+            context.ExitState();
+        }
     }
 }

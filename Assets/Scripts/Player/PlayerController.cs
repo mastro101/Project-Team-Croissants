@@ -131,6 +131,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(ability) && !player.SM.GetBool("Ability") && canAbility)
         {
             player.SM.SetBool("Ability", true);
+            canAbility = false;
             StartCoroutine(CounterCoolDownAbility());
         }
     }
@@ -151,15 +152,23 @@ public class PlayerController : MonoBehaviour
         // player.rigidbody.AddForce(Vector3.up * player.JumpForce);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision != null)
+    //    {
+    //        player.SM.SetBool("Jump", false);
+    //    }
+    //    else
+    //    {
+    //        
+    //    }
+    //}
+
+    public void ResetCooldown()
     {
-        if (collision != null)
-        {
-            player.SM.SetBool("Jump", false);
-        }
-        else
-        {
-            
-        }
+        StopCoroutine(CounterCoolDownAbility());
+        
+        canAbility = true;
+        canDash = true;
     }
 }

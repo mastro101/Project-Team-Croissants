@@ -17,7 +17,7 @@ namespace StateMachine
 
         public virtual void Tick()
         {
-            Debug.Log("On: " + stateName);
+            
         }
 
         public virtual void Exit()

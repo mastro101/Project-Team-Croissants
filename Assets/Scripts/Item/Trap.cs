@@ -1,0 +1,32 @@
+﻿using UnityEngine;
+using UnityEditor;
+using System.Collections;
+using DG.Tweening;
+
+public class Trap : Slowing
+{
+    [Range(0, 1)]
+    [SerializeField]
+    float fadeValue;
+    [SerializeField]
+    float fadeSecond;
+
+    public override void Effect(IPlayer _player)
+    {
+        base.Effect(_player);
+        gameplaySM.endBattle -= OnSpawn;
+        Destroy(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(ActiveCollider());
+        meshRenderer.material.DOFade(fadeValue, fadeSecond);
+    }
+
+    IEnumerator ActiveCollider()
+    {
+        yield return new WaitForSeconds(fadeSecond);
+        collider.enabled = true;
+    }
+}
