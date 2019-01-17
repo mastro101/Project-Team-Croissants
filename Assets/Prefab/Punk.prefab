@@ -101,7 +101,7 @@ MonoBehaviour:
   dashDistance: 16
   dashDuration: 0.5
   dashCooldown: 2
-  abilityCooldown: 0
+  abilityCooldown: 12
   trapPrefab: {fileID: 1033149681314150, guid: 9dfc50b58b10b494da938a7737389623, type: 3}
 --- !u!114 &114976937170555358
 MonoBehaviour:
@@ -122,7 +122,7 @@ MonoBehaviour:
   down: 274
   right: 275
   dash: 303
-  ability: 306
+  ability: 305
   rotationSpeed: 0.36
   groundDetector: {fileID: 0}
 --- !u!136 &9211711001245841455
