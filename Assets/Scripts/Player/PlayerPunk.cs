@@ -24,7 +24,7 @@ public class PlayerPunk : PlayerBase
 
     public override void Ability()
     {
-        Instantiate(trapPrefab, transform.position, Quaternion.Euler(0, 0, 0));
+        Instantiate(trapPrefab, transform.position + new Vector3 (0, 1, 0), Quaternion.Euler(0, 0, 0));
 
         SM.SetBool("Ability", false);
     }

@@ -24,6 +24,11 @@ public class Trap : Slowing
         meshRenderer.material.DOFade(fadeValue, fadeSecond);
     }
 
+    //private void FixedUpdate()
+    //{
+    //    transform.position += Vector3.down * 9.81f * Time.deltaTime;
+    //}
+
     IEnumerator ActiveCollider()
     {
         yield return new WaitForSeconds(fadeSecond);
