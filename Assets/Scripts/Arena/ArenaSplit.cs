@@ -45,27 +45,16 @@ public class ArenaSplit : MonoBehaviour
         oldDownRight = downRight.position;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            tween[0].Pause();
-            tween[1].Pause();
-            tween[2].Pause();
-            tween[3].Pause();
-        }
-    }
-
     /// <summary>
     /// Resetta animazioni e posizioni dei pezzi dell'arena
     /// </summary>
     public void Setup()
     {
         StopAllCoroutines();
-        tween[0].Pause();
-        tween[1].Pause();
-        tween[2].Pause();
-        tween[3].Pause();
+        //tween[0].Pause();
+        //tween[1].Pause();
+        //tween[2].Pause();
+        //tween[3].Pause();
         upLeft.position = oldUpLeft;
         upRight.position = oldUpRight;
         downLeft.position = oldDownLeft;

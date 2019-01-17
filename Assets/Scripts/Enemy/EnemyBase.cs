@@ -15,7 +15,11 @@ public abstract class EnemyBase : MonoBehaviour, IEnemy
 
     public virtual IPlayer PlayerToFollow { get; set; }
 
+    public virtual Animator SM { get { return GetComponent<Animator>(); } }
+
     public virtual void Movement() { }
+
+    public virtual void Ability() { }
 
     /// <summary>
     /// Evento attivato quando colpisce un Player

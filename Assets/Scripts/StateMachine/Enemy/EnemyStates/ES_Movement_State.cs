@@ -15,10 +15,10 @@ namespace StateMachine.Enemy
             }
         }
 
-        public override void Enter()
+        public override void Tick()
         {
-            base.Enter();
-            context.ExitState();
+            base.Tick();
+            context.Enemy.Movement();
         }
     }
 }

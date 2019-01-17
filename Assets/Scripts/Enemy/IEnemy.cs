@@ -9,6 +9,7 @@ public interface IEnemy {
 	float MovementSpeed { get; set; }
     float RotationSpeed { get; set; }
     IPlayer PlayerToFollow { get; set; }
+    Animator SM { get; }
 
     /// <summary>
     /// Evento attivato quando colpisce un Player
@@ -16,6 +17,7 @@ public interface IEnemy {
     event EnemyEvent.EnemyDelegate HitPlayer;
 
     void Movement();
+    void Ability();
 }
 
 public class EnemyEvent

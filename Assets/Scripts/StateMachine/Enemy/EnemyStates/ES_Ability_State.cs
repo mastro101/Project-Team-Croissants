@@ -19,7 +19,7 @@ namespace StateMachine.Enemy
         public override void Enter()
         {
             base.Enter();
-            context.ExitState();
+            context.Enemy.Ability();
         }
     }
 }

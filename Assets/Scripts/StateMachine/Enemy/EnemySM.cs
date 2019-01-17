@@ -13,11 +13,9 @@ namespace StateMachine.Enemy
             currentContext = new EnemySMContext()
             {
                 ExitState = goNext,
+                Enemy = gameObject.GetComponent<IEnemy>(),
             };
-
-
-
-
+            base.Start();
         }
             void goNext()
             {
@@ -25,10 +23,11 @@ namespace StateMachine.Enemy
             }
 
     }
-        public class EnemySMContext : IStateMachineContext
-        {
-            public Action ExitState;
 
-        }
+    public class EnemySMContext : IStateMachineContext
+    {
+        public Action ExitState;
+        public IEnemy Enemy;
+    }
 
 }

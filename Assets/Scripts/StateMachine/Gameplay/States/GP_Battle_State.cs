@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 namespace StateMachine.Gameplay
 {
@@ -19,6 +20,7 @@ namespace StateMachine.Gameplay
         {
             base.Enter();
             context.Enemy.PlayerToFollow = context.FollowedPlayer;
+            context.Enemy.SM.SetTrigger("Movement");
             foreach (IEnemy enemy in context.Enemies)
             {
                 Debug.Log(enemy.gameObject.name);
@@ -35,7 +37,6 @@ namespace StateMachine.Gameplay
         public override void Tick()
         {
             base.Tick();
-            context.Enemy.Movement();
             if (followedPlayerController != null)
                 followedPlayerController.PlayerInput();
             if (runnerPlayerController != null)
@@ -45,6 +46,9 @@ namespace StateMachine.Gameplay
         public override void Exit()
         {
             base.Exit();
+            DOTween.PauseAll();
+            context.Enemy.SM.SetTrigger("Idle");
+            context.Enemy.transform.localScale = Vector3.one;
             foreach (IEnemy enemy in context.Enemies)
             {
                 enemy.HitPlayer -= AddPoint;
