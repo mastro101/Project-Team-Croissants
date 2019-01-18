@@ -96,6 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   rotationSpeed: 0.09
+  percentSpeed: 36
+  PercentScale: 36
 --- !u!64 &64255993239573994
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -196,42 +198,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4304737051333742, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.044179
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304737051333742, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.044179
-      objectReference: {fileID: 0}
-    - target: {fileID: 4304737051333742, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4.044179
-      objectReference: {fileID: 0}
-    - target: {fileID: 4445752730742568, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.044179
-      objectReference: {fileID: 0}
-    - target: {fileID: 4445752730742568, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.044179
-      objectReference: {fileID: 0}
-    - target: {fileID: 4445752730742568, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4.044179
-      objectReference: {fileID: 0}
-    - target: {fileID: 4932763927436030, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.044179
-      objectReference: {fileID: 0}
-    - target: {fileID: 4932763927436030, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.044179
-      objectReference: {fileID: 0}
-    - target: {fileID: 4932763927436030, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4.044179
-      objectReference: {fileID: 0}
     - target: {fileID: 4850973198750072, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.044179
@@ -253,6 +219,42 @@ PrefabInstance:
       value: 4.044179
       objectReference: {fileID: 0}
     - target: {fileID: 4850428107352058, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.044179
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932763927436030, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.044179
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932763927436030, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.044179
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932763927436030, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.044179
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304737051333742, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.044179
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304737051333742, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.044179
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304737051333742, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.044179
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445752730742568, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.044179
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445752730742568, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.044179
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445752730742568, guid: 8ca4c601d836f6d40af9e07b8e5d85b8, type: 3}
       propertyPath: m_LocalScale.z
       value: 4.044179
       objectReference: {fileID: 0}

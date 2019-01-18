@@ -5,6 +5,10 @@ using DG.Tweening;
 
 public class Rocket : EnemyBase
 {
+    [Range(0,100)]
+    [SerializeField]
+    float percentSpeed, PercentScale;
+
     IPlayer playerToFollow;
     public override IPlayer PlayerToFollow
     {
@@ -46,8 +50,8 @@ public class Rocket : EnemyBase
     public override void Ability()
     {
         base.Ability();
-        MovementSpeed += MovementSpeed / 100 * 20;
-        transform.DOScale(transform.lossyScale / 100 * 10, 1).SetRelative();
+        MovementSpeed += MovementSpeed / 100 * percentSpeed;
+        transform.DOScale(transform.lossyScale / 100 * PercentScale, 1).SetRelative();
         
     }
 
