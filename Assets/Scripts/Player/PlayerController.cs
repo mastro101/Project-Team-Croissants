@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Vector3 Direction;
 
+    [SerializeField] private InputMaster controls;
+
     float cooldownDashTimer;
     bool canDash = true;
     bool canAbility = true;
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         player = gameObject.GetComponent<IPlayer>();
+       // controls.Player1.Dash.performed += _ctx => Dash();
     }
 
     double speed;
@@ -114,9 +117,12 @@ public class PlayerController : MonoBehaviour
         // Input per il dash
         if (Input.GetKeyDown(dash) && canDash == true)
         {
+            
             player.SM.SetTrigger("Dash");
             canDash = false;
         }
+
+      
 
         if (canDash == false)
         {
@@ -133,6 +139,46 @@ public class PlayerController : MonoBehaviour
             player.SM.SetBool("Ability", true);
             canAbility = false;
             StartCoroutine(CounterCoolDownAbility());
+        }
+    }
+
+
+    private void OnEnable()
+    {
+        controls.Player1.Enable();
+        controls.Player1.Dash.performed += Dash_performed;
+
+        //controls.Player1.MoveUp.performed += MoveUp_performed;
+        //controls.Player1.MoveDown.performed += MoveDown_performed;
+    }
+
+    //private void MoveDown_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext obj)
+    //{
+    //    transform.position += Vector3.forward * (float)speed;
+    //    VerticalAxis = -1;
+    //}
+
+    //private void MoveUp_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext obj)
+    //{
+    //    transform.position += Vector3.back * (float)speed;
+    //    VerticalAxis = 1;
+    //}
+
+    private void OnDisable()
+    {
+        controls.Player1.Disable();
+        controls.Player1.Dash.performed -= Dash_performed;
+
+        //controls.Player1.MoveUp.performed -= MoveUp_performed;
+        //controls.Player1.MoveDown.performed -= MoveDown_performed;
+    }
+
+    private void Dash_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext ctx)
+    {
+        if (canDash == true)
+        {
+            player.SM.SetTrigger("Dash");
+            canDash = false;
         }
     }
 
