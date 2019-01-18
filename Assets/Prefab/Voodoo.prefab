@@ -130,12 +130,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   Direction: {x: 0, y: 0, z: 0}
+  controls:
+    m_Asset: {fileID: 0}
+  playerN: 0
   up: 119
   left: 97
   down: 115
   right: 100
-  dash: 32
-  ability: 0
+  dash: 350
+  ability: 352
   rotationSpeed: 0.36
   groundDetector: {fileID: 0}
 --- !u!1 &8781662114007581126

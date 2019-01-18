@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     bool canAbility = true;
 
     IPlayer player;
-
+    [SerializeField]
+    Player playerN;
     [SerializeField]
     KeyCode up;
     [SerializeField]
@@ -43,13 +44,14 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         player = gameObject.GetComponent<IPlayer>();
-       // controls.Player1.Dash.performed += _ctx => Dash();
+        // controls.Player1.Dash.performed += _ctx => Dash();
     }
 
     double speed;
 
     float HorizzontalAxis, VerticalAxis;
 
+    float h , v;
 
     /// <summary>
     /// Contiene i comandi del Player
@@ -57,13 +59,28 @@ public class PlayerController : MonoBehaviour
     public void PlayerInput()
     {
         speed = player.MovementSpeed * Time.deltaTime;
-        Direction = new Vector3(HorizzontalAxis, 0, VerticalAxis);
+        Direction = new Vector3(h, 0, v);
         player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction), rotationSpeed);
 
+        transform.position += Vector3.right * h * (float)speed;
+        transform.position += Vector3.forward * v * (float)speed;
 
         // Movimento del player
         if (canMove == true)
         {
+            switch (playerN)
+            {
+                case Player.P1:
+                    h = Input.GetAxisRaw("HorizontalP1");
+                    v = Input.GetAxisRaw("VerticalP1");
+                    break;
+                case Player.P2:
+                    h = Input.GetAxisRaw("HorizontalP2");
+                    v = Input.GetAxisRaw("VerticalP2");
+                    break;
+                default:
+                    break;
+            }
 
             if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
             {
@@ -117,12 +134,12 @@ public class PlayerController : MonoBehaviour
         // Input per il dash
         if (Input.GetKeyDown(dash) && canDash == true)
         {
-            
+
             player.SM.SetTrigger("Dash");
             canDash = false;
         }
 
-      
+
 
         if (canDash == false)
         {
@@ -131,7 +148,7 @@ public class PlayerController : MonoBehaviour
             {
                 cooldownDashTimer = 0;
                 canDash = true;
-            } 
+            }
         }
 
         if (Input.GetKeyDown(ability) && !player.SM.GetBool("Ability") && canAbility)
@@ -143,14 +160,14 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnEnable()
-    {
-        controls.Player1.Enable();
-        controls.Player1.Dash.performed += Dash_performed;
-
-        //controls.Player1.MoveUp.performed += MoveUp_performed;
-        //controls.Player1.MoveDown.performed += MoveDown_performed;
-    }
+    //private void OnEnable()
+    //{
+    //    controls.Player1.Enable();
+    //    controls.Player1.Dash.performed += Dash_performed;
+    //
+    //    //controls.Player1.MoveUp.performed += MoveUp_performed;
+    //    //controls.Player1.MoveDown.performed += MoveDown_performed;
+    //}
 
     //private void MoveDown_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext obj)
     //{
@@ -164,27 +181,27 @@ public class PlayerController : MonoBehaviour
     //    VerticalAxis = 1;
     //}
 
-    private void OnDisable()
-    {
-        controls.Player1.Disable();
-        controls.Player1.Dash.performed -= Dash_performed;
+    //private void ondisable()
+    //{
+    //    controls.player1.disable();
+    //    controls.player1.dash.performed -= dash_performed;
 
-        //controls.Player1.MoveUp.performed -= MoveUp_performed;
-        //controls.Player1.MoveDown.performed -= MoveDown_performed;
-    }
+    //    //controls.player1.moveup.performed -= moveup_performed;
+    //    //controls.player1.movedown.performed -= movedown_performed;
+    //}
 
-    private void Dash_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext ctx)
-    {
-        if (canDash == true)
-        {
-            player.SM.SetTrigger("Dash");
-            canDash = false;
-        }
-    }
+    //private void Dash_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext ctx)
+    //{
+    //    if (canDash == true)
+    //    {
+    //        player.SM.SetTrigger("Dash");
+    //        canDash = false;
+    //    }
+    //}
 
     public void Dash()
     {
-        transform.position += transform.forward * (player.DashDistance * Time.deltaTime);        
+        transform.position += transform.forward * (player.DashDistance * Time.deltaTime);
     }
 
     IEnumerator CounterCoolDownAbility()
@@ -213,8 +230,14 @@ public class PlayerController : MonoBehaviour
     public void ResetCooldown()
     {
         StopCoroutine(CounterCoolDownAbility());
-        
+
         canAbility = true;
         canDash = true;
     }
+}
+
+enum Player
+{
+    P1,
+    P2,
 }
