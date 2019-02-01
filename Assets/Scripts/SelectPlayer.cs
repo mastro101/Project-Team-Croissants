@@ -12,19 +12,29 @@ public class SelectPlayer : MonoBehaviour
     TextMeshProUGUI Player1Text, Player2Text;
     bool onePressed, twoPressed;
 
+    [SerializeField]
+    GameObject pressA;
+    [SerializeField]
+    GameObject ready;
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             onePressed = true;
-            Player1Text.text = "Ok";
+            pressA.SetActive(false);
+            ready.SetActive(true);
+            //Player1Text.text = "Ok";
             check();
         }
 
         if (Input.GetKeyDown(KeyCode.Joystick2Button0))
         {
             twoPressed = true;
-            Player2Text.text = "Ok";
+            pressA.SetActive(false);
+            ready.SetActive(true);
+            //Player2Text.text = "Ok";
             check();
         }
     }
