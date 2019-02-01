@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -522,7 +522,6 @@ GameObject:
   - component: {fileID: 61647323}
   - component: {fileID: 61647326}
   - component: {fileID: 61647325}
-  - component: {fileID: 61647324}
   m_Layer: 0
   m_Name: GameplaySM
   m_TagString: Untagged
@@ -544,18 +543,6 @@ Transform:
   m_Father: {fileID: 1128039323}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &61647324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61647322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6f665ddcfe92944846f92d2d51d40b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &61647325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9520,14 +9507,14 @@ Transform:
   - {fileID: 1355230436}
   - {fileID: 1022710976}
   - {fileID: 1267532596}
-  - {fileID: 1359177085}
-  - {fileID: 1677563496}
   - {fileID: 1022770034}
-  - {fileID: 431268761}
+  - {fileID: 1677563496}
+  - {fileID: 1359177085}
   - {fileID: 1025240422}
   - {fileID: 1061166024}
   - {fileID: 2109777811}
   - {fileID: 429832573}
+  - {fileID: 431268761}
   - {fileID: 61686689}
   - {fileID: 1298683847}
   - {fileID: 376416943}
