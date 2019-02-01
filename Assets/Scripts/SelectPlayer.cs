@@ -13,9 +13,13 @@ public class SelectPlayer : MonoBehaviour
     bool onePressed, twoPressed;
 
     [SerializeField]
-    GameObject pressA;
+    GameObject pressA1;
     [SerializeField]
-    GameObject ready;
+    GameObject ready1;
+    [SerializeField]
+    GameObject pressA2;
+    [SerializeField]
+    GameObject ready2;
 
 
     void Update()
@@ -23,8 +27,8 @@ public class SelectPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             onePressed = true;
-            pressA.SetActive(false);
-            ready.SetActive(true);
+            pressA1.SetActive(false);
+            ready1.SetActive(true);
             //Player1Text.text = "Ok";
             check();
         }
@@ -32,8 +36,8 @@ public class SelectPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Joystick2Button0))
         {
             twoPressed = true;
-            pressA.SetActive(false);
-            ready.SetActive(true);
+            pressA2.SetActive(false);
+            ready2.SetActive(true);
             //Player2Text.text = "Ok";
             check();
         }
