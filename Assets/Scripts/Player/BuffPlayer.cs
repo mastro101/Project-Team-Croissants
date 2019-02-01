@@ -56,6 +56,7 @@ public class BuffPlayer : MonoBehaviour
                 break;
             case StatusCondiction.Invert:
                 player.gameObject.GetComponent<PlayerController>().InverterVector = 1;
+                player.transform.Rotate(0, 180, 0);
                 break;
             default:
                 break;
@@ -72,7 +73,7 @@ public class BuffPlayer : MonoBehaviour
     void invert()
     {
         player.gameObject.GetComponent<PlayerController>().InverterVector = -1;
-        Debug.Log("inverted");
+        player.transform.Rotate(0, 180, 0);
     }
 
     IEnumerator stopBuff(IPlayer player)
