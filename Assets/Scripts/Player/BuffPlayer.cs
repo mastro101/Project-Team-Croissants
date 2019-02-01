@@ -30,11 +30,14 @@ public class BuffPlayer : MonoBehaviour
         {
             case StatusCondiction.Slow:
                 slow();
-                StartCoroutine(stopBuff(player));
+                break;
+            case StatusCondiction.Invert:
+                invert();
                 break;
             default:
                 break;
         }
+        StartCoroutine(stopBuff(player));
     }
 
     public void RestartCorutine(float sec)
@@ -51,6 +54,9 @@ public class BuffPlayer : MonoBehaviour
             case StatusCondiction.Slow:
                 player.MovementSpeed = player.OriginalSpeed;
                 break;
+            case StatusCondiction.Invert:
+                player.gameObject.GetComponent<PlayerController>().InverterVector = 1;
+                break;
             default:
                 break;
         }
@@ -63,6 +69,12 @@ public class BuffPlayer : MonoBehaviour
         player.MovementSpeed -= variable;
     }
 
+    void invert()
+    {
+        player.gameObject.GetComponent<PlayerController>().InverterVector = -1;
+        Debug.Log("inverted");
+    }
+
     IEnumerator stopBuff(IPlayer player)
     {
         yield return new WaitForSeconds(second);
@@ -72,5 +84,5 @@ public class BuffPlayer : MonoBehaviour
 }
 
 public enum StatusCondiction{
-    Slow,
+    Slow, Invert,
 }

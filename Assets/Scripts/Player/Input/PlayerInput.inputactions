@@ -1,0 +1,81 @@
+{
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "9edf5b1b-33db-4f1a-95cb-7886a9f6b67a",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "id": "2b1ef546-4362-40c2-8788-51f3fe1afe13",
+                    "expectedControlLayout": "Stick",
+                    "bindings": []
+                },
+                {
+                    "name": "Dash",
+                    "id": "4ee7db55-4db3-4920-a400-099184ddde1f",
+                    "expectedControlLayout": "Button",
+                    "bindings": []
+                },
+                {
+                    "name": "Ability",
+                    "id": "48ccfd64-f94a-45a5-a33c-26b39cdb27f2",
+                    "expectedControlLayout": "Button",
+                    "bindings": []
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Dash",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Ability",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Gamepad",
+            "basedOn": "",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

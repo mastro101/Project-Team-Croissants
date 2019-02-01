@@ -51,10 +51,10 @@ public class ArenaSplit : MonoBehaviour
     public void Setup()
     {
         StopAllCoroutines();
-        //tween[0].Pause();
-        //tween[1].Pause();
-        //tween[2].Pause();
-        //tween[3].Pause();
+        tween[0].Pause();
+        tween[1].Pause();
+        tween[2].Pause();
+        tween[3].Pause();
         upLeft.position = oldUpLeft;
         upRight.position = oldUpRight;
         downLeft.position = oldDownLeft;

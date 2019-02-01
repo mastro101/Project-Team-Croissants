@@ -11,15 +11,14 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Vector3 Direction;
 
-    [SerializeField] private InputMaster controls;
-
     float cooldownDashTimer;
     bool canDash = true;
     bool canAbility = true;
 
     IPlayer player;
-    [SerializeField]
-    Player playerN;
+
+    public NPlayer nPlayer;
+
     [SerializeField]
     KeyCode up;
     [SerializeField]
@@ -44,14 +43,15 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         player = gameObject.GetComponent<IPlayer>();
-        // controls.Player1.Dash.performed += _ctx => Dash();
     }
 
     double speed;
-
     float HorizzontalAxis, VerticalAxis;
+    float x, y;
+    Vector3 stickDirection;
 
-    float h , v;
+    [HideInInspector]
+    public int InverterVector = 1;
 
     /// <summary>
     /// Contiene i comandi del Player
@@ -59,70 +59,73 @@ public class PlayerController : MonoBehaviour
     public void PlayerInput()
     {
         speed = player.MovementSpeed * Time.deltaTime;
-        Direction = new Vector3(h, 0, v);
-        player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction), rotationSpeed);
+        if (stickDirection != Vector3.zero)
+            Direction = stickDirection;
 
-        transform.position += Vector3.right * h * (float)speed;
-        transform.position += Vector3.forward * v * (float)speed;
+        stickDirection = new Vector3(x, 0, y).normalized;
+
+        switch (nPlayer)
+        {
+            case NPlayer.P1:
+                x = Input.GetAxis("X1");
+                y = Input.GetAxis("Y1");
+                break;
+            case NPlayer.P2:
+                x = Input.GetAxis("X2");
+                y = Input.GetAxis("Y2");
+                break;
+            default:
+                break;
+        }
 
         // Movimento del player
         if (canMove == true)
         {
-            switch (playerN)
-            {
-                case Player.P1:
-                    h = Input.GetAxisRaw("HorizontalP1");
-                    v = Input.GetAxisRaw("VerticalP1");
-                    break;
-                case Player.P2:
-                    h = Input.GetAxisRaw("HorizontalP2");
-                    v = Input.GetAxisRaw("VerticalP2");
-                    break;
-                default:
-                    break;
-            }
+            player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction), rotationSpeed);
 
             if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
             {
                 speed = speed / Math.Sqrt(2);
             }
 
-            if (!Input.GetKey(up) && !Input.GetKey(left) && !Input.GetKey(down) && !Input.GetKey(right))
+            transform.position += stickDirection * InverterVector * (float)speed;
+
+            if (!Input.GetKey(up) && !Input.GetKey(left) && !Input.GetKey(down) && !Input.GetKey(right) && stickDirection == Vector3.zero)
             {
                 player.SM.SetBool("Run", false);
             }
             else
             {
                 player.SM.SetBool("Run", true);
-                if (Input.GetKey(left))
-                {
-                    transform.position += Vector3.left * (float)speed;
-                    HorizzontalAxis = -1;
-                }
-                else if (Input.GetKey(right))
-                {
-                    transform.position += Vector3.right * (float)speed;
-                    HorizzontalAxis = 1;
-                }
-                else
-                {
-                    HorizzontalAxis = 0;
-                }
-
-                if (Input.GetKey(up))
-                {
-                    transform.position += Vector3.forward * (float)speed;
-                    VerticalAxis = 1;
-                }
-                else if (Input.GetKey(down))
-                {
-                    transform.position += Vector3.back * (float)speed;
-                    VerticalAxis = -1;
-                }
-                else
-                {
-                    VerticalAxis = 0;
-                }
+                //if (Input.GetKey(left))
+                //{
+                //    transform.position += Vector3.left * (float)speed;
+                //    HorizzontalAxis = -1;
+                //}
+                //else if (Input.GetKey(right))
+                //{
+                //    transform.position += Vector3.right * (float)speed;
+                //    HorizzontalAxis = 1;
+                //}
+                //else
+                //{
+                //    HorizzontalAxis = 0;
+                //}
+                //
+                //if (Input.GetKey(up))
+                //{
+                //    transform.position += Vector3.forward * (float)speed;
+                //    VerticalAxis = 1;
+                //}
+                //else if (Input.GetKey(down))
+                //{
+                //    transform.position += Vector3.back * (float)speed;
+                //    VerticalAxis = -1;
+                //}
+                //else
+                //{
+                //    VerticalAxis = 0;
+                //}
             }
         }
         //// Input per il salto
@@ -134,12 +137,9 @@ public class PlayerController : MonoBehaviour
         // Input per il dash
         if (Input.GetKeyDown(dash) && canDash == true)
         {
-
             player.SM.SetTrigger("Dash");
             canDash = false;
         }
-
-
 
         if (canDash == false)
         {
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
             {
                 cooldownDashTimer = 0;
                 canDash = true;
-            }
+            } 
         }
 
         if (Input.GetKeyDown(ability) && !player.SM.GetBool("Ability") && canAbility)
@@ -159,49 +159,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    //private void OnEnable()
-    //{
-    //    controls.Player1.Enable();
-    //    controls.Player1.Dash.performed += Dash_performed;
-    //
-    //    //controls.Player1.MoveUp.performed += MoveUp_performed;
-    //    //controls.Player1.MoveDown.performed += MoveDown_performed;
-    //}
-
-    //private void MoveDown_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext obj)
-    //{
-    //    transform.position += Vector3.forward * (float)speed;
-    //    VerticalAxis = -1;
-    //}
-
-    //private void MoveUp_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext obj)
-    //{
-    //    transform.position += Vector3.back * (float)speed;
-    //    VerticalAxis = 1;
-    //}
-
-    //private void ondisable()
-    //{
-    //    controls.player1.disable();
-    //    controls.player1.dash.performed -= dash_performed;
-
-    //    //controls.player1.moveup.performed -= moveup_performed;
-    //    //controls.player1.movedown.performed -= movedown_performed;
-    //}
-
-    //private void Dash_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext ctx)
-    //{
-    //    if (canDash == true)
-    //    {
-    //        player.SM.SetTrigger("Dash");
-    //        canDash = false;
-    //    }
-    //}
-
     public void Dash()
     {
-        transform.position += transform.forward * (player.DashDistance * Time.deltaTime);
+        transform.position += transform.forward * (player.DashDistance * Time.deltaTime);        
     }
 
     IEnumerator CounterCoolDownAbility()
@@ -230,14 +190,10 @@ public class PlayerController : MonoBehaviour
     public void ResetCooldown()
     {
         StopCoroutine(CounterCoolDownAbility());
-
+        
         canAbility = true;
         canDash = true;
     }
-}
 
-enum Player
-{
-    P1,
-    P2,
+    public enum NPlayer { P1, P2 }
 }

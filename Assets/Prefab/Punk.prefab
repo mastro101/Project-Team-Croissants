@@ -117,9 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   Direction: {x: 0, y: 0, z: 0}
-  controls:
-    m_Asset: {fileID: 0}
-  playerN: 1
+  nPlayer: 1
   up: 273
   left: 276
   down: 274
@@ -128,6 +126,7 @@ MonoBehaviour:
   ability: 372
   rotationSpeed: 0.36
   groundDetector: {fileID: 0}
+  InverterVector: 1
 --- !u!136 &9211711001245841455
 CapsuleCollider:
   m_ObjectHideFlags: 0

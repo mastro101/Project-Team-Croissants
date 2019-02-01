@@ -115,7 +115,9 @@ MonoBehaviour:
   dashDistance: 16
   dashDuration: 0.5
   dashCooldown: 2
-  abilityCooldown: 0
+  abilityCooldown: 18
+  Graphic: {fileID: 0}
+  effectTime: 6
 --- !u!114 &114338218211383146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,9 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   Direction: {x: 0, y: 0, z: 0}
-  controls:
-    m_Asset: {fileID: 0}
-  playerN: 0
+  nPlayer: 0
   up: 119
   left: 97
   down: 115
@@ -141,6 +141,7 @@ MonoBehaviour:
   ability: 352
   rotationSpeed: 0.36
   groundDetector: {fileID: 0}
+  InverterVector: 1
 --- !u!1 &8781662114007581126
 GameObject:
   m_ObjectHideFlags: 0

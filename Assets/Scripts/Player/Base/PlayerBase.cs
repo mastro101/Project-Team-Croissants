@@ -73,11 +73,6 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
 
     public float GetOriginalSpeed()
     {
-        return originalSpeed;
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        
+        return OriginalSpeed;
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4736139649240201580}
   - component: {fileID: 2973388956375810955}
   - component: {fileID: 1971576561088702961}
+  - component: {fileID: 1384333983}
   m_Layer: 0
   m_Name: SM_Arena_BassoSX
   m_TagString: Untagged
@@ -39,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785899241965885332}
-  m_Mesh: {fileID: 4300000, guid: 447c5c2211303e741b343ff2ec759691, type: 3}
+  m_Mesh: {fileID: 4300000, guid: f18ae39438cf78946845c7c059bc5a98, type: 3}
 --- !u!23 &1971576561088702961
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 447c5c2211303e741b343ff2ec759691, type: 3}
+  - {fileID: 2100000, guid: d4f8caa40e5835545a6b587c5e929768, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,6 +78,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1384333983
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785899241965885332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.758497, y: 1.3631004, z: 10.845006}
+  m_Center: {x: 8.994199, y: 0.104029894, z: 6.0562625}
 --- !u!1 &3235146940396931936
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +114,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3235146940396931936}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
