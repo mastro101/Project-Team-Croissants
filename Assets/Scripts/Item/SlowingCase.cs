@@ -11,7 +11,7 @@ public class SlowingCase : ItemBase
 
     Transform slowingSpawn;
 
-
+    Tween tween;
     Vector3 directionFall;
     Vector3 oldPosition;
     Quaternion oldRotation;
@@ -30,6 +30,7 @@ public class SlowingCase : ItemBase
     {
         base.OnSpawn();
         collider.enabled = true;
+        tween.Pause();
         transform.rotation = oldRotation;
         transform.position = oldPosition;
     }
@@ -40,7 +41,7 @@ public class SlowingCase : ItemBase
         collider.enabled = false;
         directionFall = player.gameObject.GetComponent<PlayerController>().Direction;
         transform.rotation = Quaternion.LookRotation(directionFall);
-        transform.DORotate(new Vector3(90, 0, 0), 0.5f).SetRelative();
+        tween = transform.DORotate(new Vector3(90, 0, 0), 0.5f).SetRelative();
     }
 
     GameObject slowing;

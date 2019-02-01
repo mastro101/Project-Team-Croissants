@@ -6,11 +6,13 @@ public class BackGround : MonoBehaviour
 {
     [SerializeField]
     float LoopTime;
+    [SerializeField]
+    Vector2 direction;
 
     Tween offsetTween;
 
     void Start()
     {
-        offsetTween = GetComponent<Renderer>().material.DOOffset(new Vector2(-1,-1), LoopTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
+        offsetTween = GetComponent<Renderer>().material.DOOffset(direction, LoopTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
     }
 }

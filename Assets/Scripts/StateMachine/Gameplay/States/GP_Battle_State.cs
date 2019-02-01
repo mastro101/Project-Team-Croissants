@@ -46,7 +46,7 @@ namespace StateMachine.Gameplay
         public override void Exit()
         {
             base.Exit();
-            DOTween.PauseAll();
+            //DOTween.PauseAll();
             context.Enemy.SM.SetTrigger("Idle");
             context.Enemy.transform.localScale = Vector3.one;
             foreach (IEnemy enemy in context.Enemies)
