@@ -5,14 +5,12 @@ using DG.Tweening;
 public class BackGround : MonoBehaviour
 {
     [SerializeField]
-    Material BackGroundMaterial;
-    [SerializeField]
     float LoopTime;
 
     Tween offsetTween;
 
-    void Update()
+    void Start()
     {
-        offsetTween = BackGroundMaterial.DOOffset(Vector2.right, LoopTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental).Play();
+        offsetTween = GetComponent<Renderer>().material.DOOffset(new Vector2(-1,-1), LoopTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
     }
 }
