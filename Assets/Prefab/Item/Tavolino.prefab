@@ -90,8 +90,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2829547, y: 10.092016, z: 1.0666113}
-  m_Center: {x: -0.10349089, y: 4.546008, z: 0.008562565}
+  m_Size: {x: 4.370957, y: 1.3004091, z: 1.2138326}
+  m_Center: {x: 0.9405103, y: 0.54473615, z: 0.008515954}
 --- !u!1001 &4304078310234013915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99,10 +99,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4192503996842422}
     m_Modifications:
-    - target: {fileID: 1244020487, guid: b616a850ee8d5da40afac4f9ef742241, type: 3}
-      propertyPath: m_Name
-      value: SM_Column_01
-      objectReference: {fileID: 0}
     - target: {fileID: 1244020490, guid: b616a850ee8d5da40afac4f9ef742241, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -146,6 +142,10 @@ PrefabInstance:
     - target: {fileID: 1244020490, guid: b616a850ee8d5da40afac4f9ef742241, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244020487, guid: b616a850ee8d5da40afac4f9ef742241, type: 3}
+      propertyPath: m_Name
+      value: SM_Column_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b616a850ee8d5da40afac4f9ef742241, type: 3}
