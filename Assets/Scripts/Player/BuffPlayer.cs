@@ -12,10 +12,13 @@ public class BuffPlayer : MonoBehaviour
     public StatusCondiction statusCondiction { get; private set; }
 
     GameplaySM gameplaySM;
+    BuffEffects buffEffects;
+    GameObject effect;
 
     public void SetBuff(StatusCondiction _condiction, float _variable, float sec)
     {
         gameplaySM = FindObjectOfType<GameplaySM>();
+        buffEffects = FindObjectOfType<BuffEffects>();
         gameplaySM.endBattle += restartStatistic;
         statusCondiction = _condiction;
         variable = _variable;
@@ -62,18 +65,27 @@ public class BuffPlayer : MonoBehaviour
                 break;
         }
         gameplaySM.endBattle -= restartStatistic;
+        Destroy(effect);
         Destroy(this);
     }
 
     void slow()
     {
         player.MovementSpeed -= variable;
+        SpawnEffect(buffEffects.SlowEffect);
     }
 
     void invert()
     {
         player.gameObject.GetComponent<PlayerController>().InverterVector = -1;
         player.transform.Rotate(0, 180, 0);
+        SpawnEffect(buffEffects.InvertEffect);
+    }
+
+    void SpawnEffect(GameObject _effect)
+    {
+        if (_effect != null)
+            effect = Instantiate(_effect, transform.position + new Vector3(0, 3.5f, 0), transform.rotation, transform);
     }
 
     IEnumerator stopBuff(IPlayer player)
@@ -84,6 +96,7 @@ public class BuffPlayer : MonoBehaviour
 
 }
 
-public enum StatusCondiction{
+public enum StatusCondiction
+{
     Slow, Invert,
 }
