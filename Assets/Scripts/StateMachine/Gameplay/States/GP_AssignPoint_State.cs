@@ -17,6 +17,7 @@ namespace StateMachine.Gameplay
 
         public override void Enter()
         {
+            FindObjectOfType<AudioManager>().Play("EndRound");
             base.Enter();
             pointP1 = 0;
             pointP2 = 0;

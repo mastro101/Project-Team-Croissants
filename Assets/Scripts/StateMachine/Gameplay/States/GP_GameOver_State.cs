@@ -16,6 +16,7 @@ namespace StateMachine.Gameplay
 
         public override void Enter()
         {
+            FindObjectOfType<AudioManager>().Play("EndGame");
             base.Enter();
             context.EndRoundPanel.SetActive(true);
 
