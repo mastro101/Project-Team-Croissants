@@ -198,6 +198,7 @@ MonoBehaviour:
   runnerPosition: {fileID: 570985399}
   followedPosition: {fileID: 1604422261}
   enemyPosition: {fileID: 649861641}
+  canvas: {fileID: 643062389}
 --- !u!95 &61647326
 Animator:
   serializedVersion: 3
@@ -754,6 +755,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4240576390918290, guid: a67db568fa890b44692ff9c9b115586e,
     type: 3}
   m_PrefabInstance: {fileID: 820067069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &643062389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3009690624267319154, guid: b540a2e9425ecfc489113b0512150818,
+    type: 3}
+  m_PrefabInstance: {fileID: 3009690623781790869}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &649861640
 GameObject:

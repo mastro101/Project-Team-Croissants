@@ -13,6 +13,8 @@ namespace StateMachine.Gameplay
         EnemyBase enemy;
         [SerializeField]
         Transform runnerPosition, followedPosition, enemyPosition;
+        [SerializeField]
+        GameObject canvas;
 
 
         public event GamplayStateEvent.EndState endBattle;
@@ -33,6 +35,7 @@ namespace StateMachine.Gameplay
                 EnemyStarterSpeed = enemy.MovementSpeed,
                 Arena = FindObjectOfType<ArenaSplit>(),
                 InvokeEndBattle = invokeEndBattle,
+                Canvas = canvas,
             };
             base.Start();
         }
@@ -64,6 +67,7 @@ namespace StateMachine.Gameplay
         public float EnemyStarterSpeed;
         public ArenaSplit Arena;
         public Action InvokeEndBattle;
+        public GameObject Canvas;
     }
 
     public class GamplayStateEvent
