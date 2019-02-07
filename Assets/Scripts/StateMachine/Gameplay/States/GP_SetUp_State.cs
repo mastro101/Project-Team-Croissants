@@ -25,6 +25,7 @@ namespace StateMachine.Gameplay
             base.Enter();
             tutorialInScene = Instantiate(tutorialPanel, context.Canvas.transform);
             tutorialInScene.SetActive(true);
+            context.EndRoundPanel.SetActive(false);
             for (int i = 0; i < 3; i++)
             {
                 context.WinCheckImageP1[i].SetActive(false);
