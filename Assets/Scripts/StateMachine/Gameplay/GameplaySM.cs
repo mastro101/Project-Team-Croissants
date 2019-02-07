@@ -48,6 +48,7 @@ namespace StateMachine.Gameplay
                     winCheckImageP2[0], winCheckImageP2[1], winCheckImageP2[2]
                 },
                 EndRoundPanel = endRoundPanel,
+                SetPoint = setPoint,
             };
             base.Start();
         }
@@ -55,6 +56,11 @@ namespace StateMachine.Gameplay
         void goNext()
         {
             SM.SetTrigger("Exit");
+        }
+
+        void setPoint(int _point)
+        {
+            SM.SetInteger("Point", _point);
         }
 
         void invokeEndBattle()
@@ -79,6 +85,7 @@ namespace StateMachine.Gameplay
         public float EnemyStarterSpeed;
         public ArenaSplit Arena;
         public Action InvokeEndBattle;
+        public Action<int> SetPoint;
         public GameObject Canvas, EndRoundPanel;
         public GameObject[] WinCheckImageP1, WinCheckImageP2;
     }

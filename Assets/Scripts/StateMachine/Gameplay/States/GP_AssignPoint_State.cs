@@ -13,17 +13,32 @@ namespace StateMachine.Gameplay
             }
         }
 
+        int pointP1, pointP2;
+
         public override void Enter()
         {
             base.Enter();
+            pointP1 = 0;
+            pointP2 = 0;
             context.EndRoundPanel.SetActive(true);
             for (int i = 0; i < context.P1.Points; i++)
             {
                 context.WinCheckImageP1[i].SetActive(true);
+                pointP1++;
             }
             for (int i = 0; i < context.P2.Points; i++)
             {
                 context.WinCheckImageP2[i].SetActive(true);
+                pointP2++;
+            }
+
+            if (pointP1 > pointP2)
+            {
+                context.SetPoint(pointP1);
+            }
+            else if (pointP2 > pointP1)
+            {
+                context.SetPoint(pointP2);
             }
         }
 
