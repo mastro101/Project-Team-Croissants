@@ -1149,6 +1149,11 @@ PrefabInstance:
       propertyPath: playerPoint
       value: 
       objectReference: {fileID: 441037795}
+    - target: {fileID: 114976937170555358, guid: 74c13faede5ef2446919ee58a73bbc26,
+        type: 3}
+      propertyPath: nPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74c13faede5ef2446919ee58a73bbc26, type: 3}
 --- !u!4 &1414618526 stripped
@@ -2125,6 +2130,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2108404012}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &968688006151670758
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 968688004938489087, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.3530436
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3398744
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.1389933
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489085, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968688004938489084, guid: ca0e61ae29d1da14193ba0ae11a55d31,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca0e61ae29d1da14193ba0ae11a55d31, type: 3}
 --- !u!1001 &3009690623781790869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2147,6 +2226,18 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3009690624147314550, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ae80917536d7db440b98ead6faf56822,
+        type: 2}
+    - target: {fileID: 3009690624147314550, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21391548452828220, guid: ae80917536d7db440b98ead6faf56822,
+        type: 2}
     - target: {fileID: 3009690624974844260, guid: b540a2e9425ecfc489113b0512150818,
         type: 3}
       propertyPath: m_havePropertiesChanged

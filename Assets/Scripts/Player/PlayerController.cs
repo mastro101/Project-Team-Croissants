@@ -137,6 +137,7 @@ public class PlayerController : MonoBehaviour
         // Input per il dash
         if (Input.GetKeyDown(dash) && canDash == true)
         {
+            FindObjectOfType<AudioManager>().Play("Dash");
             player.SM.SetTrigger("Dash");
             canDash = false;
         }
@@ -161,7 +162,8 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
-        transform.position += transform.forward * (player.DashDistance * Time.deltaTime);        
+        transform.position += transform.forward * (player.DashDistance * Time.deltaTime);
+        
     }
 
     IEnumerator CounterCoolDownAbility()

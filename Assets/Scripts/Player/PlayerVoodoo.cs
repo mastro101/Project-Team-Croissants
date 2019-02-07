@@ -30,6 +30,9 @@ public class PlayerVoodoo : PlayerBase
     public override void Ability()
     {
         //Graphic.GetComponent<MeshRenderer>().material.DOFade(0, 1).SetLoops(-1, LoopType.Yoyo);
+
+        FindObjectOfType<AudioManager>().Play("VooDooAbility");
+
         isEffect = true;
         StartCoroutine(StopEffect());
         Debug.Log(isEffect);

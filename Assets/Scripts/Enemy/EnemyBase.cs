@@ -32,6 +32,7 @@ public abstract class EnemyBase : MonoBehaviour, IEnemy
         if (collider.gameObject.GetComponent<IPlayer>() != null)
         {
             invockHit(collider.gameObject.GetComponent<IPlayer>());
+            FindObjectOfType<AudioManager>().Play("RocketExplosion");
         }
     }
 
