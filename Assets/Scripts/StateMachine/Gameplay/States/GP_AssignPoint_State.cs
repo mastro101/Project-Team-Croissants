@@ -16,7 +16,21 @@ namespace StateMachine.Gameplay
         public override void Enter()
         {
             base.Enter();
+            context.EndRoundPanel.SetActive(true);
+            for (int i = 0; i < context.P1.Points; i++)
+            {
+                context.WinCheckImageP1[i].SetActive(true);
+            }
+            for (int i = 0; i < context.P2.Points; i++)
+            {
+                context.WinCheckImageP2[i].SetActive(true);
+            }
+        }
 
+        public override void Exit()
+        {
+            base.Exit();
+            context.EndRoundPanel.SetActive(false);
         }
     }
 }

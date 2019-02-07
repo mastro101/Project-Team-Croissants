@@ -8,13 +8,13 @@ namespace StateMachine.Gameplay
     public class GameplaySM : StateMachineBase
     {
         [SerializeField]
-        PlayerBase runnerPlayer, followedPlayer;
+        PlayerBase p1, p2;
         [SerializeField]
         EnemyBase enemy;
         [SerializeField]
         Transform runnerPosition, followedPosition, enemyPosition;
         [SerializeField]
-        GameObject canvas;
+        GameObject canvas, endRoundPanel;
         [SerializeField]
         GameObject[] winCheckImageP1, winCheckImageP2;
 
@@ -27,8 +27,10 @@ namespace StateMachine.Gameplay
             {
                 Enemy = enemy,
                 Enemies = FindObjectsOfType<EnemyBase>(),
-                FollowedPlayer = followedPlayer,
-                RunnerPlayer = runnerPlayer,
+                P1 = p1,
+                P2 = p2,
+                FollowedPlayer = p1,
+                RunnerPlayer = p2,
                 RunnerPlayerTransform = runnerPosition,
                 FollowedPlayerTransform = followedPosition,
                 EnemyTransform = enemyPosition,
@@ -37,14 +39,15 @@ namespace StateMachine.Gameplay
                 Arena = FindObjectOfType<ArenaSplit>(),
                 InvokeEndBattle = invokeEndBattle,
                 Canvas = canvas,
-                //WinCheckImageP1 = new GameObject[]
-                //{
-                //    winCheckImageP1[0], winCheckImageP1[1], winCheckImageP1[2]
-                //},
-                //WinCheckImageP2 = new GameObject[]
-                //{
-                //    winCheckImageP2[0], winCheckImageP2[1], winCheckImageP2[2]
-                //},
+                WinCheckImageP1 = new GameObject[]
+                {
+                    winCheckImageP1[0], winCheckImageP1[1], winCheckImageP1[2]
+                },
+                WinCheckImageP2 = new GameObject[]
+                {
+                    winCheckImageP2[0], winCheckImageP2[1], winCheckImageP2[2]
+                },
+                EndRoundPanel = endRoundPanel,
             };
             base.Start();
         }
@@ -67,7 +70,7 @@ namespace StateMachine.Gameplay
     {
         public IEnemy Enemy;
         public IEnemy[] Enemies;
-        public IPlayer FollowedPlayer , RunnerPlayer;
+        public IPlayer P1, P2, FollowedPlayer, RunnerPlayer;
         public Transform RunnerPlayerTransform, FollowedPlayerTransform, EnemyTransform;
         /// <summary>
         /// Delegato chiamato per uscire da uno stato con una sola uscita o con un'uscita di default
@@ -76,7 +79,7 @@ namespace StateMachine.Gameplay
         public float EnemyStarterSpeed;
         public ArenaSplit Arena;
         public Action InvokeEndBattle;
-        public GameObject Canvas;
+        public GameObject Canvas, EndRoundPanel;
         public GameObject[] WinCheckImageP1, WinCheckImageP2;
     }
 
