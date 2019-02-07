@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace StateMachine.Gameplay
 {
@@ -26,6 +27,7 @@ namespace StateMachine.Gameplay
             base.Tick();
             if (Input.GetKeyDown(KeyCode.JoystickButton0))
             {
+                //SceneManager.LoadScene("CharacterSelect");
                 context.BaseExitState();
             }
         }
