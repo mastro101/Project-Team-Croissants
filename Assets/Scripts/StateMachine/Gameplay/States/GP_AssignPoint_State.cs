@@ -16,6 +16,7 @@ namespace StateMachine.Gameplay
         public override void Enter()
         {
             base.Enter();
+
         }
     }
 }

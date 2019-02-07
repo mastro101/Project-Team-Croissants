@@ -15,7 +15,8 @@ namespace StateMachine.Gameplay
         Transform runnerPosition, followedPosition, enemyPosition;
         [SerializeField]
         GameObject canvas;
-
+        [SerializeField]
+        GameObject[] winCheckImageP1, winCheckImageP2;
 
         public event GamplayStateEvent.EndState endBattle;
 
@@ -36,6 +37,14 @@ namespace StateMachine.Gameplay
                 Arena = FindObjectOfType<ArenaSplit>(),
                 InvokeEndBattle = invokeEndBattle,
                 Canvas = canvas,
+                //WinCheckImageP1 = new GameObject[]
+                //{
+                //    winCheckImageP1[0], winCheckImageP1[1], winCheckImageP1[2]
+                //},
+                //WinCheckImageP2 = new GameObject[]
+                //{
+                //    winCheckImageP2[0], winCheckImageP2[1], winCheckImageP2[2]
+                //},
             };
             base.Start();
         }
@@ -68,6 +77,7 @@ namespace StateMachine.Gameplay
         public ArenaSplit Arena;
         public Action InvokeEndBattle;
         public GameObject Canvas;
+        public GameObject[] WinCheckImageP1, WinCheckImageP2;
     }
 
     public class GamplayStateEvent
