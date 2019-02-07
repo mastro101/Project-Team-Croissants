@@ -1880,6 +1880,7 @@ GameObject:
   - component: {fileID: 1982017100}
   - component: {fileID: 1982017099}
   - component: {fileID: 1982017098}
+  - component: {fileID: 1982017101}
   m_Layer: 0
   m_Name: Pit
   m_TagString: Untagged
@@ -1928,6 +1929,19 @@ Transform:
   m_Father: {fileID: 2012520347}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1982017101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982017097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -0.6, z: 0}
 --- !u!114 &2007019210 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114711275416076472, guid: 74c13faede5ef2446919ee58a73bbc26,
@@ -2251,7 +2265,7 @@ PrefabInstance:
     - target: {fileID: 968688004938489084, guid: ca0e61ae29d1da14193ba0ae11a55d31,
         type: 3}
       propertyPath: sounds.Array.data[0].volume
-      value: 0.1
+      value: 0.029
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0e61ae29d1da14193ba0ae11a55d31, type: 3}
