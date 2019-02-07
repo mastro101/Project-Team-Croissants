@@ -5,7 +5,7 @@ public class Slowing : ItemBase
 {
     [SerializeField]
     float second = 2;
-    [Range(0, 100)]
+    [Range(-100, 100)]
     [SerializeField]
     int PercentSlow;
 
