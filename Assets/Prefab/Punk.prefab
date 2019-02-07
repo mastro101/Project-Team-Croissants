@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114295593865272084}
   - component: {fileID: 114711275416076472}
   - component: {fileID: 114976937170555358}
-  - component: {fileID: 9211711001245841455}
+  - component: {fileID: 3420621153097671824}
   m_Layer: 0
   m_Name: Punk
   m_TagString: Untagged
@@ -127,8 +127,8 @@ MonoBehaviour:
   rotationSpeed: 0.36
   groundDetector: {fileID: 0}
   InverterVector: 1
---- !u!136 &9211711001245841455
-CapsuleCollider:
+--- !u!65 &3420621153097671824
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,10 +137,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.4866245
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.01, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0.083}
 --- !u!1001 &6017610555885594324
 PrefabInstance:
   m_ObjectHideFlags: 0
