@@ -192,13 +192,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689e28045f5d7c14abdb07c48bdeaed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runnerPlayer: {fileID: 145871047}
-  followedPlayer: {fileID: 2007019210}
+  p1: {fileID: 145871047}
+  p2: {fileID: 2007019210}
   enemy: {fileID: 899545043}
   runnerPosition: {fileID: 570985399}
   followedPosition: {fileID: 1604422261}
   enemyPosition: {fileID: 649861641}
   canvas: {fileID: 643062389}
+  endRoundPanel: {fileID: 1122940297}
   winCheckImageP1:
   - {fileID: 1522539228}
   - {fileID: 406565692}
@@ -1003,6 +1004,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7470463741388313268, guid: c76c0a15cbaa74043a374b946ac7f88a,
     type: 3}
   m_PrefabInstance: {fileID: 7470463742037983522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1122940297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4668983901386197575, guid: b540a2e9425ecfc489113b0512150818,
+    type: 3}
+  m_PrefabInstance: {fileID: 3009690623781790869}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1128039322
 GameObject:
@@ -2270,18 +2277,6 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3009690624147314550, guid: b540a2e9425ecfc489113b0512150818,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: ae80917536d7db440b98ead6faf56822,
-        type: 2}
-    - target: {fileID: 3009690624147314550, guid: b540a2e9425ecfc489113b0512150818,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 21391548452828220, guid: ae80917536d7db440b98ead6faf56822,
-        type: 2}
     - target: {fileID: 3009690624974844260, guid: b540a2e9425ecfc489113b0512150818,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -2397,10 +2392,50 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4668983901386197575, guid: b540a2e9425ecfc489113b0512150818,
+    - target: {fileID: 3619468602404300373, guid: b540a2e9425ecfc489113b0512150818,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_AnchoredPosition.x
+      value: 0.7000122
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619468602404300373, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.2999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609885570565330192, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.2999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609885570565330192, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.7000122
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497701131422285415, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.9998779
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497701131422285415, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5000305
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359776845045635148, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.5000305
+      objectReference: {fileID: 0}
+    - target: {fileID: 3961022872489140065, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.99993896
+      objectReference: {fileID: 0}
+    - target: {fileID: 5873775802936908798, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.49993896
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b540a2e9425ecfc489113b0512150818, type: 3}
