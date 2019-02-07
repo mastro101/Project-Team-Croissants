@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4493931, g: 0.49946767, b: 0.5757003, a: 1}
+  m_IndirectSpecularColor: {r: 0.4493934, g: 0.49946815, b: 0.5757019, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoopTime: 240
-  direction: {x: 0, y: 0}
+  direction: {x: 7, y: 0}
 --- !u!64 &476860709
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2303,6 +2303,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasInGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3009690624147314550, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009690624147314550, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009690624974844260, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009690624974844260, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3009690624267319167, guid: b540a2e9425ecfc489113b0512150818,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2407,26 +2427,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009690624147314550, guid: b540a2e9425ecfc489113b0512150818,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009690624147314550, guid: b540a2e9425ecfc489113b0512150818,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009690624974844260, guid: b540a2e9425ecfc489113b0512150818,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009690624974844260, guid: b540a2e9425ecfc489113b0512150818,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b540a2e9425ecfc489113b0512150818, type: 3}
@@ -2565,6 +2565,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470463741421293787, guid: c76c0a15cbaa74043a374b946ac7f88a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028041798208700896, guid: c76c0a15cbaa74043a374b946ac7f88a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c76c0a15cbaa74043a374b946ac7f88a, type: 3}
