@@ -21,7 +21,7 @@ public class SlowingCase : ItemBase
         base.Awake();
         oldPosition = GetComponent<Transform>().position;
         oldRotation = GetComponent<Transform>().rotation;
-        slowingSpawn = gameObject.GetComponentInChildren<Transform>();
+        slowingSpawn = transform.GetChild(0).GetComponent<Transform>();
     }
 
 

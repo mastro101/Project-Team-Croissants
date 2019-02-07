@@ -18,6 +18,8 @@ namespace StateMachine.Gameplay
             }
         }
 
+        bool isSetup;
+
         public override void Enter()
         {
             base.Enter();
@@ -28,12 +30,13 @@ namespace StateMachine.Gameplay
                 context.WinCheckImageP1[i].SetActive(false);
                 context.WinCheckImageP2[i].SetActive(false);
             }
+            isSetup = true;
         }
 
         public override void Tick()
         {
             base.Tick();
-            if (Input.anyKey)
+            if (Input.anyKeyDown)
             {
                 context.BaseExitState();
             }

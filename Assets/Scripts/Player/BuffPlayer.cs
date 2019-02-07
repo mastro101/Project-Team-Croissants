@@ -72,14 +72,16 @@ public class BuffPlayer : MonoBehaviour
     void slow()
     {
         player.MovementSpeed -= variable;
-        SpawnEffect(buffEffects.SlowEffect);
+        if (buffEffects != null)
+            SpawnEffect(buffEffects.SlowEffect);
     }
 
     void invert()
     {
         player.gameObject.GetComponent<PlayerController>().InverterVector = -1;
         player.transform.Rotate(0, 180, 0);
-        SpawnEffect(buffEffects.InvertEffect);
+        if (buffEffects != null)
+            SpawnEffect(buffEffects.InvertEffect);
     }
 
     void SpawnEffect(GameObject _effect)
