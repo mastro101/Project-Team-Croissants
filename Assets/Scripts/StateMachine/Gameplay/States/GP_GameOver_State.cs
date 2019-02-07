@@ -28,5 +28,11 @@ namespace StateMachine.Gameplay
                 context.BaseExitState();
             }
         }
+
+        public override void Exit()
+        {
+            base.Exit();
+            context.EndRoundPanel.SetActive(false);
+        }
     }
 }

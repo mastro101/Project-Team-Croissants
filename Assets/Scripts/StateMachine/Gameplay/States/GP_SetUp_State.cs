@@ -23,6 +23,11 @@ namespace StateMachine.Gameplay
             base.Enter();
             tutorialInScene = Instantiate(tutorialPanel, context.Canvas.transform);
             tutorialInScene.SetActive(true);
+            for (int i = 0; i < 3; i++)
+            {
+                context.WinCheckImageP1[i].SetActive(false);
+                context.WinCheckImageP2[i].SetActive(false);
+            }
         }
 
         public override void Tick()
