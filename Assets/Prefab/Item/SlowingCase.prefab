@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062810255921858}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.91, y: 1.04, z: 4.25}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.052, y: 1.127, z: 4.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4125432424559594}
@@ -45,10 +45,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.36203885
-  m_Height: 1.1406578
+  m_Radius: 0.60475206
+  m_Height: 1.6035984
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0.5324598, z: -0.0067722797}
+  m_Center: {x: -0.014371395, y: 0.78234315, z: -0.0067722797}
 --- !u!114 &114534803538036402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +120,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2fc72d512c002eb48b559c40864b0308, type: 3}
       propertyPath: m_Name
       value: SM_Anfora_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2fc72d512c002eb48b559c40864b0308, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2fc72d512c002eb48b559c40864b0308, type: 3}
       propertyPath: m_LocalPosition.x
