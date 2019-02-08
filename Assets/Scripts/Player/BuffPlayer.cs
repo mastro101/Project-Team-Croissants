@@ -81,7 +81,7 @@ public class BuffPlayer : MonoBehaviour
         player.gameObject.GetComponent<PlayerController>().InverterVector = -1;
         player.transform.Rotate(0, 180, 0);
         if (buffEffects != null)
-            SpawnEffect(buffEffects.InvertEffect);
+            SpawnEffect(buffEffects.StunEffect);
     }
 
     void SpawnEffect(GameObject _effect)

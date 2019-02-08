@@ -43,11 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76e7d2516484604cb6bc71359e04fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 0}
   sounds:
   - name: SottofondoArena
     clip: {fileID: 8300000, guid: 2af8a454338388b499aa482dde195cc8, type: 3}
-    volume: 1
+    volume: 0.265
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -96,6 +95,14 @@ MonoBehaviour:
   - name: EndGame
     clip: {fileID: 8300000, guid: 62e364671477bb64790c28473ec334be, type: 3}
     volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Countdown
+    clip: {fileID: 8300000, guid: 4947a99710a6b6047ad0d1e64b42b0e3, type: 3}
+    volume: 0.196
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0

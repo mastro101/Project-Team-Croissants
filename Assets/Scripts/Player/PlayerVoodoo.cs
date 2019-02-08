@@ -10,6 +10,7 @@ public class PlayerVoodoo : PlayerBase
     float effectTime;
 
     bool isEffect;
+    BuffEffects effect;
 
     public override int ID
     {
@@ -26,13 +27,14 @@ public class PlayerVoodoo : PlayerBase
             return "Voodoo";
         }
     }
-
+    GameObject _effect;
     public override void Ability()
     {
         base.Ability();
         //Graphic.GetComponent<MeshRenderer>().material.DOFade(0, 1).SetLoops(-1, LoopType.Yoyo);
-
+        effect = FindObjectOfType<BuffEffects>();
         FindObjectOfType<AudioManager>().Play("VooDooAbility");
+        _effect = Instantiate(effect.InvertAbility, transform.position + new Vector3(0, 3.5f, 0), transform.rotation, transform);
 
         isEffect = true;
         StartCoroutine(StopEffect());
@@ -54,6 +56,7 @@ public class PlayerVoodoo : PlayerBase
         {
             if (player != null)
             {
+                isEffect = false;
                 player.gameObject.AddComponent<BuffPlayer>().SetBuff(StatusCondiction.Invert, 0, 6);
             }
         }
