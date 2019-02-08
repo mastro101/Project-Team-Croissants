@@ -26,6 +26,8 @@ namespace StateMachine.Gameplay
             tutorialInScene = Instantiate(tutorialPanel, context.Canvas.transform);
             tutorialInScene.SetActive(true);
             context.EndRoundPanel.SetActive(false);
+            context.P1.Points = 0;
+            context.P2.Points = 0;
             for (int i = 0; i < 3; i++)
             {
                 context.WinCheckImageP1[i].SetActive(false);
