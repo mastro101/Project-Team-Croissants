@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         // Input per il dash
         if (Input.GetKeyDown(dash) && canDash == true)
         {
-            FindObjectOfType<AudioManager>().Play("Dash");
+            //FindObjectOfType<AudioManager>().Play("Dash");
             player.SM.SetTrigger("Dash");
             canDash = false;
         }

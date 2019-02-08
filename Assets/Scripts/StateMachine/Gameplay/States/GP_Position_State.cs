@@ -5,6 +5,9 @@ namespace StateMachine.Gameplay
 {
     public class GP_Position_State : GP_Base_State
     {
+        //[SerializeField]
+        //Animator animatorCountDown;
+
         protected override string stateName
         {
             get
@@ -16,6 +19,10 @@ namespace StateMachine.Gameplay
         public override void Enter()
         {
             base.Enter();
+            FindObjectOfType<AudioManager>().Play("Countdown");
+            
+            //animatorCountDown.SetTrigger("Start");
+
             // Scambia i player e l'obbiettivo dell'Enemy
             IPlayer oldFollowedPlayer = context.FollowedPlayer;
             IPlayer oldRunnerPlayer = context.RunnerPlayer;
