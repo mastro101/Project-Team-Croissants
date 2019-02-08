@@ -51,8 +51,8 @@ public class Restart : MonoBehaviour
             SceneManager.LoadScene(6);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
+        //if (Input.GetKeyDown(KeyCode.Escape))
+            //Application.Quit();
 
     }
 }
