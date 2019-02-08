@@ -7,6 +7,8 @@ namespace StateMachine.Gameplay
     {
         //[SerializeField]
         //Animator animatorCountDown;
+        [SerializeField]
+        GameObject countdownPrefab;
 
         protected override string stateName
         {
@@ -16,11 +18,12 @@ namespace StateMachine.Gameplay
             }
         }
 
+        GameObject countdown;
         public override void Enter()
         {
             base.Enter();
             FindObjectOfType<AudioManager>().Play("Countdown");
-            
+            countdown = Instantiate(countdownPrefab, new Vector3(0, 25, -17), Quaternion.Euler(56, 0, 0), FindObjectOfType<Camera>().transform);
             //animatorCountDown.SetTrigger("Start");
 
             // Scambia i player e l'obbiettivo dell'Enemy
@@ -43,6 +46,12 @@ namespace StateMachine.Gameplay
                 context.Arena.Setup();
             //Esci dallo stato
             context.BaseExitState();
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+            Destroy(countdown);
         }
     }
 }
