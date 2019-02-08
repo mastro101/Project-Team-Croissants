@@ -87,7 +87,7 @@ public class BuffPlayer : MonoBehaviour
     void SpawnEffect(GameObject _effect)
     {
         if (_effect != null)
-            effect = Instantiate(_effect, transform.position + new Vector3(0, 3.5f, 0), transform.rotation, transform);
+            effect = Instantiate(_effect, transform.position + new Vector3(0, 3.5f, 0), Quaternion.Euler(0, 0, 180), transform);
     }
 
     IEnumerator stopBuff(IPlayer player)
