@@ -23,6 +23,8 @@ namespace StateMachine.Gameplay
         public override void Enter()
         {
             base.Enter();
+            context.P1.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P1;
+            context.P2.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P2;
             tutorialInScene = Instantiate(tutorialPanel, context.Canvas.transform);
             tutorialInScene.SetActive(true);
             context.EndRoundPanel.SetActive(false);

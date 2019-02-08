@@ -9,7 +9,7 @@ namespace StateMachine.Player
         {
             get
             {
-                return context.Player.Name + " Idle";
+                return "Idle";
             }
         }
     }
