@@ -29,6 +29,7 @@ public class PlayerVoodoo : PlayerBase
 
     public override void Ability()
     {
+        base.Ability();
         //Graphic.GetComponent<MeshRenderer>().material.DOFade(0, 1).SetLoops(-1, LoopType.Yoyo);
 
         FindObjectOfType<AudioManager>().Play("VooDooAbility");
@@ -53,7 +54,6 @@ public class PlayerVoodoo : PlayerBase
         {
             if (player != null)
             {
-                Debug.Log("playeeeeeeeeeeeeeeeeer");
                 player.gameObject.AddComponent<BuffPlayer>().SetBuff(StatusCondiction.Invert, 0, 6);
             }
         }

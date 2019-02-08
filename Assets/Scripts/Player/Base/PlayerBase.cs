@@ -56,7 +56,10 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     float abilityCooldown;
     public virtual float AbilityCooldown { get { return abilityCooldown; } }
 
-    public abstract void Ability();
+    public virtual void Ability()
+    {
+        StartCoroutine(GetComponent<PlayerController>().FillAmountAbility());
+    }
 
     public virtual void AddPoint(int _point)
     {

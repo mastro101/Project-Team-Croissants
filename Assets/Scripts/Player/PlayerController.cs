@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
+using DG.Tweening;
 
 [RequireComponent(typeof(IPlayer))]
 public class PlayerController : MonoBehaviour
@@ -38,7 +40,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float rotationSpeed;
 
-    public Transform groundDetector;
+    [SerializeField]
+    Image dashTimerImage, abilityTimerImage;
 
     private void Awake()
     {
@@ -162,8 +165,31 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
+        dashTimerImage.fillAmount = 0;
         transform.position += transform.forward * (player.DashDistance * Time.deltaTime);
-        
+        StartCoroutine(FillAmountDash());
+    }
+
+    public IEnumerator FillAmountDash()
+    {
+        float t = 0;
+        while (dashTimerImage.fillAmount < 1)
+        {
+            t += Time.deltaTime;
+            dashTimerImage.fillAmount = t / player.DashCooldown;
+            yield return null;
+        }
+    }
+
+    public IEnumerator FillAmountAbility()
+    {
+        float t = 0;
+        while (abilityTimerImage.fillAmount < 1)
+        {
+            t += Time.deltaTime;
+            abilityTimerImage.fillAmount = t / player.AbilityCooldown;
+            yield return null;
+        }
     }
 
     IEnumerator CounterCoolDownAbility()
@@ -192,9 +218,13 @@ public class PlayerController : MonoBehaviour
     public void ResetCooldown()
     {
         StopCoroutine(CounterCoolDownAbility());
-        
+        StopCoroutine(FillAmountAbility());
+        StopCoroutine(FillAmountDash());
         canAbility = true;
         canDash = true;
+        dashTimerImage.fillAmount = 0;
+        abilityTimerImage.fillAmount = 0;
+
     }
 
     public enum NPlayer { P1, P2 }
