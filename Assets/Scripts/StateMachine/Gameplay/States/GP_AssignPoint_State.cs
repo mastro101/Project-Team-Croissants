@@ -25,11 +25,13 @@ namespace StateMachine.Gameplay
             for (int i = 0; i < context.P1.Points; i++)
             {
                 context.WinCheckImageP1[i].SetActive(true);
+                context.WinPointImageP1[i].SetActive(true);
                 pointP1++;
             }
             for (int i = 0; i < context.P2.Points; i++)
             {
                 context.WinCheckImageP2[i].SetActive(true);
+                context.WinPointImageP2[i].SetActive(true);
                 pointP2++;
             }
 

@@ -34,6 +34,8 @@ namespace StateMachine.Gameplay
             {
                 context.WinCheckImageP1[i].SetActive(false);
                 context.WinCheckImageP2[i].SetActive(false);
+                context.WinPointImageP1[i].SetActive(false);
+                context.WinPointImageP2[i].SetActive(false);
             }
             isSetup = true;
         }

@@ -17,6 +17,8 @@ namespace StateMachine.Gameplay
         GameObject canvas, endRoundPanel;
         [SerializeField]
         GameObject[] winCheckImageP1, winCheckImageP2;
+        [SerializeField]
+        GameObject[] winPointImageP1, winPointImageP2;
 
         public event GamplayStateEvent.EndState endBattle;
 
@@ -46,6 +48,14 @@ namespace StateMachine.Gameplay
                 WinCheckImageP2 = new GameObject[]
                 {
                     winCheckImageP2[0], winCheckImageP2[1], winCheckImageP2[2]
+                },
+                WinPointImageP1 = new GameObject[]
+                {
+                    winPointImageP1[0], winPointImageP1[1], winPointImageP1[2]
+                },
+                WinPointImageP2 = new GameObject[]
+                {
+                    winPointImageP2[0], winPointImageP2[1], winPointImageP2[2]
                 },
                 EndRoundPanel = endRoundPanel,
                 SetPoint = setPoint,
@@ -88,6 +98,7 @@ namespace StateMachine.Gameplay
         public Action<int> SetPoint;
         public GameObject Canvas, EndRoundPanel;
         public GameObject[] WinCheckImageP1, WinCheckImageP2;
+        public GameObject[] WinPointImageP1, WinPointImageP2;
     }
 
     public class GamplayStateEvent
