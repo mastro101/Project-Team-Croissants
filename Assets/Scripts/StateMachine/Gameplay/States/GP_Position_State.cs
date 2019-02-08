@@ -8,7 +8,7 @@ namespace StateMachine.Gameplay
         //[SerializeField]
         //Animator animatorCountDown;
         [SerializeField]
-        GameObject countdownPrefab;
+        GameObject countdownPrefab, aimPrefab;
 
         protected override string stateName
         {
@@ -18,9 +18,10 @@ namespace StateMachine.Gameplay
             }
         }
 
-        GameObject countdown;
+        GameObject countdown, aim;
         public override void Enter()
         {
+            Destroy(aim);
             base.Enter();
             FindObjectOfType<AudioManager>().Play("Countdown");
             countdown = Instantiate(countdownPrefab, new Vector3(0, 25, -17), Quaternion.Euler(56, 0, 0), FindObjectOfType<Camera>().transform);
@@ -32,6 +33,10 @@ namespace StateMachine.Gameplay
             context.FollowedPlayer = oldRunnerPlayer;
             context.RunnerPlayer = oldFollowedPlayer;
             context.Enemy.PlayerToFollow = context.FollowedPlayer;
+
+            // Aggiunge mirino
+            aim = Instantiate(aimPrefab, context.FollowedPlayer.transform.position + new Vector3(0, 3.5f, 0), new Quaternion(0, 0, 0, 0),context.FollowedPlayer.transform);
+
             // Riposiziona i player nei loro punti iniziali
             if (context.FollowedPlayerTransform != null)
                 context.FollowedPlayer.transform.position = context.FollowedPlayerTransform.position;
