@@ -32,9 +32,9 @@ public class PlayerController : MonoBehaviour
     //[SerializeField]
     //KeyCode jump;
     [SerializeField]
-    KeyCode dash;
+    KeyCode dash, altDash;
     [SerializeField]
-    KeyCode ability;
+    KeyCode ability, altAbility;
 
     [Range(0f, 1f)]
     [SerializeField]
@@ -86,12 +86,11 @@ public class PlayerController : MonoBehaviour
         {
             player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction), rotationSpeed);
 
-            if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
-            {
-                speed = speed / Math.Sqrt(2);
-            }
+            //if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
+            //{
+            //    speed = speed / Math.Sqrt(2);
+            //}
 
-            transform.position += stickDirection * InverterVector * (float)speed;
 
             if (!Input.GetKey(up) && !Input.GetKey(left) && !Input.GetKey(down) && !Input.GetKey(right) && stickDirection == Vector3.zero)
             {
@@ -100,36 +99,39 @@ public class PlayerController : MonoBehaviour
             else
             {
                 player.SM.SetBool("Run", true);
-                //if (Input.GetKey(left))
-                //{
-                //    transform.position += Vector3.left * (float)speed;
-                //    HorizzontalAxis = -1;
-                //}
-                //else if (Input.GetKey(right))
-                //{
-                //    transform.position += Vector3.right * (float)speed;
-                //    HorizzontalAxis = 1;
-                //}
-                //else
-                //{
-                //    HorizzontalAxis = 0;
-                //}
-                //
-                //if (Input.GetKey(up))
-                //{
-                //    transform.position += Vector3.forward * (float)speed;
-                //    VerticalAxis = 1;
-                //}
-                //else if (Input.GetKey(down))
-                //{
-                //    transform.position += Vector3.back * (float)speed;
-                //    VerticalAxis = -1;
-                //}
-                //else
-                //{
-                //    VerticalAxis = 0;
-                //}
+                if (Input.GetKey(left))
+                {
+                    //transform.position += Vector3.left * (float)speed;
+                    x = -1;
+                }
+                else if (Input.GetKey(right))
+                {
+                    //transform.position += Vector3.right * (float)speed;
+                    x = 1;
+                }
+                else
+                {
+                    x = 0;
+                }
+                
+                if (Input.GetKey(up))
+                {
+                    //transform.position += Vector3.forward * (float)speed;
+                    y = 1;
+                }
+                else if (Input.GetKey(down))
+                {
+                    //transform.position += Vector3.back * (float)speed;
+                    y = -1;
+                }
+                else
+                {
+                    y = 0;
+                }
             }
+
+            transform.position += stickDirection * InverterVector * (float)speed;
+
         }
         //// Input per il salto
         //if (Input.GetKeyDown(jump))
@@ -138,7 +140,7 @@ public class PlayerController : MonoBehaviour
         //}
 
         // Input per il dash
-        if (Input.GetKeyDown(dash) && canDash == true)
+        if ((Input.GetKeyDown(dash) || Input.GetKeyDown(altDash))&& canDash == true)
         {
             //FindObjectOfType<AudioManager>().Play("Dash");
             player.SM.SetTrigger("Dash");
@@ -155,7 +157,7 @@ public class PlayerController : MonoBehaviour
             } 
         }
 
-        if (Input.GetKeyDown(ability) && !player.SM.GetBool("Ability") && canAbility)
+        if ((Input.GetKeyDown(ability) || Input.GetKeyDown(altAbility))&& !player.SM.GetBool("Ability") && canAbility)
         {
             player.SM.SetBool("Ability", true);
             canAbility = false;

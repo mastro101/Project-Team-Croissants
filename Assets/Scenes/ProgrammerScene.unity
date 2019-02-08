@@ -384,11 +384,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Voodoo
       objectReference: {fileID: 0}
-    - target: {fileID: 114371582804191160, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
-        type: 3}
-      propertyPath: playerPoint
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4685680446581520, guid: db1c4d3b6225b5a4898fbc0c2e063ae1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.3474488
@@ -435,12 +430,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114338218211383146, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
         type: 3}
-      propertyPath: controls.m_Asset
-      value: 
-      objectReference: {fileID: 11400000, guid: d811b481d0944ad4eae18035403bd035,
-        type: 3}
-    - target: {fileID: 114338218211383146, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
-        type: 3}
       propertyPath: dashTimerImage
       value: 
       objectReference: {fileID: 623829474}
@@ -449,11 +438,6 @@ PrefabInstance:
       propertyPath: abilityTimerImage
       value: 
       objectReference: {fileID: 4278062178113239293}
-    - target: {fileID: 95654742740484946, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
-        type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 173d9481c9bd0b34e8941d39ef960e8a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db1c4d3b6225b5a4898fbc0c2e063ae1, type: 3}
 --- !u!4 &391062079 stripped
@@ -1081,16 +1065,6 @@ PrefabInstance:
     - target: {fileID: 4995018824901154, guid: 74c13faede5ef2446919ee58a73bbc26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114711275416076472, guid: 74c13faede5ef2446919ee58a73bbc26,
-        type: 3}
-      propertyPath: playerPoint
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114976937170555358, guid: 74c13faede5ef2446919ee58a73bbc26,
-        type: 3}
-      propertyPath: nPlayer
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114976937170555358, guid: 74c13faede5ef2446919ee58a73bbc26,
         type: 3}
