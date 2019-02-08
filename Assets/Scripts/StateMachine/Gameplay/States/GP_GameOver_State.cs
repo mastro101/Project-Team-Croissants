@@ -30,6 +30,11 @@ namespace StateMachine.Gameplay
                 //SceneManager.LoadScene("CharacterSelect");
                 context.BaseExitState();
             }
+            if (Input.GetKeyDown(KeyCode.JoystickButton1))
+            {
+                SceneManager.LoadScene("CharacterSelect");
+                context.BaseExitState();
+            }
         }
 
         public override void Exit()
