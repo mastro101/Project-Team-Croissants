@@ -40,8 +40,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float rotationSpeed;
 
-    [SerializeField]
-    Image dashTimerImage, abilityTimerImage;
+
+    public Image dashTimerImage, abilityTimerImage;
 
     private void Awake()
     {

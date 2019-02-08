@@ -38,6 +38,11 @@ namespace StateMachine.Gameplay
                 context.WinPointImageP2[i].SetActive(false);
             }
             isSetup = true;
+
+            context.P1.gameObject.GetComponent<PlayerController>().dashTimerImage.fillAmount = 1;
+            context.P1.gameObject.GetComponent<PlayerController>().abilityTimerImage.fillAmount = 1;
+            context.P2.gameObject.GetComponent<PlayerController>().dashTimerImage.fillAmount = 1;
+            context.P2.gameObject.GetComponent<PlayerController>().abilityTimerImage.fillAmount = 1;
         }
 
         public override void Tick()
