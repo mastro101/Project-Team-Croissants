@@ -185,6 +185,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator FillAmountAbility()
     {
+        abilityTimerImage.fillAmount = 0;
         float t = 0;
         while (abilityTimerImage.fillAmount < 1)
         {
@@ -224,8 +225,8 @@ public class PlayerController : MonoBehaviour
         StopCoroutine(FillAmountDash());
         canAbility = true;
         canDash = true;
-        dashTimerImage.fillAmount = 0;
-        abilityTimerImage.fillAmount = 0;
+        dashTimerImage.fillAmount = 1;
+        abilityTimerImage.fillAmount = 1;
 
     }
 
