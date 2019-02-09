@@ -29,6 +29,7 @@ public class SlowingCase : ItemBase
     public override void OnSpawn()
     {
         base.OnSpawn();
+        StopCoroutine(MoveSlowing());
         collider.enabled = true;
         tween.Pause();
         transform.rotation = oldRotation;
@@ -49,5 +50,15 @@ public class SlowingCase : ItemBase
     {
         slowing = Instantiate(slowingObject, slowingSpawn.position, Quaternion.LookRotation(directionFall));
         slowing.transform.DOScaleZ(ExpandValue, 1);
+        StartCoroutine(MoveSlowing());
+    }
+
+    IEnumerator MoveSlowing()
+    {
+        while (true)
+        {
+            slowing.transform.position = transform.position;
+            yield return null;
+        }
     }
 }
