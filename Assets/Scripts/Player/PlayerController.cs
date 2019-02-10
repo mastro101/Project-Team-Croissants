@@ -13,13 +13,17 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Vector3 Direction;
 
+    int controller;
+
+    string h, v, DashButton, AbilityButton;
     float cooldownDashTimer;
     bool canDash = true;
     bool canAbility = true;
 
     IPlayer player;
 
-    public NPlayer nPlayer;
+    [HideInInspector]
+    public int nPlayer;
 
     [SerializeField]
     KeyCode up;
@@ -48,6 +52,15 @@ public class PlayerController : MonoBehaviour
         player = gameObject.GetComponent<IPlayer>();
     }
 
+    private void Start()
+    {
+        controller = FindObjectOfType<SetController>().assignedController[nPlayer];
+        h = "J" + controller + "H";
+        v = "J" + controller + "V";
+        DashButton = "J" + controller + "A";
+        AbilityButton = "J" + controller + "X";
+    }
+
     double speed;
     float HorizzontalAxis, VerticalAxis;
     float x, y;
@@ -65,21 +78,10 @@ public class PlayerController : MonoBehaviour
         if (stickDirection != Vector3.zero)
             Direction = stickDirection;
 
+        x = Input.GetAxis(h);
+        y = Input.GetAxis(v);
         stickDirection = new Vector3(x, 0, y).normalized;
 
-        switch (nPlayer)
-        {
-            case NPlayer.P1:
-                x = Input.GetAxis("X1");
-                y = Input.GetAxis("Y1");
-                break;
-            case NPlayer.P2:
-                x = Input.GetAxis("X2");
-                y = Input.GetAxis("Y2");
-                break;
-            default:
-                break;
-        }
 
         // Movimento del player
         if (canMove == true)
@@ -95,6 +97,7 @@ public class PlayerController : MonoBehaviour
             if (!Input.GetKey(up) && !Input.GetKey(left) && !Input.GetKey(down) && !Input.GetKey(right) && stickDirection == Vector3.zero)
             {
                 player.SM.SetBool("Run", false);
+                Debug.Log(stickDirection);
             }
             else
             {
@@ -128,6 +131,9 @@ public class PlayerController : MonoBehaviour
                 {
                     y = 0;
                 }
+
+                if (Input.GetKey(up) || Input.GetKey(left) || Input.GetKey(down) || Input.GetKey(right))
+                    stickDirection = new Vector3(x, 0, y).normalized;
             }
 
             transform.position += stickDirection * InverterVector * (float)speed;
@@ -140,7 +146,7 @@ public class PlayerController : MonoBehaviour
         //}
 
         // Input per il dash
-        if ((Input.GetKeyDown(dash) || Input.GetKeyDown(altDash))&& canDash == true)
+        if ((Input.GetKeyDown(dash) || Input.GetKeyDown(altDash) || Input.GetButtonDown(DashButton)) && canDash == true)
         {
             //FindObjectOfType<AudioManager>().Play("Dash");
             player.SM.SetTrigger("Dash");
@@ -157,7 +163,7 @@ public class PlayerController : MonoBehaviour
             } 
         }
 
-        if ((Input.GetKeyDown(ability) || Input.GetKeyDown(altAbility))&& !player.SM.GetBool("Ability") && canAbility)
+        if ((Input.GetKeyDown(ability) || Input.GetKeyDown(altAbility) || Input.GetButtonDown(AbilityButton)) && !player.SM.GetBool("Ability") && canAbility)
         {
             player.SM.SetBool("Ability", true);
             canAbility = false;
@@ -230,5 +236,5 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public enum NPlayer { P1, P2 }
+    //public enum NPlayer { P1, P2 }
 }
