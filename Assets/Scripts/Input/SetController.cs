@@ -10,7 +10,7 @@ public class SetController : MonoBehaviour
 
     public void AssigneController()
     {
-        for (int i = 1; i <= 2; i++)
+        for (int i = 1; i <= 16; i++)
         {
             if (assignedController.Contains(i))
             {
