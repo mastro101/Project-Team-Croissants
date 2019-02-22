@@ -60,7 +60,7 @@ public class SelectPlayer : MonoBehaviour
     {
         if (onePressed && twoPressed)
         {
-            SceneManager.LoadScene(Random.Range(1, 7));
+            SceneManager.LoadScene(Random.Range(2, 8));
         }
     }
 }

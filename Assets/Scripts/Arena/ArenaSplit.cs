@@ -39,10 +39,13 @@ public class ArenaSplit : MonoBehaviour
 
     private void Awake()
     {
-        oldUpLeft = upLeft.position;
-        oldUpRight = upRight.position;
-        oldDownLeft = downLeft.position;
-        oldDownRight = downRight.position;
+        if (upLeft != null && upRight != null && downLeft != null && downRight != null)
+        {
+            oldUpLeft = upLeft.position;
+            oldUpRight = upRight.position;
+            oldDownLeft = downLeft.position;
+            oldDownRight = downRight.position;
+        }
     }
 
     /// <summary>
@@ -50,15 +53,18 @@ public class ArenaSplit : MonoBehaviour
     /// </summary>
     public void Setup()
     {
-        StopAllCoroutines();
-        tween[0].Pause();
-        tween[1].Pause();
-        tween[2].Pause();
-        tween[3].Pause();
-        upLeft.position = oldUpLeft;
-        upRight.position = oldUpRight;
-        downLeft.position = oldDownLeft;
-        downRight.position = oldDownRight;
+        if (upLeft != null && upRight != null && downLeft != null && downRight != null)
+        {
+            StopAllCoroutines();
+            tween[0].Pause();
+            tween[1].Pause();
+            tween[2].Pause();
+            tween[3].Pause();
+            upLeft.position = oldUpLeft;
+            upRight.position = oldUpRight;
+            downLeft.position = oldDownLeft;
+            downRight.position = oldDownRight;
+        }
     }
 
     IEnumerator MoveUD()

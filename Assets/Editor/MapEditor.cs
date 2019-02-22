@@ -17,7 +17,7 @@ public class MapEditor : Editor
         {
             // Date la colpa a Papagno
             if (EditorUtility.DisplayDialog("CREARE NUOVA ARENA?", "PERDERAI TUTTI I DATI NON SALVATI SEI DAVVERO SICURO SICURO?",
-                "YOLO", "ora mi sembra una cazzata"))
+                "si, distruggo l'arena", "NO!"))
             {
                 map.GenerateMap();
             }
