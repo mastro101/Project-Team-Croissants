@@ -7,26 +7,32 @@ using System;
 
 public class ArenaMovement : MonoBehaviour
 {
-    public Transform wallToMove;
+    Transform wallToMove;
 
-   GameplaySM gameplaysm;
+    GameplaySM gameplaysm;
 
-    Vector3 oldPosition;
 
     [SerializeField]
     Vector3 newPosition;
 
-    public float movementDuration;
+    [SerializeField] float movementDuration;
 
-    public float WaitTime;
+    [SerializeField] float WaitTime;
 
 
     Tween tween;
 
 
+    private void Awake()
+    {
+        wallToMove = transform;
+        
+    }
+
     private void Start()
     {
-     //  gameplaysm.endBattle += spawn();
+        gameplaysm.endBattle += spawn;
+        
     }
 
     private void Update()
@@ -35,18 +41,25 @@ public class ArenaMovement : MonoBehaviour
         {
             MoveArena();
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            spawn();
+        }
+
     }
 
 
     void MoveArena()
     {
-            tween = wallToMove.DOMove(newPosition, movementDuration).SetDelay<Tween>(WaitTime).SetEase(Ease.Linear);
+            tween = wallToMove.DOMove(newPosition, movementDuration).SetDelay<Tween>(WaitTime).SetEase(Ease.Linear).SetAutoKill<Tween>(false);
             
     }
 
 
     public void spawn()
     {
-        tween.Restart();
+        tween.Rewind(true);
+        
     }
 }

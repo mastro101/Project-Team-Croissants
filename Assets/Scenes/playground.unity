@@ -187,13 +187,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307408196}
-  m_LocalRotation: {x: 0.103886046, y: -0, z: -0, w: 0.9945892}
-  m_LocalPosition: {x: 0, y: 1.52, z: -5.54}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 6.34, y: 8, z: -4.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 11.926001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &1838701344
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 1862529786}
   - component: {fileID: 1862529785}
   - component: {fileID: 1862529790}
+  - component: {fileID: 1862529791}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -296,9 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67f7adcb9f26c04d811951a2fb59a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallToMove: {fileID: 1862529789}
-  newPosition: {x: 4, y: 2, z: 2}
-  movementDuration: 2
+  newPosition: {x: 10, y: 0, z: 0}
+  movementDuration: 1.5
   WaitTime: 0
 --- !u!65 &1862529786
 BoxCollider:
@@ -384,7 +384,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67f7adcb9f26c04d811951a2fb59a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallToMove: {fileID: 1862529789}
-  newPosition: {x: -5, y: 0, z: 0}
-  movementDuration: 2
-  WaitTime: 2.5
+  newPosition: {x: 10, y: 0, z: 10}
+  movementDuration: 1.5
+  WaitTime: 2
+--- !u!114 &1862529791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862529784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67f7adcb9f26c04d811951a2fb59a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPosition: {x: 2.82, y: 5.72, z: 0}
+  movementDuration: 1.5
+  WaitTime: 4
