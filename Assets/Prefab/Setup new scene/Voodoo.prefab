@@ -47,10 +47,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.46309337
-  m_Height: 2.5123663
+  m_Radius: 0.25
+  m_Height: 2.5
   m_Direction: 1
-  m_Center: {x: 0.03690663, y: 1.04, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &54544052965124706
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -110,13 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d97a9c4b6db604da24d11bd80d7a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPoint: {fileID: 0}
   movementSpeed: 8
   dashDistance: 16
   dashDuration: 0.5
   dashCooldown: 2
   abilityCooldown: 18
-  Graphic: {fileID: 0}
   effectTime: 6
 --- !u!114 &114338218211383146
 MonoBehaviour:
@@ -137,9 +135,7 @@ MonoBehaviour:
   left: 97
   down: 115
   right: 100
-  dash: 350
   altDash: 32
-  ability: 352
   altAbility: 101
   rotationSpeed: 0.36
   dashTimerImage: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114295593865272084}
   - component: {fileID: 114711275416076472}
   - component: {fileID: 114976937170555358}
-  - component: {fileID: 3420621153097671824}
+  - component: {fileID: 4340912774820375044}
   m_Layer: 0
   m_Name: Punk
   m_TagString: Untagged
@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48dbc5961b5ec0642bee04f0cee55890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPoint: {fileID: 0}
   movementSpeed: 8
   dashDistance: 16
   dashDuration: 0.5
@@ -122,16 +121,14 @@ MonoBehaviour:
   left: 276
   down: 274
   right: 275
-  dash: 370
   altDash: 305
-  ability: 372
   altAbility: 303
   rotationSpeed: 0.36
   dashTimerImage: {fileID: 0}
   abilityTimerImage: {fileID: 0}
   InverterVector: 1
---- !u!65 &3420621153097671824
-BoxCollider:
+--- !u!136 &4340912774820375044
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -140,9 +137,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0.083}
+  m_Radius: 0.25
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &6017610555885594324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: af2eb79e39ceb9e439898a82eb4f00c9, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 9afa5d3f88a96684eb786c4106951cbb, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: af2eb79e39ceb9e439898a82eb4f00c9, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
