@@ -23,6 +23,7 @@ namespace StateMachine.Gameplay
         {
             Destroy(aim);
             base.Enter();
+
             FindObjectOfType<AudioManager>().Play("Countdown");
             countdown = Instantiate(countdownPrefab, new Vector3(0, 25, -17), Quaternion.Euler(56, 0, 0), FindObjectOfType<Camera>().transform);
             //animatorCountDown.SetTrigger("Start");

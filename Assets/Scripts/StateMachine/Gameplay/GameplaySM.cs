@@ -20,7 +20,8 @@ namespace StateMachine.Gameplay
         [SerializeField]
         GameObject[] winPointImageP1, winPointImageP2;
 
-        public event GamplayStateEvent.EndState endBattle;
+        public event GameplayStateEvent.EndState endBattle;
+        public event GameplayStateEvent.StartState startBattle;
 
 
         protected override void Start()
@@ -40,6 +41,7 @@ namespace StateMachine.Gameplay
                 EnemyStarterSpeed = enemy.MovementSpeed,
                 Arena = FindObjectOfType<ArenaSplit>(),
                 InvokeEndBattle = invokeEndBattle,
+                InvockeStartBattle = invokeStartBattle,
                 Canvas = canvas,
                 WinCheckImageP1 = new GameObject[]
                 {
@@ -80,6 +82,14 @@ namespace StateMachine.Gameplay
                 endBattle();
             }
         }
+
+        void invokeStartBattle()
+        {
+            if (startBattle != null)
+            {
+                startBattle();
+            }
+        }
     }
 
     public class GameplaySMContext : IStateMachineContext
@@ -95,14 +105,16 @@ namespace StateMachine.Gameplay
         public float EnemyStarterSpeed;
         public ArenaSplit Arena;
         public Action InvokeEndBattle;
+        public Action InvockeStartBattle;
         public Action<int> SetPoint;
         public GameObject Canvas, EndRoundPanel;
         public GameObject[] WinCheckImageP1, WinCheckImageP2;
         public GameObject[] WinPointImageP1, WinPointImageP2;
     }
 
-    public class GamplayStateEvent
+    public class GameplayStateEvent
     {
         public delegate void EndState();
+        public delegate void StartState();
     }
 }

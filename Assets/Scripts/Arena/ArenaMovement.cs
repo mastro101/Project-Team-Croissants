@@ -25,41 +25,38 @@ public class ArenaMovement : MonoBehaviour
 
     private void Awake()
     {
-        wallToMove = transform;
-        
+        gameplaysm = FindObjectOfType<GameplaySM>();
+        wallToMove = transform;        
     }
 
     private void Start()
     {
-        gameplaysm.endBattle += spawn;
-        
+        gameplaysm.startBattle += MoveArena;
+        gameplaysm.endBattle += spawn;        
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            MoveArena();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            spawn();
-        }
-
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        MoveArena();
+    //    }
+    //
+    //    if (Input.GetKeyDown(KeyCode.Alpha1))
+    //    {
+    //        spawn();
+    //    }
+    //}
 
 
     void MoveArena()
     {
-            tween = wallToMove.DOMove(newPosition, movementDuration).SetDelay<Tween>(WaitTime).SetEase(Ease.Linear).SetAutoKill<Tween>(false);
-            
+        tween = wallToMove.DOMove(newPosition, movementDuration).SetDelay<Tween>(WaitTime).SetEase(Ease.Linear).SetAutoKill<Tween>(false).SetRelative();            
     }
 
 
     public void spawn()
     {
-        tween.Rewind(true);
-        
+        tween.Rewind(true);        
     }
 }

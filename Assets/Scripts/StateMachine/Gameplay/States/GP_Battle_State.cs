@@ -19,6 +19,8 @@ namespace StateMachine.Gameplay
         public override void Enter()
         {
             base.Enter();
+            context.InvockeStartBattle();
+
             context.Enemy.PlayerToFollow = context.FollowedPlayer;
             context.Enemy.SM.SetTrigger("Movement");
             foreach (IEnemy enemy in context.Enemies)
