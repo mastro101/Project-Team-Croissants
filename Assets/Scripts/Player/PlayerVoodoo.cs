@@ -5,8 +5,6 @@ using DG.Tweening;
 public class PlayerVoodoo : PlayerBase
 {
     [SerializeField]
-    GameObject Graphic;
-    [SerializeField]
     float effectTime;
 
     bool isEffect;

@@ -29,7 +29,7 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
         }
     }
 
-    [SerializeField]
+    [HideInInspector]
     TextMeshProUGUI playerPoint;
 
     [SerializeField]

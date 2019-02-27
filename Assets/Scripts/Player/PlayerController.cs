@@ -36,9 +36,9 @@ public class PlayerController : MonoBehaviour
     //[SerializeField]
     //KeyCode jump;
     [SerializeField]
-    KeyCode dash, altDash;
+    KeyCode altDash;
     [SerializeField]
-    KeyCode ability, altAbility;
+    KeyCode altAbility;
 
     [Range(0f, 1f)]
     [SerializeField]
