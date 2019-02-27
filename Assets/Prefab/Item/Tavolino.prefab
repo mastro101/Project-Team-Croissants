@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33791513087749856}
   - component: {fileID: 23127325909168712}
   - component: {fileID: 65845151187903400}
+  - component: {fileID: 8367091637938291251}
   m_Layer: 0
   m_Name: Tavolino
   m_TagString: Untagged
@@ -92,6 +93,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5385633, y: 1.3004091, z: 1.2138326}
   m_Center: {x: 0.024313688, y: 0.54473615, z: 0.008515954}
+--- !u!114 &8367091637938291251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055497315960392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43b84cf31d392a47974ce9fd2acf6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &4304078310234013915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99,6 +115,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4192503996842422}
     m_Modifications:
+    - target: {fileID: 1244020487, guid: b616a850ee8d5da40afac4f9ef742241, type: 3}
+      propertyPath: m_Name
+      value: SM_Column_01
+      objectReference: {fileID: 0}
     - target: {fileID: 1244020490, guid: b616a850ee8d5da40afac4f9ef742241, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -142,10 +162,6 @@ PrefabInstance:
     - target: {fileID: 1244020490, guid: b616a850ee8d5da40afac4f9ef742241, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1244020487, guid: b616a850ee8d5da40afac4f9ef742241, type: 3}
-      propertyPath: m_Name
-      value: SM_Column_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b616a850ee8d5da40afac4f9ef742241, type: 3}

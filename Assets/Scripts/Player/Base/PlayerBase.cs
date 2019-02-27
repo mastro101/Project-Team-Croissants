@@ -78,4 +78,12 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     {
         return OriginalSpeed;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            transform.SetParent(collision.transform);
+        }
+    }
 }

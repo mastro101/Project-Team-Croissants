@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
         //}
 
         // Input per il dash
-        if ((Input.GetKeyDown(dash) || Input.GetKeyDown(altDash) || Input.GetButtonDown(DashButton)) && canDash == true)
+        if ((Input.GetKeyDown(altDash) || Input.GetButtonDown(DashButton)) && canDash == true)
         {
             //FindObjectOfType<AudioManager>().Play("Dash");
             player.SM.SetTrigger("Dash");
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
             } 
         }
 
-        if ((Input.GetKeyDown(ability) || Input.GetKeyDown(altAbility) || Input.GetButtonDown(AbilityButton)) && !player.SM.GetBool("Ability") && canAbility)
+        if ((Input.GetKeyDown(altAbility) || Input.GetButtonDown(AbilityButton)) && !player.SM.GetBool("Ability") && canAbility)
         {
             player.SM.SetBool("Ability", true);
             canAbility = false;
@@ -173,6 +173,8 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
+        StopCoroutine(FillAmountDash());
+        transform.SetParent(null);
         dashTimerImage.fillAmount = 0;
         transform.position += transform.forward * (player.DashDistance * Time.deltaTime);
         StartCoroutine(FillAmountDash());

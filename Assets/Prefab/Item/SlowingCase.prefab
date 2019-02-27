@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 136902975656288660}
   - component: {fileID: 114534803538036402}
   - component: {fileID: 54730285978705602}
+  - component: {fileID: 8734808122726345528}
   m_Layer: 0
   m_Name: SlowingCase
   m_TagString: Untagged
@@ -80,6 +81,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8734808122726345528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062810255921858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43b84cf31d392a47974ce9fd2acf6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &1444187661774832
 GameObject:
   m_ObjectHideFlags: 0

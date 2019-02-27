@@ -246,6 +246,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8061733257047021763}
     m_Modifications:
+    - target: {fileID: 4275484374747889828, guid: 6c69c99e3837ddb4d8e2187b01553a1b,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Arena_BassoDX_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275484374747889828, guid: 6c69c99e3837ddb4d8e2187b01553a1b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6018558899127477938, guid: 6c69c99e3837ddb4d8e2187b01553a1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -301,15 +311,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4275484374747889828, guid: 6c69c99e3837ddb4d8e2187b01553a1b,
-        type: 3}
-      propertyPath: m_Name
-      value: SM_Arena_BassoDX_01
-      objectReference: {fileID: 0}
     - target: {fileID: 5553827959485448700, guid: 6c69c99e3837ddb4d8e2187b01553a1b,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553827959485448700, guid: 6c69c99e3837ddb4d8e2187b01553a1b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c69c99e3837ddb4d8e2187b01553a1b, type: 3}
@@ -326,6 +336,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8061733257047021763}
     m_Modifications:
+    - target: {fileID: 3473894358608869668, guid: f9489b312c057e542a68568ce0a8b8d3,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Arena_AltoDX_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473894358608869668, guid: f9489b312c057e542a68568ce0a8b8d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3763601904701420313, guid: f9489b312c057e542a68568ce0a8b8d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -381,15 +401,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3473894358608869668, guid: f9489b312c057e542a68568ce0a8b8d3,
-        type: 3}
-      propertyPath: m_Name
-      value: SM_Arena_AltoDX_01
-      objectReference: {fileID: 0}
     - target: {fileID: 8293880039978976490, guid: f9489b312c057e542a68568ce0a8b8d3,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293880039978976490, guid: f9489b312c057e542a68568ce0a8b8d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9489b312c057e542a68568ce0a8b8d3, type: 3}
@@ -406,6 +426,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8061733257047021763}
     m_Modifications:
+    - target: {fileID: 3235146940396931936, guid: 663cf711e228bf44181a5e49a5c9c730,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Arena_BassoSX_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235146940396931936, guid: 663cf711e228bf44181a5e49a5c9c730,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8450661039359773283, guid: 663cf711e228bf44181a5e49a5c9c730,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -461,15 +491,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3235146940396931936, guid: 663cf711e228bf44181a5e49a5c9c730,
-        type: 3}
-      propertyPath: m_Name
-      value: SM_Arena_BassoSX_01
-      objectReference: {fileID: 0}
     - target: {fileID: 1785899241965885332, guid: 663cf711e228bf44181a5e49a5c9c730,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785899241965885332, guid: 663cf711e228bf44181a5e49a5c9c730,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 663cf711e228bf44181a5e49a5c9c730, type: 3}
@@ -490,6 +520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Arena_AltoSX_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090730503277153965, guid: 5b1b12b81f3152e40bd7697ecbd151c9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1900103482543932322, guid: 5b1b12b81f3152e40bd7697ecbd151c9,
         type: 3}
@@ -550,6 +585,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5682191338870619258, guid: 5b1b12b81f3152e40bd7697ecbd151c9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b1b12b81f3152e40bd7697ecbd151c9, type: 3}

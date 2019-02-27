@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2388764367916590909}
   - component: {fileID: 2381488948614036373}
   - component: {fileID: 2429542920676665973}
+  - component: {fileID: 8421307361394132016}
   m_Layer: 0
   m_Name: Tavolino 1
   m_TagString: Untagged
@@ -92,6 +93,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.748536, y: 1.4805247, z: 1.2138326}
   m_Center: {x: 0.8568032, y: 0.48933685, z: 0.008515954}
+--- !u!114 &8421307361394132016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2404124243090968469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43b84cf31d392a47974ce9fd2acf6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &1705671670504574374
 PrefabInstance:
   m_ObjectHideFlags: 0

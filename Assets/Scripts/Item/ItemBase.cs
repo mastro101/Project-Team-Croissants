@@ -2,7 +2,7 @@
 using System.Collections;
 using StateMachine.Gameplay;
 
-public abstract class ItemBase : MonoBehaviour , IItem
+public abstract class ItemBase : MonoBehaviour , IItem, IObject
 {
     public Collider collider { get { return GetComponent<Collider>(); } }
 
