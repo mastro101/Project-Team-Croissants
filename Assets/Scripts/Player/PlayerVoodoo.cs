@@ -47,8 +47,9 @@ public class PlayerVoodoo : PlayerBase
         Debug.Log(isEffect);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    override protected void OnCollisionEnter(Collision collision)
     {
+        base.OnCollisionEnter(collision);
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
         if (isEffect)
         {

@@ -79,10 +79,11 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
         return OriginalSpeed;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
+            Debug.Log("Figlio di " + collision.gameObject.name);
             transform.SetParent(collision.transform);
         }
     }

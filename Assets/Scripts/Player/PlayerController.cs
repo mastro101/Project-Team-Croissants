@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
             if (!Input.GetKey(up) && !Input.GetKey(left) && !Input.GetKey(down) && !Input.GetKey(right) && setInput == false)// && stickDirection == Vector3.zero)
             {
                 player.SM.SetBool("Run", false);
-                Debug.Log(stickDirection);
+                //Debug.Log(stickDirection);
                 x = 0;
                 y = 0;
                 stickDirection = new Vector3(x, 0, y).normalized;
