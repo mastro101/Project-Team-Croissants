@@ -6,10 +6,12 @@ public class SetParent : MonoBehaviour
 {
 
     public LayerMask mask;
+
     
     private void Start()
     {
-        Ray ray = new Ray(transform.position, Vector3.down);
+        Ray ray = new Ray(transform.position + new Vector3(0,0.1f,0), Vector3.down);
+
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 20f, mask))
         {
