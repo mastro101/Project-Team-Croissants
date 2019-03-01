@@ -10,8 +10,8 @@ public class Restart : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            SceneManager.LoadScene("ProgrammerScene");
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+            SceneManager.LoadScene("SceneSelector");
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
@@ -24,6 +24,11 @@ public class Restart : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene(1);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -51,8 +56,8 @@ public class Restart : MonoBehaviour
             SceneManager.LoadScene(6);
         }
 
-        //if (Input.GetKeyDown(KeyCode.Escape))
-            //Application.Quit();
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
 
     }
 }
