@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 33563250628381544}
   - component: {fileID: 23879205200032654}
   - component: {fileID: 114971929699171164}
-  - component: {fileID: 64255993239573994}
   - component: {fileID: 6261767667281539567}
   - component: {fileID: 2040043458713305951}
+  - component: {fileID: 927360760254801910}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519573916191810}
-  m_Mesh: {fileID: 4300000, guid: d02c39f224d564548ad9ce191edea092, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &23879205200032654
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519573916191810}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d02c39f224d564548ad9ce191edea092, type: 3}
+  - {fileID: 2100000, guid: 1447f81bd6dcfdf4b846d5e8543c5c0f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,20 +98,6 @@ MonoBehaviour:
   rotationSpeed: 0.09
   percentSpeed: 20
   PercentScale: 20
---- !u!64 &64255993239573994
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519573916191810}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: d02c39f224d564548ad9ce191edea092, type: 3}
 --- !u!95 &6261767667281539567
 Animator:
   serializedVersion: 3
@@ -143,6 +129,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adcaf9d49dac7e499db3300dfa2392f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &927360760254801910
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519573916191810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &7049332536567011034
 PrefabInstance:
   m_ObjectHideFlags: 0
