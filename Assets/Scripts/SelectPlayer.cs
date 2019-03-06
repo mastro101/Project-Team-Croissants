@@ -9,7 +9,6 @@ public class SelectPlayer : MonoBehaviour
     [SerializeField]
     string sceneName;
     bool onePressed, twoPressed;
-    [SerializeField]
     SetController set;
 
     [SerializeField]
@@ -29,31 +28,52 @@ public class SelectPlayer : MonoBehaviour
     void Update()
     {
         set.AssigneController();
-        if (set.assignedController.Count > 0)
+
+        if (onePressed == false)
         {
-            if (Input.GetButtonDown("J" + set.assignedController[0].ToString() + "A") || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) ||
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) ||
                 Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
             {
-                onePressed = true;
-                pressA1.SetActive(false);
-                ready1.SetActive(true);
-                //Player1Text.text = "Ok";
-                check();
+                checkPlayer1();
+            }
+            else if (set.assignedController.Count > 0)
+            {
+                if (Input.GetButtonDown("J" + set.assignedController[0].ToString() + "A"))
+                    checkPlayer1();
             }
         }
 
-        if (set.assignedController.Count > 1)
+        if (twoPressed == false)
         {
-            if (Input.GetButtonDown("J" + set.assignedController[1].ToString() + "A") || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
-            Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.RightShift))
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
+                Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.RightShift))
             {
-                twoPressed = true;
-                pressA2.SetActive(false);
-                ready2.SetActive(true);
-                //Player2Text.text = "Ok";
-                check();
+                checkPlayer2();
+            }
+            else if (set.assignedController.Count > 1)
+            {
+                if (Input.GetButtonDown("J" + set.assignedController[1].ToString() + "A"))
+                    checkPlayer2();
             }
         }
+    }
+
+    void checkPlayer1()
+    {
+        onePressed = true;
+        pressA1.SetActive(false);
+        ready1.SetActive(true);
+        //Player1Text.text = "Ok";
+        check();
+    }
+
+    void checkPlayer2()
+    {
+        twoPressed = true;
+        pressA2.SetActive(false);
+        ready2.SetActive(true);
+        //Player2Text.text = "Ok";
+        check();
     }
 
     void check()
