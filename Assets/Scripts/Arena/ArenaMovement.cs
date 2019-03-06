@@ -21,6 +21,7 @@ public class ArenaMovement : MonoBehaviour
 
 
     Tween tween;
+    Vector3 oldPosition;
 
 
     private void Awake()
@@ -51,12 +52,15 @@ public class ArenaMovement : MonoBehaviour
 
     void MoveArena()
     {
+        oldPosition = transform.position;
         tween = wallToMove.DOMove(newPosition, movementDuration).SetDelay<Tween>(WaitTime).SetEase(Ease.Linear).SetAutoKill<Tween>(false).SetRelative();            
     }
 
 
     public void spawn()
     {
+        tween.Pause();
         tween.Rewind(true);        
+        transform.position = oldPosition;
     }
 }
