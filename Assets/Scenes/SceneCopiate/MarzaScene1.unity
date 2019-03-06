@@ -57,7 +57,7 @@ LightmapSettings:
     serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_AtlasSize: 512
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -88,7 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000000, guid: 2f77807f360266744a23f22c8c36c555,
+  m_LightingDataAsset: {fileID: 112000000, guid: 8d1e7de4af29b7c4cb252f60ae6750e8,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -49250,15 +49250,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7050985324494786916, guid: 67e4c59e29078fd4690ca0986ee110a1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.5
-      objectReference: {fileID: 0}
     - target: {fileID: 23879205200032654, guid: 67e4c59e29078fd4690ca0986ee110a1,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050985324494786916, guid: 67e4c59e29078fd4690ca0986ee110a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5200124124076669689, guid: 67e4c59e29078fd4690ca0986ee110a1,
         type: 3}

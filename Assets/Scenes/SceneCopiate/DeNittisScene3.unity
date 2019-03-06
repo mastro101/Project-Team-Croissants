@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.20441931, g: 0.4292895, b: 0.43705043, a: 1}
+  m_IndirectSpecularColor: {r: 0.20441927, g: 0.42928955, b: 0.43705037, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -88,7 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000000, guid: 2f77807f360266744a23f22c8c36c555,
+  m_LightingDataAsset: {fileID: 112000000, guid: 28520a3448e03eb408ae0ffb11b46f21,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -7826,11 +7826,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3961022872489140065, guid: b540a2e9425ecfc489113b0512150818,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -2.000061
-      objectReference: {fileID: 0}
     - target: {fileID: 3461335540098628319, guid: b540a2e9425ecfc489113b0512150818,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -7890,6 +7885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3961022872489140065, guid: b540a2e9425ecfc489113b0512150818,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.000061
       objectReference: {fileID: 0}
     - target: {fileID: 5873775802936908798, guid: b540a2e9425ecfc489113b0512150818,
         type: 3}
