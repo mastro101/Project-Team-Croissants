@@ -17,6 +17,7 @@ public interface IPlayer
     float DashCooldown { get; }
     float AbilityCooldown { get; }
     float OriginalSpeed { get; }
+    GameObject Aim { get; }
     //float JumpForce { get; }
 
     // Abilità unica del personaggio

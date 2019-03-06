@@ -51,6 +51,10 @@ namespace StateMachine.Gameplay
             //DOTween.PauseAll();
             context.Enemy.SM.SetTrigger("Idle");
             context.Enemy.transform.localScale = Vector3.one;
+            context.FollowedPlayer.SM.SetBool("Run", false);
+            context.RunnerPlayer.SM.SetBool("Run", false);
+            context.FollowedPlayerTransform.rotation = Quaternion.Euler(Vector3.zero);
+            context.RunnerPlayerTransform.rotation = Quaternion.Euler(Vector3.zero);
             foreach (IEnemy enemy in context.Enemies)
             {
                 enemy.HitPlayer -= AddPoint;

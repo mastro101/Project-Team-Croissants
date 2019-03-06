@@ -56,6 +56,10 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     float abilityCooldown;
     public virtual float AbilityCooldown { get { return abilityCooldown; } }
 
+    [SerializeField]
+    GameObject aim;
+    public GameObject Aim { get { return aim; } }
+
     public virtual void Ability()
     {
         StartCoroutine(GetComponent<PlayerController>().FillAmountAbility());

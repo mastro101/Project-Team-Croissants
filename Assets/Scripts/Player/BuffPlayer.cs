@@ -70,10 +70,15 @@ public class BuffPlayer : MonoBehaviour
     }
 
     void slow()
-    {
-        player.MovementSpeed -= variable;
+    {        
         if (buffEffects != null)
-            SpawnEffect(buffEffects.SlowEffect);
+        {
+            if (variable > 0)
+                SpawnEffect(buffEffects.SlowEffect);
+            else
+                SpawnEffect(buffEffects.AcceleratorEffect);
+        }
+        player.MovementSpeed -= variable;
     }
 
     void invert()

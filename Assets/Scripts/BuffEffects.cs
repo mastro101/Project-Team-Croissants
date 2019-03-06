@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BuffEffects : MonoBehaviour
 {
-    public GameObject SlowEffect, StunEffect, InvertAbility;
+    public GameObject SlowEffect, StunEffect, InvertAbility, AcceleratorEffect;
 
     public static BuffEffects instance;
 
