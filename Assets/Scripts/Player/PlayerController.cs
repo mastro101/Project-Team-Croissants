@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
     public Image dashTimerImage, abilityTimerImage;
     public GameObject abilityReady;
 
-    public float readyImageFillSpeed = 0.1f;
 
     public TextMeshProUGUI abilityCDText;
     
