@@ -34,6 +34,8 @@ namespace StateMachine.Gameplay
             context.FollowedPlayer = oldRunnerPlayer;
             context.RunnerPlayer = oldFollowedPlayer;
             context.Enemy.PlayerToFollow = context.FollowedPlayer;
+            context.FollowedPlayer.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
+            context.RunnerPlayer.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
 
             // Aggiunge mirino
             //aim = Instantiate(aimPrefab, context.FollowedPlayer.transform.position + new Vector3(0, 3.5f, 0), new Quaternion(0, 0, 0, 0),context.FollowedPlayer.transform);

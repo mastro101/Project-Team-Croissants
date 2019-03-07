@@ -53,4 +53,25 @@ public class AudioManager : MonoBehaviour
 		s.source.Play();
 	}
 
+    public void Pause(string sound)
+    {
+        Sound s = Array.Find(sounds, item => item.name == sound);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        
+        s.source.Pause();
+    }
+
+    public void Pause()
+    {
+        foreach (Sound sound in sounds)
+        {
+            sound.source.Stop();
+        }
+
+        Play("SottofondoArena");
+    }
 }

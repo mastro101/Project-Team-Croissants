@@ -13,6 +13,7 @@ public class Restart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             SceneManager.LoadScene("SceneSelector");
+            FindObjectOfType<AudioManager>().Pause();
         }
 
         //if (Input.GetKeyDown(KeyCode.Alpha0))
@@ -27,45 +28,49 @@ public class Restart : MonoBehaviour
         //    }
 
 
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            FindObjectOfType<AudioManager>().Pause();
+        }
 
-            //}
+        //}
 
-            //if (Input.GetKeyDown(KeyCode.Alpha1))
-            //{
-            //    SceneManager.LoadScene(1);
-            //}
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    SceneManager.LoadScene(1);
+        //}
 
-            //if (Input.GetKeyDown(KeyCode.Alpha2))
-            //{
-            //    SceneManager.LoadScene(2);
-            //}
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    SceneManager.LoadScene(2);
+        //}
 
-            //if (Input.GetKeyDown(KeyCode.Alpha3))
-            //{
-            //    SceneManager.LoadScene(3);
-            //}
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    SceneManager.LoadScene(3);
+        //}
 
-            //if (Input.GetKeyDown(KeyCode.Alpha4))
-            //{
-            //    SceneManager.LoadScene(4);
-            //}
+        //if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    SceneManager.LoadScene(4);
+        //}
 
-            //if (Input.GetKeyDown(KeyCode.Alpha5))
-            //{
-            //    SceneManager.LoadScene(5);
-            //}
+        //if (Input.GetKeyDown(KeyCode.Alpha5))
+        //{
+        //    SceneManager.LoadScene(5);
+        //}
 
-            //if (Input.GetKeyDown(KeyCode.Alpha6))
-            //{
-            //    SceneManager.LoadScene(6);
-            //}
+        //if (Input.GetKeyDown(KeyCode.Alpha6))
+        //{
+        //    SceneManager.LoadScene(6);
+        //}
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             SceneManager.LoadScene("CharacterSelect");
+            FindObjectOfType<AudioManager>().Pause();
+        }
 
     }
 }
