@@ -9,6 +9,7 @@ public class SlowingCase : ItemBase
     [SerializeField]
     float ExpandValue;
 
+    [SerializeField]
     Transform slowingSpawn;
 
     Tween tween;
@@ -19,7 +20,6 @@ public class SlowingCase : ItemBase
     {
         base.Awake();
         oldRotation = GetComponent<Transform>().rotation;
-        slowingSpawn = transform.GetChild(0).GetComponent<Transform>();
     }
 
 
@@ -43,6 +43,7 @@ public class SlowingCase : ItemBase
     }
 
     GameObject slowing;
+    Vector3 spawnPosition;
     public override void Effect(IPlayer _player)
     {
         slowing = Instantiate(slowingObject, slowingSpawn.position, Quaternion.LookRotation(directionFall));
@@ -54,7 +55,7 @@ public class SlowingCase : ItemBase
     {
         while (true)
         {
-            slowing.transform.position = transform.position;
+            slowing.transform.position = slowingSpawn.position + (Vector3.up * slowingSpawn.localPosition.y);
             yield return null;
         }
     }

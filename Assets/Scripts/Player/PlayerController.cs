@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         // Movimento del player
         if (canMove == true)
         {
-            player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction), rotationSpeed);
+            player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction * InverterVector), rotationSpeed);
 
             //if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
             //{
