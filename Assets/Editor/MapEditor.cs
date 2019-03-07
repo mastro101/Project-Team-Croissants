@@ -22,5 +22,10 @@ public class MapEditor : Editor
                 map.GenerateMap();
             }
         }
+
+        if (GUILayout.Button("UpdateModulo"))
+        {
+            map.UpdateMap();
+        }
     }
 }

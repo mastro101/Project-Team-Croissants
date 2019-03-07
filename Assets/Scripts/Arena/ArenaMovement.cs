@@ -13,11 +13,11 @@ public class ArenaMovement : MonoBehaviour
 
 
     [SerializeField]
-    Vector3 newPosition;
+    public Vector3 newPosition;
 
-    [SerializeField] float movementDuration;
+    [SerializeField] public float movementDuration;
 
-    [SerializeField] float WaitTime;
+    [SerializeField] public float WaitTime;
 
 
     Tween tween;
@@ -32,23 +32,19 @@ public class ArenaMovement : MonoBehaviour
 
     private void Start()
     {
-        gameplaysm.startBattle += MoveArena;
-        gameplaysm.endBattle += spawn;        
+        if (gameplaysm != null)
+        {
+            gameplaysm.startBattle += MoveArena;
+            gameplaysm.endBattle += spawn;
+        }
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        MoveArena();
-    //    }
-    //
-    //    if (Input.GetKeyDown(KeyCode.Alpha1))
-    //    {
-    //        spawn();
-    //    }
-    //}
-
+    public void SetValue(Vector3 _newPosition, float _movementDuration, float _waitTime)
+    {
+        newPosition = _newPosition;
+        movementDuration = _movementDuration;
+        WaitTime = _waitTime;
+    }
 
     void MoveArena()
     {

@@ -12,9 +12,13 @@ public class MapGenerator : MonoBehaviour
     /// </summary>
     public float Outline;
 
+
+    ArenaMovement[] tilesinScene;
+    string holderName = "GeneratedMap";
+    Transform mapHolder;
+
     public void GenerateMap()
     {
-        string holderName = "GeneratedMap";
         /// Distrugge La griglia precedente 
         if (transform.Find(holderName))
         {
@@ -22,7 +26,7 @@ public class MapGenerator : MonoBehaviour
         }
 
         /// Crea Un GO padre dove contenere le tile
-        Transform mapHolder = new GameObject(holderName).transform;
+        mapHolder = new GameObject(holderName).transform;
         mapHolder.parent = transform;
 
         for (int x = 0; x < MapSize.x; x++)
@@ -33,6 +37,29 @@ public class MapGenerator : MonoBehaviour
                 Transform newTile = Instantiate(TilePrefab, tilePosition, Quaternion.Euler(Vector3.zero));
                 newTile.parent = mapHolder;
             }
+        }
+    }
+
+    public void UpdateMap()
+    {
+        Debug.Log("UpdateMap");
+        tilesinScene = new ArenaMovement[100];
+
+        tilesinScene = FindObjectsOfType<ArenaMovement>();
+        int i = 0;
+        foreach (ArenaMovement tile in tilesinScene)
+        {
+            if (tile == null)
+                break;
+
+            i++;
+            Debug.Log(i);
+
+            //tile.CopyValue(newPosition, movementDuration, WaitTime);
+            Transform t = Instantiate(TilePrefab, tile.transform.position, Quaternion.Euler(Vector3.zero));
+            t.GetComponent<ArenaMovement>().SetValue(tile.newPosition, tile.movementDuration, tile.WaitTime);
+            t.parent = tile.transform.parent;
+            DestroyImmediate(tile.gameObject);
         }
     }
 }
