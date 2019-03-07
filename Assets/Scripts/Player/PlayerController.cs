@@ -193,7 +193,6 @@ public class PlayerController : MonoBehaviour
         {
             player.SM.SetBool("Ability", true);
             canAbility = false;
-            abilityReady.SetActive(false);
             StartCoroutine(CounterCoolDownAbility());
         }
         if (AbilityButton != null)
@@ -229,6 +228,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator FillAmountAbility()
     {
+        abilityReady.SetActive(false);
         abilityTimerImage.fillAmount = 0;
         float t = 0;
         float timeLeft = player.AbilityCooldown;
