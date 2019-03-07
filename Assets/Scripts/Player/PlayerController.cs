@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 [RequireComponent(typeof(IPlayer))]
 public class PlayerController : MonoBehaviour
@@ -46,6 +47,13 @@ public class PlayerController : MonoBehaviour
 
 
     public Image dashTimerImage, abilityTimerImage;
+    public GameObject abilityReady;
+
+    public float readyImageFillSpeed = 0.1f;
+
+    public TextMeshProUGUI abilityCDText;
+    
+
 
     private void Awake()
     {
@@ -186,6 +194,7 @@ public class PlayerController : MonoBehaviour
         {
             player.SM.SetBool("Ability", true);
             canAbility = false;
+            abilityReady.SetActive(false);
             StartCoroutine(CounterCoolDownAbility());
         }
         if (AbilityButton != null)
@@ -223,10 +232,32 @@ public class PlayerController : MonoBehaviour
     {
         abilityTimerImage.fillAmount = 0;
         float t = 0;
+        float timeLeft = player.AbilityCooldown;
         while (abilityTimerImage.fillAmount < 1)
         {
             t += Time.deltaTime;
             abilityTimerImage.fillAmount = t / player.AbilityCooldown;
+
+            timeLeft -= Time.deltaTime;
+            abilityCDText.text = Mathf.Round(timeLeft).ToString();
+
+            if (abilityCDText.text == "0")
+            {
+                abilityReady.SetActive(true);
+
+            }
+        
+
+            //if (timeLeft <= 0)
+            //{
+            //    readyImage.fillAmount = readyImageFillSpeed;
+            //}
+
+            //if(readyImage.fillAmount == 1)
+            //{
+            //    readyImage.fillAmount = 0;
+            //}
+
             yield return null;
         }
     }
