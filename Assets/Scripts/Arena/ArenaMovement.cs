@@ -15,10 +15,11 @@ public class ArenaMovement : MonoBehaviour
     [SerializeField]
     public Vector3 newPosition;
 
-    [SerializeField] public float movementDuration;
+    [SerializeField] public float movementDuration = 1;
 
-    [SerializeField] public float WaitTime;
+    [SerializeField] public float WaitTime = 0;
 
+    public AnimationCurve Curve = AnimationCurve.Linear(0,0,1,1);
 
     Tween tween;
     Vector3 oldPosition;
@@ -27,7 +28,8 @@ public class ArenaMovement : MonoBehaviour
     private void Awake()
     {
         gameplaysm = FindObjectOfType<GameplaySM>();
-        wallToMove = transform;        
+        wallToMove = transform;
+        
     }
 
     private void Start()
@@ -39,19 +41,27 @@ public class ArenaMovement : MonoBehaviour
         }
     }
 
-    public void SetValue(Vector3 _newPosition, float _movementDuration, float _waitTime)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            MoveArena();
+        }
+    }
+
+    public void SetValue(Vector3 _newPosition, float _movementDuration, float _waitTime, AnimationCurve _curve)
     {
         newPosition = _newPosition;
         movementDuration = _movementDuration;
         WaitTime = _waitTime;
+        Curve = _curve;
     }
 
     void MoveArena()
     {
         oldPosition = transform.position;
-        tween = wallToMove.DOMove(newPosition, movementDuration).SetDelay<Tween>(WaitTime).SetEase(Ease.Linear).SetAutoKill<Tween>(false).SetRelative();            
+        tween = wallToMove.DOMove(newPosition, movementDuration).SetDelay<Tween>(WaitTime).SetEase(Curve).SetAutoKill<Tween>(false).SetRelative();            
     }
-
 
     public void spawn()
     {

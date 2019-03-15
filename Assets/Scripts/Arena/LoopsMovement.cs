@@ -11,14 +11,16 @@ public class LoopsMovement : MonoBehaviour
 
     GameplaySM gameplaysm;
 
-    public Vector3[] paths;
+    public Vector3[] Paths;
 
-    [SerializeField] float movementDuration;
+    [SerializeField] public float MovementDuration = 1;
 
-    [SerializeField] float WaitTime;
+    [SerializeField] public float WaitTime = 0;
 
-    public LoopType looptype;
-    public int looptimes = -1;
+    [SerializeField] public AnimationCurve Curve = AnimationCurve.Linear(0, 0, 1, 1);
+
+    public LoopType LoopType;
+    public int Looptimes = -1;
 
     Tween tween;
 
@@ -45,7 +47,15 @@ public class LoopsMovement : MonoBehaviour
 
     }
 
-
+    public void SetValue(Vector3[] _paths, float _movementDuration, float _waitTime, AnimationCurve _curve, LoopType _loopType, int _loopTimes)
+    {
+        Paths = _paths;
+        MovementDuration = _movementDuration;
+        WaitTime = _waitTime;
+        Curve = _curve;
+        LoopType = _loopType;
+        Looptimes = _loopTimes;
+    }
 
     public void spawn()
     {
@@ -58,7 +68,7 @@ public class LoopsMovement : MonoBehaviour
 
     public void PathMovements()
     {
-        tween = wallToMove.DOPath(paths, movementDuration).SetLoops<Tweener>(looptimes, looptype).SetDelay(WaitTime).SetRelative();
+        tween = wallToMove.DOPath(Paths, MovementDuration).SetLoops<Tweener>(Looptimes, LoopType).SetDelay(WaitTime).SetRelative().SetEase(Curve);
 
     }
 }
