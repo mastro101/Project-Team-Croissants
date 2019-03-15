@@ -11,11 +11,22 @@ public class Trap : Slowing
     [SerializeField]
     float fadeSecond;
 
+    [HideInInspector]
+    public IPlayer PlayerOfTrap;
+
+    public void SetPlayer(IPlayer player)
+    {
+        PlayerOfTrap = player;
+    }
+
     public override void Effect(IPlayer _player)
     {
-        base.Effect(_player);
-        gameplaySM.endBattle -= OnSpawn;
-        Destroy(gameObject);
+        if (PlayerOfTrap != _player)
+        {
+            base.Effect(_player);
+            gameplaySM.endBattle -= OnSpawn;
+            Destroy(gameObject);
+        }
     }
 
     private void OnEnable()

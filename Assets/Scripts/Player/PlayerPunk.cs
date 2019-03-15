@@ -25,7 +25,8 @@ public class PlayerPunk : PlayerBase
     public override void Ability()
     {
         base.Ability();
-        Instantiate(trapPrefab, transform.position + new Vector3 (0, 1, 0), Quaternion.Euler(0, 0, 0));
+        GameObject trap = Instantiate(trapPrefab, transform.position, Quaternion.Euler(0, 0, 0));
+        trap.GetComponent<Trap>().SetPlayer(this);
         FindObjectOfType<AudioManager>().Play("PunkAbility");
 
         SM.SetBool("Ability", false);
