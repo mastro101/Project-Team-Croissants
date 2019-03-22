@@ -8,6 +8,8 @@ public abstract class ItemBase : MonoBehaviour , IItem, IObject
 
     public MeshRenderer meshRenderer { get { return GetComponent<MeshRenderer>(); } }
 
+    protected abstract bool EffectOnTriggerEnter { get; }
+
     /// <summary>
     /// Chiamato per attivare l'effetto dell'oggetto preso
     /// </summary>
@@ -56,7 +58,8 @@ public abstract class ItemBase : MonoBehaviour , IItem, IObject
         if (player != null)
         {
             OnTake(player);
-            Effect(player);
+            if (EffectOnTriggerEnter)
+                Effect(player);
         }
     }
 }

@@ -9,6 +9,14 @@ public class Slowing : ItemBase
     [SerializeField]
     int PercentSlow;
 
+    protected override bool EffectOnTriggerEnter
+    {
+        get
+        {
+            return true;
+        }
+    }
+
     public override void Effect(IPlayer _player)
     {
         if (_player.gameObject.GetComponent<BuffPlayer>() == null)

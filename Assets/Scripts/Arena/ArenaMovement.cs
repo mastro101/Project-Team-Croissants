@@ -41,14 +41,6 @@ public class ArenaMovement : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            MoveArena();
-        }
-    }
-
     public void SetValue(Vector3 _newPosition, float _movementDuration, float _waitTime, AnimationCurve _curve)
     {
         newPosition = _newPosition;

@@ -5,7 +5,10 @@ using DG.Tweening;
 public class PlayerVoodoo : PlayerBase
 {
     [SerializeField]
-    float effectTime;
+    float effectTime, timerAbility;
+
+    [SerializeField]
+    GameObject InverterBarrier;
 
     bool isEffect;
     BuffEffects effect;
@@ -33,10 +36,10 @@ public class PlayerVoodoo : PlayerBase
         effect = FindObjectOfType<BuffEffects>();
         FindObjectOfType<AudioManager>().Play("VooDooAbility");
         _effect = Instantiate(effect.InvertAbility, transform.position + new Vector3(0, 3.5f, 0), transform.rotation, transform);
-
-        isEffect = true;
+        Instantiate(InverterBarrier, transform.position + (Vector3.up * 1), Quaternion.Euler(Vector3.zero), transform).GetComponent<InvertMovement>().SetTimer(timerAbility, effectTime);
+        /*isEffect = true;
         StartCoroutine(StopEffect());
-        Debug.Log(isEffect);
+        Debug.Log(isEffect);*/
         SM.SetBool("Ability", false);
     }
 

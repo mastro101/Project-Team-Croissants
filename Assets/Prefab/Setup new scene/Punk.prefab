@@ -104,7 +104,7 @@ MonoBehaviour:
   dashDistance: 16
   dashDuration: 0.5
   dashCooldown: 2
-  abilityCooldown: 12
+  abilityCooldown: 4
   aim: {fileID: 8202162888362651973}
   trapPrefab: {fileID: 1033149681314150, guid: 9dfc50b58b10b494da938a7737389623, type: 3}
 --- !u!114 &114976937170555358
@@ -131,6 +131,8 @@ MonoBehaviour:
   rotationSpeed: 0.36
   dashTimerImage: {fileID: 0}
   abilityTimerImage: {fileID: 0}
+  abilityReady: {fileID: 0}
+  abilityCDText: {fileID: 0}
   InverterVector: 1
 --- !u!136 &4340912774820375044
 CapsuleCollider:
@@ -524,6 +526,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13700002, guid: b6e3eaa02c05a694d922291af45361da, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8351efa316d1ce459b323ad13a1bcc4, type: 2}
+    - target: {fileID: 13700002, guid: b6e3eaa02c05a694d922291af45361da, type: 3}
+      propertyPath: m_Bones.Array.data[0]
+      value: 
+      objectReference: {fileID: 5081834685500440490}
+    - target: {fileID: 13700002, guid: b6e3eaa02c05a694d922291af45361da, type: 3}
+      propertyPath: m_RootBone
+      value: 
+      objectReference: {fileID: 5081834685500440490}
     - target: {fileID: 13700000, guid: b6e3eaa02c05a694d922291af45361da, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -740,18 +754,6 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 5081834685500440494}
-    - target: {fileID: 13700002, guid: b6e3eaa02c05a694d922291af45361da, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a8351efa316d1ce459b323ad13a1bcc4, type: 2}
-    - target: {fileID: 13700002, guid: b6e3eaa02c05a694d922291af45361da, type: 3}
-      propertyPath: m_Bones.Array.data[0]
-      value: 
-      objectReference: {fileID: 5081834685500440490}
-    - target: {fileID: 13700002, guid: b6e3eaa02c05a694d922291af45361da, type: 3}
-      propertyPath: m_RootBone
-      value: 
-      objectReference: {fileID: 5081834685500440490}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6e3eaa02c05a694d922291af45361da, type: 3}
 --- !u!4 &5081834685500440106 stripped

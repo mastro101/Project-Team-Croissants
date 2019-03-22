@@ -7,6 +7,14 @@ public class RocketAccelerator : PowerUpBase
     float addedSpeed;
     Rocket rocket;
 
+    protected override bool EffectOnTriggerEnter
+    {
+        get
+        {
+            return true;
+        }
+    }
+
     protected override void Start()
     {
         base.Start();

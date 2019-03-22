@@ -16,6 +16,14 @@ public class SlowingCase : ItemBase
     Vector3 directionFall;
     Quaternion oldRotation;
 
+    protected override bool EffectOnTriggerEnter
+    {
+        get
+        {
+            return true;
+        }
+    }
+
     protected override void Awake()
     {
         base.Awake();
@@ -44,6 +52,8 @@ public class SlowingCase : ItemBase
 
     GameObject slowing;
     Vector3 spawnPosition;
+
+
     public override void Effect(IPlayer _player)
     {
         slowing = Instantiate(slowingObject, slowingSpawn.position, Quaternion.LookRotation(directionFall));

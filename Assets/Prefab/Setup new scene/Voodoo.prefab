@@ -120,6 +120,9 @@ MonoBehaviour:
   abilityCooldown: 18
   aim: {fileID: 3717842646172128137}
   effectTime: 6
+  timerAbility: 3
+  InverterBarrier: {fileID: 7287256027241058847, guid: 1901e8b0196fcc64f93ae8968a4faf18,
+    type: 3}
 --- !u!114 &114338218211383146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +147,8 @@ MonoBehaviour:
   rotationSpeed: 0.36
   dashTimerImage: {fileID: 0}
   abilityTimerImage: {fileID: 0}
+  abilityReady: {fileID: 0}
+  abilityCDText: {fileID: 0}
   InverterVector: 1
 --- !u!1 &3717842646172128137
 GameObject:
