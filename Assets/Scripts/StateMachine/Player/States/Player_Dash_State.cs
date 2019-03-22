@@ -21,6 +21,7 @@ namespace StateMachine.Player
             cooldownDurationTimer = 0;
             context.PlayerController.canMove = false;
             context.Player.rigidbody.useGravity = false;
+            FindObjectOfType<AudioManager>().Play("Dash");
         }
 
         public override void Tick()
