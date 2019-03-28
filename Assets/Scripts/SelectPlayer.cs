@@ -23,6 +23,7 @@ public class SelectPlayer : MonoBehaviour
     private void Awake()
     {
         set = FindObjectOfType<SetController>();
+        set.NPlayer = 0;
     }
 
     void Update()
@@ -60,6 +61,7 @@ public class SelectPlayer : MonoBehaviour
 
     void checkPlayer1()
     {
+        set.NPlayer++;
         onePressed = true;
         pressA1.SetActive(false);
         ready1.SetActive(true);
@@ -69,6 +71,7 @@ public class SelectPlayer : MonoBehaviour
 
     void checkPlayer2()
     {
+        set.NPlayer++;
         twoPressed = true;
         pressA2.SetActive(false);
         ready2.SetActive(true);

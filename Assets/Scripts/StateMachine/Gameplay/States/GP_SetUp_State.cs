@@ -23,6 +23,17 @@ namespace StateMachine.Gameplay
         public override void Enter()
         {
             base.Enter();
+            int n = 0;
+            foreach (IPlayer player in context.Players)
+            {
+                PlayerController playerC = player.gameObject.GetComponent<PlayerController>();
+                playerC.dashTimerImage = context.DashTimerImage[n];
+                playerC.abilityTimerImage = context.AbilityTimerImage[n];
+                playerC.abilityReady = context.AbilityReady[n];
+                playerC.abilityCDText = context.AbilityCDText[n];
+                n++;
+            }
+
             //context.P1.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P1;
             //context.P2.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P2;
             tutorialInScene = Instantiate(tutorialPanel, context.Canvas.transform);

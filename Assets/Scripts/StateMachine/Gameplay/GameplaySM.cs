@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.UI;
+using TMPro;
 
 namespace StateMachine.Gameplay
 {
@@ -20,6 +22,10 @@ namespace StateMachine.Gameplay
         [SerializeField]
         GameObject[] winPointImageP1, winPointImageP2;
 
+        public Image[] dashTimerImage, abilityTimerImage;
+        public GameObject[] abilityReady;
+        public TextMeshProUGUI[] abilityCDText;
+
         public event GameplayStateEvent.EndState endBattle;
         public event GameplayStateEvent.StartState startBattle;
 
@@ -30,6 +36,13 @@ namespace StateMachine.Gameplay
             {
                 Enemy = enemy,
                 Enemies = FindObjectsOfType<EnemyBase>(),
+                Players = new IPlayer[]
+                {
+                    // Provvisorio
+                    FindObjectOfType<PlayerVoodoo>(),
+                    FindObjectOfType<PlayerPunk>(),
+                    //
+                },
                 P1 = p1,
                 P2 = p2,
                 FollowedPlayer = p1,
@@ -61,6 +74,10 @@ namespace StateMachine.Gameplay
                 },
                 EndRoundPanel = endRoundPanel,
                 SetPoint = setPoint,
+                DashTimerImage = dashTimerImage,
+                AbilityTimerImage = abilityTimerImage,
+                AbilityReady = abilityReady,
+                AbilityCDText = abilityCDText,
             };
             base.Start();
         }
@@ -96,6 +113,7 @@ namespace StateMachine.Gameplay
     {
         public IEnemy Enemy;
         public IEnemy[] Enemies;
+        public IPlayer[] Players;
         public IPlayer P1, P2, FollowedPlayer, RunnerPlayer;
         public Transform RunnerPlayerTransform, FollowedPlayerTransform, EnemyTransform;
         /// <summary>
@@ -110,6 +128,10 @@ namespace StateMachine.Gameplay
         public GameObject Canvas, EndRoundPanel;
         public GameObject[] WinCheckImageP1, WinCheckImageP2;
         public GameObject[] WinPointImageP1, WinPointImageP2;
+
+        public Image[] DashTimerImage, AbilityTimerImage;
+        public GameObject[] AbilityReady;
+        public TextMeshProUGUI[] AbilityCDText;
     }
 
     public class GameplayStateEvent
