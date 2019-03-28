@@ -15,6 +15,15 @@ namespace StateMachine.Enemy
             }
         }
 
+        public override void Enter()
+        {
+            base.Enter();
+            if (context.StateInt < context.LimitChangeState || context.LimitChangeState < 0)
+            {
+                context.AbilityState();
+            }
+        }
+
         public override void Tick()
         {
             base.Tick();

@@ -20,6 +20,8 @@ namespace StateMachine.Enemy
         {
             base.Enter();
             context.Enemy.Ability();
+            if (context.LimitChangeState >= 0)
+                context.StateInt++;
         }
     }
 }
