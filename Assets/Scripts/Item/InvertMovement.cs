@@ -27,12 +27,6 @@ public class InvertMovement : ItemBase
         _player.gameObject.AddComponent<BuffPlayer>().SetBuff(StatusCondiction.Invert, 0, 6);
     }
 
-    public override void OnSpawn()
-    {
-        base.OnSpawn();
-        Destroy(gameObject);
-    }
-
     protected override void OnTriggerEnter(Collider other)
     {
         IPlayer player = other.GetComponent<IPlayer>();

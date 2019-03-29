@@ -10,6 +10,7 @@ public class SetController : MonoBehaviour
 
     public static SetController Instance { get; private set; }
 
+    [HideInInspector]
     public int NPlayer;
 
     private void Awake()
