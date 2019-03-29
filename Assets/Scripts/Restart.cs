@@ -36,10 +36,10 @@ public class Restart : MonoBehaviour
 
         //}
 
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    SceneManager.LoadScene(1);
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadSceneAsync("02AnconaScene", LoadSceneMode.Additive);
+        }
 
         //if (Input.GetKeyDown(KeyCode.Alpha2))
         //{
