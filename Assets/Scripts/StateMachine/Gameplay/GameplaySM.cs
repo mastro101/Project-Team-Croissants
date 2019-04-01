@@ -34,6 +34,7 @@ namespace StateMachine.Gameplay
         {
             currentContext = new GameplaySMContext()
             {
+                GameManager = FindObjectOfType<GameManager>(),
                 Enemy = enemy,
                 Enemies = FindObjectsOfType<EnemyBase>(),
                 Players = new IPlayer[]
@@ -111,6 +112,7 @@ namespace StateMachine.Gameplay
 
     public class GameplaySMContext : IStateMachineContext
     {
+        public GameManager GameManager;
         public IEnemy Enemy;
         public IEnemy[] Enemies;
         public IPlayer[] Players;

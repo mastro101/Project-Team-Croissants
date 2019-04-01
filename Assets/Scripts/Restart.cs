@@ -38,7 +38,7 @@ public class Restart : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SceneManager.LoadSceneAsync("02AnconaScene", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("BaseScene", LoadSceneMode.Additive);
         }
 
         //if (Input.GetKeyDown(KeyCode.Alpha2))
