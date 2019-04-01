@@ -208,14 +208,14 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
-        StopCoroutine(FillAmountDash());
+       // StopCoroutine(FillAmountDash());
         transform.SetParent(null);
-        dashTimerImage.fillAmount = 0;
+        //dashTimerImage.fillAmount = 0;
         transform.position += transform.forward * (player.DashDistance * Time.deltaTime);
-        StartCoroutine(FillAmountDash());
+       // StartCoroutine(FillAmountDash());
     }
 
-    public IEnumerator FillAmountDash()
+   /* public IEnumerator FillAmountDash()
     {
         float t = 0;
         while (dashTimerImage.fillAmount < 1)
@@ -225,7 +225,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
     }
-
+*/
     public IEnumerator FillAmountAbility()
     {
         abilityReady.SetActive(false);
@@ -288,10 +288,10 @@ public class PlayerController : MonoBehaviour
     {
         StopCoroutine(CounterCoolDownAbility());
         StopCoroutine(FillAmountAbility());
-        StopCoroutine(FillAmountDash());
+        //StopCoroutine(FillAmountDash());
         canAbility = true;
         canDash = true;
-        dashTimerImage.fillAmount = 1;
+       // dashTimerImage.fillAmount = 1;
         abilityTimerImage.fillAmount = 1;
 
     }

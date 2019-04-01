@@ -27,7 +27,7 @@ namespace StateMachine.Gameplay
             foreach (IPlayer player in context.Players)
             {
                 PlayerController playerC = player.gameObject.GetComponent<PlayerController>();
-                playerC.dashTimerImage = context.DashTimerImage[n];
+               // playerC.dashTimerImage = context.DashTimerImage[n];
                 playerC.abilityTimerImage = context.AbilityTimerImage[n];
                 playerC.abilityReady = context.AbilityReady[n];
                 playerC.abilityCDText = context.AbilityCDText[n];
@@ -43,10 +43,10 @@ namespace StateMachine.Gameplay
             context.P2.Points = 0;
             for (int i = 0; i < 3; i++)
             {
-                context.WinCheckImageP1[i].SetActive(false);
-                context.WinCheckImageP2[i].SetActive(false);
-                context.WinPointImageP1[i].SetActive(false);
-                context.WinPointImageP2[i].SetActive(false);
+                //context.WinCheckImageP1[i].SetActive(false);
+                //context.WinCheckImageP2[i].SetActive(false);
+                //context.WinPointImageP1[i].SetActive(false);
+                //context.WinPointImageP2[i].SetActive(false);
             }
             isSetup = true;
 
