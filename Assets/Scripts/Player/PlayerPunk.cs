@@ -18,7 +18,7 @@ public class PlayerPunk : PlayerBase
     {
         get
         {
-            return "Punk-ina";
+            return "Veeky";
         }
     }
 

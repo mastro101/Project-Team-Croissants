@@ -18,6 +18,7 @@ public interface IPlayer
     float AbilityCooldown { get; }
     float OriginalSpeed { get; }
     GameObject Aim { get; }
+    Sprite CharacterImage { get; }
     //float JumpForce { get; }
 
     // Abilità unica del personaggio

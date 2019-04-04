@@ -26,12 +26,17 @@ namespace StateMachine.Gameplay
             int n = 0;
             foreach (IPlayer player in context.Players)
             {
-                PlayerController playerC = player.gameObject.GetComponent<PlayerController>();
-               // playerC.dashTimerImage = context.DashTimerImage[n];
-                playerC.abilityTimerImage = context.AbilityTimerImage[n];
-                playerC.abilityReady = context.AbilityReady[n];
-                playerC.abilityCDText = context.AbilityCDText[n];
-                n++;
+                if (player != null)
+                {
+                    PlayerController playerC = player.gameObject.GetComponent<PlayerController>();
+                    // playerC.dashTimerImage = context.DashTimerImage[n];
+                    playerC.abilityTimerImage = context.AbilityTimerImage[n];
+                    playerC.abilityReady = context.AbilityReady[n];
+                    playerC.abilityCDText = context.AbilityCDText[n];
+                    n++;
+
+                    player.Points = 0;
+                }
             }
 
             //context.P1.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P1;
@@ -39,8 +44,6 @@ namespace StateMachine.Gameplay
             tutorialInScene = Instantiate(tutorialPanel, context.Canvas.transform);
             tutorialInScene.SetActive(true);
             context.EndRoundPanel.SetActive(false);
-            context.P1.Points = 0;
-            context.P2.Points = 0;
             for (int i = 0; i < 3; i++)
             {
                 //context.WinCheckImageP1[i].SetActive(false);

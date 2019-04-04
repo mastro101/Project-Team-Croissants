@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public int SelectedLevel;
+    [HideInInspector]
+    public List<IPlayer> Players;
+    [HideInInspector]
+    public GameObject[] PlayersGO;
 
     private void Awake()
     {

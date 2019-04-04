@@ -33,15 +33,15 @@ namespace StateMachine.Gameplay
             IPlayer oldRunnerPlayer = context.RunnerPlayer;
             context.FollowedPlayer = oldRunnerPlayer;
             context.RunnerPlayer = oldFollowedPlayer;
-            context.Enemy.PlayerToFollow = context.FollowedPlayer;
+            //Rimove mirino
+            if (context.Enemy.PlayerToFollow != null)
+            context.Enemy.PlayerToFollow.Aim.SetActive(false);
+            // Scelta random provvisoria
+            context.Enemy.PlayerToFollow = context.Players[Random.Range(0, context.Players.Count)];
+            //
+            context.Enemy.PlayerToFollow.Aim.SetActive(true);
             context.FollowedPlayer.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
             context.RunnerPlayer.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
-
-            // Aggiunge mirino
-            //aim = Instantiate(aimPrefab, context.FollowedPlayer.transform.position + new Vector3(0, 3.5f, 0), new Quaternion(0, 0, 0, 0),context.FollowedPlayer.transform);
-            context.RunnerPlayer.Aim.SetActive(false);
-            context.FollowedPlayer.Aim.SetActive(true);
-
             // Riposiziona i player nei loro punti iniziali
             if (context.FollowedPlayerTransform != null)
                 context.FollowedPlayer.transform.position = context.FollowedPlayerTransform.position;

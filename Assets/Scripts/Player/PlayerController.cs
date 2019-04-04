@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     bool canDash = true;
     bool canAbility = true;
 
-    IPlayer player;
+    public IPlayer player { private get; set; }
 
     [HideInInspector]
     public int nPlayer;
@@ -243,7 +243,6 @@ public class PlayerController : MonoBehaviour
             if (abilityCDText.text == "0")
             {
                 abilityReady.SetActive(true);
-
             }
         
 

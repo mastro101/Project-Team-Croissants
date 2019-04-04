@@ -37,13 +37,7 @@ namespace StateMachine.Gameplay
                 GameManager = FindObjectOfType<GameManager>(),
                 Enemy = enemy,
                 Enemies = FindObjectsOfType<EnemyBase>(),
-                Players = new IPlayer[]
-                {
-                    // Provvisorio
-                    FindObjectOfType<PlayerVoodoo>(),
-                    FindObjectOfType<PlayerPunk>(),
-                    //
-                },
+
                 P1 = p1,
                 P2 = p2,
                 FollowedPlayer = p1,
@@ -115,7 +109,7 @@ namespace StateMachine.Gameplay
         public GameManager GameManager;
         public IEnemy Enemy;
         public IEnemy[] Enemies;
-        public IPlayer[] Players;
+        public List<IPlayer> Players;
         public IPlayer P1, P2, FollowedPlayer, RunnerPlayer;
         public Transform RunnerPlayerTransform, FollowedPlayerTransform, EnemyTransform;
         /// <summary>

@@ -6,24 +6,27 @@ using UnityEngine.SceneManagement;
 
 public class SelectPlayer : MonoBehaviour
 {
+    public List<GameObject> Characters;
+
     [SerializeField]
     string sceneName;
-    bool onePressed, twoPressed;
+    bool onePressed, twoPressed, threePressed, fourPressed;
     SetController set;
 
     [SerializeField]
-    GameObject pressA1;
+    GameObject pressA1, pressA2, pressA3, pressA4;
     [SerializeField]
-    GameObject ready1;
-    [SerializeField]
-    GameObject pressA2;
-    [SerializeField]
-    GameObject ready2;
+    GameObject selectCMenu1, selectCMenu2, selectCMenu3, selectCMenu4;
 
     private void Awake()
     {
         set = FindObjectOfType<SetController>();
         set.NPlayer = 0;
+    }
+
+    private void Start()
+    {
+        FindObjectOfType<GameManager>().PlayersGO = new GameObject[4];
     }
 
     void Update()
@@ -57,6 +60,23 @@ public class SelectPlayer : MonoBehaviour
                     checkPlayer2();
             }
         }
+
+        if (set.assignedController.Count > 2 && !threePressed)
+        {
+            if (Input.GetButtonDown("J" + set.assignedController[2].ToString() + "A"))
+                checkPlayer3();
+        }
+
+        if (set.assignedController.Count > 3 && !fourPressed)
+        {
+            if (Input.GetButtonDown("J" + set.assignedController[3].ToString() + "A"))
+                checkPlayer4();
+        }
+         
+        if (FindObjectOfType<GameManager>().PlayersGO[1] != null)
+        {
+            check();
+        }
     }
 
     void checkPlayer1()
@@ -64,9 +84,9 @@ public class SelectPlayer : MonoBehaviour
         set.NPlayer++;
         onePressed = true;
         pressA1.SetActive(false);
-        ready1.SetActive(true);
+        selectCMenu1.SetActive(true);
         //Player1Text.text = "Ok";
-        check();
+        //check();
     }
 
     void checkPlayer2()
@@ -74,16 +94,33 @@ public class SelectPlayer : MonoBehaviour
         set.NPlayer++;
         twoPressed = true;
         pressA2.SetActive(false);
-        ready2.SetActive(true);
+        selectCMenu2.SetActive(true);
         //Player2Text.text = "Ok";
-        check();
+        //check();
     }
+
+    void checkPlayer3()
+    {
+        set.NPlayer++;
+        threePressed = true;
+        pressA3.SetActive(false);
+    }
+
+    void checkPlayer4()
+    {
+        set.NPlayer++;
+        fourPressed = true;
+        pressA4.SetActive(false);
+    }
+
 
     void check()
     {
-        if (onePressed && twoPressed)
+        if (Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene("SceneSelector");
         }
     }
+
+    
 }

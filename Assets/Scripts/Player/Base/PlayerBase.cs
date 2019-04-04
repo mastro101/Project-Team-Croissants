@@ -14,6 +14,10 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
 
     public abstract string Name { get; }
 
+    [SerializeField]
+    Sprite characterImage;
+    public Sprite CharacterImage { get { return characterImage; } }
+
     protected int points;
     public virtual int Points
     {

@@ -15,6 +15,7 @@ namespace StateMachine.Gameplay
         }
 
         PlayerController followedPlayerController, runnerPlayerController;
+        PlayerController[] PlayersController = new PlayerController[4];
 
         public override void Enter()
         {
@@ -34,15 +35,24 @@ namespace StateMachine.Gameplay
                 runnerPlayerController = context.RunnerPlayer.gameObject.GetComponent<PlayerController>();
             if (context.Arena != null)
                 context.Arena.StartCoroutine(context.Arena.MoveRL());
+
+            for (int i = 0; i < context.Players.Count; i++)
+            {
+                if (context.Players[i] != null)
+                {
+                    PlayersController[i] = context.Players[i].gameObject.GetComponent<PlayerController>();
+                }
+            }
         }
 
         public override void Tick()
         {
             base.Tick();
-            if (followedPlayerController != null)
-                followedPlayerController.PlayerInput();
-            if (runnerPlayerController != null)
-                runnerPlayerController.PlayerInput();
+            foreach (PlayerController player in PlayersController)
+            {
+                if (player != null)
+                    player.PlayerInput();
+            }
         }
 
         public override void Exit()
@@ -51,8 +61,13 @@ namespace StateMachine.Gameplay
             //DOTween.PauseAll();
             context.Enemy.SM.SetTrigger("Idle");
             context.Enemy.transform.localScale = Vector3.one;
-            context.FollowedPlayer.SM.SetBool("Run", false);
-            context.RunnerPlayer.SM.SetBool("Run", false);
+            foreach (IPlayer player in context.Players)
+            {
+                if (player != null)
+                {
+                    player.SM.SetBool("Run", false);
+                }
+            }
             context.FollowedPlayerTransform.rotation = Quaternion.Euler(Vector3.zero);
             context.RunnerPlayerTransform.rotation = Quaternion.Euler(Vector3.zero);
             foreach (IEnemy enemy in context.Enemies)
@@ -64,8 +79,21 @@ namespace StateMachine.Gameplay
 
         void AddPoint(IPlayer player)
         {
-            context.FollowedPlayer.SM.SetTrigger("GameOver");
-            context.RunnerPlayer.SM.SetTrigger("GameOver");
+            foreach (IPlayer p in context.Players)
+            {
+                if (p != null)
+                {
+                    p.SM.SetTrigger("GameOver");
+                }
+            }
+
+            foreach (IPlayer p in context.Players)
+            {
+                if (p != null)
+                {
+                    p.SM.SetTrigger("GameOver");
+                }
+            }
 
             if (player == context.FollowedPlayer)
             {
