@@ -10,11 +10,9 @@ namespace StateMachine.Gameplay
     public class GameplaySM : StateMachineBase
     {
         [SerializeField]
-        PlayerBase p1, p2;
-        [SerializeField]
         EnemyBase enemy;
         [SerializeField]
-        Transform runnerPosition, followedPosition, enemyPosition;
+        Transform enemyPosition;
         [SerializeField]
         GameObject canvas, endRoundPanel;
         [SerializeField]
@@ -37,13 +35,6 @@ namespace StateMachine.Gameplay
                 GameManager = FindObjectOfType<GameManager>(),
                 Enemy = enemy,
                 Enemies = FindObjectsOfType<EnemyBase>(),
-
-                P1 = p1,
-                P2 = p2,
-                FollowedPlayer = p1,
-                RunnerPlayer = p2,
-                RunnerPlayerTransform = runnerPosition,
-                FollowedPlayerTransform = followedPosition,
                 EnemyTransform = enemyPosition,
                 BaseExitState = goNext,
                 EnemyStarterSpeed = enemy.MovementSpeed,
@@ -110,7 +101,7 @@ namespace StateMachine.Gameplay
         public IEnemy Enemy;
         public IEnemy[] Enemies;
         public List<IPlayer> Players;
-        public IPlayer P1, P2, FollowedPlayer, RunnerPlayer;
+        public IPlayer FollowedPlayer;
         public Transform RunnerPlayerTransform, FollowedPlayerTransform, EnemyTransform;
         /// <summary>
         /// Delegato chiamato per uscire da uno stato con una sola uscita o con un'uscita di default

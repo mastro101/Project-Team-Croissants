@@ -77,6 +77,21 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     float originalSpeed;
     public float OriginalSpeed { get { return originalSpeed; } }
 
+    bool b;
+    public bool IsGameOver
+    {
+        get
+        {
+            return b;
+        }
+        set
+        {
+            b = value;
+            if (b)
+                SM.SetTrigger("GameOver");
+        }
+    }
+
     protected virtual void Start()
     {
         originalSpeed = MovementSpeed;

@@ -14,25 +14,25 @@ namespace StateMachine.Gameplay
             }
         }
 
-        PlayerController followedPlayerController, runnerPlayerController;
+        PlayerController followedPlayerController;
         PlayerController[] PlayersController = new PlayerController[4];
+        int NPlayerInGameOver;
 
         public override void Enter()
         {
             base.Enter();
             context.InvockeStartBattle();
+            NPlayerInGameOver = 0;
 
-            context.Enemy.PlayerToFollow = context.FollowedPlayer;
+            //context.Enemy.PlayerToFollow = context.FollowedPlayer;
             context.Enemy.SM.SetTrigger("Movement");
             foreach (IEnemy enemy in context.Enemies)
             {
                 Debug.Log(enemy.gameObject.name);
-                enemy.HitPlayer += AddPoint;
+                enemy.HitPlayer += CheckGameOver;
             }
             if (context.FollowedPlayer != null)
                 followedPlayerController = context.FollowedPlayer.gameObject.GetComponent<PlayerController>();
-            if (context.RunnerPlayer != null)
-                runnerPlayerController = context.RunnerPlayer.gameObject.GetComponent<PlayerController>();
             if (context.Arena != null)
                 context.Arena.StartCoroutine(context.Arena.MoveRL());
 
@@ -50,7 +50,7 @@ namespace StateMachine.Gameplay
             base.Tick();
             foreach (PlayerController player in PlayersController)
             {
-                if (player != null)
+                if (player != null && !player.gameObject.GetComponent<IPlayer>().IsGameOver)
                     player.PlayerInput();
             }
         }
@@ -66,47 +66,38 @@ namespace StateMachine.Gameplay
                 if (player != null)
                 {
                     player.SM.SetBool("Run", false);
+                    player.transform.rotation = Quaternion.Euler(Vector3.zero);
                 }
             }
-            context.FollowedPlayerTransform.rotation = Quaternion.Euler(Vector3.zero);
-            context.RunnerPlayerTransform.rotation = Quaternion.Euler(Vector3.zero);
             foreach (IEnemy enemy in context.Enemies)
             {
-                enemy.HitPlayer -= AddPoint;
+                enemy.HitPlayer -= CheckGameOver;
             }
             context.InvokeEndBattle();
         }
 
-        void AddPoint(IPlayer player)
+        void CheckGameOver(IPlayer player)
         {
+            player.IsGameOver = true;
             foreach (IPlayer p in context.Players)
             {
-                if (p != null)
+                if (p != null && p.IsGameOver)
                 {
-                    p.SM.SetTrigger("GameOver");
+                    NPlayerInGameOver++;
                 }
             }
 
-            foreach (IPlayer p in context.Players)
+            if (NPlayerInGameOver >= context.Players.Count - 1)
             {
-                if (p != null)
+                foreach (IPlayer p in context.Players)
                 {
-                    p.SM.SetTrigger("GameOver");
+                    if (p != null && !p.IsGameOver)
+                    {
+                        p.AddPoint(1);
+                        context.BaseExitState();
+                    }
                 }
             }
-
-            if (player == context.FollowedPlayer)
-            {
-                context.RunnerPlayer.AddPoint(1);
-            }
-
-            if (player == context.RunnerPlayer)
-            {
-                context.FollowedPlayer.AddPoint(1);
-            }
-
-            // Esci dallo stato
-            context.BaseExitState();
         }
     }
 }

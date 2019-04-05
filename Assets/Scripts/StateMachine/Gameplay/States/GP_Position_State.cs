@@ -28,25 +28,28 @@ namespace StateMachine.Gameplay
             countdown = Instantiate(countdownPrefab, new Vector3(0, 25, -17), Quaternion.Euler(56, 0, 0), FindObjectOfType<Camera>().transform);
             //animatorCountDown.SetTrigger("Start");
 
-            // Scambia i player e l'obbiettivo dell'Enemy
-            IPlayer oldFollowedPlayer = context.FollowedPlayer;
-            IPlayer oldRunnerPlayer = context.RunnerPlayer;
-            context.FollowedPlayer = oldRunnerPlayer;
-            context.RunnerPlayer = oldFollowedPlayer;
             //Rimove mirino
             if (context.Enemy.PlayerToFollow != null)
             context.Enemy.PlayerToFollow.Aim.SetActive(false);
-            // Scelta random provvisoria
+            // Cambio PlayerToFollow
+                // Scelta random provvisoria
             context.Enemy.PlayerToFollow = context.Players[Random.Range(0, context.Players.Count)];
-            //
+                //
             context.Enemy.PlayerToFollow.Aim.SetActive(true);
-            context.FollowedPlayer.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
-            context.RunnerPlayer.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
+            foreach (IPlayer player in context.Players)
+            {
+                if (player != null)
+                    player.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
+            }
             // Riposiziona i player nei loro punti iniziali
-            if (context.FollowedPlayerTransform != null)
-                context.FollowedPlayer.transform.position = context.FollowedPlayerTransform.position;
-            if (context.RunnerPlayerTransform != null)
-                context.RunnerPlayer.transform.position = context.RunnerPlayerTransform.position;
+            foreach (IPlayer player in context.Players)
+            {
+                //Molto provvisorio
+                player.transform.position = Vector3.up;
+                //
+                player.IsGameOver = false;
+            }
+
             if (context.EnemyTransform != null)
                 context.Enemy.transform.position = context.EnemyTransform.position;
             // Resetta variabili

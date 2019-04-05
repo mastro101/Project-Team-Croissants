@@ -19,6 +19,7 @@ public interface IPlayer
     float OriginalSpeed { get; }
     GameObject Aim { get; }
     Sprite CharacterImage { get; }
+    bool IsGameOver { get; set; }
     //float JumpForce { get; }
 
     // Abilità unica del personaggio
