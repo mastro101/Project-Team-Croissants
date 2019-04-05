@@ -23,8 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public IPlayer player { private get; set; }
 
-    [HideInInspector]
-    public int nPlayer;
+    int NPlayer;
 
     [SerializeField]
     KeyCode up;
@@ -52,7 +51,10 @@ public class PlayerController : MonoBehaviour
 
     public TextMeshProUGUI abilityCDText;
     
-
+    public void SetController(int _nPlayer)
+    {
+        NPlayer = _nPlayer;
+    }
 
     private void Awake()
     {
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         if (FindObjectOfType<SetController>() != null)
         {
-            controller = FindObjectOfType<SetController>().assignedController[nPlayer];
+            controller = FindObjectOfType<SetController>().AssignedController[NPlayer];
             h = "J" + controller + "H";
             v = "J" + controller + "V";
             DashButton = "J" + controller + "A";

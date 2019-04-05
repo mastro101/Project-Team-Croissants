@@ -14,12 +14,16 @@ namespace StateMachine.Gameplay
             base.Enter();
             SceneManager.LoadSceneAsync(context.GameManager.SelectedLevel, LoadSceneMode.Additive);
             context.Players = new List<IPlayer>();
+
+            int n = 0;
             foreach (GameObject player in context.GameManager.PlayersGO)
             {
                 if (player != null)
                 {
+                    player.GetComponent<PlayerController>().SetController(FindObjectOfType<SetController>().AssignedController[n]);
                     GameObject p = Instantiate(player, Vector3.up * 1.5f, Quaternion.Euler(Vector3.zero));
                     context.Players.Add(p.GetComponent<IPlayer>());
+                    n++;
                 }
             }
         }

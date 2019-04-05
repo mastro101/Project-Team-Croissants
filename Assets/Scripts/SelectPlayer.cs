@@ -40,9 +40,9 @@ public class SelectPlayer : MonoBehaviour
             {
                 checkPlayer1();
             }
-            else if (set.assignedController.Count > 0)
+            else if (set.AssignedController.Count > 0)
             {
-                if (Input.GetButtonDown("J" + set.assignedController[0].ToString() + "A"))
+                if (Input.GetButtonDown("J" + set.AssignedController[0].ToString() + "A"))
                     checkPlayer1();
             }
         }
@@ -54,22 +54,22 @@ public class SelectPlayer : MonoBehaviour
             {
                 checkPlayer2();
             }
-            else if (set.assignedController.Count > 1)
+            else if (set.AssignedController.Count > 1)
             {
-                if (Input.GetButtonDown("J" + set.assignedController[1].ToString() + "A"))
+                if (Input.GetButtonDown("J" + set.AssignedController[1].ToString() + "A"))
                     checkPlayer2();
             }
         }
 
-        if (set.assignedController.Count > 2 && !threePressed)
+        if (set.AssignedController.Count > 2 && !threePressed)
         {
-            if (Input.GetButtonDown("J" + set.assignedController[2].ToString() + "A"))
+            if (Input.GetButtonDown("J" + set.AssignedController[2].ToString() + "A"))
                 checkPlayer3();
         }
 
-        if (set.assignedController.Count > 3 && !fourPressed)
+        if (set.AssignedController.Count > 3 && !fourPressed)
         {
-            if (Input.GetButtonDown("J" + set.assignedController[3].ToString() + "A"))
+            if (Input.GetButtonDown("J" + set.AssignedController[3].ToString() + "A"))
                 checkPlayer4();
         }
          

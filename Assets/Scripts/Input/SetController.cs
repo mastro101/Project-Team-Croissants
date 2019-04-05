@@ -6,7 +6,7 @@ public class SetController : MonoBehaviour
 {
     int controllerNumber;
     [HideInInspector]
-    public List<int> assignedController = new List<int>();
+    public List<int> AssignedController = new List<int>();
 
     public static SetController Instance { get; private set; }
 
@@ -30,14 +30,14 @@ public class SetController : MonoBehaviour
     {
         for (int i = 1; i <= 16; i++)
         {
-            if (assignedController.Contains(i))
+            if (AssignedController.Contains(i))
             {
                 continue;
             }
 
             if (Input.GetButtonDown("J" + i + "A"))
             {
-                assignedController.Add(i);
+                AssignedController.Add(i);
                 Debug.Log("Add " + i);
             }
         }
