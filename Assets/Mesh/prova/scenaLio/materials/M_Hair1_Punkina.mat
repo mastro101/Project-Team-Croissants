@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_PunkinaDef
+  m_Name: M_Hair1_Punkina
   m_Shader: {fileID: 4800000, guid: 7252379db4c18b641b517f2c91bb57e1, type: 3}
-  m_ShaderKeywords: _USECOLORMAP_ON _USEEMISSIVEMAP_ON _USEMETALLICMAP_ON _USENORMALMAP_ON
-    _USEROUGHNESSMAP_ON
+  m_ShaderKeywords: _USEAOMAP_ON _USECOLORMAP_ON _USEEMISSIVEMAP_ON _USEMETALLICMAP_ON
+    _USENORMALMAP_ON _USEROUGHNESSMAP_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 9051f2a3c6ebf89479c4cb9d389c463c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 389012a8b889a274399e4dde3df19674, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CoatMaskMap:
@@ -67,7 +67,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: eb434b81e9734b7448ed9f656772b035, type: 3}
+        m_Texture: {fileID: 2800000, guid: 023566fba6f43c74087effab3e17f721, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissiveColorMap:
@@ -87,7 +87,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ea565f07d7c61d64b988d99bbf616e76, type: 3}
+        m_Texture: {fileID: 2800000, guid: e250e6458750ef5439bad3c72317d2b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -95,7 +95,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 160e617aaf9cc7d4ca90e0148ae86f92, type: 3}
+        m_Texture: {fileID: 2800000, guid: 79205825dd80e5e47b8f217c3060169a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -115,7 +115,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: ad3abea16ae20a24bb7e404e5b83ded7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2f094ac87a091914d9ae989ea8725b15, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularColorMap:
@@ -194,7 +194,7 @@ Material:
     - _EnableSpecularOcclusion: 0
     - _EnableWind: 0
     - _EnergyConservingSpecularColor: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 1
     - _GlossyReflections: 1
     - _HdrpVersion: 2
     - _HeightAmplitude: 0.02
@@ -258,7 +258,7 @@ Material:
     - _UVDetail: 0
     - _UVEmissive: 0
     - _UVSec: 0
-    - _UseAoMap: 0
+    - _UseAoMap: 1
     - _UseColorMap: 1
     - _UseEmissiveMap: 1
     - _UseMetallicMap: 1

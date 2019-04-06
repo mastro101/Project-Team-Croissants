@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Punkina
   m_Shader: {fileID: 4800000, guid: 7252379db4c18b641b517f2c91bb57e1, type: 3}
-  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP _USEAOMAP_ON
-    _USECOLORMAP_ON _USEEMISSIVEMAP_ON _USEMETALLICMAP_ON _USENORMALMAP_ON _USEROUGHNESSMAP_ON
+  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP _USECOLORMAP_ON
+    _USEMETALLICMAP_ON _USENORMALMAP_ON _USEROUGHNESSMAP_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -23,7 +23,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 31c3d38bc96f3dd4ca42399ff8026aeb, type: 3}
+        m_Texture: {fileID: 2800000, guid: fb11ab12841516549917d7801f7aa0dc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -43,11 +43,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 98c98a131a718dc46a37036ee61a68f9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 163fb3ebd23318c48b4f7daa553eb9d1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: a5bca72740b89514ba5d5fb5a3c38493, type: 3}
+        m_Texture: {fileID: 2800000, guid: 63540e1c35da5c147888f265697f52d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: 77db7ef686bedde40915247a78d7b0b1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6154042b4602f294e85add19e66e2680, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -78,9 +78,9 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UseAoMap: 1
+    - _UseAoMap: 0
     - _UseColorMap: 1
-    - _UseEmissiveMap: 1
+    - _UseEmissiveMap: 0
     - _UseMetallicMap: 1
     - _UseNormalMap: 1
     - _UseRoughnessMap: 1
