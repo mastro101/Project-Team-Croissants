@@ -20,8 +20,8 @@ namespace StateMachine.Gameplay
             {
                 if (player != null)
                 {
-                    player.GetComponent<PlayerController>().SetController(FindObjectOfType<SetController>().AssignedController[n]);
                     GameObject p = Instantiate(player, Vector3.up * 1.5f, Quaternion.Euler(Vector3.zero));
+                    p.GetComponent<PlayerController>().SetController(n);
                     context.Players.Add(p.GetComponent<IPlayer>());
                     n++;
                 }

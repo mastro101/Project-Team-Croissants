@@ -50,11 +50,6 @@ public class PlayerController : MonoBehaviour
 
 
     public TextMeshProUGUI abilityCDText;
-    
-    public void SetController(int _nPlayer)
-    {
-        NPlayer = _nPlayer;
-    }
 
     private void Awake()
     {
@@ -62,8 +57,9 @@ public class PlayerController : MonoBehaviour
     }
 
     bool setInput = false;
-    private void Start()
+    public void SetController(int _nPlayer)
     {
+        NPlayer = _nPlayer;
         if (FindObjectOfType<SetController>() != null)
         {
             controller = FindObjectOfType<SetController>().AssignedController[NPlayer];
