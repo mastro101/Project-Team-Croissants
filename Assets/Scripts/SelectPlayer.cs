@@ -73,7 +73,7 @@ public class SelectPlayer : MonoBehaviour
                 checkPlayer4();
         }
          
-        if (FindObjectOfType<GameManager>().PlayersGO[1] != null)
+        if (FindObjectOfType<GameManager>().PlayersGO[0] != null)
         {
             check();
         }
@@ -120,6 +120,10 @@ public class SelectPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.JoystickButton7) || Input.GetKeyDown(KeyCode.Return))
         {
+            if (FindObjectOfType<GameManager>().PlayersGO.Length == 1)
+            {
+                FindObjectOfType<GameManager>().PlayersGO[1] = Characters[0];
+            }
             SceneManager.LoadScene("SceneSelector");
         }
     }

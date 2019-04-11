@@ -43,13 +43,9 @@ public class SelectCharacterMenu : MonoBehaviour
     {
         if (setController.AssignedController.Count >= playerInt && !choosed)
         {
-            if (Input.GetButtonDown("J" + setController.AssignedController[playerInt - 1].ToString() + "A"))
+            if (Input.GetButtonDown("J" + setController.AssignedController[playerInt - 1].ToString() + "A") || (playerInt == 1 && Input.GetKeyDown(KeyCode.Space)) || (playerInt == 2 && Input.GetKeyDown(KeyCode.RightControl)))
             {
-                Debug.Log(playerInt - 1);
-                Debug.Log(selectCharacter.currentPlayer.GetComponent<IPlayer>().Name);
-                gameManager.PlayersGO[playerInt - 1] = selectCharacter.currentPlayer;
-                choosed = true;
-                gameObject.SetActive(false);
+                choose();
             }
 
             if (Input.GetAxis("J" + setController.AssignedController[playerInt - 1].ToString() + "H") > 0.7f && b == false)
@@ -65,5 +61,14 @@ public class SelectCharacterMenu : MonoBehaviour
             else if (Input.GetAxis("J" + setController.AssignedController[playerInt - 1].ToString() + "H") < 0.7f && Input.GetAxis("J" + setController.AssignedController[playerInt - 1].ToString() + "H") > -0.7f)
                 b = false;
         }
+    }
+
+    void choose()
+    {
+        Debug.Log(playerInt - 1);
+        Debug.Log(selectCharacter.currentPlayer.GetComponent<IPlayer>().Name);
+        gameManager.PlayersGO[playerInt - 1] = selectCharacter.currentPlayer;
+        choosed = true;
+        gameObject.SetActive(false);
     }
 }
