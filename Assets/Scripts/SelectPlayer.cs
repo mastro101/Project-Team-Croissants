@@ -104,6 +104,7 @@ public class SelectPlayer : MonoBehaviour
         set.NPlayer++;
         threePressed = true;
         pressA3.SetActive(false);
+        selectCMenu3.SetActive(true);
     }
 
     void checkPlayer4()
@@ -111,6 +112,7 @@ public class SelectPlayer : MonoBehaviour
         set.NPlayer++;
         fourPressed = true;
         pressA4.SetActive(false);
+        selectCMenu4.SetActive(true);
     }
 
 

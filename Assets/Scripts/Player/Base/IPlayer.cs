@@ -18,7 +18,9 @@ public interface IPlayer
     float AbilityCooldown { get; }
     float OriginalSpeed { get; }
     GameObject Aim { get; }
-    Sprite CharacterImage { get; }
+    Sprite SelectCharacterSprite { get; }
+    Sprite AbilitySprite { get; }
+    Sprite IconCharacterSprite { get; }
     bool IsGameOver { get; set; }
     //float JumpForce { get; }
 

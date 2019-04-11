@@ -98,6 +98,17 @@ namespace StateMachine.Gameplay
                     }
                 }
             }
+            else
+            { 
+                foreach (IPlayer p in context.Players)
+                {
+                    if (p != null)
+                    {
+                        if (!p.IsGameOver)
+                        context.Enemy.PlayerToFollow = p;
+                    }
+                }
+            }
         }
     }
 }

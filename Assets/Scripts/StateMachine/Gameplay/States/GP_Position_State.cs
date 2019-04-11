@@ -18,12 +18,13 @@ namespace StateMachine.Gameplay
             }
         }
 
+        SpawnPoint spawnPoint;
         GameObject countdown, aim;
         public override void Enter()
         {
             //Destroy(aim);
             base.Enter();
-
+            spawnPoint = FindObjectOfType<SpawnPoint>();
             FindObjectOfType<AudioManager>().Play("Countdown");
             countdown = Instantiate(countdownPrefab, new Vector3(0, 25, -17), Quaternion.Euler(56, 0, 0), FindObjectOfType<Camera>().transform);
             //animatorCountDown.SetTrigger("Start");
@@ -42,11 +43,16 @@ namespace StateMachine.Gameplay
                     player.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
             }
             // Riposiziona i player nei loro punti iniziali
+            int i = 0;
             foreach (IPlayer player in context.Players)
             {
-                //Molto provvisorio
-                player.transform.position = Vector3.up;
-                //
+                if (spawnPoint != null)
+                {
+                    if (player != null)
+                        player.gameObject.transform.position = spawnPoint.PlayerSpawn[i].position + (Vector3.up * 1.5f);
+
+                    i++;
+                }
                 player.IsGameOver = false;
             }
 
@@ -54,6 +60,7 @@ namespace StateMachine.Gameplay
                 context.Enemy.transform.position = context.EnemyTransform.position;
             // Resetta variabili
             context.Enemy.MovementSpeed = context.EnemyStarterSpeed;
+            context.Enemy.transform.localScale = Vector3.one; 
             // Resetta Arena
             if (context.Arena != null)
                 context.Arena.Setup();

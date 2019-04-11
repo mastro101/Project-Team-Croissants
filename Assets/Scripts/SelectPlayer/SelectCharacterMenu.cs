@@ -34,7 +34,7 @@ public class SelectCharacterMenu : MonoBehaviour
 
     void changeIcon()
     {
-        currentCharacterImage.sprite = selectCharacter.currentPlayer.GetComponent<IPlayer>().CharacterImage;
+        currentCharacterImage.sprite = selectCharacter.currentPlayer.GetComponent<IPlayer>().SelectCharacterSprite;
         NameText.text = selectCharacter.currentPlayer.GetComponent<IPlayer>().Name;
     }
 

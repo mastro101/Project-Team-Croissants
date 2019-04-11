@@ -23,6 +23,8 @@ namespace StateMachine.Gameplay
         public override void Enter()
         {
             base.Enter();
+            tutorialInScene = Instantiate(tutorialPanel, context.Canvas.transform);
+            tutorialInScene.SetActive(true);
             int n = 0;
             foreach (IPlayer player in context.Players)
             {
@@ -41,8 +43,7 @@ namespace StateMachine.Gameplay
 
             //context.P1.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P1;
             //context.P2.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P2;
-            tutorialInScene = Instantiate(tutorialPanel, context.Canvas.transform);
-            tutorialInScene.SetActive(true);
+            
             context.EndRoundPanel.SetActive(false);
             for (int i = 0; i < 3; i++)
             {
