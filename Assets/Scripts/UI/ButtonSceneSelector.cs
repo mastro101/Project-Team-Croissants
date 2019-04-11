@@ -7,10 +7,9 @@ public class ButtonSceneSelector : MonoBehaviour
 {
     public int numeroScena;
 
-
     public void SelectScene()
     {
-        SceneManager.LoadScene(numeroScena);
+        FindObjectOfType<GameManager>().SelectedLevel = numeroScena;
+        SceneManager.LoadScene("BaseScene");
     }
-
 }

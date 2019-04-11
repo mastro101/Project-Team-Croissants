@@ -22,16 +22,16 @@ namespace StateMachine.Gameplay
             pointP1 = 0;
             pointP2 = 0;
             context.EndRoundPanel.SetActive(true);
-            for (int i = 0; i < context.P1.Points; i++)
+            for (int i = 0; i < context.Players[0].Points; i++)
             {
                 context.WinCheckImageP1[i].SetActive(true);
-                context.WinPointImageP1[i].SetActive(true);
+                //context.WinPointImageP1[i].SetActive(true);
                 pointP1++;
             }
-            for (int i = 0; i < context.P2.Points; i++)
+            for (int i = 0; i < context.Players[1].Points; i++)
             {
                 context.WinCheckImageP2[i].SetActive(true);
-                context.WinPointImageP2[i].SetActive(true);
+               // context.WinPointImageP2[i].SetActive(true);
                 pointP2++;
             }
 

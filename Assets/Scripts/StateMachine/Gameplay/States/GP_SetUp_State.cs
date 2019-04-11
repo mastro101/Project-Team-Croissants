@@ -23,19 +23,34 @@ namespace StateMachine.Gameplay
         public override void Enter()
         {
             base.Enter();
-            //context.P1.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P1;
-            //context.P2.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P2;
             tutorialInScene = Instantiate(tutorialPanel, context.Canvas.transform);
             tutorialInScene.SetActive(true);
+            int n = 0;
+            foreach (IPlayer player in context.Players)
+            {
+                if (player != null)
+                {
+                    PlayerController playerC = player.gameObject.GetComponent<PlayerController>();
+                    // playerC.dashTimerImage = context.DashTimerImage[n];
+                    playerC.abilityTimerImage = context.AbilityTimerImage[n];
+                    playerC.abilityReady = context.AbilityReady[n];
+                    playerC.abilityCDText = context.AbilityCDText[n];
+                    n++;
+
+                    player.Points = 0;
+                }
+            }
+
+            //context.P1.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P1;
+            //context.P2.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P2;
+            
             context.EndRoundPanel.SetActive(false);
-            context.P1.Points = 0;
-            context.P2.Points = 0;
             for (int i = 0; i < 3; i++)
             {
-                context.WinCheckImageP1[i].SetActive(false);
-                context.WinCheckImageP2[i].SetActive(false);
-                context.WinPointImageP1[i].SetActive(false);
-                context.WinPointImageP2[i].SetActive(false);
+                //context.WinCheckImageP1[i].SetActive(false);
+                //context.WinCheckImageP2[i].SetActive(false);
+                //context.WinPointImageP1[i].SetActive(false);
+                //context.WinPointImageP2[i].SetActive(false);
             }
             isSetup = true;
 

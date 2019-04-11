@@ -27,13 +27,10 @@ namespace StateMachine.Gameplay
             winText = winGO.GetComponent<TextMeshProUGUI>();
             FindObjectOfType<AudioManager>().Play("EndGame");
             context.EndRoundPanel.SetActive(true);
-            if (context.P1.Points == 3)
+            foreach (IPlayer player in context.Players)
             {
-                winText.text = "BARONE WINS THE MATCH";
-            }
-            else
-            {
-                winText.text = "VEEKY WINS THE MATCH";
+                if (player.Points == 3)
+                    winText.text = player.Name + " Wins the match";
             }
             tempPressTo = Instantiate(pressToGO, context.Canvas.transform);
             tempWin = Instantiate(winGO, context.Canvas.transform);
