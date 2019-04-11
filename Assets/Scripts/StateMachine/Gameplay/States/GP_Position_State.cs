@@ -18,39 +18,49 @@ namespace StateMachine.Gameplay
             }
         }
 
+        SpawnPoint spawnPoint;
         GameObject countdown, aim;
         public override void Enter()
         {
             //Destroy(aim);
             base.Enter();
-
+            spawnPoint = FindObjectOfType<SpawnPoint>();
             FindObjectOfType<AudioManager>().Play("Countdown");
             countdown = Instantiate(countdownPrefab, new Vector3(0, 25, -17), Quaternion.Euler(56, 0, 0), FindObjectOfType<Camera>().transform);
             //animatorCountDown.SetTrigger("Start");
 
-            // Scambia i player e l'obbiettivo dell'Enemy
-            IPlayer oldFollowedPlayer = context.FollowedPlayer;
-            IPlayer oldRunnerPlayer = context.RunnerPlayer;
-            context.FollowedPlayer = oldRunnerPlayer;
-            context.RunnerPlayer = oldFollowedPlayer;
-            context.Enemy.PlayerToFollow = context.FollowedPlayer;
-            context.FollowedPlayer.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
-            context.RunnerPlayer.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
-
-            // Aggiunge mirino
-            //aim = Instantiate(aimPrefab, context.FollowedPlayer.transform.position + new Vector3(0, 3.5f, 0), new Quaternion(0, 0, 0, 0),context.FollowedPlayer.transform);
-            context.RunnerPlayer.Aim.SetActive(false);
-            context.FollowedPlayer.Aim.SetActive(true);
-
+            //Rimove mirino
+            if (context.Enemy.PlayerToFollow != null)
+            context.Enemy.PlayerToFollow.Aim.SetActive(false);
+            // Cambio PlayerToFollow
+                // Scelta random provvisoria
+            context.Enemy.PlayerToFollow = context.Players[Random.Range(0, context.Players.Count)];
+                //
+            context.Enemy.PlayerToFollow.Aim.SetActive(true);
+            foreach (IPlayer player in context.Players)
+            {
+                if (player != null)
+                    player.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
+            }
             // Riposiziona i player nei loro punti iniziali
-            if (context.FollowedPlayerTransform != null)
-                context.FollowedPlayer.transform.position = context.FollowedPlayerTransform.position;
-            if (context.RunnerPlayerTransform != null)
-                context.RunnerPlayer.transform.position = context.RunnerPlayerTransform.position;
+            int i = 0;
+            foreach (IPlayer player in context.Players)
+            {
+                if (spawnPoint != null)
+                {
+                    if (player != null)
+                        player.gameObject.transform.position = spawnPoint.PlayerSpawn[i].position + (Vector3.up * 1.5f);
+
+                    i++;
+                }
+                player.IsGameOver = false;
+            }
+
             if (context.EnemyTransform != null)
                 context.Enemy.transform.position = context.EnemyTransform.position;
             // Resetta variabili
             context.Enemy.MovementSpeed = context.EnemyStarterSpeed;
+            context.Enemy.transform.localScale = Vector3.one; 
             // Resetta Arena
             if (context.Arena != null)
                 context.Arena.Setup();

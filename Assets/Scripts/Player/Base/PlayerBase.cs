@@ -14,6 +14,18 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
 
     public abstract string Name { get; }
 
+    [SerializeField]
+    Sprite slectCharacterSprite;
+    public Sprite SelectCharacterSprite { get { return slectCharacterSprite; } }
+
+    [SerializeField]
+    Sprite abilitySprite;
+    public Sprite AbilitySprite { get { return abilitySprite; } }
+
+    [SerializeField]
+    Sprite iconCharacterSprite;
+    public Sprite IconCharacterSprite { get { return iconCharacterSprite; } }
+
     protected int points;
     public virtual int Points
     {
@@ -72,6 +84,21 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
 
     float originalSpeed;
     public float OriginalSpeed { get { return originalSpeed; } }
+
+    bool b;
+    public bool IsGameOver
+    {
+        get
+        {
+            return b;
+        }
+        set
+        {
+            b = value;
+            if (b)
+                SM.SetTrigger("GameOver");
+        }
+    }
 
     protected virtual void Start()
     {

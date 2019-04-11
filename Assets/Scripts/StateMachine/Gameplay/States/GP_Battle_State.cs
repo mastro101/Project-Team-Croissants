@@ -14,35 +14,45 @@ namespace StateMachine.Gameplay
             }
         }
 
-        PlayerController followedPlayerController, runnerPlayerController;
+        PlayerController followedPlayerController;
+        PlayerController[] PlayersController = new PlayerController[4];
+        int NPlayerInGameOver;
 
         public override void Enter()
         {
             base.Enter();
             context.InvockeStartBattle();
+            NPlayerInGameOver = 0;
 
-            context.Enemy.PlayerToFollow = context.FollowedPlayer;
+            //context.Enemy.PlayerToFollow = context.FollowedPlayer;
             context.Enemy.SM.SetTrigger("Movement");
             foreach (IEnemy enemy in context.Enemies)
             {
                 Debug.Log(enemy.gameObject.name);
-                enemy.HitPlayer += AddPoint;
+                enemy.HitPlayer += CheckGameOver;
             }
             if (context.FollowedPlayer != null)
                 followedPlayerController = context.FollowedPlayer.gameObject.GetComponent<PlayerController>();
-            if (context.RunnerPlayer != null)
-                runnerPlayerController = context.RunnerPlayer.gameObject.GetComponent<PlayerController>();
             if (context.Arena != null)
                 context.Arena.StartCoroutine(context.Arena.MoveRL());
+
+            for (int i = 0; i < context.Players.Count; i++)
+            {
+                if (context.Players[i] != null)
+                {
+                    PlayersController[i] = context.Players[i].gameObject.GetComponent<PlayerController>();
+                }
+            }
         }
 
         public override void Tick()
         {
             base.Tick();
-            if (followedPlayerController != null)
-                followedPlayerController.PlayerInput();
-            if (runnerPlayerController != null)
-                runnerPlayerController.PlayerInput();
+            foreach (PlayerController player in PlayersController)
+            {
+                if (player != null && !player.gameObject.GetComponent<IPlayer>().IsGameOver)
+                    player.PlayerInput();
+            }
         }
 
         public override void Exit()
@@ -51,34 +61,54 @@ namespace StateMachine.Gameplay
             //DOTween.PauseAll();
             context.Enemy.SM.SetTrigger("Idle");
             context.Enemy.transform.localScale = Vector3.one;
-            context.FollowedPlayer.SM.SetBool("Run", false);
-            context.RunnerPlayer.SM.SetBool("Run", false);
-            context.FollowedPlayerTransform.rotation = Quaternion.Euler(Vector3.zero);
-            context.RunnerPlayerTransform.rotation = Quaternion.Euler(Vector3.zero);
+            foreach (IPlayer player in context.Players)
+            {
+                if (player != null)
+                {
+                    player.SM.SetBool("Run", false);
+                    player.transform.rotation = Quaternion.Euler(Vector3.zero);
+                }
+            }
             foreach (IEnemy enemy in context.Enemies)
             {
-                enemy.HitPlayer -= AddPoint;
+                enemy.HitPlayer -= CheckGameOver;
             }
             context.InvokeEndBattle();
         }
 
-        void AddPoint(IPlayer player)
+        void CheckGameOver(IPlayer player)
         {
-            context.FollowedPlayer.SM.SetTrigger("GameOver");
-            context.RunnerPlayer.SM.SetTrigger("GameOver");
-
-            if (player == context.FollowedPlayer)
+            player.IsGameOver = true;
+            foreach (IPlayer p in context.Players)
             {
-                context.RunnerPlayer.AddPoint(1);
+                if (p != null && p.IsGameOver)
+                {
+                    NPlayerInGameOver++;
+                }
             }
 
-            if (player == context.RunnerPlayer)
+            if (NPlayerInGameOver >= context.Players.Count - 1)
             {
-                context.FollowedPlayer.AddPoint(1);
+                foreach (IPlayer p in context.Players)
+                {
+                    if (p != null && !p.IsGameOver)
+                    {
+                        p.AddPoint(1);
+                        context.BaseExitState();
+                    }
+                }
             }
-
-            // Esci dallo stato
-            context.BaseExitState();
+            else
+            { 
+                foreach (IPlayer p in context.Players)
+                {
+                    if (p != null)
+                    {
+                        if (!p.IsGameOver)
+                        context.Enemy.PlayerToFollow = p;
+                    }
+                }
+            }
         }
     }
 }
