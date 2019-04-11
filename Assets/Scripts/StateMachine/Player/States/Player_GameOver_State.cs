@@ -17,6 +17,7 @@ namespace StateMachine.Player
         {
             base.Enter();
             context.PlayerController.ResetCooldown();
+            context.Player.gameObject.SetActive(false);
             context.ExitState();
         }
     }
