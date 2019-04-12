@@ -13,7 +13,7 @@ namespace StateMachine.Gameplay
             }
         }
 
-        int pointP1, pointP2;
+        int pointP1, pointP2, pointP3, pointP4;
 
         public override void Enter()
         {
@@ -21,6 +21,8 @@ namespace StateMachine.Gameplay
             base.Enter();
             pointP1 = 0;
             pointP2 = 0;
+            pointP3 = 0;
+            pointP4 = 0;
             context.EndRoundPanel.SetActive(true);
             for (int i = 0; i < context.Players[0].Points; i++)
             {
@@ -34,7 +36,16 @@ namespace StateMachine.Gameplay
                // context.WinPointImageP2[i].SetActive(true);
                 pointP2++;
             }
-
+            for (int i = 0; i < context.Players[2].Points; i++)
+            {
+                context.WinCheckImageP3[i].SetActive(true);
+                pointP3++;
+            }
+            for (int i = 0; i < context.Players[3].Points; i++)
+            {
+                context.WinCheckImageP4[i].SetActive(true);
+                pointP4++;
+            }
             if (pointP1 > pointP2)
             {
                 context.SetPoint(pointP1);

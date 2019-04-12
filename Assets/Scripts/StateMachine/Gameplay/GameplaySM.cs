@@ -16,7 +16,7 @@ namespace StateMachine.Gameplay
         [SerializeField]
         GameObject canvas, endRoundPanel;
         [SerializeField]
-        GameObject[] winCheckImageP1, winCheckImageP2;
+        GameObject[] winCheckImageP1, winCheckImageP2, winCheckImageP3, winCheckImageP4;
         [SerializeField]
         GameObject[] winPointImageP1, winPointImageP2;
 
@@ -44,11 +44,19 @@ namespace StateMachine.Gameplay
                 Canvas = canvas,
                 WinCheckImageP1 = new GameObject[]
                 {
-                    winCheckImageP1[0], winCheckImageP1[1], winCheckImageP1[2]
+                    winCheckImageP1[0], winCheckImageP1[1], winCheckImageP1[2], winCheckImageP1[3]
                 },
                 WinCheckImageP2 = new GameObject[]
                 {
-                    winCheckImageP2[0], winCheckImageP2[1], winCheckImageP2[2]
+                    winCheckImageP2[0], winCheckImageP2[1], winCheckImageP2[2], winCheckImageP2[3]
+                },
+                WinCheckImageP3 = new GameObject[]
+                {
+                    winCheckImageP3[0], winCheckImageP3[1], winCheckImageP3[2], winCheckImageP3[3]
+                },
+                WinCheckImageP4 = new GameObject[]
+                {
+                    winCheckImageP4[0], winCheckImageP4[1], winCheckImageP4[2], winCheckImageP4[3],
                 },
                 WinPointImageP1 = new GameObject[]
                 {
@@ -113,7 +121,7 @@ namespace StateMachine.Gameplay
         public Action InvockeStartBattle;
         public Action<int> SetPoint;
         public GameObject Canvas, EndRoundPanel;
-        public GameObject[] WinCheckImageP1, WinCheckImageP2;
+        public GameObject[] WinCheckImageP1, WinCheckImageP2, WinCheckImageP3, WinCheckImageP4;
         public GameObject[] WinPointImageP1, WinPointImageP2;
 
         public Image[] DashTimerImage, AbilityTimerImage;

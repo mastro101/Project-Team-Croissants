@@ -46,6 +46,7 @@ namespace StateMachine.Gameplay
             int i = 0;
             foreach (IPlayer player in context.Players)
             {
+                player.gameObject.SetActive(true);
                 if (spawnPoint != null)
                 {
                     if (player != null)
