@@ -62,4 +62,9 @@ public abstract class ItemBase : MonoBehaviour , IItem, IObject
                 Effect(player);
         }
     }
+
+    private void OnDestroy()
+    {
+        gameplaySM.endBattle -= OnSpawn;
+    }
 }

@@ -43,6 +43,14 @@ public class InvertMovement : ItemBase
         {
             Effect(player);
         }
+        //gameplaySM.endBattle -= OnSpawn;
+        Destroy(gameObject);
+    }
+
+    public override void OnSpawn()
+    {
+        base.OnSpawn();
+        StopCoroutine(Effect());
         Destroy(gameObject);
     }
 

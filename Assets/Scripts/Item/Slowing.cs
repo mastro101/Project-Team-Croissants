@@ -45,7 +45,7 @@ public class Slowing : ItemBase
     public override void OnSpawn()
     {
         base.OnSpawn();
-        gameplaySM.endBattle -= OnSpawn;
+        //gameplaySM.endBattle -= OnSpawn;
         Destroy(gameObject);
     }
 }

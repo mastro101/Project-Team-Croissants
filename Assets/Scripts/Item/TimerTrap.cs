@@ -53,6 +53,12 @@ public class TimerTrap : Slowing
         }
     }
 
+    public override void OnSpawn()
+    {
+        StopCoroutine(Effect());
+        base.OnSpawn();
+    }
+
     public void SetTimer(float _timer, float _effectTime)
     {
         timer = _timer;
