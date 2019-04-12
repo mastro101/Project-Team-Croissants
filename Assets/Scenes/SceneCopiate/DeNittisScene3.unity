@@ -397,6 +397,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &25577450
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1296,6 +1320,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &40977103
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2663,6 +2711,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &119849775
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3965,7 +4037,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dashTimerImage
       value: 
-      objectReference: {fileID: 260540086}
+      objectReference: {fileID: 0}
     - target: {fileID: 114976937170555358, guid: 74c13faede5ef2446919ee58a73bbc26,
         type: 3}
       propertyPath: abilityTimerImage
@@ -4642,6 +4714,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &221887142
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5791,60 +5887,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 260540071}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &260540074 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2995210455871912460, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &260540075 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6029395075723765378, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &260540076 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6315128428397058540, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &260540077 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 559221855765488203, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &260540078 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1581271075524963830, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &260540079 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1939679479053526013, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &260540080 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8190287957338880527, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &260540081 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3491091451446326748, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &260540082 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4283352898088406726, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &260540083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2117986710026994799, guid: b540a2e9425ecfc489113b0512150818,
@@ -5863,33 +5905,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 260540071}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &260540086 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2076584742, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &260540087 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1255114917, guid: b540a2e9425ecfc489113b0512150818,
-    type: 3}
-  m_PrefabInstance: {fileID: 260540071}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &260540088 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6175680728024247576, guid: b540a2e9425ecfc489113b0512150818,
     type: 3}
   m_PrefabInstance: {fileID: 260540071}
   m_PrefabAsset: {fileID: 0}
@@ -6172,6 +6190,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &286214065
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7391,6 +7433,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &333292162
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8367,6 +8433,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &334871793
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9456,6 +9546,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &368220725
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11684,47 +11798,47 @@ PrefabInstance:
         type: 3}
       propertyPath: winCheckImageP2.Array.data[0]
       value: 
-      objectReference: {fileID: 260540082}
+      objectReference: {fileID: 0}
     - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
       propertyPath: winCheckImageP2.Array.data[1]
       value: 
-      objectReference: {fileID: 260540080}
+      objectReference: {fileID: 0}
     - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
       propertyPath: winCheckImageP2.Array.data[2]
       value: 
-      objectReference: {fileID: 260540078}
+      objectReference: {fileID: 0}
     - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
       propertyPath: winPointImageP1.Array.data[0]
       value: 
-      objectReference: {fileID: 260540081}
+      objectReference: {fileID: 0}
     - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
       propertyPath: winPointImageP1.Array.data[1]
       value: 
-      objectReference: {fileID: 260540079}
+      objectReference: {fileID: 0}
     - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
       propertyPath: winPointImageP1.Array.data[2]
       value: 
-      objectReference: {fileID: 260540077}
+      objectReference: {fileID: 0}
     - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
       propertyPath: winPointImageP2.Array.data[0]
       value: 
-      objectReference: {fileID: 260540076}
+      objectReference: {fileID: 0}
     - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
       propertyPath: winPointImageP2.Array.data[1]
       value: 
-      objectReference: {fileID: 260540075}
+      objectReference: {fileID: 0}
     - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
       propertyPath: winPointImageP2.Array.data[2]
       value: 
-      objectReference: {fileID: 260540074}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377f4ba49406d7d4d9dea5d038895dea, type: 3}
 --- !u!4 &504651516 stripped
@@ -11940,6 +12054,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &545498350
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13101,6 +13239,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1490123895138733281, guid: f8d2eb5179eafec4a8fb1c8f3f7264f0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5f0b0d489205ab439f2a876ae2ca984, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d2eb5179eafec4a8fb1c8f3f7264f0, type: 3}
 --- !u!4 &567294157 stripped
@@ -14096,6 +14239,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &683536226
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15072,6 +15239,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &698064394
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15971,6 +16162,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &702654648
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17741,6 +17956,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &811434589
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19309,7 +19548,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dashTimerImage
       value: 
-      objectReference: {fileID: 260540088}
+      objectReference: {fileID: 0}
     - target: {fileID: 114338218211383146, guid: db1c4d3b6225b5a4898fbc0c2e063ae1,
         type: 3}
       propertyPath: abilityTimerImage
@@ -19865,6 +20104,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &880373174
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21232,6 +21495,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &905728915
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22744,6 +23031,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &980398506
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25950,6 +26261,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1170333177
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26926,6 +27261,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1172079109
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28216,6 +28575,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1196654766
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29711,6 +30094,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1248040180
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30616,6 +31023,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1291567563
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31515,6 +31946,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1293833193
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32728,6 +33183,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1313556840
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35067,6 +35546,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1427975491
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36296,6 +36799,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1490123895138733281, guid: f8d2eb5179eafec4a8fb1c8f3f7264f0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5f0b0d489205ab439f2a876ae2ca984, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d2eb5179eafec4a8fb1c8f3f7264f0, type: 3}
 --- !u!4 &1462200920 stripped
@@ -36357,6 +36865,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1465961431
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37730,6 +38262,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1504067751
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38629,6 +39185,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1532833085
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -39837,6 +40417,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1559914087
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41056,6 +41660,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1572030782
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42131,6 +42759,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1490123895138733281, guid: f8d2eb5179eafec4a8fb1c8f3f7264f0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5f0b0d489205ab439f2a876ae2ca984, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d2eb5179eafec4a8fb1c8f3f7264f0, type: 3}
 --- !u!4 &1600699891 stripped
@@ -42423,6 +43056,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1618395380
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43322,6 +43979,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1631044855
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44794,6 +45475,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1647793920
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46161,6 +46866,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1671747353
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47060,6 +47789,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1678970713
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49124,6 +49877,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1785062485
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50444,6 +51221,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1490123895138733281, guid: f8d2eb5179eafec4a8fb1c8f3f7264f0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5f0b0d489205ab439f2a876ae2ca984, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d2eb5179eafec4a8fb1c8f3f7264f0, type: 3}
 --- !u!4 &1804229678 stripped
@@ -50577,6 +51359,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1816789708
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51636,6 +52442,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1817664465
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52759,6 +53589,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1839808166
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54246,6 +55100,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1889804700
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55453,6 +56331,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1914958823
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56352,6 +57254,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1929135868
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57275,6 +58201,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1490123895138733281, guid: f8d2eb5179eafec4a8fb1c8f3f7264f0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5f0b0d489205ab439f2a876ae2ca984, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d2eb5179eafec4a8fb1c8f3f7264f0, type: 3}
 --- !u!4 &1939388416 stripped
@@ -57413,6 +58344,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &1983374726
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -58626,6 +59581,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &2012290219
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59531,6 +60510,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &2019799278
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -60857,6 +61860,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &2041842296
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -61756,6 +62783,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &2047869896
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -63598,6 +64649,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &2121129783
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64497,6 +65572,30 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: -2}
   movementDuration: 2
   WaitTime: 10
+  Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &2124492816
 MeshCollider:
   m_ObjectHideFlags: 0
