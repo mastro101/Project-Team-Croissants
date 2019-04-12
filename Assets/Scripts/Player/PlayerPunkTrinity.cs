@@ -35,7 +35,7 @@ public class PlayerPunkTrinity : PlayerBase
         effect = FindObjectOfType<BuffEffects>();
         FindObjectOfType<AudioManager>().Play("PunkAbility");
         _effect = Instantiate(effect.InvertAbility, transform.position + new Vector3(0, 3.5f, 0), transform.rotation, transform);
-        Instantiate(trapPrefab, transform.position + (Vector3.up * 1), Quaternion.Euler(Vector3.zero), transform).GetComponent<InvertMovement>().SetTimer(timerAbility, effectTime);
+        Instantiate(trapPrefab, transform.position + (Vector3.up * 1), Quaternion.Euler(Vector3.zero), transform).GetComponent<TimerTrap>();
         /*isEffect = true;
         StartCoroutine(StopEffect());
         Debug.Log(isEffect);*/

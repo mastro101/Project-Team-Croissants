@@ -17,7 +17,7 @@ namespace StateMachine.Player
         {
             base.Enter();
             context.PlayerController.ResetCooldown();
-            context.Player.gameObject.SetActive(false);
+            context.Player.transform.position = new Vector3(200,-200,200);
             context.ExitState();
         }
     }

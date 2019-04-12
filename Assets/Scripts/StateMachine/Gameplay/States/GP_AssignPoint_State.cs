@@ -17,6 +17,10 @@ namespace StateMachine.Gameplay
 
         public override void Enter()
         {
+            foreach (IPlayer p in context.Players)
+            {
+                p.gameObject.SetActive(true);
+            }
             FindObjectOfType<AudioManager>().Play("EndRound");
             base.Enter();
             pointP1 = 0;
@@ -30,13 +34,14 @@ namespace StateMachine.Gameplay
                 //context.WinPointImageP1[i].SetActive(true);
                 pointP1++;
             }
-            for (int i = 0; i < context.Players[1].Points; i++)
-            {
-                context.WinCheckImageP2[i].SetActive(true);
-               // context.WinPointImageP2[i].SetActive(true);
-                pointP2++;
-            }
             if (context.Players.Count > 1)
+                for (int i = 0; i < context.Players[1].Points; i++)
+                {
+                    context.WinCheckImageP2[i].SetActive(true);
+                    // context.WinPointImageP2[i].SetActive(true);
+                    pointP2++;
+                }
+            if (context.Players.Count > 2)
             {
                 for (int i = 0; i < context.Players[2].Points; i++)
                 {
@@ -44,7 +49,7 @@ namespace StateMachine.Gameplay
                     pointP3++;
                 }
             }
-            if (context.Players.Count > 2)
+            if (context.Players.Count > 3)
             {
                 for (int i = 0; i < context.Players[3].Points; i++)
                 {
@@ -52,12 +57,10 @@ namespace StateMachine.Gameplay
                     pointP4++;
                 }
             }
-            if (context.Players.Count >= 3)
+
+            if (pointP1 >= 4 || pointP2 >= 4 || pointP3 >= 4 || pointP4 >= 4)
             {
-                if (pointP1 >= 4 || pointP2 >= 4 || pointP3 >= 4 || pointP4 >= 4)
-                {
-                    context.SetPoint(4);
-                }
+                context.SetPoint(4);
             }
         }
 

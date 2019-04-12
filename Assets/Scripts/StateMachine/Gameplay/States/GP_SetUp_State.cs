@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 namespace StateMachine.Gameplay
 {
@@ -30,6 +31,8 @@ namespace StateMachine.Gameplay
             {
                 if (player != null)
                 {
+                    context.AbilityReady[n].transform.GetChild(0).GetComponent<Image>().sprite = player.AbilitySprite;
+                    context.IconPlayer[n].sprite = player.IconCharacterSprite;
                     PlayerController playerC = player.gameObject.GetComponent<PlayerController>();
                     // playerC.dashTimerImage = context.DashTimerImage[n];
                     playerC.abilityTimerImage = context.AbilityTimerImage[n];

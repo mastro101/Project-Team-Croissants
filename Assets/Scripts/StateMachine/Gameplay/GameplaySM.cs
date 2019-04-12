@@ -23,6 +23,7 @@ namespace StateMachine.Gameplay
         public Image[] dashTimerImage, abilityTimerImage;
         public GameObject[] abilityReady;
         public TextMeshProUGUI[] abilityCDText;
+        public Image[] iconPlayer;
 
         public event GameplayStateEvent.EndState endBattle;
         public event GameplayStateEvent.StartState startBattle;
@@ -72,6 +73,7 @@ namespace StateMachine.Gameplay
                 AbilityTimerImage = abilityTimerImage,
                 AbilityReady = abilityReady,
                 AbilityCDText = abilityCDText,
+                IconPlayer = iconPlayer,
             };
             base.Start();
         }
@@ -127,6 +129,8 @@ namespace StateMachine.Gameplay
         public Image[] DashTimerImage, AbilityTimerImage;
         public GameObject[] AbilityReady;
         public TextMeshProUGUI[] AbilityCDText;
+
+        public Image[] IconPlayer;
     }
 
     public class GameplayStateEvent

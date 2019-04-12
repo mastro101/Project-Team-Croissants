@@ -7,7 +7,7 @@ public class Slowing : ItemBase
     float second = 2;
     [Range(-100, 100)]
     [SerializeField]
-    int PercentSlow;
+    protected int PercentSlow;
 
     protected override bool EffectOnTriggerEnter
     {

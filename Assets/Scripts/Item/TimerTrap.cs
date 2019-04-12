@@ -25,11 +25,6 @@ public class TimerTrap : Slowing
         StartCoroutine(Effect());
     }
 
-    public override void Effect(IPlayer _player)
-    {
-        _player.gameObject.AddComponent<BuffPlayer>().SetBuff(StatusCondiction.Slow, effectTime, timer);
-    }
-
     protected override void OnTriggerEnter(Collider other)
     {
         IPlayer player = other.GetComponent<IPlayer>();
