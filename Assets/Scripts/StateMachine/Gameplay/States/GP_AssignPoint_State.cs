@@ -36,23 +36,28 @@ namespace StateMachine.Gameplay
                // context.WinPointImageP2[i].SetActive(true);
                 pointP2++;
             }
-            for (int i = 0; i < context.Players[2].Points; i++)
+            if (context.Players.Count > 1)
             {
-                context.WinCheckImageP3[i].SetActive(true);
-                pointP3++;
+                for (int i = 0; i < context.Players[2].Points; i++)
+                {
+                    context.WinCheckImageP3[i].SetActive(true);
+                    pointP3++;
+                }
             }
-            for (int i = 0; i < context.Players[3].Points; i++)
+            if (context.Players.Count > 2)
             {
-                context.WinCheckImageP4[i].SetActive(true);
-                pointP4++;
+                for (int i = 0; i < context.Players[3].Points; i++)
+                {
+                    context.WinCheckImageP4[i].SetActive(true);
+                    pointP4++;
+                }
             }
-            if (pointP1 > pointP2)
+            if (context.Players.Count >= 3)
             {
-                context.SetPoint(pointP1);
-            }
-            else if (pointP2 > pointP1)
-            {
-                context.SetPoint(pointP2);
+                if (pointP1 >= 4 || pointP2 >= 4 || pointP3 >= 4 || pointP4 >= 4)
+                {
+                    context.SetPoint(4);
+                }
             }
         }
 

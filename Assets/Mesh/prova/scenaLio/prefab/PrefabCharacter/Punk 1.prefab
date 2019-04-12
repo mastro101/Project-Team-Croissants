@@ -457,9 +457,9 @@ GameObject:
   - component: {fileID: 2998531843337596396}
   - component: {fileID: 2998531843337596395}
   - component: {fileID: 2998531843337596394}
-  - component: {fileID: 2998531844188772515}
   - component: {fileID: 2998531843337596393}
   - component: {fileID: 2998531843337596392}
+  - component: {fileID: 3644524944010448294}
   m_Layer: 0
   m_Name: Punk 1
   m_TagString: Untagged
@@ -536,26 +536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab75ace2f64ebf4a9662c22672e42f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2998531844188772515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 144481851, guid: 46818c6fd3b1bdd4faf55cf92fce356c,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2998531843337596407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48dbc5961b5ec0642bee04f0cee55890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 8
-  dashDistance: 16
-  dashDuration: 0.5
-  dashCooldown: 2
-  abilityCooldown: 4
-  aim: {fileID: 2998531843280053509}
-  trapPrefab: {fileID: 1033149681314150, guid: 9dfc50b58b10b494da938a7737389623, type: 3}
 --- !u!114 &2998531843337596393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,7 +551,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   Direction: {x: 0, y: 0, z: 0}
-  nPlayer: 1
   up: 273
   left: 276
   down: 274
@@ -599,6 +578,31 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &3644524944010448294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998531843337596407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649dc2d1c8f334a4ba74f6acb7b93feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slectCharacterSprite: {fileID: 0}
+  abilitySprite: {fileID: 0}
+  iconCharacterSprite: {fileID: 0}
+  movementSpeed: 8
+  dashDistance: 16
+  dashDuration: 0.5
+  dashCooldown: 2
+  abilityCooldown: 10
+  aim: {fileID: 2998531843280053509}
+  effectTime: 5
+  timerAbility: 50
+  trapPrefab: {fileID: 4223719614770433423, guid: aa4a2185d9189a445b0c8032be4e07f2,
+    type: 3}
 --- !u!1 &2998531843342869820
 GameObject:
   m_ObjectHideFlags: 0

@@ -2822,8 +2822,8 @@ GameObject:
   - component: {fileID: 308616854927388314}
   - component: {fileID: 308616854927388313}
   - component: {fileID: 308616854927388312}
-  - component: {fileID: 308616854439750876}
   - component: {fileID: 308616854927388295}
+  - component: {fileID: 6517424984028892018}
   m_Layer: 0
   m_Name: Voodoo 1
   m_TagString: Untagged
@@ -2915,29 +2915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab75ace2f64ebf4a9662c22672e42f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &308616854439750876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 857220020, guid: 64556ac102602d74bb0b06a090fc6391,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308616854927388294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d97a9c4b6db604da24d11bd80d7a99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 8
-  dashDistance: 16
-  dashDuration: 0.5
-  dashCooldown: 2
-  abilityCooldown: 18
-  aim: {fileID: 308616853985957715}
-  effectTime: 6
-  timerAbility: 3
-  InverterBarrier: {fileID: 7287256027241058847, guid: 1901e8b0196fcc64f93ae8968a4faf18,
-    type: 3}
 --- !u!114 &308616854927388295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2953,7 +2930,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   Direction: {x: 0, y: 0, z: 0}
-  nPlayer: 0
   up: 119
   left: 97
   down: 115
@@ -2966,6 +2942,31 @@ MonoBehaviour:
   abilityReady: {fileID: 0}
   abilityCDText: {fileID: 0}
   InverterVector: 1
+--- !u!114 &6517424984028892018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308616854927388294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc6c69fc859b5c438d1acb9258cc8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slectCharacterSprite: {fileID: 0}
+  abilitySprite: {fileID: 0}
+  iconCharacterSprite: {fileID: 0}
+  movementSpeed: 8
+  dashDistance: 16
+  dashDuration: 0.5
+  dashCooldown: 2
+  abilityCooldown: 18
+  aim: {fileID: 308616853985957715}
+  effectTime: 1
+  timerAbility: 3
+  InverterBarrier: {fileID: 7287256027241058847, guid: 1901e8b0196fcc64f93ae8968a4faf18,
+    type: 3}
 --- !u!1 &308616854961047686
 GameObject:
   m_ObjectHideFlags: 0
