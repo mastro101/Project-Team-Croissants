@@ -2928,6 +2928,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d97a9c4b6db604da24d11bd80d7a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slectCharacterSprite: {fileID: 21300000, guid: ec6703078fa400a4a82f75a2e79a3b6d,
+    type: 3}
+  abilitySprite: {fileID: 0}
+  iconCharacterSprite: {fileID: 0}
   movementSpeed: 8
   dashDistance: 16
   dashDuration: 0.5
@@ -2953,7 +2957,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   Direction: {x: 0, y: 0, z: 0}
-  nPlayer: 0
   up: 119
   left: 97
   down: 115
