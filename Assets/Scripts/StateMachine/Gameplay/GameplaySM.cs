@@ -16,7 +16,7 @@ namespace StateMachine.Gameplay
         [SerializeField]
         GameObject canvas, endRoundPanel;
         [SerializeField]
-        GameObject[] winCheckImageP1, winCheckImageP2, winCheckImageP3, winCheckImageP4;
+        GameObject[] winCheckImageP1, winCheckImageP2, winCheckImageP3, winCheckImageP4, imageInseguito;
         [SerializeField]
         GameObject[] winPointImageP1, winPointImageP2;
 
@@ -66,6 +66,10 @@ namespace StateMachine.Gameplay
                 WinPointImageP2 = new GameObject[]
                 {
                     winPointImageP2[0], winPointImageP2[1], winPointImageP2[2]
+                },
+                ImageInseguito = new GameObject[]
+                {
+                    imageInseguito[0], imageInseguito[1], imageInseguito[2], imageInseguito[3]
                 },
                 EndRoundPanel = endRoundPanel,
                 SetPoint = setPoint,
@@ -123,7 +127,7 @@ namespace StateMachine.Gameplay
         public Action InvockeStartBattle;
         public Action<int> SetPoint;
         public GameObject Canvas, EndRoundPanel;
-        public GameObject[] WinCheckImageP1, WinCheckImageP2, WinCheckImageP3, WinCheckImageP4;
+        public GameObject[] WinCheckImageP1, WinCheckImageP2, WinCheckImageP3, WinCheckImageP4, ImageInseguito;
         public GameObject[] WinPointImageP1, WinPointImageP2;
 
         public Image[] DashTimerImage, AbilityTimerImage;

@@ -43,6 +43,11 @@ namespace StateMachine.Gameplay
                     PlayersController[i] = context.Players[i].gameObject.GetComponent<PlayerController>();
                 }
             }
+
+            foreach (IPlayer player in context.Players)
+            {
+                player.rigidbody.useGravity = true;
+            }
         }
 
         public override void Tick()

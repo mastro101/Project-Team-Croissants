@@ -31,6 +31,7 @@ namespace StateMachine.Gameplay
             {
                 if (player != null)
                 {
+                    player.rigidbody.useGravity = false;
                     context.AbilityReady[n].transform.GetChild(0).GetComponent<Image>().sprite = player.AbilitySprite;
                     context.IconPlayer[n].sprite = player.IconCharacterSprite;
                     PlayerController playerC = player.gameObject.GetComponent<PlayerController>();

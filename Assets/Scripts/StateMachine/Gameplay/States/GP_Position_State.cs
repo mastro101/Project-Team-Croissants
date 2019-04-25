@@ -29,19 +29,37 @@ namespace StateMachine.Gameplay
             countdown = Instantiate(countdownPrefab, new Vector3(0, 25, -17), Quaternion.Euler(56, 0, 0), FindObjectOfType<Camera>().transform);
             //animatorCountDown.SetTrigger("Start");
 
+            foreach (GameObject image in context.ImageInseguito)
+            {
+                image.SetActive(false);
+            }
+
             //Rimove mirino
             if (context.Enemy.PlayerToFollow != null)
             context.Enemy.PlayerToFollow.Aim.SetActive(false);
             // Cambio PlayerToFollow
                 // Scelta random provvisoria
-            context.Enemy.PlayerToFollow = context.Players[Random.Range(0, context.Players.Count)];
+            int nPlayer = Random.Range(0, context.Players.Count);
+            context.Enemy.PlayerToFollow = context.Players[nPlayer];
                 //
             context.Enemy.PlayerToFollow.Aim.SetActive(true);
+
+
+            int n = 0;
             foreach (IPlayer player in context.Players)
             {
                 if (player != null)
+                {
+                    player.rigidbody.useGravity = false;
                     player.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
+                    if (nPlayer == n)
+                    {
+                        context.ImageInseguito[n].SetActive(true);
+                    }
+                }
+                n++;
             }
+
             // Riposiziona i player nei loro punti iniziali
             int i = 0;
             foreach (IPlayer player in context.Players)

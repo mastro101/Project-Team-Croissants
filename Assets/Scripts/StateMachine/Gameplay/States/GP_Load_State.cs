@@ -20,7 +20,7 @@ namespace StateMachine.Gameplay
             {
                 if (player != null)
                 {
-                    GameObject p = Instantiate(player, Vector3.up * 1.5f, Quaternion.Euler(Vector3.zero));
+                    GameObject p = Instantiate(player, Vector3.up * (n + 2f), Quaternion.Euler(Vector3.zero));
                     p.GetComponent<PlayerController>().SetController(n);
                     context.Players.Add(p.GetComponent<IPlayer>());
                     n++;

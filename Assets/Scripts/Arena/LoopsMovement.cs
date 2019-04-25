@@ -28,9 +28,7 @@ public class LoopsMovement : MonoBehaviour
     private void Awake()
     {
         wallToMove = transform;
-       
     }
-
 
     private void Update()
     {
@@ -43,8 +41,6 @@ public class LoopsMovement : MonoBehaviour
         {
             spawn();
         }
-
-
     }
 
     public void SetValue(Vector3[] _paths, float _movementDuration, float _waitTime, AnimationCurve _curve, LoopType _loopType, int _loopTimes)
@@ -62,9 +58,7 @@ public class LoopsMovement : MonoBehaviour
         tween.Complete();
         tween.Rewind(true);
         tween.Kill();
-
     }
-
 
     public void PathMovements()
     {
