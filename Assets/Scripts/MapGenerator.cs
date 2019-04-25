@@ -35,7 +35,8 @@ public class MapGenerator : MonoBehaviour
             for (int y = 0; y < MapSize.y; y++)
             {
                 Vector3 tilePosition = new Vector3(-MapSize.x + (Outline * x), transform.position.y, -MapSize.y + (Outline * y));
-                Transform newTile = Instantiate(TilePrefab[Random.Range(0, TilePrefab.Length)], tilePosition, Quaternion.Euler(Vector3.zero));
+                int[] i = { 0, 90, 180, 270, 360 };
+                Transform newTile = Instantiate(TilePrefab[Random.Range(0, TilePrefab.Length)], tilePosition, Quaternion.Euler(Vector3.up * i[Random.Range(0, i.Length)]));
                 newTile.parent = mapHolder;
             }
         }
@@ -59,8 +60,9 @@ public class MapGenerator : MonoBehaviour
                 i++;
                 Debug.Log(i);
 
+                int[] r = { 0, 90, 180, 270, 360 };
                 //tile.CopyValue(newPosition, movementDuration, WaitTime);
-                Transform t = Instantiate(TilePrefab[Random.Range(0, TilePrefab.Length)], tile.transform.position, Quaternion.Euler(Vector3.zero));
+                Transform t = Instantiate(TilePrefab[Random.Range(0, TilePrefab.Length)], tile.transform.position, Quaternion.Euler(Vector3.up * r[Random.Range(0, r.Length)]));
                 t.GetComponent<ArenaMovement>().SetValue(tile.newPosition, tile.movementDuration, tile.WaitTime, tile.Curve);
                 //t.GetComponent<LoopsMovement>().SetValue(t.GetComponent<LoopsMovement>().Paths, t.GetComponent<LoopsMovement>().MovementDuration, t.GetComponent<LoopsMovement>().WaitTime, 
                 //t.GetComponent<LoopsMovement>().Curve, t.GetComponent<LoopsMovement>().LoopType, t.GetComponent<LoopsMovement>().Looptimes);
