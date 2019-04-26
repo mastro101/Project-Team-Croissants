@@ -2367,6 +2367,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 260540071}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &260540107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8007548542415457006, guid: b540a2e9425ecfc489113b0512150818,
+    type: 3}
+  m_PrefabInstance: {fileID: 260540071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &260540108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2908855101555200941, guid: b540a2e9425ecfc489113b0512150818,
+    type: 3}
+  m_PrefabInstance: {fileID: 260540071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &260540109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8234055279829522984, guid: b540a2e9425ecfc489113b0512150818,
+    type: 3}
+  m_PrefabInstance: {fileID: 260540071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &260540110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 883706062693278198, guid: b540a2e9425ecfc489113b0512150818,
+    type: 3}
+  m_PrefabInstance: {fileID: 260540071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &274201861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3594,6 +3618,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
+      propertyPath: playerCheckWin.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
       propertyPath: p1
       value: 
       objectReference: {fileID: 857220020}
@@ -3862,6 +3891,26 @@ PrefabInstance:
       propertyPath: imageInseguito.Array.data[3]
       value: 
       objectReference: {fileID: 260540103}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: playerCheckWin.Array.data[0]
+      value: 
+      objectReference: {fileID: 260540110}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: playerCheckWin.Array.data[1]
+      value: 
+      objectReference: {fileID: 260540109}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: playerCheckWin.Array.data[2]
+      value: 
+      objectReference: {fileID: 260540108}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: playerCheckWin.Array.data[3]
+      value: 
+      objectReference: {fileID: 260540107}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377f4ba49406d7d4d9dea5d038895dea, type: 3}
 --- !u!4 &474818130 stripped
@@ -16782,7 +16831,7 @@ PrefabInstance:
     - target: {fileID: 4666213398664103013, guid: 67e4c59e29078fd4690ca0986ee110a1,
         type: 3}
       propertyPath: m_Intensity
-      value: 47.746483
+      value: 159.15494
       objectReference: {fileID: 0}
     - target: {fileID: 4666213398664103013, guid: 67e4c59e29078fd4690ca0986ee110a1,
         type: 3}

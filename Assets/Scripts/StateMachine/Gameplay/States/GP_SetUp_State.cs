@@ -45,17 +45,27 @@ namespace StateMachine.Gameplay
                 }
             }
 
+            for (int i = n; i < 4; i++)
+            {
+                context.AbilityReady[i].SetActive(false);
+            }
+
+            for (int i = n; i < 4; i++)
+            {
+                context.PlayerCheckWin[i].SetActive(false);
+            }
+
             //context.P1.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P1;
             //context.P2.gameObject.GetComponent<PlayerController>().nPlayer = PlayerController.NPlayer.P2;
             
             context.EndRoundPanel.SetActive(false);
-            for (int i = 0; i < 3; i++)
-            {
+            //for (int i = 0; i < 3; i++)
+            //{
                 //context.WinCheckImageP1[i].SetActive(false);
                 //context.WinCheckImageP2[i].SetActive(false);
                 //context.WinPointImageP1[i].SetActive(false);
                 //context.WinPointImageP2[i].SetActive(false);
-            }
+            //}
             isSetup = true;
 
             //context.P1.gameObject.GetComponent<PlayerController>().dashTimerImage.fillAmount = 1;

@@ -16,7 +16,7 @@ namespace StateMachine.Gameplay
         [SerializeField]
         GameObject canvas, endRoundPanel;
         [SerializeField]
-        GameObject[] winCheckImageP1, winCheckImageP2, winCheckImageP3, winCheckImageP4, imageInseguito;
+        GameObject[] winCheckImageP1, winCheckImageP2, winCheckImageP3, winCheckImageP4, imageInseguito, playerCheckWin;
         [SerializeField]
         GameObject[] winPointImageP1, winPointImageP2;
 
@@ -59,18 +59,22 @@ namespace StateMachine.Gameplay
                 {
                     winCheckImageP4[0], winCheckImageP4[1], winCheckImageP4[2], winCheckImageP4[3],
                 },
-                WinPointImageP1 = new GameObject[]
-                {
-                    winPointImageP1[0], winPointImageP1[1], winPointImageP1[2]
-                },
-                WinPointImageP2 = new GameObject[]
-                {
-                    winPointImageP2[0], winPointImageP2[1], winPointImageP2[2]
-                },
                 ImageInseguito = new GameObject[]
                 {
                     imageInseguito[0], imageInseguito[1], imageInseguito[2], imageInseguito[3]
                 },
+                PlayerCheckWin = new GameObject[]
+                {
+                    playerCheckWin[0], playerCheckWin[1], playerCheckWin[2], playerCheckWin[3]
+                },
+                //WinPointImageP1 = new GameObject[]
+                //{
+                //    winPointImageP1[0], winPointImageP1[1], winPointImageP1[2]
+                //},
+                //WinPointImageP2 = new GameObject[]
+                //{
+                //    winPointImageP2[0], winPointImageP2[1], winPointImageP2[2]
+                //},
                 EndRoundPanel = endRoundPanel,
                 SetPoint = setPoint,
                 DashTimerImage = dashTimerImage,
@@ -127,7 +131,7 @@ namespace StateMachine.Gameplay
         public Action InvockeStartBattle;
         public Action<int> SetPoint;
         public GameObject Canvas, EndRoundPanel;
-        public GameObject[] WinCheckImageP1, WinCheckImageP2, WinCheckImageP3, WinCheckImageP4, ImageInseguito;
+        public GameObject[] WinCheckImageP1, WinCheckImageP2, WinCheckImageP3, WinCheckImageP4, ImageInseguito, PlayerCheckWin;
         public GameObject[] WinPointImageP1, WinPointImageP2;
 
         public Image[] DashTimerImage, AbilityTimerImage;
