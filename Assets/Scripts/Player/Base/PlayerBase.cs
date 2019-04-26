@@ -100,6 +100,20 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
         }
     }
 
+    Color color;
+    public Color Color
+    {
+        get { return color; }
+        set
+        {
+            color = value;
+            emission.color = color;
+        }
+    }
+
+    [SerializeField]
+    Light emission;
+
     protected virtual void Start()
     {
         originalSpeed = MovementSpeed;

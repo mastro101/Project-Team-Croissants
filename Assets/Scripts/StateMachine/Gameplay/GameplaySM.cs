@@ -10,6 +10,9 @@ namespace StateMachine.Gameplay
     public class GameplaySM : StateMachineBase
     {
         [SerializeField]
+        Color[] playersColor;
+
+        [SerializeField]
         EnemyBase enemy;
         [SerializeField]
         Transform enemyPosition;
@@ -82,6 +85,7 @@ namespace StateMachine.Gameplay
                 AbilityReady = abilityReady,
                 AbilityCDText = abilityCDText,
                 IconPlayer = iconPlayer,
+                PlayersColor = playersColor,
             };
             base.Start();
         }
@@ -139,6 +143,7 @@ namespace StateMachine.Gameplay
         public TextMeshProUGUI[] AbilityCDText;
 
         public Image[] IconPlayer;
+        public Color[] PlayersColor;
     }
 
     public class GameplayStateEvent

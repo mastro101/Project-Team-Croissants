@@ -65,7 +65,7 @@ namespace StateMachine.Gameplay
         {
             base.Exit();
             //DOTween.PauseAll();
-            context.Enemy.SM.SetTrigger("Idle");
+            context.Enemy.SM.SetTrigger("Destroy");
             context.Enemy.transform.localScale = Vector3.one;
             foreach (IPlayer player in context.Players)
             {
