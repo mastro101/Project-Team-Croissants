@@ -29,12 +29,13 @@ namespace StateMachine.Gameplay
             context.EndRoundPanel.SetActive(true);
             foreach (IPlayer player in context.Players)
             {
-                if (player.Points == 3)
+                if (player.Points == 4)
                     winText.text = player.Name + " Wins the match";
+                break;
             }
             tempPressTo = Instantiate(pressToGO, context.Canvas.transform);
             tempWin = Instantiate(winGO, context.Canvas.transform);
-
+            tempWin.GetComponent<TextMeshProUGUI>().text = winText.text;
         }
 
         public override void Tick()
@@ -55,6 +56,21 @@ namespace StateMachine.Gameplay
         public override void Exit()
         {
             base.Exit();
+
+            foreach (IPlayer player in context.Players)
+            {
+                player.Points = 0;
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                context.WinCheckImageP1[i].SetActive(false);
+                context.WinCheckImageP2[i].SetActive(false);
+                context.WinCheckImageP3[i].SetActive(false);
+                context.WinCheckImageP4[i].SetActive(false);
+
+            }
+
             context.EndRoundPanel.SetActive(false);
             Destroy(tempPressTo);
             Destroy(tempWin);

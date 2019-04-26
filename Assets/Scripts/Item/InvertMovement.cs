@@ -16,6 +16,8 @@ public class InvertMovement : ItemBase
 
     List<IPlayer> players = new List<IPlayer>();
 
+    public IPlayer MyPlayer;
+
     protected override void Start()
     {
         base.Start();
@@ -41,7 +43,8 @@ public class InvertMovement : ItemBase
         yield return new WaitForSeconds(timer);
         foreach (IPlayer player in players)
         {
-            Effect(player);
+            if (player != MyPlayer)
+                Effect(player);
         }
         //gameplaySM.endBattle -= OnSpawn;
         Destroy(gameObject);

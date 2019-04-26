@@ -9,9 +9,17 @@ namespace StateMachine.Gameplay
     {
         protected override string stateName { get { return "Load"; } }
 
+        [SerializeField]
+        GameObject tutorialPanel;
+
+        GameObject tutorialInScene;
+
         public override void Enter()
         {
             base.Enter();
+            tutorialInScene = Instantiate(tutorialPanel, context.Canvas.transform);
+            tutorialInScene.SetActive(true);
+
             SceneManager.LoadSceneAsync(context.GameManager.SelectedLevel, LoadSceneMode.Additive);
             context.Players = new List<IPlayer>();
 
@@ -27,5 +35,12 @@ namespace StateMachine.Gameplay
                 }
             }
         }
+
+        public override void Exit()
+        {
+            base.Exit();
+            Destroy(tutorialInScene);
+        }
+
     }
 }

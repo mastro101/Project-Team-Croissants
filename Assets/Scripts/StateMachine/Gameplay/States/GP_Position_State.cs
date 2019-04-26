@@ -36,7 +36,7 @@ namespace StateMachine.Gameplay
 
             //Rimove mirino
             if (context.Enemy.PlayerToFollow != null)
-            context.Enemy.PlayerToFollow.Aim.SetActive(false);
+                context.Enemy.PlayerToFollow.Aim.SetActive(false);
             // Cambio PlayerToFollow
                 // Scelta random provvisoria
             int nPlayer = Random.Range(0, context.Players.Count);
@@ -51,6 +51,7 @@ namespace StateMachine.Gameplay
                 if (player != null)
                 {
                     player.rigidbody.useGravity = false;
+                    player.rigidbody.velocity = Vector3.zero;
                     player.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
                     if (nPlayer == n)
                     {

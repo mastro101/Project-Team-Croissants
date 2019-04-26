@@ -13,6 +13,8 @@ public class PlayerVoodooMascherato : PlayerBase
     bool isEffect;
     BuffEffects effect;
 
+    GameObject barrier;
+
     public override int ID
     {
         get
@@ -36,7 +38,9 @@ public class PlayerVoodooMascherato : PlayerBase
         effect = FindObjectOfType<BuffEffects>();
         FindObjectOfType<AudioManager>().Play("VooDooAbility");
         _effect = Instantiate(effect.InvertAbility, transform.position + new Vector3(0, 3.5f, 0), transform.rotation, transform);
-        Instantiate(InverterBarrier, transform.position + (Vector3.up * 1), Quaternion.Euler(Vector3.zero)).GetComponent<InvertMovement>().SetTimer(timerAbility, effectTime);
+        barrier = Instantiate(InverterBarrier, transform.position + (Vector3.up * 1), Quaternion.Euler(Vector3.zero));
+        barrier.GetComponent<InvertMovement>().SetTimer(timerAbility, effectTime);
+        barrier.GetComponent<InvertMovement>().MyPlayer = this;
         /*isEffect = true;
         StartCoroutine(StopEffect());
         Debug.Log(isEffect);*/

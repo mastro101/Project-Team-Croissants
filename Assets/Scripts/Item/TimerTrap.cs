@@ -19,6 +19,8 @@ public class TimerTrap : Slowing
 
     List<IPlayer> players = new List<IPlayer>();
 
+    public IPlayer MyPlayer;
+
     protected override void Start()
     {
         base.Start();
@@ -39,7 +41,8 @@ public class TimerTrap : Slowing
         yield return new WaitForSeconds(timer);
         foreach (IPlayer player in players)
         {
-            Effect(player);
+            if (player != MyPlayer)
+                Effect(player);
         }
         Destroy(gameObject);
     }

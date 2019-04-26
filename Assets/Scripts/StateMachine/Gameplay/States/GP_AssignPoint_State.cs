@@ -68,6 +68,7 @@ namespace StateMachine.Gameplay
         {
             base.Exit();
             context.EndRoundPanel.SetActive(false);
+            context.SetPoint(0);
         }
     }
 }

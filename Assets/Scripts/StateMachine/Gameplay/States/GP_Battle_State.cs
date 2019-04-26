@@ -21,6 +21,11 @@ namespace StateMachine.Gameplay
         public override void Enter()
         {
             base.Enter();
+            foreach (IPlayer player in context.Players)
+            {
+                player.rigidbody.useGravity = true;
+            }
+
             context.InvockeStartBattle();
             NPlayerInGameOver = 0;
 
@@ -44,10 +49,6 @@ namespace StateMachine.Gameplay
                 }
             }
 
-            foreach (IPlayer player in context.Players)
-            {
-                player.rigidbody.useGravity = true;
-            }
         }
 
         public override void Tick()
@@ -84,6 +85,8 @@ namespace StateMachine.Gameplay
         void CheckGameOver(IPlayer player)
         {
             player.IsGameOver = true;
+            player.Aim.SetActive(false);
+            NPlayerInGameOver = 0;
             foreach (IPlayer p in context.Players)
             {
                 if (p != null && p.IsGameOver)
@@ -110,7 +113,11 @@ namespace StateMachine.Gameplay
                     if (p != null)
                     {
                         if (!p.IsGameOver)
-                        context.Enemy.PlayerToFollow = p;
+                        {
+                            context.Enemy.PlayerToFollow = p;
+                            p.Aim.SetActive(true);
+                            break;
+                        }
                     }
                 }
             }
