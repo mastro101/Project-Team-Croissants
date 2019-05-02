@@ -7,7 +7,7 @@ namespace StateMachine.Gameplay
     public class GP_SetUp_State : GP_Base_State
     {
         [SerializeField]
-        GameObject tutorialPanel;
+        GameObject tutorialPanel, GlowGO;
 
         GameObject tutorialInScene;
 
@@ -37,6 +37,7 @@ namespace StateMachine.Gameplay
                     context.IconPlayer[n].sprite = player.IconCharacterSprite;
                     PlayerController playerC = player.gameObject.GetComponent<PlayerController>();
                     // playerC.dashTimerImage = context.DashTimerImage[n];
+                    Instantiate(GlowGO, player.transform).GetComponent<SpriteRenderer>().color = player.Color;
                     playerC.abilityTimerImage = context.AbilityTimerImage[n];
                     playerC.abilityReady = context.AbilityReady[n];
                     playerC.abilityCDText = context.AbilityCDText[n];
@@ -45,6 +46,7 @@ namespace StateMachine.Gameplay
                     player.Points = 0;
                 }
             }
+
 
             for (int i = n; i < 4; i++)
             {

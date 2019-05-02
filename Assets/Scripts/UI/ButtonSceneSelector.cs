@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonSceneSelector : MonoBehaviour
 {
-    public int numeroScena;
+    public string NomeScena;
 
     public void SelectScene()
     {
-        FindObjectOfType<GameManager>().SelectedLevel = numeroScena;
+        FindObjectOfType<GameManager>().SelectedLevel = NomeScena;
         SceneManager.LoadScene("NuovaBaseScene");
     }
 }

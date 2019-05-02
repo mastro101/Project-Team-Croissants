@@ -45,11 +45,9 @@ public class PlayerController : MonoBehaviour
     float rotationSpeed;
 
 
-    public Image dashTimerImage, abilityTimerImage;
-    public GameObject abilityReady;
-
-
-    public TextMeshProUGUI abilityCDText;
+    [HideInInspector] public Image dashTimerImage, abilityTimerImage;
+    [HideInInspector] public GameObject abilityReady;
+    [HideInInspector] public TextMeshProUGUI abilityCDText;
 
     private void Awake()
     {

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [HideInInspector]
-    public int SelectedLevel;
+    public string SelectedLevel;
     [HideInInspector]
     public List<IPlayer> Players;
     [HideInInspector]
