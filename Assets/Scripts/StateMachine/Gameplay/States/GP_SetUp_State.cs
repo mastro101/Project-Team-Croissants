@@ -36,8 +36,8 @@ namespace StateMachine.Gameplay
                     context.AbilityReady[n].transform.GetChild(0).GetComponent<Image>().sprite = player.AbilitySprite;
                     context.IconPlayer[n].sprite = player.IconCharacterSprite;
                     PlayerController playerC = player.gameObject.GetComponent<PlayerController>();
-                    // playerC.dashTimerImage = context.DashTimerImage[n];
-                    Instantiate(GlowGO, player.transform).GetComponent<SpriteRenderer>().color = player.Color;
+                    //playerC.dashTimerImage = context.DashTimerImage[n];
+                    Instantiate(GlowGO, player.transform.position + new Vector3(0, 0.13f, 0), GlowGO.transform.rotation, player.transform).GetComponent<SpriteRenderer>().color = player.Color;
                     playerC.abilityTimerImage = context.AbilityTimerImage[n];
                     playerC.abilityReady = context.AbilityReady[n];
                     playerC.abilityCDText = context.AbilityCDText[n];
