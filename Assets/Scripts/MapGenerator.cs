@@ -48,42 +48,70 @@ public class MapGenerator : MonoBehaviour
         tilesinScene = new ArenaMovement[100];
 
         tilesinScene = FindObjectsOfType<ArenaMovement>();
-        tileinLoop = FindObjectsOfType<LoopsMovement>();
+        tileinLoop = new LoopsMovement[tilesinScene.Length];
+        int n = 0;
+        foreach (ArenaMovement go in tilesinScene)
+        {
+            tileinLoop[n] = go.GetComponent<LoopsMovement>();
+            n++;
+        }
+
         int i = 0;
+        Transform t = null;
         foreach (ArenaMovement tile in tilesinScene)
         {
             if (tile == null)
-                break;
+                continue;
 
             if (tile.gameObject.tag == "Ground")
             {
-                i++;
                 Debug.Log(i);
 
                 int[] r = { 0, 90, 180, 270, 360 };
                 //tile.CopyValue(newPosition, movementDuration, WaitTime);
-                Transform t = Instantiate(TilePrefab[Random.Range(0, TilePrefab.Length)], tile.transform.position, Quaternion.Euler(Vector3.up * r[Random.Range(0, r.Length)]));
+                t = Instantiate(TilePrefab[Random.Range(0, TilePrefab.Length)], tile.transform.position, Quaternion.Euler(Vector3.up * r[Random.Range(0, r.Length)]));
                 t.GetComponent<ArenaMovement>().SetValue(tile.newPosition, tile.movementDuration, tile.WaitTime, tile.Curve);
                 //t.GetComponent<LoopsMovement>().SetValue(t.GetComponent<LoopsMovement>().Paths, t.GetComponent<LoopsMovement>().MovementDuration, t.GetComponent<LoopsMovement>().WaitTime, 
                 //t.GetComponent<LoopsMovement>().Curve, t.GetComponent<LoopsMovement>().LoopType, t.GetComponent<LoopsMovement>().Looptimes);
                 t.parent = tile.transform.parent;
-                DestroyImmediate(tile.gameObject);
+                //DestroyImmediate(tile.gameObject);
+
+                LoopsMovement tileLoop = tile.GetComponent<LoopsMovement>();
+                LoopsMovement tLoop = t.GetComponent<LoopsMovement>();
+
+                if (tileLoop == null)
+                {
+                    DestroyImmediate(tile.gameObject);
+                    continue;
+                }
+
+                if (tLoop != null)
+                {
+                    if (tile.gameObject.tag == "Ground")
+                    {
+                        tLoop.Paths = new Vector3[tileLoop.Paths.Length];
+                        tLoop.SetValue(tileLoop.Paths, tileLoop.MovementDuration, tileLoop.WaitTime, tileLoop.Curve, tileLoop.LoopType, tileLoop.Looptimes);
+                        //t.parent = tile.transform.parent;
+                        DestroyImmediate(tile.gameObject);
+                    }
+                }
+
+                i++;
             }
         }
 
-        foreach (LoopsMovement tile in tileinLoop)
-        {
-            if (tile == null)
-                break;
-
-            if (tile.gameObject.tag == "Ground")
-            {
-                Transform t = Instantiate(TilePrefab[Random.Range(0, TilePrefab.Length)], tile.transform.position, Quaternion.Euler(Vector3.zero));
-                t.GetComponent<LoopsMovement>().Paths = new Vector3[tile.Paths.Length];
-                t.GetComponent<LoopsMovement>().SetValue(tile.Paths, tile.MovementDuration, tile.WaitTime, tile.Curve, tile.LoopType, tile.Looptimes);
-                t.parent = tile.transform.parent;
-                DestroyImmediate(tile.gameObject);
-            }
-        }
+        //foreach (LoopsMovement tile in tileinLoop)
+        //{
+        //    if (tile == null)
+        //        continue;
+        //
+        //    if (tile.gameObject.tag == "Ground")
+        //    {
+        //        t.GetComponent<LoopsMovement>().Paths = new Vector3[tile.Paths.Length];
+        //        t.GetComponent<LoopsMovement>().SetValue(tile.Paths, tile.MovementDuration, tile.WaitTime, tile.Curve, tile.LoopType, tile.Looptimes);
+        //        //t.parent = tile.transform.parent;
+        //        DestroyImmediate(tile.gameObject);
+        //    }
+        //}
     }
 }

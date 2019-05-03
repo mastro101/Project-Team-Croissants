@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace StateMachine.Gameplay
 {
@@ -9,6 +10,7 @@ namespace StateMachine.Gameplay
         //Animator animatorCountDown;
         [SerializeField]
         GameObject countdownPrefab, aimPrefab;
+        
 
         protected override string stateName
         {
@@ -34,16 +36,32 @@ namespace StateMachine.Gameplay
                 image.SetActive(false);
             }
 
-            //Rimove mirino
+            //Rimuove mirino
+
             if (context.Enemy.PlayerToFollow != null)
                 context.Enemy.PlayerToFollow.Aim.SetActive(false);
             // Cambio PlayerToFollow
-                // Scelta random provvisoria
-            int nPlayer = Random.Range(0, context.Players.Count);
-            context.Enemy.PlayerToFollow = context.Players[nPlayer];
-                //
-            context.Enemy.PlayerToFollow.Aim.SetActive(true);
+            int nPlayer = 0;
+            if (context.FollowPlayerList.Count == 0)
+            {
+                nPlayer = Random.Range(0, context.Players.Count);
+                context.FollowPlayerList.Add(context.Players[nPlayer]);
+                context.Enemy.PlayerToFollow = context.Players[nPlayer];
+            }
+            else if (context.FollowPlayerList.Count < context.Players.Count)
+            {
+                nPlayer = Random.Range(0, context.Players.Count);
+                foreach (IPlayer p in context.FollowPlayerList)
+                {
+                    if (context.Players[nPlayer] != p)
+                    {
+                        context.FollowPlayerList.Add(context.Players[nPlayer]);
+                        context.Enemy.PlayerToFollow = context.Players[nPlayer];
+                    }
+                }
+            }
 
+            //
 
             int n = 0;
             foreach (IPlayer player in context.Players)
@@ -60,6 +78,8 @@ namespace StateMachine.Gameplay
                 }
                 n++;
             }
+
+            context.Enemy.PlayerToFollow.Aim.SetActive(true);
 
             // Riposiziona i player nei loro punti iniziali
             int i = 0;

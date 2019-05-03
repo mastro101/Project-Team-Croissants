@@ -20,6 +20,7 @@ namespace StateMachine.Gameplay
         }
 
         bool isSetup;
+        GameObject[] glows = new GameObject[4];
 
         public override void Enter()
         {
@@ -37,7 +38,10 @@ namespace StateMachine.Gameplay
                     context.IconPlayer[n].sprite = player.IconCharacterSprite;
                     PlayerController playerC = player.gameObject.GetComponent<PlayerController>();
                     //playerC.dashTimerImage = context.DashTimerImage[n];
-                    Instantiate(GlowGO, player.transform.position + new Vector3(0, 0.13f, 0), GlowGO.transform.rotation, player.transform).GetComponent<SpriteRenderer>().color = player.Color;
+                    if (glows[n] != null)
+                        Destroy(glows[n]);
+                    glows[n] = Instantiate(GlowGO, player.transform.position + new Vector3(0, 0.13f, 0), GlowGO.transform.rotation, player.transform);
+                    glows[n].GetComponent<SpriteRenderer>().color = player.Color;
                     playerC.abilityTimerImage = context.AbilityTimerImage[n];
                     playerC.abilityReady = context.AbilityReady[n];
                     playerC.abilityCDText = context.AbilityCDText[n];

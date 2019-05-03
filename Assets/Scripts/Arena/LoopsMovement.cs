@@ -45,7 +45,12 @@ public class LoopsMovement : MonoBehaviour
 
     public void SetValue(Vector3[] _paths, float _movementDuration, float _waitTime, AnimationCurve _curve, LoopType _loopType, int _loopTimes)
     {
-        Paths = _paths;
+        int n = 0;
+        foreach (Vector3 p in _paths)
+        {
+            Paths[n] = p;
+            n++;
+        }
         MovementDuration = _movementDuration;
         WaitTime = _waitTime;
         Curve = _curve;
@@ -63,6 +68,5 @@ public class LoopsMovement : MonoBehaviour
     public void PathMovements()
     {
         tween = wallToMove.DOPath(Paths, MovementDuration).SetLoops<Tweener>(Looptimes, LoopType).SetDelay(WaitTime).SetRelative().SetEase(Curve);
-
     }
 }

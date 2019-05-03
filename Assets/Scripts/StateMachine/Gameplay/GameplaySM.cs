@@ -86,6 +86,7 @@ namespace StateMachine.Gameplay
                 AbilityCDText = abilityCDText,
                 IconPlayer = iconPlayer,
                 PlayersColor = playersColor,
+                FollowPlayerList = new List<IPlayer>(),
             };
             base.Start();
         }
@@ -144,6 +145,7 @@ namespace StateMachine.Gameplay
 
         public Image[] IconPlayer;
         public Color[] PlayersColor;
+        public List<IPlayer> FollowPlayerList;
     }
 
     public class GameplayStateEvent
