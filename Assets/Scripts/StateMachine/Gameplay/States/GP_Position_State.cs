@@ -22,6 +22,7 @@ namespace StateMachine.Gameplay
 
         SpawnPoint spawnPoint;
         GameObject countdown, aim;
+        int NplayerToFollow;
         public override void Enter()
         {
             //Destroy(aim);
@@ -47,18 +48,30 @@ namespace StateMachine.Gameplay
                 nPlayer = Random.Range(0, context.Players.Count);
                 context.FollowPlayerList.Add(context.Players[nPlayer]);
                 context.Enemy.PlayerToFollow = context.Players[nPlayer];
+                NplayerToFollow = 0;
             }
             else if (context.FollowPlayerList.Count < context.Players.Count)
             {
                 nPlayer = Random.Range(0, context.Players.Count);
+
                 foreach (IPlayer p in context.FollowPlayerList)
                 {
                     if (context.Players[nPlayer] != p)
                     {
                         context.FollowPlayerList.Add(context.Players[nPlayer]);
                         context.Enemy.PlayerToFollow = context.Players[nPlayer];
+                        break;
                     }
                 }
+            }
+            else
+            {
+                NplayerToFollow++;
+                if (NplayerToFollow >= context.FollowPlayerList.Count)
+                {
+                    NplayerToFollow = 0;
+                }
+                context.Enemy.PlayerToFollow = context.Players[NplayerToFollow];
             }
 
             //

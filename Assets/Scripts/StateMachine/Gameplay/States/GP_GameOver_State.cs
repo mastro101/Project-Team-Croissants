@@ -57,6 +57,7 @@ namespace StateMachine.Gameplay
         {
             base.Exit();
 
+            context.FollowPlayerList = new System.Collections.Generic.List<IPlayer>();
             foreach (IPlayer player in context.Players)
             {
                 player.Points = 0;
