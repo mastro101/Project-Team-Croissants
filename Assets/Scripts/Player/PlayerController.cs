@@ -115,7 +115,10 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                player.SM.SetBool("Run", true);
+                if (!player.SM.GetBool("Run") && (x != 0 || y != 0))
+                    player.SM.SetBool("Run", true);
+                else if (player.SM.GetBool("Run") && (x == 0 && y == 0))
+                    player.SM.SetBool("Run", false);
                 if (Input.GetKey(left))
                 {
                     //transform.position += Vector3.left * (float)speed;
