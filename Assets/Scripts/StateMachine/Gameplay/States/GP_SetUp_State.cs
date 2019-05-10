@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 namespace StateMachine.Gameplay
 {
@@ -51,6 +52,8 @@ namespace StateMachine.Gameplay
                 }
             }
 
+            context.FollowPlayerList.AddRange(context.Players);
+            ListExtension.Shuffle(context.FollowPlayerList);
 
             for (int i = n; i < 4; i++)
             {

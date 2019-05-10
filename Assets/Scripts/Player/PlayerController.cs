@@ -242,6 +242,8 @@ public class PlayerController : MonoBehaviour
             if (abilityCDText.text == "0")
             {
                 abilityReady.SetActive(true);
+                canAbility = true;
+                break;
             }
         
 
@@ -262,7 +264,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator CounterCoolDownAbility()
     {
         yield return new WaitForSeconds(player.AbilityCooldown);
-        canAbility = true;
+        //canAbility = true;
     }
 
     public void Jump()
@@ -291,7 +293,7 @@ public class PlayerController : MonoBehaviour
         canDash = true;
        // dashTimerImage.fillAmount = 1;
         abilityTimerImage.fillAmount = 1;
-
+        abilityCDText.text = "0";
     }
 
     //public enum NPlayer { P1, P2 }

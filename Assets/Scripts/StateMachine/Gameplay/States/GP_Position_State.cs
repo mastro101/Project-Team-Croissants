@@ -42,37 +42,14 @@ namespace StateMachine.Gameplay
             if (context.Enemy.PlayerToFollow != null)
                 context.Enemy.PlayerToFollow.Aim.SetActive(false);
             // Cambio PlayerToFollow
-            int nPlayer = 0;
-            if (context.FollowPlayerList.Count == 0)
+            
+            if (NplayerToFollow >= context.FollowPlayerList.Count)
             {
-                nPlayer = Random.Range(0, context.Players.Count);
-                context.FollowPlayerList.Add(context.Players[nPlayer]);
-                context.Enemy.PlayerToFollow = context.Players[nPlayer];
                 NplayerToFollow = 0;
             }
-            else if (context.FollowPlayerList.Count < context.Players.Count)
-            {
-                nPlayer = Random.Range(0, context.Players.Count);
-
-                foreach (IPlayer p in context.FollowPlayerList)
-                {
-                    if (context.Players[nPlayer] != p)
-                    {
-                        context.FollowPlayerList.Add(context.Players[nPlayer]);
-                        context.Enemy.PlayerToFollow = context.Players[nPlayer];
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                NplayerToFollow++;
-                if (NplayerToFollow >= context.FollowPlayerList.Count)
-                {
-                    NplayerToFollow = 0;
-                }
-                context.Enemy.PlayerToFollow = context.Players[NplayerToFollow];
-            }
+            context.Enemy.PlayerToFollow = context.FollowPlayerList[NplayerToFollow];
+            NplayerToFollow++;
+            
 
             //
 
@@ -84,7 +61,7 @@ namespace StateMachine.Gameplay
                     player.rigidbody.useGravity = false;
                     player.rigidbody.velocity = Vector3.zero;
                     player.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
-                    if (nPlayer == n)
+                    if (player == context.Enemy.PlayerToFollow)
                     {
                         context.ImageInseguito[n].SetActive(true);
                     }
