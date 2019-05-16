@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3616449094432170279}
   - component: {fileID: 6406267686814458708}
   - component: {fileID: 6284649715384708117}
+  - component: {fileID: 2204670358875312021}
   m_Layer: 0
   m_Name: ILMODULOV2
   m_TagString: Untagged
@@ -114,6 +115,19 @@ MonoBehaviour:
     m_RotationOrder: 4
   LoopType: 0
   Looptimes: -1
+--- !u!65 &2204670358875312021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595705422325832046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0.046883106, y: 0, z: -0.012656689}
 --- !u!1 &3040242873427122706
 GameObject:
   m_ObjectHideFlags: 0
