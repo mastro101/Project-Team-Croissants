@@ -24,6 +24,12 @@ public class ArenaMovement : MonoBehaviour
     Tween tween;
     Vector3 oldPosition;
 
+    //MEGA PROVVISORIO
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            MoveArena();
+    }
 
     private void Awake()
     {

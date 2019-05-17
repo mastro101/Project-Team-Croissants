@@ -11,7 +11,7 @@ public class LoopsMovement : MonoBehaviour
 
     GameplaySM gameplaysm;
 
-    public Vector3[] Paths;
+    public Vector3[] Paths = new Vector3[1];
 
     [SerializeField] public float MovementDuration = 1;
 
@@ -24,22 +24,25 @@ public class LoopsMovement : MonoBehaviour
 
     Tween tween;
 
-
-    private void Awake()
-    {
-        wallToMove = transform;
-    }
-
+    //MEGA PROVVISORIO
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        {
             PathMovements();
-        }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+    private void Awake()
+    {
+        gameplaysm = FindObjectOfType<GameplaySM>();
+        wallToMove = transform;
+    }
+
+    private void Start()
+    {
+        if (gameplaysm != null)
         {
-            spawn();
+            gameplaysm.startBattle += PathMovements;
+            gameplaysm.endBattle += spawn;
         }
     }
 
@@ -67,6 +70,8 @@ public class LoopsMovement : MonoBehaviour
 
     public void PathMovements()
     {
-        tween = wallToMove.DOPath(Paths, MovementDuration).SetLoops<Tweener>(Looptimes, LoopType).SetDelay(WaitTime).SetRelative().SetEase(Curve);
+        //AH pezzo di merda
+        if (Paths.Length > 0)
+            tween = wallToMove.DOPath(Paths, MovementDuration).SetLoops<Tweener>(Looptimes, LoopType).SetDelay(WaitTime).SetRelative().SetEase(Curve);
     }
 }
