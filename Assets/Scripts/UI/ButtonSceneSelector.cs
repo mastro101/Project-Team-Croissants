@@ -10,6 +10,6 @@ public class ButtonSceneSelector : MonoBehaviour
     public void SelectScene()
     {
         FindObjectOfType<GameManager>().SelectedLevel = NomeScena;
-        SceneManager.LoadScene("NuovaBaseScene");
+        SceneManager.LoadScene("Ambientazione2");
     }
 }

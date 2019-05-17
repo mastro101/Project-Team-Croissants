@@ -20,10 +20,8 @@ namespace StateMachine.Gameplay
         GameObject canvas, endRoundPanel;
         [SerializeField]
         GameObject[] winCheckImageP1, winCheckImageP2, winCheckImageP3, winCheckImageP4, imageInseguito, playerCheckWin;
-        [SerializeField]
-        GameObject[] winPointImageP1, winPointImageP2;
 
-        public Image[] dashTimerImage, abilityTimerImage;
+        public Image[] abilityTimerImage;
         public GameObject[] abilityReady;
         public TextMeshProUGUI[] abilityCDText;
         public Image[] iconPlayer;
@@ -80,7 +78,6 @@ namespace StateMachine.Gameplay
                 //},
                 EndRoundPanel = endRoundPanel,
                 SetPoint = setPoint,
-                DashTimerImage = dashTimerImage,
                 AbilityTimerImage = abilityTimerImage,
                 AbilityReady = abilityReady,
                 AbilityCDText = abilityCDText,
@@ -137,9 +134,8 @@ namespace StateMachine.Gameplay
         public Action<int> SetPoint;
         public GameObject Canvas, EndRoundPanel;
         public GameObject[] WinCheckImageP1, WinCheckImageP2, WinCheckImageP3, WinCheckImageP4, ImageInseguito, PlayerCheckWin;
-        public GameObject[] WinPointImageP1, WinPointImageP2;
 
-        public Image[] DashTimerImage, AbilityTimerImage;
+        public Image[] AbilityTimerImage;
         public GameObject[] AbilityReady;
         public TextMeshProUGUI[] AbilityCDText;
 
