@@ -27,7 +27,12 @@ public class Slowing : ItemBase
         {
             BuffPlayer buff = _player.gameObject.GetComponent<BuffPlayer>();
             if (buff.statusCondiction == StatusCondiction.Slow)
+            {
                 buff.RestartCorutine(second);
+                buff.restartStatistic();
+                Destroy(buff);
+                _player.gameObject.AddComponent<BuffPlayer>().SetBuff(StatusCondiction.Slow, (_player.MovementSpeed / 100) * PercentSlow, second);
+            }
             else
                 _player.gameObject.AddComponent<BuffPlayer>().SetBuff(StatusCondiction.Slow, (_player.MovementSpeed / 100) * PercentSlow, second);
         }

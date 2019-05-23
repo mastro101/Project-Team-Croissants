@@ -29,8 +29,8 @@ namespace StateMachine.Gameplay
             context.EndRoundPanel.SetActive(true);
             foreach (IPlayer player in context.Players)
             {
-                if (player.Points == 4)
-                    winText.text = player.Name + " Wins the match";
+                //if (player.Points == 4)
+                    //winText.text = player.Name + " Wins the match";
                 break;
             }
             tempPressTo = Instantiate(pressToGO, context.Canvas.transform);

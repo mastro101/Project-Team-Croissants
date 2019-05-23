@@ -47,10 +47,10 @@ public class BuffPlayer : MonoBehaviour
     {
         StopCoroutine(stopBuff(player));
         second = sec;
-        StartCoroutine(stopBuff(player));
+        //StartCoroutine(stopBuff(player));
     }
 
-    void restartStatistic()
+    public void restartStatistic()
     {
         switch (statusCondiction)
         {
@@ -100,7 +100,6 @@ public class BuffPlayer : MonoBehaviour
         yield return new WaitForSeconds(second);
         restartStatistic();
     }
-
 }
 
 public enum StatusCondiction

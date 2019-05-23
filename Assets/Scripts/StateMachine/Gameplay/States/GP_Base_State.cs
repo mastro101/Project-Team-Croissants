@@ -7,8 +7,6 @@ namespace StateMachine.Gameplay
     {
         protected GameplaySMContext context;
 
-        
-
         public override IState Setup(IStateMachineContext _context)
         {
             context = _context as GameplaySMContext;

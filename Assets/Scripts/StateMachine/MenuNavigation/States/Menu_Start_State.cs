@@ -15,6 +15,12 @@ namespace StateMachine.Menu
             }
         }
 
+        public override void Enter()
+        {
+            base.Enter();
+            
+        }
+
         public override void Tick()
         {
             base.Tick();
