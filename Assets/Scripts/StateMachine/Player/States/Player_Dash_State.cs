@@ -21,6 +21,7 @@ namespace StateMachine.Player
             cooldownDurationTimer = 0;
             context.PlayerController.canMove = false;
             context.Player.rigidbody.useGravity = false;
+            context.PlayerController.canPush = true;
             FindObjectOfType<AudioManager>().Play("Dash");
         }
 
@@ -42,6 +43,7 @@ namespace StateMachine.Player
             base.Exit();
             context.PlayerController.canMove = true;
             context.Player.rigidbody.useGravity = true;
+            context.PlayerController.canPush = false;
         }
 
     }

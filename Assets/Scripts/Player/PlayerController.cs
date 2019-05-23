@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     float cooldownDashTimer;
     bool canDash = true;
     bool canAbility = true;
+    public bool canPush = true;
+    [Range (1, 5)]
+    public float pushForce;
+    [Range(2, 5)]
+    public float pushHeight;
 
     public IPlayer player { private get; set; }
 
@@ -97,7 +102,7 @@ public class PlayerController : MonoBehaviour
         // Movimento del player
         if (canMove == true)
         {
-            player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction * InverterVector), rotationSpeed);
+            player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction * InverterVector),   rotationSpeed);
 
             //if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
             //{
@@ -214,6 +219,14 @@ public class PlayerController : MonoBehaviour
        // StartCoroutine(FillAmountDash());
     }
 
+    public void Push(IPlayer player)
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        player.rigidbody.AddForce(-rb.velocity.normalized * pushForce * 500);
+        player.rigidbody.AddForce(Vector3.up * pushHeight * 200);
+    }
+
+
    /* public IEnumerator FillAmountDash()
     {
         float t = 0;
@@ -294,6 +307,15 @@ public class PlayerController : MonoBehaviour
        // dashTimerImage.fillAmount = 1;
         abilityTimerImage.fillAmount = 1;
         abilityCDText.text = "0";
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        IPlayer playerPushed = collision.gameObject.GetComponent<IPlayer>();
+        if (playerPushed != null && canPush)
+        {
+            Push(playerPushed);
+        }
     }
 
     //public enum NPlayer { P1, P2 }

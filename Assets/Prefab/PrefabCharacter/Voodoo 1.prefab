@@ -2930,6 +2930,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   Direction: {x: 0, y: 0, z: 0}
+  canPush: 0
+  pushForce: 3
+  pushHeight: 3
   up: 119
   left: 97
   down: 115
