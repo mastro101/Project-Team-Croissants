@@ -18,7 +18,7 @@ namespace StateMachine.Menu
         public override void Enter()
         {
             base.Enter();
-            
+            context.StartPanel.SetActive(true);
         }
 
         public override void Tick()

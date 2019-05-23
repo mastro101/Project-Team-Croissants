@@ -8,6 +8,7 @@ namespace StateMachine.Menu
     public class MenuSM : StateMachineBase
     {
         [SerializeField] Animator luce;
+        [SerializeField] GameObject startPanel, menuPanel;
 
         protected override void Start()
         {
@@ -15,6 +16,8 @@ namespace StateMachine.Menu
             {
                 GenericGoNext = goNext,
                 Luce = luce,
+                StartPanel = startPanel,
+                MenuPanel = menuPanel,
             };
             base.Start();
         }
@@ -34,5 +37,6 @@ namespace StateMachine.Menu
     {
         public Action GenericGoNext;
         public Animator Luce;
+        public GameObject StartPanel, MenuPanel;
     }
 }
