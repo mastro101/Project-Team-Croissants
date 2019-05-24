@@ -73,6 +73,7 @@ namespace StateMachine.Gameplay
                 {
                     player.SM.SetBool("Run", false);
                     player.transform.rotation = Quaternion.Euler(Vector3.zero);
+                    player.rigidbody.rotation = Quaternion.Euler(Vector3.zero);
                 }
             }
             foreach (IEnemy enemy in context.Enemies)
@@ -107,16 +108,37 @@ namespace StateMachine.Gameplay
                 }
             }
             else
-            { 
-                foreach (IPlayer p in context.Players)
+            {
+                if (player == context.Enemy.PlayerToFollow)
                 {
-                    if (p != null)
+                    int i = 0;
+                    foreach (IPlayer p in context.FollowPlayerList)
                     {
-                        if (!p.IsGameOver)
+                        if (p != null)
                         {
-                            context.Enemy.PlayerToFollow = p;
-                            p.Aim.SetActive(true);
-                            break;
+                            if (p == player)
+                            {
+                                i++;
+                                if (i >= context.FollowPlayerList.Count)
+                                    i = 0;
+
+                                for (int n = 0; n < context.FollowPlayerList.Count; n++)
+                                {
+                                    if (context.FollowPlayerList[i].IsGameOver)
+                                    {
+                                        i++;
+                                        if (i >= context.FollowPlayerList.Count)
+                                            i = 0;
+                                    }
+                                }
+
+                                context.Enemy.PlayerToFollow = context.FollowPlayerList[i];
+                                context.FollowPlayerList[i].Aim.SetActive(true);
+                                break;
+                            }
+                            i++;
+                            if (i >= context.FollowPlayerList.Count)
+                                i = 0;
                         }
                     }
                 }

@@ -21,6 +21,7 @@ namespace StateMachine.Player
             cooldownDurationTimer = 0;
             context.PlayerController.canMove = false;
             context.Player.rigidbody.useGravity = false;
+            context.Player.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
             context.PlayerController.canPush = true;
             FindObjectOfType<AudioManager>().Play("Dash");
         }
@@ -44,6 +45,10 @@ namespace StateMachine.Player
             context.PlayerController.canMove = true;
             context.Player.rigidbody.useGravity = true;
             context.PlayerController.canPush = false;
+            context.Player.rigidbody.freezeRotation = false;
+            context.Player.rigidbody.constraints = RigidbodyConstraints.None;
+            context.Player.rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
         }
 
     }
