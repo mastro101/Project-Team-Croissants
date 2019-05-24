@@ -7,6 +7,20 @@ using UnityEngine.SceneManagement;
 // PROVVISORIO
 public class Restart : MonoBehaviour
 {
+    public static Restart Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Update()
     {
