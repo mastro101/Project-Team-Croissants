@@ -88,7 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000000, guid: 0739bd01778c69745ba5a13d45e93188,
+  m_LightingDataAsset: {fileID: 112000004, guid: 618a5ae378dc14945a379acd99b2c27c,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -2200,6 +2200,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8ba8868c22e46664fb63d2246793436a, type: 2}
+    - target: {fileID: 9209753680975079200, guid: 5dfb711277de77640a4eb2b8954f070e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 282297250364532768, guid: 5dfb711277de77640a4eb2b8954f070e,
         type: 3}
       propertyPath: m_Intensity
@@ -2219,11 +2224,6 @@ PrefabInstance:
         type: 3}
       propertyPath: displayLightIntensity
       value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209753680975079200, guid: 5dfb711277de77640a4eb2b8954f070e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfb711277de77640a4eb2b8954f070e, type: 3}
@@ -12088,6 +12088,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8ba8868c22e46664fb63d2246793436a, type: 2}
+    - target: {fileID: 9209753680975079200, guid: 5dfb711277de77640a4eb2b8954f070e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 282297250364532768, guid: 5dfb711277de77640a4eb2b8954f070e,
         type: 3}
       propertyPath: m_Intensity
@@ -12107,11 +12112,6 @@ PrefabInstance:
         type: 3}
       propertyPath: displayLightIntensity
       value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209753680975079200, guid: 5dfb711277de77640a4eb2b8954f070e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfb711277de77640a4eb2b8954f070e, type: 3}
@@ -14377,6 +14377,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8ba8868c22e46664fb63d2246793436a, type: 2}
+    - target: {fileID: 9209753680975079200, guid: 5dfb711277de77640a4eb2b8954f070e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 282297250364532768, guid: 5dfb711277de77640a4eb2b8954f070e,
         type: 3}
       propertyPath: m_Intensity
@@ -14396,11 +14401,6 @@ PrefabInstance:
         type: 3}
       propertyPath: displayLightIntensity
       value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209753680975079200, guid: 5dfb711277de77640a4eb2b8954f070e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfb711277de77640a4eb2b8954f070e, type: 3}
@@ -31669,6 +31669,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8ba8868c22e46664fb63d2246793436a, type: 2}
+    - target: {fileID: 9209753680975079200, guid: 5dfb711277de77640a4eb2b8954f070e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 282297250364532768, guid: 5dfb711277de77640a4eb2b8954f070e,
         type: 3}
       propertyPath: m_Intensity
@@ -31688,11 +31693,6 @@ PrefabInstance:
         type: 3}
       propertyPath: displayLightIntensity
       value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209753680975079200, guid: 5dfb711277de77640a4eb2b8954f070e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfb711277de77640a4eb2b8954f070e, type: 3}
