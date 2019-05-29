@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2400542526373120107
 Transform:
@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Colonna
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e66996e0749d6fe48aa8a709676644ee, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e66996e0749d6fe48aa8a709676644ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -115,18 +119,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: e66996e0749d6fe48aa8a709676644ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e66996e0749d6fe48aa8a709676644ee, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e66996e0749d6fe48aa8a709676644ee, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: e66996e0749d6fe48aa8a709676644ee, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: e66996e0749d6fe48aa8a709676644ee, type: 3}
       propertyPath: m_Materials.Array.data[0]
