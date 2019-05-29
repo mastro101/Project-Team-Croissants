@@ -63,14 +63,18 @@ public class PlayerController : MonoBehaviour
     public void SetController(int _nPlayer)
     {
         NPlayer = _nPlayer;
-        if (FindObjectOfType<SetController>() != null)
+        SetController setController = FindObjectOfType<SetController>();
+        if (setController != null)
         {
-            controller = FindObjectOfType<SetController>().AssignedController[NPlayer];
-            h = "J" + controller + "H";
-            v = "J" + controller + "V";
-            DashButton = "J" + controller + "A";
-            AbilityButton = "J" + controller + "X";
-            setInput = true;
+            if (setController.AssignedController.Count > NPlayer)
+            {
+                controller = FindObjectOfType<SetController>().AssignedController[NPlayer];
+                h = "J" + controller + "H";
+                v = "J" + controller + "V";
+                DashButton = "J" + controller + "A";
+                AbilityButton = "J" + controller + "X";
+                setInput = true;
+            }
         }
     }
 
