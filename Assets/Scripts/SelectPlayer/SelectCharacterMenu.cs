@@ -61,6 +61,10 @@ public class SelectCharacterMenu : MonoBehaviour
             else if (Input.GetAxis("J" + setController.AssignedController[playerInt - 1].ToString() + "H") < 0.7f && Input.GetAxis("J" + setController.AssignedController[playerInt - 1].ToString() + "H") > -0.7f)
                 b = false;
         }
+        else if (!choosed && (playerInt == 1 && Input.GetKeyDown(KeyCode.Space)) || (playerInt == 2 && Input.GetKeyDown(KeyCode.RightControl)))
+        {
+            choose();
+        }
     }
 
     void choose()
