@@ -49600,16 +49600,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2183479
       objectReference: {fileID: 0}
-    - target: {fileID: 198446072704972968, guid: a8bab10fc7d39d5448d0d03c2b0a7c2f,
+    - target: {fileID: 199550733326467134, guid: a8bab10fc7d39d5448d0d03c2b0a7c2f,
         type: 3}
-      propertyPath: NoiseModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198446072704972968, guid: a8bab10fc7d39d5448d0d03c2b0a7c2f,
-        type: 3}
-      propertyPath: NoiseModule.separateAxes
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c7fec2238bada74ab4f7efa3deca06f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8bab10fc7d39d5448d0d03c2b0a7c2f, type: 3}
 --- !u!1 &1611582583

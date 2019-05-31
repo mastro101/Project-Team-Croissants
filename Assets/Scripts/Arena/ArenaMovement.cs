@@ -27,8 +27,8 @@ public class ArenaMovement : MonoBehaviour
     //MEGA PROVVISORIO
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            MoveArena();
+//        if (Input.GetKeyDown(KeyCode.Space))
+//            MoveArena();
     }
 
     private void Awake()
