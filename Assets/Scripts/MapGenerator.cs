@@ -34,13 +34,15 @@ public class MapGenerator : MonoBehaviour
         {
             for (int y = 0; y < MapSize.y; y++)
             {
-                Vector3 tilePosition = new Vector3((Outline * x), transform.position.y,(Outline * y));
+                
+
+                //Vector3 tilePosition = new Vector3((3 * x) , transform.position.y,(3 * y));
+                Vector3 tilePosition = new Vector3((Outline * x) - (MapSize.x * Outline / 2) + Outline / 2, transform.position.y, (Outline * y) - (MapSize.y * Outline / 2) + Outline / 2);
                 int[] i = { 0, 90, 180, 270, 360 };
-                Transform newTile = Instantiate(TilePrefab[Random.Range(0, TilePrefab.Length)], tilePosition, Quaternion.Euler(Vector3.up * i[Random.Range(0, i.Length)]));
-                newTile.parent = mapHolder;
+                Transform newTile = Instantiate(TilePrefab[Random.Range(0, TilePrefab.Length)], tilePosition, Quaternion.Euler(Vector3.up * i[Random.Range(0, i.Length)]), mapHolder);
             }
         }
-        mapHolder.position = new Vector3(mapHolder.transform.position.x - (MapSize.x), mapHolder.transform.position.y, mapHolder.transform.position.z - (MapSize.y));
+        //mapHolder.position = new Vector3(mapHolder.transform.position.x - (MapSize.x - Outline/2), mapHolder.transform.position.y, mapHolder.transform.position.z - (MapSize.y - Outline/2));
     }
 
     public void UpdateMap()
