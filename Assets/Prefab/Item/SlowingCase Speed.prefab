@@ -71,10 +71,11 @@ PrefabInstance:
       propertyPath: slowingSpawn
       value: 
       objectReference: {fileID: 53750688811995430}
-    - target: {fileID: 4125432424559594, guid: 77d45e08e2a54a24d989cf43e8b9ab5f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 114534803538036402, guid: 77d45e08e2a54a24d989cf43e8b9ab5f,
+        type: 3}
+      propertyPath: anfora
+      value: 
+      objectReference: {fileID: 1245382655819500805}
     - target: {fileID: 136902975656288660, guid: 77d45e08e2a54a24d989cf43e8b9ab5f,
         type: 3}
       propertyPath: m_Direction
@@ -94,6 +95,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125432424559594, guid: 77d45e08e2a54a24d989cf43e8b9ab5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7286162266969702122, guid: 77d45e08e2a54a24d989cf43e8b9ab5f,
         type: 3}
@@ -188,3 +193,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e872059410e0b4e9a7edc7f52b3cea, type: 3}
+--- !u!1 &1245382655819500805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2256403079248732480, guid: 18e872059410e0b4e9a7edc7f52b3cea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1015603806940572741}
+  m_PrefabAsset: {fileID: 0}

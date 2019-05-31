@@ -66,6 +66,7 @@ MonoBehaviour:
     type: 3}
   ExpandValue: 3
   slowingSpawn: {fileID: 4125432424559594}
+  anfora: {fileID: 7286162266969702122}
 --- !u!54 &54730285978705602
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -194,8 +195,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 48e9e02c289304449b40c1e6666b40ff, type: 2}
+    - target: {fileID: 2300000, guid: 2fc72d512c002eb48b559c40864b0308, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fc72d512c002eb48b559c40864b0308, type: 3}
+--- !u!1 &7286162266969702122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 2fc72d512c002eb48b559c40864b0308,
+    type: 3}
+  m_PrefabInstance: {fileID: 7286162266969667658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7286162266969531082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2fc72d512c002eb48b559c40864b0308,

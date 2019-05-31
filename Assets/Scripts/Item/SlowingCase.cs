@@ -11,6 +11,8 @@ public class SlowingCase : ItemBase
 
     [SerializeField]
     Transform slowingSpawn;
+    [SerializeField]
+    GameObject anfora;
 
     Tween tween;
     Vector3 directionFall;
@@ -39,6 +41,7 @@ public class SlowingCase : ItemBase
         collider.enabled = true;
         tween.Pause();
         transform.rotation = oldRotation;
+        anfora.SetActive(true);
     }
 
     public override void OnTake(IPlayer player)
@@ -47,7 +50,8 @@ public class SlowingCase : ItemBase
         collider.enabled = false;
         directionFall = player.gameObject.GetComponent<PlayerController>().Direction;
         transform.rotation = Quaternion.LookRotation(directionFall);
-        tween = transform.DORotate(new Vector3(90, 0, 0), 0.5f).SetRelative();
+        //tween = transform.DORotate(new Vector3(90, 0, 0), 0.5f).SetRelative();
+        anfora.SetActive(false);
     }
 
     GameObject slowing;
@@ -56,8 +60,8 @@ public class SlowingCase : ItemBase
 
     public override void Effect(IPlayer _player)
     {
-        slowing = Instantiate(slowingObject, slowingSpawn.position, Quaternion.LookRotation(directionFall));
-        slowing.transform.DOScaleZ(ExpandValue, 1);
+        slowing = Instantiate(slowingObject, slowingSpawn.position, Quaternion.Euler(Vector3.zero));
+        //slowing.transform.DOScaleZ(ExpandValue, 1);
         StartCoroutine(MoveSlowing());
     }
 
@@ -65,7 +69,8 @@ public class SlowingCase : ItemBase
     {
         while (true)
         {
-            slowing.transform.position = slowingSpawn.position + (Vector3.up * slowingSpawn.localPosition.y);
+            if (slowing != null)
+                slowing.transform.position = slowingSpawn.position + (Vector3.up * slowingSpawn.localPosition.y);
             yield return null;
         }
     }
