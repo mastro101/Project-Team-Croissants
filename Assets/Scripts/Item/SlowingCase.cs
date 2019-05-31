@@ -37,11 +37,11 @@ public class SlowingCase : ItemBase
     public override void OnSpawn()
     {
         base.OnSpawn();
+        anfora.SetActive(true);
         StopCoroutine(MoveSlowing());
         collider.enabled = true;
         tween.Pause();
         transform.rotation = oldRotation;
-        anfora.SetActive(true);
     }
 
     public override void OnTake(IPlayer player)

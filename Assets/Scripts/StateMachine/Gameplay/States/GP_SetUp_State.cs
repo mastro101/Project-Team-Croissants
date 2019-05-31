@@ -43,6 +43,11 @@ namespace StateMachine.Gameplay
                         Destroy(glows[n]);
                     glows[n] = Instantiate(GlowGO, player.transform.position + new Vector3(0, 0.13f, 0), GlowGO.transform.rotation, player.transform);
                     glows[n].GetComponent<SpriteRenderer>().color = player.Color;
+                    if (player.DashVFX != null)
+                    {
+                        ParticleSystem.MainModule mainModule = player.DashVFX.main;
+                        mainModule.startColor = player.Color;
+                    }
                     playerC.abilityTimerImage = context.AbilityTimerImage[n];
                     playerC.abilityReady = context.AbilityReady[n];
                     playerC.abilityCDText = context.AbilityCDText[n];

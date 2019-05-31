@@ -26,6 +26,13 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     Sprite iconCharacterSprite;
     public Sprite IconCharacterSprite { get { return iconCharacterSprite; } }
 
+    [SerializeField]
+    ParticleSystem dashVFX;
+    public ParticleSystem DashVFX {
+        get { return dashVFX; }
+        set { dashVFX = value; }
+    }
+
     protected int points;
     public virtual int Points
     {
@@ -117,6 +124,7 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     protected virtual void Start()
     {
         originalSpeed = MovementSpeed;
+        DashVFX.Stop();
     }
 
     public float GetOriginalSpeed()

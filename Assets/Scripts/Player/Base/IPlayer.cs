@@ -23,6 +23,7 @@ public interface IPlayer
     Sprite IconCharacterSprite { get; }
     bool IsGameOver { get; set; }
     Color Color { get; set; }
+    ParticleSystem DashVFX { get; set; }
     //float JumpForce { get; }
 
     // Abilità unica del personaggio

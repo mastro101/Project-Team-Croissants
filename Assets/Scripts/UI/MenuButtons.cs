@@ -7,7 +7,7 @@ public class MenuButtons : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("CharacterSelect");
+        SceneManager.LoadScene("B_CharacterSelect");
     }
 
     public void ExitGame()

@@ -26,7 +26,7 @@ public class Restart : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            SceneManager.LoadScene("SceneSelector");
+            SceneManager.LoadScene("B_SceneSelector");
             FindObjectOfType<AudioManager>().Pause();
         }
 

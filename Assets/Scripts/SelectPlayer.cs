@@ -124,7 +124,7 @@ public class SelectPlayer : MonoBehaviour
             {
                 FindObjectOfType<GameManager>().PlayersGO[1] = Characters[0];
             }
-            SceneManager.LoadScene("SceneSelector");
+            SceneManager.LoadScene("B_SceneSelector");
         }
     }
 

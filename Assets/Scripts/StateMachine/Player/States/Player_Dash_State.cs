@@ -24,6 +24,7 @@ namespace StateMachine.Player
             context.Player.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
             context.PlayerController.canPush = true;
             FindObjectOfType<AudioManager>().Play("Dash");
+            context.Player.DashVFX.Play();
         }
 
         public override void Tick()
@@ -48,7 +49,7 @@ namespace StateMachine.Player
             context.Player.rigidbody.freezeRotation = false;
             context.Player.rigidbody.constraints = RigidbodyConstraints.None;
             context.Player.rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-
+            context.Player.DashVFX.Stop();
         }
 
     }
