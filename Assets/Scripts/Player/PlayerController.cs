@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Image dashTimerImage, abilityTimerImage;
     [HideInInspector] public GameObject abilityReady;
     [HideInInspector] public TextMeshProUGUI abilityCDText;
+    [HideInInspector] public Animator abilityUIAnimator;
+
 
     private void Awake()
     {
@@ -245,6 +247,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator FillAmountAbility()
     {
         abilityReady.SetActive(false);
+        abilityUIAnimator.gameObject.SetActive(false);
         abilityTimerImage.fillAmount = 0;
         float t = 0;
         float timeLeft = player.AbilityCooldown;
@@ -259,6 +262,9 @@ public class PlayerController : MonoBehaviour
             if (abilityCDText.text == "0")
             {
                 abilityReady.SetActive(true);
+                abilityUIAnimator.gameObject.SetActive(true);
+                abilityUIAnimator.SetTrigger("Anim");
+
                 canAbility = true;
                 break;
             }
