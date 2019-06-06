@@ -11,6 +11,8 @@ namespace StateMachine.Gameplay
     {
         [SerializeField]
         Color[] playersColor;
+        [SerializeField]
+        GameObject[] baroneVFX;
 
         [SerializeField]
         EnemyBase enemy;
@@ -83,6 +85,7 @@ namespace StateMachine.Gameplay
                 AbilityCDText = abilityCDText,
                 IconPlayer = iconPlayer,
                 PlayersColor = playersColor,
+                VoodooBarrierVFX = baroneVFX,
                 FollowPlayerList = new List<IPlayer>(),
             };
             base.Start();
@@ -141,6 +144,7 @@ namespace StateMachine.Gameplay
 
         public Image[] IconPlayer;
         public Color[] PlayersColor;
+        public GameObject[] VoodooBarrierVFX;
         public List<IPlayer> FollowPlayerList;
     }
 

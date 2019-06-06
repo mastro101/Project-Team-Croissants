@@ -8,7 +8,7 @@ public class PlayerVoodoo : PlayerBase
     float effectTime, timerAbility;
 
     [SerializeField]
-    GameObject InverterBarrier;
+    public GameObject InverterBarrier;
 
     bool isEffect;
     BuffEffects effect;
