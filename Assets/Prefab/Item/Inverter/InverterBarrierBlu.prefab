@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7287256027241058847, guid: 1901e8b0196fcc64f93ae8968a4faf18,
-        type: 3}
-      propertyPath: m_Name
-      value: InverterBarrierBlu
-      objectReference: {fileID: 0}
     - target: {fileID: 1290941860267900870, guid: 1901e8b0196fcc64f93ae8968a4faf18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,6 +61,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287256027241058847, guid: 1901e8b0196fcc64f93ae8968a4faf18,
+        type: 3}
+      propertyPath: m_Name
+      value: InverterBarrierBlu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1901e8b0196fcc64f93ae8968a4faf18, type: 3}
