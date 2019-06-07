@@ -566,6 +566,7 @@ MonoBehaviour:
   abilityTimerImage: {fileID: 0}
   abilityReady: {fileID: 0}
   abilityCDText: {fileID: 0}
+  abilityUIAnimator: {fileID: 0}
   InverterVector: 1
 --- !u!136 &2998531843337596392
 CapsuleCollider:
@@ -594,7 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649dc2d1c8f334a4ba74f6acb7b93feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slectCharacterSprite: {fileID: 21300000, guid: 775946684232bc746943b39447eea0b7,
+  slectCharacterSprite: {fileID: 21300000, guid: 142ff67b41b5eaa41af60028b919cf48,
     type: 3}
   abilitySprite: {fileID: 21300000, guid: bb114b733c98a764faa53bb43b43bfd3, type: 3}
   iconCharacterSprite: {fileID: 21300000, guid: 6a611417ce2483f4da1082bfb891dd6f,
