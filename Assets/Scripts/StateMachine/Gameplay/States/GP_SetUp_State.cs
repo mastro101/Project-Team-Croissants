@@ -51,6 +51,18 @@ namespace StateMachine.Gameplay
                     playerC.abilityTimerImage = context.AbilityTimerImage[n];
                     playerC.abilityReady = context.AbilityReady[n];
                     playerC.abilityCDText = context.AbilityCDText[n];
+                    playerC.abilityUIAnimator = context.UIAbilityAnimation[n];
+                    PlayerVoodoo voodoo = player.gameObject.GetComponent<PlayerVoodoo>();
+                    PlayerVoodooMascherato voodooMascherato = player.gameObject.GetComponent<PlayerVoodooMascherato>();
+                    if (voodoo != null)
+                    {
+                        voodoo.InverterBarrier = context.VoodooBarrierVFX[n];
+                    }
+                    else if (voodooMascherato != null)
+                    {
+                        voodooMascherato.InverterBarrier = context.VoodooBarrierVFX[n];
+                    }
+
                     n++;
 
                     player.Points = 0;

@@ -11,6 +11,8 @@ namespace StateMachine.Gameplay
     {
         [SerializeField]
         Color[] playersColor;
+        [SerializeField]
+        GameObject[] baroneVFX;
 
         [SerializeField]
         EnemyBase enemy;
@@ -25,6 +27,7 @@ namespace StateMachine.Gameplay
         public GameObject[] abilityReady;
         public TextMeshProUGUI[] abilityCDText;
         public Image[] iconPlayer;
+        [SerializeField] Animator[] UIAbilityAnimation;
 
         public event GameplayStateEvent.EndState endBattle;
         public event GameplayStateEvent.StartState startBattle;
@@ -83,6 +86,8 @@ namespace StateMachine.Gameplay
                 AbilityCDText = abilityCDText,
                 IconPlayer = iconPlayer,
                 PlayersColor = playersColor,
+                VoodooBarrierVFX = baroneVFX,
+                UIAbilityAnimation = UIAbilityAnimation,
                 FollowPlayerList = new List<IPlayer>(),
             };
             base.Start();
@@ -138,9 +143,11 @@ namespace StateMachine.Gameplay
         public Image[] AbilityTimerImage;
         public GameObject[] AbilityReady;
         public TextMeshProUGUI[] AbilityCDText;
+        public Animator[] UIAbilityAnimation;
 
         public Image[] IconPlayer;
         public Color[] PlayersColor;
+        public GameObject[] VoodooBarrierVFX;
         public List<IPlayer> FollowPlayerList;
     }
 
