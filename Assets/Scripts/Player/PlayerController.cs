@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     bool canDash = true;
     bool canAbility = true;
     public bool canPush = true;
-    [Range (1, 5)]
+    [Range(1, 5)]
     public float pushForce;
     [Range(2, 5)]
     public float pushHeight;
@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float rotationSpeed;
 
+    [SerializeField] LayerMask obstacle;
 
     [HideInInspector] public Image dashTimerImage, abilityTimerImage;
     [HideInInspector] public GameObject abilityReady;
@@ -101,6 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             x = Input.GetAxis(h);
             y = Input.GetAxis(v);
+            CheckRay();
             stickDirection = new Vector3(x, 0, y).normalized;
         }
 
@@ -108,7 +110,7 @@ public class PlayerController : MonoBehaviour
         // Movimento del player
         if (canMove == true)
         {
-            player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction * InverterVector),   rotationSpeed);
+            player.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Direction * InverterVector), rotationSpeed);
 
             //if ((Input.GetKey(left) || Input.GetKey(right)) && (Input.GetKey(up) || Input.GetKey(down)))
             //{
@@ -144,7 +146,7 @@ public class PlayerController : MonoBehaviour
                 {
                     x = 0;
                 }
-                
+
                 if (Input.GetKey(up))
                 {
                     //transform.position += Vector3.forward * (float)speed;
@@ -161,9 +163,13 @@ public class PlayerController : MonoBehaviour
                 }
 
                 if (Input.GetKey(up) || Input.GetKey(left) || Input.GetKey(down) || Input.GetKey(right))
+                {
+                    CheckRay();
                     stickDirection = new Vector3(x, 0, y).normalized;
+                }
             }
 
+            CheckRay();
             transform.position += stickDirection * InverterVector * (float)speed;
 
         }
@@ -196,7 +202,7 @@ public class PlayerController : MonoBehaviour
             {
                 cooldownDashTimer = 0;
                 canDash = true;
-            } 
+            }
         }
 
         if (Input.GetKeyDown(altAbility) && !player.SM.GetBool("Ability") && canAbility)
@@ -218,11 +224,11 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
-       // StopCoroutine(FillAmountDash());
+        // StopCoroutine(FillAmountDash());
         transform.SetParent(null);
         //dashTimerImage.fillAmount = 0;
         transform.position += transform.forward * (player.DashDistance * Time.deltaTime);
-       // StartCoroutine(FillAmountDash());
+        // StartCoroutine(FillAmountDash());
     }
 
     public void Push(IPlayer player)
@@ -233,17 +239,17 @@ public class PlayerController : MonoBehaviour
     }
 
 
-   /* public IEnumerator FillAmountDash()
-    {
-        float t = 0;
-        while (dashTimerImage.fillAmount < 1)
-        {
-            t += Time.deltaTime;
-            dashTimerImage.fillAmount = t / player.DashCooldown;
-            yield return null;
-        }
-    }
-*/
+    /* public IEnumerator FillAmountDash()
+     {
+         float t = 0;
+         while (dashTimerImage.fillAmount < 1)
+         {
+             t += Time.deltaTime;
+             dashTimerImage.fillAmount = t / player.DashCooldown;
+             yield return null;
+         }
+     }
+ */
     public IEnumerator FillAmountAbility()
     {
         abilityReady.SetActive(false);
@@ -268,7 +274,7 @@ public class PlayerController : MonoBehaviour
                 canAbility = true;
                 break;
             }
-        
+
 
             //if (timeLeft <= 0)
             //{
@@ -290,23 +296,6 @@ public class PlayerController : MonoBehaviour
         //canAbility = true;
     }
 
-    public void Jump()
-    {
-        // player.rigidbody.AddForce(Vector3.up * player.JumpForce);
-    }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision != null)
-    //    {
-    //        player.SM.SetBool("Jump", false);
-    //    }
-    //    else
-    //    {
-    //        
-    //    }
-    //}
-
     public void ResetCooldown()
     {
         StopCoroutine(CounterCoolDownAbility());
@@ -314,7 +303,7 @@ public class PlayerController : MonoBehaviour
         //StopCoroutine(FillAmountDash());
         canAbility = true;
         canDash = true;
-       // dashTimerImage.fillAmount = 1;
+        // dashTimerImage.fillAmount = 1;
         abilityTimerImage.fillAmount = 1;
         abilityCDText.text = "0";
     }
@@ -329,4 +318,69 @@ public class PlayerController : MonoBehaviour
     }
 
     //public enum NPlayer { P1, P2 }
+
+    Ray upRay, leftRay, downRay, rightRay;
+    Vector3 rayOrigin;
+
+    void CheckRay()
+    {
+        RaycastHit upHit, leftHit, downHit, rightHit;
+        rayOrigin = new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z);
+
+        upRay    = new Ray(rayOrigin, Vector3.forward);
+        downRay  = new Ray(rayOrigin, Vector3.back);
+        rightRay = new Ray(rayOrigin, Vector3.right);
+        leftRay  = new Ray(rayOrigin, Vector3.left);
+
+        if (Physics.Raycast(upRay, out upHit, .5f))
+        {
+            if (upHit.transform.gameObject.tag == "Obstacle")
+            {
+                if (y > 0)
+                    y = 0;
+            }
+        }
+
+        if (Physics.Raycast(downRay, out downHit, .5f))
+        {
+            if (downHit.transform.gameObject.tag == "Obstacle")
+            {
+                if (y < 0)
+                    y = 0;
+            }
+        }
+
+        if (Physics.Raycast(rightRay, out rightHit, .5f))
+        {
+            if (rightHit.transform.gameObject.tag == "Obstacle")
+            {
+                if (x > 0)
+                    x = 0;
+            }
+        }
+
+        if (Physics.Raycast(leftRay, out leftHit, .5f))
+        {
+            if (leftHit.transform.gameObject.tag == "Obstacle")
+            {
+                if (x < 0)
+                    x = 0;
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        rayOrigin = new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z);
+
+        upRay    = new Ray(rayOrigin, Vector3.forward);
+        downRay  = new Ray(rayOrigin, Vector3.back);
+        rightRay = new Ray(rayOrigin, Vector3.right);
+        leftRay  = new Ray(rayOrigin, Vector3.left);
+
+        Gizmos.DrawRay(upRay);
+        Gizmos.DrawRay(downRay);
+        Gizmos.DrawRay(rightRay);
+        Gizmos.DrawRay(leftRay);
+    }
 }

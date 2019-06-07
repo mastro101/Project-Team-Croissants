@@ -22,7 +22,7 @@ namespace StateMachine.Player
         {
             base.Enter();
             playerController = context.Player.gameObject.GetComponent<PlayerController>();
-            playerController.Jump();
+            //playerController.Jump();
             //if (playerController.groundDetector.position != null)
             //{
             //    rayGround = new Ray(playerController.groundDetector.position, Vector3.down);

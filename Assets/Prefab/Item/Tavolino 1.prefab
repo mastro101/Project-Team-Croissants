@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2400542526373120107}
   - component: {fileID: 2429542920676665973}
   - component: {fileID: 8421307361394132016}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tavolino 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,6 +75,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e66996e0749d6fe48aa8a709676644ee, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e66996e0749d6fe48aa8a709676644ee, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e66996e0749d6fe48aa8a709676644ee, type: 3}
       propertyPath: m_LocalPosition.x
