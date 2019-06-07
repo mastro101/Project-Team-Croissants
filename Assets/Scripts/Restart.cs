@@ -82,7 +82,7 @@ public class Restart : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("CharacterSelect");
+            SceneManager.LoadScene("B_CharacterSelect");
             FindObjectOfType<AudioManager>().Pause();
         }
 
