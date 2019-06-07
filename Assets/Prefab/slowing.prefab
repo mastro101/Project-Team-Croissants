@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 1940409285986550}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.02, y: 5, z: 0.01}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4738160233490338}
   m_RootOrder: 0
@@ -138,7 +138,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &316285263281670615
 PrefabInstance:
@@ -207,27 +207,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4295226319563326224, guid: 257608c3176784b4e9b90434e809dc32,
-        type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 570512112719846163, guid: 257608c3176784b4e9b90434e809dc32,
         type: 3}
       propertyPath: looping
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 622800500633751738, guid: 257608c3176784b4e9b90434e809dc32,
-        type: 3}
-      propertyPath: looping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8643915050616145359, guid: 257608c3176784b4e9b90434e809dc32,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222300033069968728, guid: 257608c3176784b4e9b90434e809dc32,
         type: 3}
       propertyPath: looping
       value: 1
@@ -241,6 +226,21 @@ PrefabInstance:
         type: 3}
       propertyPath: looping
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222300033069968728, guid: 257608c3176784b4e9b90434e809dc32,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295226319563326224, guid: 257608c3176784b4e9b90434e809dc32,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643915050616145359, guid: 257608c3176784b4e9b90434e809dc32,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 257608c3176784b4e9b90434e809dc32, type: 3}

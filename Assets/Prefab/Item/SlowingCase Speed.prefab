@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: anfora
       value: 
       objectReference: {fileID: 1245382655819500805}
+    - target: {fileID: 4125432424559594, guid: 77d45e08e2a54a24d989cf43e8b9ab5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 136902975656288660, guid: 77d45e08e2a54a24d989cf43e8b9ab5f,
         type: 3}
       propertyPath: m_Direction
@@ -96,9 +100,9 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4125432424559594, guid: 77d45e08e2a54a24d989cf43e8b9ab5f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
+    - target: {fileID: 1444187661774832, guid: 77d45e08e2a54a24d989cf43e8b9ab5f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7286162266969702122, guid: 77d45e08e2a54a24d989cf43e8b9ab5f,
         type: 3}
