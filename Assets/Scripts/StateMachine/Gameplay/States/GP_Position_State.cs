@@ -86,6 +86,8 @@ namespace StateMachine.Gameplay
                 player.IsGameOver = false;
             }
 
+            spawnPoint.Spawn(context.Players.Count);
+
             if (context.EnemyTransform != null)
                 context.Enemy.transform.position = context.EnemyTransform.position;
             // Resetta variabili

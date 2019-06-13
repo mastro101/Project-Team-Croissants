@@ -25,13 +25,15 @@ namespace StateMachine.Gameplay
         {
             base.Enter();
             winText = winGO.GetComponent<TextMeshProUGUI>();
-            FindObjectOfType<AudioManager>().Play("EndGame");
+            //FindObjectOfType<AudioManager>().Play("EndGame");
             context.EndRoundPanel.SetActive(true);
             foreach (IPlayer player in context.Players)
             {
-                //if (player.Points == 4)
-                    //winText.text = player.Name + " Wins the match";
-                break;
+                if (player.Points == 4)
+                {
+                    winText.text = player.Name + " Wins the match";
+                    break;
+                }
             }
             tempPressTo = Instantiate(pressToGO, context.Canvas.transform);
             tempWin = Instantiate(winGO, context.Canvas.transform);
@@ -48,7 +50,7 @@ namespace StateMachine.Gameplay
             }
             if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.Escape))
             {
-                SceneManager.LoadScene("CharacterSelect");
+                SceneManager.LoadScene("B_CharacterSelect");
                 context.BaseExitState();
             }
         }
