@@ -2824,6 +2824,7 @@ GameObject:
   - component: {fileID: 308616854927388312}
   - component: {fileID: 308616854439750876}
   - component: {fileID: 308616854927388295}
+  - component: {fileID: 2747909765228720961}
   m_Layer: 0
   m_Name: Voodoo
   m_TagString: Untagged
@@ -2861,7 +2862,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 308616854927388294}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.4746716
   m_Height: 2
   m_Direction: 1
@@ -2980,6 +2981,19 @@ MonoBehaviour:
   abilityCDText: {fileID: 0}
   abilityUIAnimator: {fileID: 0}
   InverterVector: 1
+--- !u!65 &2747909765228720961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308616854927388294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 1.5}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &308616854961047686
 GameObject:
   m_ObjectHideFlags: 0
