@@ -1,16 +1,60 @@
 fileFormatVersion: 2
-guid: 74586fb1d7816734697077557e64fe04
+guid: f0924dbe4248ab74ca3c5dd1a2fe5964
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Group12244
-    100002: //RootNode
-    400000: Group12244
-    400002: //RootNode
-    2100000: Group12244Mat
-    2300000: Group12244
-    3300000: Group12244
-    4300000: Group12244
+    100000: bocca__bot
+    100002: bocca_bot
+    100004: bocca_top
+    100006: bocca_top 1
+    100008: bot_davanti
+    100010: bot_dx
+    100012: bot_dx_2
+    100014: bot_sx
+    100016: bot_sx_2
+    100018: centrale
+    100020: corpo
+    100022: high_poly:Group3288
+    100024: //RootNode
+    100026: occhi
+    100028: top_davanti
+    100030: top_dx
+    100032: top_dx_2
+    100034: top_sx
+    100036: top_sx_2
+    400000: bocca__bot
+    400002: bocca_bot
+    400004: bocca_top
+    400006: bocca_top 1
+    400008: bot_davanti
+    400010: bot_dx
+    400012: bot_dx_2
+    400014: bot_sx
+    400016: bot_sx_2
+    400018: centrale
+    400020: corpo
+    400022: high_poly:Group3288
+    400024: //RootNode
+    400026: occhi
+    400028: top_davanti
+    400030: top_dx
+    400032: top_dx_2
+    400034: top_sx
+    400036: top_sx_2
+    2100000: lambert1
+    2300000: high_poly:Group3288
+    3300000: high_poly:Group3288
+    4300000: high_poly:Group3288
+    4300002: occhi
+    4300004: corpo
+    4300006: bocca_top
+    4300008: bocca_bot
+    7400000: move
+    9500000: //RootNode
+    13700000: bocca_bot
+    13700002: bocca_top
+    13700004: corpo
+    13700006: occhi
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -63,8 +107,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -91,7 +135,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
