@@ -2941,6 +2941,9 @@ MonoBehaviour:
   altDash: 32
   altAbility: 101
   rotationSpeed: 0.36
+  obstacle:
+    serializedVersion: 2
+    m_Bits: 0
   dashTimerImage: {fileID: 0}
   abilityTimerImage: {fileID: 0}
   abilityReady: {fileID: 0}
@@ -2973,7 +2976,7 @@ MonoBehaviour:
   aim: {fileID: 308616853985957715}
   emission: {fileID: 308616853278458966}
   effectTime: 1
-  timerAbility: 3
+  timerAbility: 2.5
   InverterBarrier: {fileID: 7287256027241058847, guid: 1901e8b0196fcc64f93ae8968a4faf18,
     type: 3}
 --- !u!1 &308616854961047686

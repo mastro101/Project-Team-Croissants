@@ -60,6 +60,7 @@ public class TimerTrap : Slowing
     {
         StopCoroutine(Effect());
         base.OnSpawn();
+        Destroy(gameObject);
     }
 
     public void SetTimer(float _timer, float _effectTime)
