@@ -14,14 +14,13 @@ ModelImporter:
     100016: bot_sx_2
     100018: centrale
     100020: corpo
-    100022: high_poly:Group3288
-    100024: //RootNode
-    100026: occhi
-    100028: top_davanti
-    100030: top_dx
-    100032: top_dx_2
-    100034: top_sx
-    100036: top_sx_2
+    100022: //RootNode
+    100024: occhi
+    100026: top_davanti
+    100028: top_dx
+    100030: top_dx_2
+    100032: top_sx
+    100034: top_sx_2
     400000: bocca__bot
     400002: bocca_bot
     400004: bocca_top
@@ -33,22 +32,18 @@ ModelImporter:
     400016: bot_sx_2
     400018: centrale
     400020: corpo
-    400022: high_poly:Group3288
-    400024: //RootNode
-    400026: occhi
-    400028: top_davanti
-    400030: top_dx
-    400032: top_dx_2
-    400034: top_sx
-    400036: top_sx_2
+    400022: //RootNode
+    400024: occhi
+    400026: top_davanti
+    400028: top_dx
+    400030: top_dx_2
+    400032: top_sx
+    400034: top_sx_2
     2100000: lambert1
-    2300000: high_poly:Group3288
-    3300000: high_poly:Group3288
-    4300000: high_poly:Group3288
-    4300002: occhi
-    4300004: corpo
-    4300006: bocca_top
-    4300008: bocca_bot
+    4300000: occhi
+    4300002: corpo
+    4300004: bocca_top
+    4300006: bocca_bot
     7400000: move
     9500000: //RootNode
     13700000: bocca_bot
@@ -82,7 +77,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: move
+      takeName: move
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
