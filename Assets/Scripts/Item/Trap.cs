@@ -45,4 +45,10 @@ public class Trap : Slowing
         yield return new WaitForSeconds(fadeSecond);
         collider.enabled = true;
     }
+
+    public override void OnSpawn()
+    {
+        base.OnSpawn();
+        Destroy(gameObject);
+    }
 }

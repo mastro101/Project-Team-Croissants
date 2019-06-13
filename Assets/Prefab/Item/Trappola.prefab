@@ -92,8 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8231395c045751b4180198ca22dbbe26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentGO: {fileID: 0}
   second: 0.5
   PercentSlow: 100
+  immediatelyEffect: 1
   fadeValue: 0.1
   fadeSecond: 1.5
 --- !u!65 &3497856480705607896
