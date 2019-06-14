@@ -33,6 +33,10 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
         set { dashVFX = value; }
     }
 
+    [SerializeField]
+    GameObject victoryAnimation;
+    public GameObject VictoryAnimation { get { return victoryAnimation; } }
+
     protected int points;
     public virtual int Points
     {
@@ -79,6 +83,7 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     GameObject aim;
     public GameObject Aim { get { return aim; } }
 
+
     public virtual void Ability()
     {
         StartCoroutine(GetComponent<PlayerController>().FillAmountAbility());
@@ -117,6 +122,7 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
             emission.color = color;
         }
     }
+
 
     [SerializeField]
     Light emission;

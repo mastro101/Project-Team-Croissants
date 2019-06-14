@@ -17,7 +17,7 @@ namespace StateMachine.Gameplay
 
         [SerializeField] GameObject[] WinAnimationPerColorPrefab;
 
-        GameObject currentWinAnimationPerColor;
+        GameObject currentWinAnimationPerColor, currentWinAnimationPerPlayer;
         public override void Enter()
         {
             base.Enter();
@@ -28,6 +28,10 @@ namespace StateMachine.Gameplay
                 if (player.Points == 4)
                 {
                     currentWinAnimationPerColor = Instantiate(WinAnimationPerColorPrefab[i], context.Canvas.transform);
+                    if (player.VictoryAnimation != null)
+                    {
+                        currentWinAnimationPerPlayer = Instantiate(player.VictoryAnimation, context.Canvas.transform);
+                    }
                 }
                 i++;
             }
@@ -46,7 +50,9 @@ namespace StateMachine.Gameplay
         public override void Exit()
         {
             base.Exit();
-            currentWinAnimationPerColor.SetActive(false);
+            Destroy(currentWinAnimationPerColor);
+            if (currentWinAnimationPerPlayer != null)
+                Destroy(currentWinAnimationPerPlayer);
         }
     }
 }

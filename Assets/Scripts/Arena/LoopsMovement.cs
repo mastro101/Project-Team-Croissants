@@ -27,7 +27,7 @@ public class LoopsMovement : MonoBehaviour
     //MEGA PROVVISORIO
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
             PathMovements();
     }
 
