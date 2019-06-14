@@ -38,7 +38,7 @@ public class Rocket : EnemyBase
         if (PlayerToFollow != null)
         {
             transform.position += transform.forward * speed;
-            Vector3 targetPos = PlayerToFollow.transform.position - transform.position + new Vector3(0, 1, 0);
+            Vector3 targetPos = PlayerToFollow.transform.position - transform.position + new Vector3(0, 0, 0);
             Quaternion rotation = Quaternion.LookRotation(targetPos);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, RotationSpeed);
             //transform.position = Vector3.MoveTowards(transform.position, PlayerToFollow.transform.position, speed);
