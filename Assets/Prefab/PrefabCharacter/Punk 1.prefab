@@ -612,12 +612,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649dc2d1c8f334a4ba74f6acb7b93feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slectCharacterSprite: {fileID: 21300000, guid: 142ff67b41b5eaa41af60028b919cf48,
+  slectCharacterSprite: {fileID: 21300000, guid: 26c930267b298c3438ae2c3ea325bba9,
+    type: 3}
+  selectedCharacterSprite: {fileID: 21300000, guid: 7c68bbbe4f9c00a4c85310da9df3f791,
     type: 3}
   abilitySprite: {fileID: 21300000, guid: bb114b733c98a764faa53bb43b43bfd3, type: 3}
+  abilitySpriteSquare: {fileID: 21300000, guid: f3a9fdc280643d24fbcfbf8e1fee925c,
+    type: 3}
   iconCharacterSprite: {fileID: 21300000, guid: 6a611417ce2483f4da1082bfb891dd6f,
     type: 3}
   dashVFX: {fileID: 3203163491313584056}
+  victoryAnimation: {fileID: 0}
   movementSpeed: 8
   dashDistance: 16
   dashDuration: 0.5

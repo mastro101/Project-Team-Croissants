@@ -19,12 +19,21 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     public Sprite SelectCharacterSprite { get { return slectCharacterSprite; } }
 
     [SerializeField]
+    Sprite selectedCharacterSprite;
+    public Sprite SelectedCharacterSprite { get { return selectedCharacterSprite; } }
+
+    [SerializeField]
     Sprite abilitySprite;
     public Sprite AbilitySprite { get { return abilitySprite; } }
+
 
     [SerializeField]
     Sprite iconCharacterSprite;
     public Sprite IconCharacterSprite { get { return iconCharacterSprite; } }
+
+    [SerializeField]
+    Sprite abilitySpriteSquare;
+    public Sprite SquareAbility { get { return SquareAbility; } }
 
     [SerializeField]
     ParticleSystem dashVFX;

@@ -46,10 +46,6 @@ public class SelectCharacter : MonoBehaviour
         currentPlayer = characters[0];
     }
 
-    private void Start()
-    {
-    }
-
     public void NextCharacter()
     {
         playerInList++;

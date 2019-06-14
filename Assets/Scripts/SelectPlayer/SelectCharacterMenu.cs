@@ -10,9 +10,11 @@ public class SelectCharacterMenu : MonoBehaviour
     int playerInt;
     SelectCharacter selectCharacter;
     [SerializeField]
-    Image currentCharacterImage;
+    Image currentCharacterImage, currentAbilityImage;
     [SerializeField]
     TextMeshProUGUI NameText;
+    [SerializeField]
+    ParticleSystem SelectedVFX;
     GameManager gameManager;
     SetController setController;
 
@@ -23,6 +25,7 @@ public class SelectCharacterMenu : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         selectCharacter = GetComponent<SelectCharacter>();
         setController = FindObjectOfType<SetController>();
+        SelectedVFX.Stop();
     }
 
     private void Start()
@@ -34,8 +37,10 @@ public class SelectCharacterMenu : MonoBehaviour
 
     void changeIcon()
     {
-        currentCharacterImage.sprite = selectCharacter.currentPlayer.GetComponent<IPlayer>().SelectCharacterSprite;
-        NameText.text = selectCharacter.currentPlayer.GetComponent<IPlayer>().Name;
+        IPlayer currentPlayer = selectCharacter.currentPlayer.GetComponent<IPlayer>();
+        currentCharacterImage.sprite = currentPlayer.SelectCharacterSprite;
+        NameText.text = currentPlayer.Name;
+        currentAbilityImage.sprite = currentPlayer.AbilitySprite;
     }
 
     bool b = false;
@@ -71,8 +76,9 @@ public class SelectCharacterMenu : MonoBehaviour
     {
         Debug.Log(playerInt - 1);
         Debug.Log(selectCharacter.currentPlayer.GetComponent<IPlayer>().Name);
+        SelectedVFX.Play();
         gameManager.PlayersGO[playerInt - 1] = selectCharacter.currentPlayer;
         choosed = true;
-        gameObject.SetActive(false);
+        currentCharacterImage.sprite = selectCharacter.currentPlayer.GetComponent<IPlayer>().SelectedCharacterSprite;
     }
 }

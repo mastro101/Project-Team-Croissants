@@ -27,7 +27,7 @@ public class PlayerVoodooMascherato : PlayerBase
     {
         get
         {
-            return "Voodoo";
+            return "Wendigo";
         }
     }
     GameObject _effect;
