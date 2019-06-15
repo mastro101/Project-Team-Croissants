@@ -26,14 +26,9 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     Sprite abilitySprite;
     public Sprite AbilitySprite { get { return abilitySprite; } }
 
-
     [SerializeField]
     Sprite iconCharacterSprite;
     public Sprite IconCharacterSprite { get { return iconCharacterSprite; } }
-
-    [SerializeField]
-    Sprite abilitySpriteSquare;
-    public Sprite SquareAbility { get { return SquareAbility; } }
 
     [SerializeField]
     ParticleSystem dashVFX;
@@ -89,9 +84,12 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
     public virtual float AbilityCooldown { get { return abilityCooldown; } }
 
     [SerializeField]
-    GameObject aim;
-    public GameObject Aim { get { return aim; } }
+    string abilityDescription;
+    public virtual string AbilityDescription { get { return abilityDescription; } }
 
+    [SerializeField]
+    GameObject aim;
+    //public GameObject Aim { get { return aim; } }
 
     public virtual void Ability()
     {

@@ -15,6 +15,8 @@ public class SelectCharacterMenu : MonoBehaviour
     TextMeshProUGUI NameText;
     [SerializeField]
     ParticleSystem SelectedVFX;
+    [SerializeField]
+    TextMeshProUGUI DescriptionText;
     GameManager gameManager;
     SetController setController;
 
@@ -41,6 +43,7 @@ public class SelectCharacterMenu : MonoBehaviour
         currentCharacterImage.sprite = currentPlayer.SelectCharacterSprite;
         NameText.text = currentPlayer.Name;
         currentAbilityImage.sprite = currentPlayer.AbilitySprite;
+        DescriptionText.text = currentPlayer.AbilityDescription;
     }
 
     bool b = false;

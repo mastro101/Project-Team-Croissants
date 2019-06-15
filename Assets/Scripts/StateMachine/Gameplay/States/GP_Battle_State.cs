@@ -86,7 +86,7 @@ namespace StateMachine.Gameplay
         void CheckGameOver(IPlayer player)
         {
             player.IsGameOver = true;
-            player.Aim.SetActive(false);
+            //player.Aim.SetActive(false);
             NPlayerInGameOver = 0;
             foreach (IPlayer p in context.Players)
             {
@@ -133,7 +133,7 @@ namespace StateMachine.Gameplay
                                 }
 
                                 context.Enemy.PlayerToFollow = context.FollowPlayerList[i];
-                                context.FollowPlayerList[i].Aim.SetActive(true);
+                                //context.FollowPlayerList[i].Aim.SetActive(true);
                                 break;
                             }
                             i++;

@@ -17,16 +17,16 @@ public interface IPlayer
     float DashCooldown { get; }
     float AbilityCooldown { get; }
     float OriginalSpeed { get; }
-    GameObject Aim { get; }
+    //GameObject Aim { get; }
     Sprite SelectCharacterSprite { get; }
     Sprite AbilitySprite { get; }
-    Sprite SquareAbility { get; }
     Sprite IconCharacterSprite { get; }
     bool IsGameOver { get; set; }
     Color Color { get; set; }
     ParticleSystem DashVFX { get; set; }
     GameObject VictoryAnimation { get; }
     Sprite SelectedCharacterSprite { get; }
+    string AbilityDescription { get; }
     //float JumpForce { get; }
 
     // Abilità unica del personaggio
