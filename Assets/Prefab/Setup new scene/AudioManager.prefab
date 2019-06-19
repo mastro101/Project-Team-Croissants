@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: SottofondoArena
-    clip: {fileID: 8300000, guid: c4c29d4911bf9844194a2e31b8522f2b, type: 3}
+    clip: {fileID: 8300000, guid: f1f3357851aa7c94fa16ece638a7b452, type: 3}
     volume: 0.265
     volumeVariance: 0
     pitch: 1
@@ -53,7 +53,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: Dash
-    clip: {fileID: 8300000, guid: 24a5368a9236870498cd1f08062b598d, type: 3}
+    clip: {fileID: 8300000, guid: 24a6d359914ba294896fdc328de8aa19, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
@@ -61,7 +61,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: PunkAbility
-    clip: {fileID: 8300000, guid: 43b1df80c6a94ff429bdaf645aa3e4af, type: 3}
+    clip: {fileID: 8300000, guid: 6041569b402c3f244ab72def07b5977b, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: VooDooAbility
-    clip: {fileID: 8300000, guid: 3a024d5209a724b43854b6295e200b42, type: 3}
+    clip: {fileID: 8300000, guid: 674fe3110ebff4345a18f24613ae13cd, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
@@ -102,6 +102,110 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Countdown
     clip: {fileID: 8300000, guid: 4947a99710a6b6047ad0d1e64b42b0e3, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: SottofondoMenu
+    clip: {fileID: 8300000, guid: 70fa5549c36423c4a87f06d4b549746e, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: MenuScrolling
+    clip: {fileID: 8300000, guid: e1c83463ea3f5af49ba5bc59c72c9853, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuFinalSelection
+    clip: {fileID: 8300000, guid: a61935ba9f3ea91428ab3b48209fe4a8, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuBack
+    clip: {fileID: 8300000, guid: f652332286263fb49bfc2734003e07f6, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: PunkActivatedAbility
+    clip: {fileID: 8300000, guid: 6c497e05bad55bd40ab26d1f6c3c470e, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: VoodooActivatedAbility
+    clip: {fileID: 8300000, guid: 76dfc0dda8b0a8342a8fa0640a5b942c, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: FallingSound
+    clip: {fileID: 8300000, guid: 941bce0b247aff1458c6abb725eb5646, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: BrokenAmphora
+    clip: {fileID: 8300000, guid: bb500777759782d4686315eaec3b48e4, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: AccelerationPuddle
+    clip: {fileID: 8300000, guid: cf9c06825d736aa40a9e28ce418c7ec3, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: SlowingPuddle
+    clip: {fileID: 8300000, guid: 2c3a6d5258bdb6543b83e8216a678ebe, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: ArenaMovement
+    clip: {fileID: 8300000, guid: 2bc0681d2504b164693dd605cbc7adb0, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: MissileGrowing
+    clip: {fileID: 8300000, guid: 11fd8c54a88e5a84bb8712c2e4919929, type: 3}
+    volume: 0.196
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: PushSound
+    clip: {fileID: 8300000, guid: c2663301926f70a4a9006866ebc0426c, type: 3}
     volume: 0.196
     volumeVariance: 0
     pitch: 1
