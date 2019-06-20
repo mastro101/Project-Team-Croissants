@@ -7,17 +7,18 @@ namespace StateMachine.Menu
 {
     public class MenuSM : StateMachineBase
     {
-        [SerializeField] Animator luce;
-        [SerializeField] GameObject startPanel, menuPanel;
+        [SerializeField] GameObject canvasPrefab, luce, startPanel, menuPanelPrefab;
 
         protected override void Start()
         {
             currentContext = new MenuSMContext()
             {
                 GenericGoNext = goNext,
-                Luce = luce,
+                GoNext = goNext,
+                LuceGO = luce,
                 StartPanel = startPanel,
-                MenuPanel = menuPanel,
+                MenuPanelPrefab = menuPanelPrefab,
+                CanvasPrefab = canvasPrefab,
             };
             base.Start();
         }
@@ -31,12 +32,19 @@ namespace StateMachine.Menu
         {
             SM.SetTrigger("Back");
         }
+
+        public void goNext(int path)
+        {
+            SM.SetInteger("Path", path);
+        }
     }
 
     public class MenuSMContext : IStateMachineContext
     {
         public Action GenericGoNext;
-        public Animator Luce;
-        public GameObject StartPanel, MenuPanel;
+        public Action<int> GoNext;
+        public GameObject CanvasPrefab;
+        public Animator LuceAnimator;
+        public GameObject LuceGO, StartPanel, MenuPanelPrefab, MenuPanelInGame, canvasInGame;
     }
 }

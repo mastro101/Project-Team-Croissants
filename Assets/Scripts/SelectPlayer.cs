@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
+using StateMachine.Menu;
 
 public class SelectPlayer : MonoBehaviour
 {
@@ -124,9 +122,7 @@ public class SelectPlayer : MonoBehaviour
             {
                 FindObjectOfType<GameManager>().PlayersGO[1] = Characters[0];
             }
-            SceneManager.LoadScene("B_SceneSelector");
+            FindObjectOfType<MenuSM>().goNext();
         }
     }
-
-    
 }

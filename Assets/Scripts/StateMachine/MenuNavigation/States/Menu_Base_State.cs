@@ -16,7 +16,7 @@ namespace StateMachine.Menu
         public override void Enter()
         {
             base.Enter();
-
+            context.GoNext(-1);
         }
 
         public override void Tick()
@@ -28,7 +28,6 @@ namespace StateMachine.Menu
         public override void Exit()
         {
             base.Exit();
-
         }
     }
 }

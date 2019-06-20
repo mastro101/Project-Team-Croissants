@@ -18,7 +18,7 @@ namespace StateMachine.Menu
         public override void Enter()
         {
             base.Enter();
-            context.StartPanel.SetActive(true);
+            context.LuceAnimator = context.LuceGO.GetComponent<Animator>();
         }
 
         public override void Tick()
@@ -33,7 +33,7 @@ namespace StateMachine.Menu
         public override void Exit()
         {
             base.Exit();
-            context.Luce.SetTrigger("Exit");
+            context.LuceAnimator.SetTrigger("Exit");
         }
     }
 }

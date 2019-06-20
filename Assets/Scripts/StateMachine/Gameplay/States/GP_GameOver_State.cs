@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement;
 using TMPro;
+using StateMachine.Menu;
 
 namespace StateMachine.Gameplay
 {
@@ -50,7 +49,7 @@ namespace StateMachine.Gameplay
             }
             if (Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.Escape))
             {
-                SceneManager.LoadScene("B_CharacterSelect");
+                FindObjectOfType<MenuSM>().goNext(0);
                 context.BaseExitState();
             }
         }

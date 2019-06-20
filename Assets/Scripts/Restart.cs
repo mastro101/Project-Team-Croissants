@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using StateMachine.Menu;
 
 // PROVVISORIO
 public class Restart : MonoBehaviour
@@ -26,7 +24,7 @@ public class Restart : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            SceneManager.LoadScene("B_SceneSelector");
+            FindObjectOfType<MenuSM>().goNext(0);
             FindObjectOfType<AudioManager>().Pause();
         }
 
@@ -80,9 +78,9 @@ public class Restart : MonoBehaviour
         //    SceneManager.LoadScene(6);
         //}
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            SceneManager.LoadScene("B_CharacterSelect");
+            FindObjectOfType<MenuSM>().goNext(0);
             FindObjectOfType<AudioManager>().Pause();
         }
 

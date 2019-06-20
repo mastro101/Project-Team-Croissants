@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using StateMachine.Menu;
 
 public class MenuButtons : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("B_CharacterSelect");
+        FindObjectOfType<MenuSM>().goNext(0);
     }
 
     public void ExitGame()

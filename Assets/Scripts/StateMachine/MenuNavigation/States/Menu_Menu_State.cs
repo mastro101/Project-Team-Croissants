@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace StateMachine.Menu
 {
@@ -18,8 +17,18 @@ namespace StateMachine.Menu
         public override void Enter()
         {
             base.Enter();
-            context.StartPanel.SetActive(false);
-            context.MenuPanel.SetActive(true);
+            if (SceneManager.GetActiveScene().name != "StartScene")
+                SceneManager.LoadScene("MenuScene");
+            context.canvasInGame = FindObjectOfType<Canvas>().gameObject;
+            if (context.canvasInGame == null)
+            {
+                GameObject canvas = Instantiate(context.CanvasPrefab);
+                context.canvasInGame = canvas;
+            }
+            if (context.StartPanel != null)
+                Destroy(context.StartPanel);
+            context.MenuPanelInGame = Instantiate(context.MenuPanelPrefab, context.canvasInGame.transform);
+            context.MenuPanelPrefab.SetActive(true);
         }
     }
 }
