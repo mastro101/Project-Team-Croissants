@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using DG.Tweening;
+using UnityEngine;
 
 namespace StateMachine.Gameplay
 {
@@ -30,22 +30,37 @@ namespace StateMachine.Gameplay
             context.EndRoundPanel.SetActive(true);
             for (int i = 0; i < context.Players[0].Points; i++)
             {
-                context.WinCheckImageP1[i].SetActive(true);
+                if (!context.WinCheckImageP1[i].activeInHierarchy)
+                {
+                    context.WinCheckImageP1[i].SetActive(true);
+                    context.WinCheckImageP1[i].GetComponent<Animator>().SetTrigger("Next");
+                }
                 //context.WinPointImageP1[i].SetActive(true);
+                context.WinCheckImageP1[i].transform.DOScale(1, 1).SetEase(Ease.OutBack);
                 pointP1++;
             }
             if (context.Players.Count > 1)
                 for (int i = 0; i < context.Players[1].Points; i++)
                 {
-                    context.WinCheckImageP2[i].SetActive(true);
+                    if (!context.WinCheckImageP2[i].activeInHierarchy)
+                    {
+                        context.WinCheckImageP2[i].SetActive(true);
+                        context.WinCheckImageP2[i].GetComponent<Animator>().SetTrigger("Next");
+                    }
                     // context.WinPointImageP2[i].SetActive(true);
+                    context.WinCheckImageP2[i].transform.DOScale(1, 1).SetEase(Ease.OutBack);
                     pointP2++;
                 }
             if (context.Players.Count > 2)
             {
                 for (int i = 0; i < context.Players[2].Points; i++)
                 {
-                    context.WinCheckImageP3[i].SetActive(true);
+                    if (!context.WinCheckImageP3[i].activeInHierarchy)
+                    {
+                        context.WinCheckImageP3[i].SetActive(true);
+                        context.WinCheckImageP3[i].GetComponent<Animator>().SetTrigger("Next");
+                    }
+                    context.WinCheckImageP3[i].transform.DOScale(1, 1).SetEase(Ease.OutBack);
                     pointP3++;
                 }
             }
@@ -53,7 +68,12 @@ namespace StateMachine.Gameplay
             {
                 for (int i = 0; i < context.Players[3].Points; i++)
                 {
-                    context.WinCheckImageP4[i].SetActive(true);
+                    if (!context.WinCheckImageP4[i].activeInHierarchy)
+                    {
+                        context.WinCheckImageP4[i].SetActive(true);
+                        context.WinCheckImageP4[i].GetComponent<Animator>().SetTrigger("Next");
+                    }
+                    context.WinCheckImageP4[i].transform.DOScale(1, 1).SetEase(Ease.OutBack);
                     pointP4++;
                 }
             }
