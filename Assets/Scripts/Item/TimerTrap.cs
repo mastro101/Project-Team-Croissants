@@ -39,10 +39,14 @@ public class TimerTrap : Slowing
     IEnumerator Effect()
     {
         yield return new WaitForSeconds(timer);
+        PlayerPunkTrinity playerPunk = MyPlayer.gameObject.GetComponent<PlayerPunkTrinity>();
+        Instantiate(playerPunk.VFXEffectTrap, transform.position, Quaternion.Euler(Vector3.zero));
         foreach (IPlayer player in players)
         {
             if (player != MyPlayer)
+            {
                 Effect(player);
+            }
         }
         Destroy(gameObject);
     }

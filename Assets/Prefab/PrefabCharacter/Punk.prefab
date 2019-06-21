@@ -556,10 +556,11 @@ MonoBehaviour:
   selectedCharacterSprite: {fileID: 21300000, guid: a9ca60e7660ae904390fc4db53428bac,
     type: 3}
   abilitySprite: {fileID: 21300000, guid: e5e4213885306e2458b1f2958ba62168, type: 3}
-  iconCharacterSprite: {fileID: 21300000, guid: d3dd2c6506d8e5740a740fa88826df96,
+  iconCharacterSprite: {fileID: 21300000, guid: 2d2ce2145896d3a48acd16708629dc7f,
     type: 3}
   dashVFX: {fileID: 3554210847223013778}
-  victoryAnimation: {fileID: 0}
+  victoryAnimation: {fileID: 4889674205057961741, guid: 8e54f2638f74b2642b7c92a7524f26e0,
+    type: 3}
   movementSpeed: 8
   dashDistance: 16
   dashDuration: 0.5
@@ -569,6 +570,7 @@ MonoBehaviour:
   aim: {fileID: 2998531843280053509}
   emission: {fileID: 2998531843966522950}
   trapPrefab: {fileID: 1033149681314150, guid: 9dfc50b58b10b494da938a7737389623, type: 3}
+  VFXEffectTrap: {fileID: 0}
 --- !u!114 &2998531843337596393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3066,6 +3068,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2998531843337596397}
     m_Modifications:
+    - target: {fileID: 3332297927904842158, guid: 78687f9a8af376b478207764fb86f645,
+        type: 3}
+      propertyPath: m_Name
+      value: 'dush punk '
+      objectReference: {fileID: 0}
     - target: {fileID: 1693657372191656650, guid: 78687f9a8af376b478207764fb86f645,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3120,11 +3127,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3332297927904842158, guid: 78687f9a8af376b478207764fb86f645,
-        type: 3}
-      propertyPath: m_Name
-      value: 'dush punk '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78687f9a8af376b478207764fb86f645, type: 3}

@@ -21,9 +21,12 @@ public class Trap : Slowing
 
     public override void Effect(IPlayer _player)
     {
+        PlayerPunk playerPunk = PlayerOfTrap.gameObject.GetComponent<PlayerPunk>();
         if (PlayerOfTrap != _player)
         {
             base.Effect(_player);
+            Instantiate(playerPunk.VFXEffectTrap, transform.position, Quaternion.Euler(Vector3.zero));
+            FindObjectOfType<AudioManager>().Play("PunkActivatedAbility");
             gameplaySM.endBattle -= OnSpawn;
             Destroy(gameObject);
         }

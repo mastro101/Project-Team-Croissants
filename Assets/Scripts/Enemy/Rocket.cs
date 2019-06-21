@@ -52,7 +52,7 @@ public class Rocket : EnemyBase
         base.Ability();
         MovementSpeed += MovementSpeed / 100 * percentSpeed;
         transform.DOScale(transform.lossyScale / 100 * PercentScale, 1).SetRelative();
-        
+        FindObjectOfType<AudioManager>().Play("MissileGrowing");
     }
 
 }

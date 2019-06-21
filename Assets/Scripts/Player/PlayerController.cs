@@ -236,6 +236,7 @@ public class PlayerController : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         player.rigidbody.AddForce(-rb.velocity.normalized * pushForce * 500);
         player.rigidbody.AddForce(Vector3.up * pushHeight * 200);
+        FindObjectOfType<AudioManager>().Play("PushSound");
     }
 
 
