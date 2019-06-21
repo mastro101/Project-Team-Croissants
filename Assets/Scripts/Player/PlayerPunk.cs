@@ -5,6 +5,8 @@ public class PlayerPunk : PlayerBase
 {
     [SerializeField]
     GameObject trapPrefab;
+    [HideInInspector]
+    public GameObject VFXEffectTrap;
 
     public override int ID
     {

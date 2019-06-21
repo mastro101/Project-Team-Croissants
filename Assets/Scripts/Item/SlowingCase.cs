@@ -50,6 +50,7 @@ public class SlowingCase : ItemBase
         collider.enabled = false;
         directionFall = player.gameObject.GetComponent<PlayerController>().Direction;
         transform.rotation = Quaternion.LookRotation(directionFall);
+        FindObjectOfType<AudioManager>().Play("BrokenAmphora");
         //tween = transform.DORotate(new Vector3(90, 0, 0), 0.5f).SetRelative();
         anfora.SetActive(false);
     }

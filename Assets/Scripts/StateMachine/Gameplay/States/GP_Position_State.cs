@@ -58,9 +58,11 @@ namespace StateMachine.Gameplay
             {
                 if (player != null)
                 {
+                    player.gameObject.GetComponent<PlayerController>().ResetCooldown();
                     player.rigidbody.useGravity = false;
                     player.rigidbody.velocity = Vector3.zero;
                     player.gameObject.GetComponent<PlayerController>().abilityReady.SetActive(true);
+                    context.UIAbilityAnimation[n].gameObject.SetActive(true);
                     if (player == context.Enemy.PlayerToFollow)
                     {
                         context.ImageInseguito[n].SetActive(true);

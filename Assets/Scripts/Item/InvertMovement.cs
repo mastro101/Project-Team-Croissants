@@ -44,7 +44,10 @@ public class InvertMovement : ItemBase
         foreach (IPlayer player in players)
         {
             if (player != MyPlayer)
+            {
                 Effect(player);
+                FindObjectOfType<AudioManager>().Play("VoodooActivatedAbility");
+            }
         }
         //gameplaySM.endBattle -= OnSpawn;
         Destroy(gameObject);

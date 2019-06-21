@@ -8,6 +8,8 @@ public class PlayerPunkTrinity : PlayerBase
 
     [SerializeField]
     GameObject trapPrefab;
+    [HideInInspector]
+    public GameObject VFXEffectTrap;
 
     BuffEffects effect;
 

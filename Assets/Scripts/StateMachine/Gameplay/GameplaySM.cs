@@ -13,6 +13,9 @@ namespace StateMachine.Gameplay
         Color[] playersColor;
         [SerializeField]
         GameObject[] baroneVFX;
+        [SerializeField]
+        GameObject[] trapVFX;
+        GameObject[] trapTimerVFX;
 
         [SerializeField]
         EnemyBase enemy;
@@ -87,6 +90,8 @@ namespace StateMachine.Gameplay
                 IconPlayer = iconPlayer,
                 PlayersColor = playersColor,
                 VoodooBarrierVFX = baroneVFX,
+                PunkTrapVFX = trapVFX,
+                TrinityTrapVFX = trapTimerVFX,
                 UIAbilityAnimation = UIAbilityAnimation,
                 FollowPlayerList = new List<IPlayer>(),
             };
@@ -147,7 +152,7 @@ namespace StateMachine.Gameplay
 
         public Image[] IconPlayer;
         public Color[] PlayersColor;
-        public GameObject[] VoodooBarrierVFX;
+        public GameObject[] VoodooBarrierVFX, PunkTrapVFX, TrinityTrapVFX;
         public List<IPlayer> FollowPlayerList;
     }
 

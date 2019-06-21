@@ -54,6 +54,8 @@ namespace StateMachine.Gameplay
                     playerC.abilityUIAnimator = context.UIAbilityAnimation[n];
                     PlayerVoodoo voodoo = player.gameObject.GetComponent<PlayerVoodoo>();
                     PlayerVoodooMascherato voodooMascherato = player.gameObject.GetComponent<PlayerVoodooMascherato>();
+                    PlayerPunk punk = player.gameObject.GetComponent<PlayerPunk>();
+                    PlayerPunkTrinity trinity = player.gameObject.GetComponent<PlayerPunkTrinity>();
                     if (voodoo != null)
                     {
                         voodoo.InverterBarrier = context.VoodooBarrierVFX[n];
@@ -61,6 +63,14 @@ namespace StateMachine.Gameplay
                     else if (voodooMascherato != null)
                     {
                         voodooMascherato.InverterBarrier = context.VoodooBarrierVFX[n];
+                    }
+                    else if (punk != null)
+                    {
+                        punk.VFXEffectTrap = context.PunkTrapVFX[n];
+                    }
+                    else if (trinity != null)
+                    {
+                        trinity.VFXEffectTrap = context.TrinityTrapVFX[n];
                     }
 
                     n++;
