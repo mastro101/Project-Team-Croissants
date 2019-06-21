@@ -74,9 +74,15 @@ public class BuffPlayer : MonoBehaviour
         if (buffEffects != null)
         {
             if (variable > 0)
+            {
                 SpawnEffect(buffEffects.SlowEffect);
+                FindObjectOfType<AudioManager>().Play("SlowingPuddle");
+            }
             else
+            {
                 SpawnEffect(buffEffects.AcceleratorEffect);
+                FindObjectOfType<AudioManager>().Play("AccelerationPuddle");
+            }
         }
         player.MovementSpeed -= variable;
     }
