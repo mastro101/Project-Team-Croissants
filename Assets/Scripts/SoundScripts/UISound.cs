@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UISound : MonoBehaviour
 {
+    bool Moved;
+
     public void OnMouseDown()
     {
         FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
@@ -14,4 +14,9 @@ public class UISound : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("MenuScrolling");
     }
+
+    public void OnScroll()
+    {
+        FindObjectOfType<AudioManager>().Play("MenuScrolling");
+    }   
 }

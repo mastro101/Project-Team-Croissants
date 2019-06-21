@@ -19,8 +19,7 @@ namespace StateMachine.Menu
             base.Enter();
             FindObjectOfType<AudioManager>().Pause();
             FindObjectOfType<AudioManager>().Play("SottofondoMenu");
-            if (SceneManager.GetActiveScene().name != "StartScene")
-                SceneManager.LoadScene("MenuScene");
+            SceneManager.LoadScene("MenuScene");
             context.canvasInGame = FindObjectOfType<Canvas>().gameObject;
             if (context.canvasInGame == null)
             {
@@ -29,8 +28,8 @@ namespace StateMachine.Menu
             }
             if (context.StartPanel != null)
                 Destroy(context.StartPanel);
-            context.MenuPanelInGame = Instantiate(context.MenuPanelPrefab, context.canvasInGame.transform);
-            context.MenuPanelPrefab.SetActive(true);
+            //context.MenuPanelInGame = Instantiate(context.MenuPanelPrefab, context.canvasInGame.transform);
+            //context.MenuPanelPrefab.SetActive(true);
         }
     }
 }
