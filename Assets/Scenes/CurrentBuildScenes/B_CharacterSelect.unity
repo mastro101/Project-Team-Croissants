@@ -1804,11 +1804,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5781455768420624805, guid: dd73a8560fd398a4cab16002941a76e2,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1201685244, guid: dd73a8560fd398a4cab16002941a76e2, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1846,6 +1841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781455768420624805, guid: dd73a8560fd398a4cab16002941a76e2,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd73a8560fd398a4cab16002941a76e2, type: 3}
@@ -3589,22 +3589,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1999341242851599999, guid: dd73a8560fd398a4cab16002941a76e2,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e3320d4f496d45440b0f95ae96955e46,
-        type: 3}
-    - target: {fileID: 5781455768420624805, guid: dd73a8560fd398a4cab16002941a76e2,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5781455768420624805, guid: dd73a8560fd398a4cab16002941a76e2,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1201685245, guid: dd73a8560fd398a4cab16002941a76e2, type: 3}
       propertyPath: m_havePropertiesChanged
       value: 1
@@ -3618,6 +3602,22 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5781455768420624805, guid: dd73a8560fd398a4cab16002941a76e2,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781455768420624805, guid: dd73a8560fd398a4cab16002941a76e2,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999341242851599999, guid: dd73a8560fd398a4cab16002941a76e2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e3320d4f496d45440b0f95ae96955e46,
+        type: 3}
     - target: {fileID: 445726930619013835, guid: dd73a8560fd398a4cab16002941a76e2,
         type: 3}
       propertyPath: playOnAwake

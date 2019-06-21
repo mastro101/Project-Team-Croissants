@@ -32,12 +32,12 @@ public class AudioManager : MonoBehaviour
 			//s.source.outputAudioMixerGroup = mixerGroup;
 		}
 	}
-
+/*
     private void Start()
     {
         Play("SottofondoArena");
     }
-
+    */
     public void Play(string sound)
 	{
 		Sound s = Array.Find(sounds, item => item.name == sound);
@@ -72,6 +72,6 @@ public class AudioManager : MonoBehaviour
             sound.source.Stop();
         }
 
-        Play("SottofondoArena");
+       // Play("SottofondoMenu");
     }
 }

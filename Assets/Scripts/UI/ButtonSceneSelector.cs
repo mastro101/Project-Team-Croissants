@@ -4,6 +4,7 @@ using StateMachine.Menu;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class ButtonSceneSelector : MonoBehaviour
 {
@@ -12,11 +13,17 @@ public class ButtonSceneSelector : MonoBehaviour
     public Slider loadingBar;
     public TextMeshProUGUI loadText;
 
-
+    Selectable sel;
     AsyncOperation async;
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        FindObjectOfType<AudioManager>().Play("MenuScrolling");
+    }
 
     public void SelectScene()
     {
+        FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
         FindObjectOfType<GameManager>().SelectedLevel = NomeScena;
         FindObjectOfType<MenuSM>().goNext();
         SceneManager.LoadScene("Ambientazione2");
@@ -24,6 +31,7 @@ public class ButtonSceneSelector : MonoBehaviour
 
     public void LoadScreen()
     {
+        FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
         StartCoroutine(caricalivello());
 
     }
@@ -44,7 +52,7 @@ public class ButtonSceneSelector : MonoBehaviour
         {
             float progress = Mathf.Clamp01(async.progress / 0.9f);
             loadingBar.value = progress;
-            loadText.text = "Loading...         " + (progress * 100f).ToString() + "%";
+            loadText.text = "Loading...         " + (progress * 100f).ToString("F0") + "%";
             Debug.Log(progress);
             if (async.progress == 0.9f)
             {
@@ -54,5 +62,8 @@ public class ButtonSceneSelector : MonoBehaviour
         }
 
     }
+
+
+
    
 }

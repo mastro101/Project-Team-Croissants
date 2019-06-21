@@ -18,6 +18,8 @@ namespace StateMachine.Menu
         public override void Enter()
         {
             base.Enter();
+         //   FindObjectOfType<AudioManager>().Pause();
+         //   FindObjectOfType<AudioManager>().Play("SottofondoMenu");
             context.LuceAnimator = context.LuceGO.GetComponent<Animator>();
         }
 

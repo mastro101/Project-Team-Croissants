@@ -83,6 +83,7 @@ public class SelectPlayer : MonoBehaviour
         onePressed = true;
         pressA1.SetActive(false);
         selectCMenu1.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
         //Player1Text.text = "Ok";
         //check();
     }
@@ -93,6 +94,7 @@ public class SelectPlayer : MonoBehaviour
         twoPressed = true;
         pressA2.SetActive(false);
         selectCMenu2.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
         //Player2Text.text = "Ok";
         //check();
     }
@@ -103,6 +105,7 @@ public class SelectPlayer : MonoBehaviour
         threePressed = true;
         pressA3.SetActive(false);
         selectCMenu3.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
     }
 
     void checkPlayer4()
@@ -111,6 +114,7 @@ public class SelectPlayer : MonoBehaviour
         fourPressed = true;
         pressA4.SetActive(false);
         selectCMenu4.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
     }
 
 
