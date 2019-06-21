@@ -4599,6 +4599,7 @@ GameObject:
   - component: {fileID: 3252132731130476352}
   - component: {fileID: 3252132731130476353}
   - component: {fileID: 3252132731130476354}
+  - component: {fileID: 568501661986101316}
   m_Layer: 0
   m_Name: trappola punk pg1
   m_TagString: Untagged
@@ -9287,6 +9288,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &568501661986101316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252132731130476355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198959e93f748f14a9e8a5efd9aed864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GO: {fileID: 3252132731130476355}
+  timerToDestroy: 2
 --- !u!1 &3252132731531485883
 GameObject:
   m_ObjectHideFlags: 0
@@ -23097,11 +23112,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3252132731065345004}
     m_Modifications:
-    - target: {fileID: 1171354271774721459, guid: a0ba03222ee4f8248ba8fbe997b4b208,
-        type: 3}
-      propertyPath: m_Name
-      value: Bubble
-      objectReference: {fileID: 0}
     - target: {fileID: 1171354271774721458, guid: a0ba03222ee4f8248ba8fbe997b4b208,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23157,6 +23167,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1171354271774721459, guid: a0ba03222ee4f8248ba8fbe997b4b208,
+        type: 3}
+      propertyPath: m_Name
+      value: Bubble
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ba03222ee4f8248ba8fbe997b4b208, type: 3}
 --- !u!1001 &6397297971805287334
@@ -23166,11 +23181,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3252132731065345004}
     m_Modifications:
-    - target: {fileID: 8495514998584185117, guid: b1e7563913cbc5d4db0e9dc9fff5324b,
-        type: 3}
-      propertyPath: m_Name
-      value: Smoke
-      objectReference: {fileID: 0}
     - target: {fileID: 8495514998584185116, guid: b1e7563913cbc5d4db0e9dc9fff5324b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23226,6 +23236,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8495514998584185117, guid: b1e7563913cbc5d4db0e9dc9fff5324b,
+        type: 3}
+      propertyPath: m_Name
+      value: Smoke
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1e7563913cbc5d4db0e9dc9fff5324b, type: 3}
 --- !u!1001 &7365006577644349213
@@ -23235,11 +23250,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3252132731065345004}
     m_Modifications:
-    - target: {fileID: 5409991969969636679, guid: 04a080767ca686d45a7cc128e480a6fc,
-        type: 3}
-      propertyPath: m_Name
-      value: Lines
-      objectReference: {fileID: 0}
     - target: {fileID: 5409991969969636676, guid: 04a080767ca686d45a7cc128e480a6fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23294,6 +23304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409991969969636679, guid: 04a080767ca686d45a7cc128e480a6fc,
+        type: 3}
+      propertyPath: m_Name
+      value: Lines
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04a080767ca686d45a7cc128e480a6fc, type: 3}

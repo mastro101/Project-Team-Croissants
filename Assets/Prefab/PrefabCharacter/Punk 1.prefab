@@ -620,7 +620,8 @@ MonoBehaviour:
   iconCharacterSprite: {fileID: 21300000, guid: 5552c1a4beeb6cb44a82105ed9ae5242,
     type: 3}
   dashVFX: {fileID: 3203163491313584056}
-  victoryAnimation: {fileID: 0}
+  victoryAnimation: {fileID: 1783382511515022911, guid: debba97a819ac0b4b99cf1b172ea8f69,
+    type: 3}
   movementSpeed: 8
   dashDistance: 16
   dashDuration: 0.5
@@ -633,6 +634,7 @@ MonoBehaviour:
   timerAbility: 50
   trapPrefab: {fileID: 4223719614770433423, guid: aa4a2185d9189a445b0c8032be4e07f2,
     type: 3}
+  VFXEffectTrap: {fileID: 0}
 --- !u!1 &2998531843342869820
 GameObject:
   m_ObjectHideFlags: 0

@@ -9091,6 +9091,7 @@ GameObject:
   - component: {fileID: 4272796856866412185}
   - component: {fileID: 3795030623681497500}
   - component: {fileID: 1721636026125090787}
+  - component: {fileID: 5131963738564622527}
   m_Layer: 0
   m_Name: trappola punk 2 viola
   m_TagString: Untagged
@@ -13794,6 +13795,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5131963738564622527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994006173900828369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198959e93f748f14a9e8a5efd9aed864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GO: {fileID: 994006173900828369}
+  timerToDestroy: 3
 --- !u!1 &1154062251386354234
 GameObject:
   m_ObjectHideFlags: 0

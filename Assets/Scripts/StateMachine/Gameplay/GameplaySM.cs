@@ -15,6 +15,7 @@ namespace StateMachine.Gameplay
         GameObject[] baroneVFX;
         [SerializeField]
         GameObject[] trapVFX;
+        [SerializeField]
         GameObject[] trapTimerVFX;
 
         [SerializeField]

@@ -32052,6 +32052,7 @@ GameObject:
   - component: {fileID: 4885149972613809491}
   - component: {fileID: 8538026984298405022}
   - component: {fileID: 6253921024799223518}
+  - component: {fileID: 852443607004138244}
   m_Layer: 0
   m_Name: trappola punk 2 blu
   m_TagString: Untagged
@@ -36755,6 +36756,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &852443607004138244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609092910744845435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198959e93f748f14a9e8a5efd9aed864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GO: {fileID: 2609092910744845435}
+  timerToDestroy: 3
 --- !u!1 &4538103146617909804
 GameObject:
   m_ObjectHideFlags: 0

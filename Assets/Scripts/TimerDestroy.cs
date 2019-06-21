@@ -17,4 +17,9 @@ public class TimerDestroy : MonoBehaviour
         yield return new WaitForSeconds(timerToDestroy);
         Destroy(GO);
     }
+
+    private void OnDestroy()
+    {
+        StopCoroutine(startTimer());
+    }
 }

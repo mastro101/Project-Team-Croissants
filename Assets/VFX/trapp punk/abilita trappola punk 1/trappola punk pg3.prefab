@@ -18390,8 +18390,9 @@ GameObject:
   - component: {fileID: 1608345111329011365}
   - component: {fileID: 1608345111329011364}
   - component: {fileID: 1608345111329011367}
+  - component: {fileID: 300798614692068071}
   m_Layer: 0
-  m_Name: trappola punk pg 3
+  m_Name: trappola punk pg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23078,3 +23079,17 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &300798614692068071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608345111329011366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198959e93f748f14a9e8a5efd9aed864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GO: {fileID: 1608345111329011366}
+  timerToDestroy: 2

@@ -16747,6 +16747,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
+      propertyPath: trapVFX.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: trapTimerVFX.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
       propertyPath: p1
       value: 
       objectReference: {fileID: 0}
@@ -17139,6 +17149,54 @@ PrefabInstance:
       propertyPath: UIAbilityAnimation.Array.data[3]
       value: 
       objectReference: {fileID: 260540114}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: trapTimerVFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 3252132731130476355, guid: bd3fd6f16cc96e2479f2d4740760d43e,
+        type: 3}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: trapTimerVFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 6794473984282998823, guid: 5363c3611803b3641989360ca2cd4d69,
+        type: 3}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: trapTimerVFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 1608345111329011366, guid: 95532e8a35cf05a4a93bf5774f3859d0,
+        type: 3}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: trapTimerVFX.Array.data[3]
+      value: 
+      objectReference: {fileID: 4480284527753471629, guid: 4e91212844f603443bc52225eb07be99,
+        type: 3}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: trapVFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 2609092910744845435, guid: c8d988e75a287c34baa23af5f6777725,
+        type: 3}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: trapVFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 128143886843057795, guid: f5c1651f5d87fce45879de49c58c0fb3,
+        type: 3}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: trapVFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 3685688418356779841, guid: 382b69b3535cc524b91efd8ab0da360d,
+        type: 3}
+    - target: {fileID: 7091529689333819928, guid: 377f4ba49406d7d4d9dea5d038895dea,
+        type: 3}
+      propertyPath: trapVFX.Array.data[3]
+      value: 
+      objectReference: {fileID: 994006173900828369, guid: 50a78b91354221c479d30ca54cce5eeb,
+        type: 3}
     - target: {fileID: 7091529689333819935, guid: 377f4ba49406d7d4d9dea5d038895dea,
         type: 3}
       propertyPath: m_IsActive
