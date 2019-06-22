@@ -95,6 +95,23 @@ ModelImporter:
     100178: SM_Tree_7
     100180: SM_Tree_8
     100182: SM_Tree_9
+    100184: pianeta
+    100186: SM_Pantheon2
+    100188: SM_Skyscraper1
+    100190: SM_Skyscraper2
+    100192: SM_Vulcano1
+    100194: SM_Cocktail_Dreams1
+    100196: SM_Cocktail_Dreams2
+    100198: SM_Cocktail_Dreams3
+    100200: SM_Cocktail_Dreams4
+    100202: SM_Cocktail_Dreams5
+    100204: SM_House4
+    100206: SM_House5
+    100208: SM_House6
+    100210: SM_House_10
+    100212: SM_House_7
+    100214: SM_House_8
+    100216: SM_House_9
     400000: //RootNode
     400002: default1
     400004: group1
@@ -187,12 +204,35 @@ ModelImporter:
     400178: SM_Tree_7
     400180: SM_Tree_8
     400182: SM_Tree_9
+    400184: pianeta
+    400186: SM_Pantheon2
+    400188: SM_Skyscraper1
+    400190: SM_Skyscraper2
+    400192: SM_Vulcano1
+    400194: SM_Cocktail_Dreams1
+    400196: SM_Cocktail_Dreams2
+    400198: SM_Cocktail_Dreams3
+    400200: SM_Cocktail_Dreams4
+    400202: SM_Cocktail_Dreams5
+    400204: SM_House4
+    400206: SM_House5
+    400208: SM_House6
+    400210: SM_House_10
+    400212: SM_House_7
+    400214: SM_House_8
+    400216: SM_House_9
     2100000: default
     2100002: default2
     2100004: M_Tree_2
     2100006: M_Tree
     2100008: M_House
     2100010: M_House_2
+    2100012: SM_Pantheon1
+    2100014: M_Skyscraper
+    2100016: M_Vulcano
+    2100018: M_Cocktail_Dreams
+    2100020: M_House_3
+    2100022: M_House1
     2300000: //RootNode
     2300002: default1
     2300004: SM_House
@@ -284,6 +324,23 @@ ModelImporter:
     2300176: SM_Tree_7
     2300178: SM_Tree_8
     2300180: SM_Tree_9
+    2300182: pianeta
+    2300184: SM_Pantheon2
+    2300186: SM_Skyscraper1
+    2300188: SM_Skyscraper2
+    2300190: SM_Vulcano1
+    2300192: SM_Cocktail_Dreams1
+    2300194: SM_Cocktail_Dreams2
+    2300196: SM_Cocktail_Dreams3
+    2300198: SM_Cocktail_Dreams4
+    2300200: SM_Cocktail_Dreams5
+    2300202: SM_House4
+    2300204: SM_House5
+    2300206: SM_House6
+    2300208: SM_House_10
+    2300210: SM_House_7
+    2300212: SM_House_8
+    2300214: SM_House_9
     3300000: //RootNode
     3300002: default1
     3300004: SM_House
@@ -375,6 +432,23 @@ ModelImporter:
     3300176: SM_Tree_7
     3300178: SM_Tree_8
     3300180: SM_Tree_9
+    3300182: pianeta
+    3300184: SM_Pantheon2
+    3300186: SM_Skyscraper1
+    3300188: SM_Skyscraper2
+    3300190: SM_Vulcano1
+    3300192: SM_Cocktail_Dreams1
+    3300194: SM_Cocktail_Dreams2
+    3300196: SM_Cocktail_Dreams3
+    3300198: SM_Cocktail_Dreams4
+    3300200: SM_Cocktail_Dreams5
+    3300202: SM_House4
+    3300204: SM_House5
+    3300206: SM_House6
+    3300208: SM_House_10
+    3300210: SM_House_7
+    3300212: SM_House_8
+    3300214: SM_House_9
     4300000: default1
     4300002: SM_Tree_3
     4300004: SM_Tree_4
@@ -465,7 +539,79 @@ ModelImporter:
     4300174: SM_House
     4300176: SM_Tree_2
     4300178: SM_Tree
-  externalObjects: {}
+    4300180: pianeta
+    4300182: SM_Pantheon2
+    4300184: SM_Skyscraper1
+    4300186: SM_Skyscraper2
+    4300188: SM_Vulcano1
+    4300190: SM_Cocktail_Dreams5
+    4300192: SM_Cocktail_Dreams4
+    4300194: SM_Cocktail_Dreams3
+    4300196: SM_Cocktail_Dreams2
+    4300198: SM_Cocktail_Dreams1
+    4300200: SM_House_9
+    4300202: SM_House_8
+    4300204: SM_House_7
+    4300206: SM_House4
+    4300208: SM_House5
+    4300210: SM_House6
+    4300212: SM_House_10
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Cocktail_Dreams
+    second: {fileID: 2100000, guid: c1ecec8098f4d8042907139f78df4a33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_House
+    second: {fileID: 2100000, guid: 4f851acdc995f754dbcfa16652615a47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_House1
+    second: {fileID: 2100000, guid: 4f851acdc995f754dbcfa16652615a47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_House_2
+    second: {fileID: 2100000, guid: 632537c6c843dc747a902ccbd788dddb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_House_3
+    second: {fileID: 2100000, guid: 632537c6c843dc747a902ccbd788dddb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Skyscraper
+    second: {fileID: 2100000, guid: 5414e9d5d17750246aa78698bcf7f206, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tree
+    second: {fileID: 2100000, guid: ec57f5d3d3f8ee54aa61f465d4d3ae60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tree_2
+    second: {fileID: 2100000, guid: fc764c28d19951447b07fec3dc66e435, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Vulcano
+    second: {fileID: 2100000, guid: be512a39ab671dd429177f9c332999fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SM_Pantheon1
+    second: {fileID: 2100000, guid: 258832e38f75eb04f874d0633f869de2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: default2
+    second: {fileID: 2100000, guid: bd9b05e27b6bd4c49ac28588285c7a51, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
