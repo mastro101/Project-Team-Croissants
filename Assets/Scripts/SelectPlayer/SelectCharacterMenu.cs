@@ -10,7 +10,7 @@ public class SelectCharacterMenu : MonoBehaviour
     int playerInt;
     SelectCharacter selectCharacter;
     [SerializeField]
-    Image currentCharacterImage, currentAbilityImage;
+    Image nameImage, currentCharacterImage, currentAbilityImage;
     [SerializeField]
     TextMeshProUGUI NameText;
     [SerializeField]
@@ -40,10 +40,12 @@ public class SelectCharacterMenu : MonoBehaviour
     void changeIcon()
     {
         IPlayer currentPlayer = selectCharacter.currentPlayer.GetComponent<IPlayer>();
+        PlayerBase currentPlayerBase = selectCharacter.currentPlayer.GetComponent<PlayerBase>();
         currentCharacterImage.sprite = currentPlayer.SelectCharacterSprite;
         NameText.text = currentPlayer.Name;
         currentAbilityImage.sprite = currentPlayer.AbilitySprite;
         DescriptionText.text = currentPlayer.AbilityDescription;
+        nameImage.sprite = currentPlayerBase.NameSprite;
     }
 
     bool b = false;

@@ -14,6 +14,8 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
 
     public abstract string Name { get; }
 
+    public Sprite NameSprite;
+
     [SerializeField]
     Sprite slectCharacterSprite;
     public Sprite SelectCharacterSprite { get { return slectCharacterSprite; } }
