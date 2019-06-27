@@ -8,6 +8,11 @@ public class MenuButtons : MonoBehaviour
         FindObjectOfType<MenuSM>().goNext(0);
     }
 
+    public void PlayTutorial()
+    {
+        FindObjectOfType<MenuSM>().goNext(1);
+    }
+
     public void ExitGame()
     {
         Application.Quit();
