@@ -59,6 +59,7 @@ namespace StateMachine.Gameplay
                 if (player != null && !player.gameObject.GetComponent<IPlayer>().IsGameOver)
                     player.PlayerInput();
             }
+            context.Pause.CheckInput();
         }
 
         public override void Exit()

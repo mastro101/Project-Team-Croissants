@@ -32,6 +32,9 @@ namespace StateMachine.Gameplay
         public TextMeshProUGUI[] abilityCDText;
         public Image[] iconPlayer;
         [SerializeField] Animator[] UIAbilityAnimation;
+        [SerializeField]
+        Pause pause;
+
 
         public event GameplayStateEvent.EndState endBattle;
         public event GameplayStateEvent.StartState startBattle;
@@ -95,6 +98,7 @@ namespace StateMachine.Gameplay
                 TrinityTrapVFX = trapTimerVFX,
                 UIAbilityAnimation = UIAbilityAnimation,
                 FollowPlayerList = new List<IPlayer>(),
+                Pause = pause,
             };
             base.Start();
         }
@@ -111,18 +115,12 @@ namespace StateMachine.Gameplay
 
         void invokeEndBattle()
         {
-            if (endBattle != null)
-            {
-                endBattle();
-            }
+            endBattle?.Invoke();
         }
 
         void invokeStartBattle()
         {
-            if (startBattle != null)
-            {
-                startBattle();
-            }
+            startBattle?.Invoke();
         }
     }
 
@@ -155,6 +153,7 @@ namespace StateMachine.Gameplay
         public Color[] PlayersColor;
         public GameObject[] VoodooBarrierVFX, PunkTrapVFX, TrinityTrapVFX;
         public List<IPlayer> FollowPlayerList;
+        public Pause Pause;
     }
 
     public class GameplayStateEvent

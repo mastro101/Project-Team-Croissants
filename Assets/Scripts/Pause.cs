@@ -1,9 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using StateMachine.Menu;
 
 public class Pause : MonoBehaviour
 {
+    [SerializeField]
+    GameObject pauseMenu;
+
     GameplayState currentState;
     float normalTime;
 
@@ -12,24 +15,44 @@ public class Pause : MonoBehaviour
         normalTime = Time.timeScale;
     }
 
-    private void Update()
+    public void CheckInput()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             switch (currentState)
             {
                 case GameplayState.Pause:
                     Time.timeScale = 0;
                     currentState = GameplayState.Play;
+                    pauseMenu.SetActive(true);
                     break;
                 case GameplayState.Play:
                     Time.timeScale = normalTime;
                     currentState = GameplayState.Pause;
+                    pauseMenu.SetActive(false);
                     break;
                 default:
                     break;
             }
         }
+    }
+
+    public void Resume()
+    {
+        currentState = GameplayState.Play;
+        pauseMenu.SetActive(false);
+        Time.timeScale = normalTime;
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = normalTime;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MainMenu()
+    {
+        FindObjectOfType<MenuSM>().goNext(0);
     }
 
     enum GameplayState
