@@ -56,7 +56,6 @@ public class SelectCharacterMenu : MonoBehaviour
             if (Input.GetButtonDown("J" + setController.AssignedController[playerInt - 1].ToString() + "A") || (playerInt == 1 && Input.GetKeyDown(KeyCode.Space)) || (playerInt == 2 && Input.GetKeyDown(KeyCode.RightControl)))
             {
                 choose();
-               
             }
 
             if (Input.GetAxis("J" + setController.AssignedController[playerInt - 1].ToString() + "H") > 0.7f && b == false)
@@ -86,7 +85,8 @@ public class SelectCharacterMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
         Debug.Log(playerInt - 1);
         Debug.Log(selectCharacter.currentPlayer.GetComponent<IPlayer>().Name);
-        SelectedVFX.Play();
+        SelectedVFX.gameObject.SetActive(true);
+        //SelectedVFX.Play();
         gameManager.PlayersGO[playerInt - 1] = selectCharacter.currentPlayer;
         choosed = true;
         currentCharacterImage.sprite = selectCharacter.currentPlayer.GetComponent<IPlayer>().SelectedCharacterSprite;

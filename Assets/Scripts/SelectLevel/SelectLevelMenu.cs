@@ -66,9 +66,25 @@ public class SelectLevelMenu : MonoBehaviour
             else if (Input.GetAxis("J" + setController.AssignedController[0].ToString() + "H") < 0.7f && Input.GetAxis("J" + setController.AssignedController[0].ToString() + "H") > -0.7f)
                 b = false;
         }
-        else if (!choosed && (Input.GetKeyDown(KeyCode.Space)) || (Input.GetKeyDown(KeyCode.Return)))
+        else if (!choosed && setController.AssignedController.Count < 1)
         {
-            choose();
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+            {
+                selectLevel.NextLevel();
+                FindObjectOfType<AudioManager>().Play("MenuScrolling");
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+            {
+                selectLevel.PrevLevel();
+                FindObjectOfType<AudioManager>().Play("MenuScrolling");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
+            {
+                choose();
+            }
+
         }
     }
 
