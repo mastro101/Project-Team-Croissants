@@ -10,7 +10,7 @@ public class SelectLevelMenu : MonoBehaviour
 {
     SelectLevel selectLevel;
     [SerializeField]
-    Image currentLevelImage;
+    Image currentLevelImage, prevLevelImage, nextLevelImage;
     [SerializeField]
     TextMeshProUGUI NameText;
     GameManager gameManager;
@@ -36,6 +36,8 @@ public class SelectLevelMenu : MonoBehaviour
     {
         LevelData currentLevel = selectLevel.currentLevel;
         currentLevelImage.sprite = currentLevel.Preview;
+        prevLevelImage.sprite = selectLevel.prevLevel.Preview;
+        nextLevelImage.sprite = selectLevel.nextLevel.Preview;
         NameText.text = currentLevel.Name;
     }
 

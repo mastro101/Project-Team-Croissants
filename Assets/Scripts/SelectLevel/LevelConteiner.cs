@@ -3,5 +3,10 @@ using UnityEngine;
 
 public class LevelConteiner : MonoBehaviour
 {
-    public List<LevelData> Levels;
+    public object[] Levels;
+
+    private void Awake()
+    {
+        Levels = Resources.LoadAll("LevelData", typeof(LevelData));
+    }
 }
