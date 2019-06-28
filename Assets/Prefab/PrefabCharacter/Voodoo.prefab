@@ -2930,6 +2930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d97a9c4b6db604da24d11bd80d7a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NameSprite: {fileID: 0}
   slectCharacterSprite: {fileID: 21300000, guid: 2c170e26b09b60549958d5c92d7612e5,
     type: 3}
   selectedCharacterSprite: {fileID: 21300000, guid: a5bacba6b71941c4e81acdb345ba43f6,
@@ -2940,12 +2941,13 @@ MonoBehaviour:
   dashVFX: {fileID: 2560144574750324350}
   victoryAnimation: {fileID: 2756804313959660916, guid: 09bd283d984f79d49a3d562acc5fe46c,
     type: 3}
-  movementSpeed: 8
+  movementSpeed: 7
   dashDistance: 16
   dashDuration: 0.5
-  dashCooldown: 2
-  abilityCooldown: 18
-  abilityDescription: Ti controllo la mente
+  dashCooldown: 1.5
+  abilityCooldown: 10
+  abilityDescription: Creates an aura around himself. It explodes after a while confusing
+    opponents inside of it.
   aim: {fileID: 308616853985957715}
   emission: {fileID: 308616853278458966}
   effectTime: 6
