@@ -16,6 +16,11 @@ public class SelectLevelMenu : MonoBehaviour
     GameManager gameManager;
     SetController setController;
 
+    public GameObject loadTestImageScreen;
+    AsyncOperation async;
+    public Slider loadingBar;
+    public TextMeshProUGUI loadText;
+
     bool choosed;
 
     private void Awake()
@@ -91,10 +96,40 @@ public class SelectLevelMenu : MonoBehaviour
     void choose()
     {
         FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
-        gameManager.SelectedLevel = selectLevel.currentLevel.ID;
+
+        StartCoroutine(caricalivello());
+
+
         choosed = true;
 
-        FindObjectOfType<MenuSM>().goNext();
-        SceneManager.LoadScene("Ambientazione2");
+
     }
+
+    IEnumerator caricalivello()
+    {
+        loadTestImageScreen.SetActive(true);
+
+        gameManager.SelectedLevel = selectLevel.currentLevel.ID;
+        FindObjectOfType<MenuSM>().goNext();
+        async = SceneManager.LoadSceneAsync("Ambientazione2");
+
+
+
+        async.allowSceneActivation = false;
+
+        while (async.isDone == false)
+        {
+            float progress = Mathf.Clamp01(async.progress / 0.9f);
+            loadingBar.value = progress;
+            loadText.text = "Loading...         " + (progress * 100f).ToString("F0") + "%";
+            Debug.Log(progress);
+            if (async.progress == 0.9f)
+            {
+                async.allowSceneActivation = true;
+            }
+            yield return null;
+        }
+
+    }
+
 }

@@ -3972,14 +3972,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368504605}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 222972548}
   - {fileID: 280913388}
-  m_Father: {fileID: 1323834764}
-  m_RootOrder: 3
+  m_Father: {fileID: 8163946524249369332}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -11310,7 +11310,6 @@ RectTransform:
   - {fileID: 1805076843}
   - {fileID: 300453328}
   - {fileID: 365348746}
-  - {fileID: 368504606}
   - {fileID: 8163946524249369332}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -17179,8 +17178,9 @@ RectTransform:
   - {fileID: 3600048707985143671}
   - {fileID: 735732683}
   - {fileID: 1568022227}
+  - {fileID: 368504606}
   m_Father: {fileID: 1323834764}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -17221,6 +17221,9 @@ MonoBehaviour:
   prevLevelImage: {fileID: 735732684}
   nextLevelImage: {fileID: 1568022228}
   NameText: {fileID: 4235889695149661193}
+  loadTestImageScreen: {fileID: 368504605}
+  loadingBar: {fileID: 280913389}
+  loadText: {fileID: 222972549}
 --- !u!114 &8163946524249369335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17234,8 +17237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels: []
-  nextLevel: {fileID: 0}
-  prevLevel: {fileID: 0}
 --- !u!222 &8573531481740241379
 CanvasRenderer:
   m_ObjectHideFlags: 0
