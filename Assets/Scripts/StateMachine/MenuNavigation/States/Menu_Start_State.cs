@@ -28,6 +28,7 @@ namespace StateMachine.Menu
             base.Tick();
             if (Input.anyKeyDown)
             {
+                FindObjectOfType<AudioManager>().Play("PressAnyButtonSound");
                 context.GenericGoNext();
             }
         }

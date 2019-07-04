@@ -19,6 +19,7 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
         {
+            FindObjectOfType<AudioManager>().Play("OpenPauseMenu");
             switch (currentState)
             {
                 case GameplayState.Pause:
@@ -39,6 +40,7 @@ public class Pause : MonoBehaviour
 
     public void Resume()
     {
+        FindObjectOfType<AudioManager>().Play("ClosePauseMenu");
         currentState = GameplayState.Play;
         pauseMenu.SetActive(false);
         Time.timeScale = normalTime;
