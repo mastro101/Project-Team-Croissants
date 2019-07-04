@@ -36,6 +36,11 @@ public class Pause : MonoBehaviour
                     break;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton1) && currentState == GameplayState.Pause)
+        {
+            Resume();
+        }
     }
 
     public void Resume()
