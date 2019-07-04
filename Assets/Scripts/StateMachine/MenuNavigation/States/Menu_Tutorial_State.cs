@@ -18,7 +18,7 @@ namespace StateMachine.Menu
             FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
             FindObjectOfType<GameManager>().SelectedLevel = "B_DeNittisOrigins_HorizontalSplit_Tutorial";
 
-            context.GenericGoNext();
+            //context.GenericGoNext();
             SceneManager.LoadScene("Ambientazione2Tutorial");
         }
     }
