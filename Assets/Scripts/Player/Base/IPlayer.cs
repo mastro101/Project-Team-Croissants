@@ -17,7 +17,7 @@ public interface IPlayer
     float DashCooldown { get; }
     float AbilityCooldown { get; }
     float OriginalSpeed { get; }
-    //GameObject Aim { get; }
+    GameObject Aim { get; }
     Sprite SelectCharacterSprite { get; }
     Sprite AbilitySprite { get; }
     Sprite IconCharacterSprite { get; }

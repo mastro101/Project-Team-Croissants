@@ -91,7 +91,7 @@ public abstract class PlayerBase : MonoBehaviour, IPlayer
 
     [SerializeField]
     GameObject aim;
-    //public GameObject Aim { get { return aim; } }
+    public GameObject Aim { get { return aim; } }
 
     public virtual void Ability()
     {

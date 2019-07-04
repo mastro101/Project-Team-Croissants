@@ -40,7 +40,7 @@ namespace StateMachine.Gameplay
             //Rimuove mirino
 
             if (context.Enemy.PlayerToFollow != null)
-                //context.Enemy.PlayerToFollow.Aim.SetActive(false);
+                context.Enemy.PlayerToFollow.Aim.SetActive(false);
             // Cambio PlayerToFollow
             
             if (NplayerToFollow >= context.FollowPlayerList.Count)
@@ -71,7 +71,7 @@ namespace StateMachine.Gameplay
                 n++;
             }
 
-            //context.Enemy.PlayerToFollow.Aim.SetActive(true);
+            context.Enemy.PlayerToFollow.Aim.SetActive(true);
 
             // Riposiziona i player nei loro punti iniziali
             int i = 0;
