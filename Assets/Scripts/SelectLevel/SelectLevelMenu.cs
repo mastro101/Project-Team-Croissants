@@ -20,6 +20,8 @@ public class SelectLevelMenu : MonoBehaviour
     AsyncOperation async;
     public Slider loadingBar;
     public TextMeshProUGUI loadText;
+    [SerializeField]
+    Sprite[] loadingBackgrounds;
 
     bool choosed;
 
@@ -107,6 +109,7 @@ public class SelectLevelMenu : MonoBehaviour
 
     IEnumerator caricalivello()
     {
+        loadTestImageScreen.GetComponent<Image>().sprite = loadingBackgrounds[Random.Range(0, loadingBackgrounds.Length)];
         loadTestImageScreen.SetActive(true);
 
         gameManager.SelectedLevel = selectLevel.currentLevel.ID;
@@ -121,7 +124,7 @@ public class SelectLevelMenu : MonoBehaviour
         {
             float progress = Mathf.Clamp01(async.progress / 0.9f);
             loadingBar.value = progress;
-            loadText.text = "Loading...         " + (progress * 100f).ToString("F0") + "%";
+            loadText.text = "Loading...         " + (progress * 99f).ToString("F0") + "%";
             Debug.Log(progress);
             if (async.progress == 0.9f)
             {

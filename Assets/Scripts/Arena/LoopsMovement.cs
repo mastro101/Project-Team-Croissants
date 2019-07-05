@@ -66,12 +66,19 @@ public class LoopsMovement : MonoBehaviour
         tween.Complete();
         tween.Rewind(true);
         tween.Kill();
+        //tween.onPlay -= Sound;
     }
 
     public void PathMovements()
     {
-        //AH pezzo di merda
         if (Paths.Length > 0)
             tween = wallToMove.DOPath(Paths, MovementDuration).SetLoops<Tweener>(Looptimes, LoopType).SetDelay(WaitTime).SetRelative().SetEase(Curve);
+        //tween.onPlay += Sound;
+        //tween.onComplete += Sound;
     }
+
+    public void Sound()
+    {
+        FindObjectOfType<AudioManager>().Play("MovementArenaLoop");
+    } 
 }

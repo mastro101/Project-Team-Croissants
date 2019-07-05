@@ -59,7 +59,8 @@ public class ArenaMovement : MonoBehaviour
     void MoveArena()
     {
         oldPosition = transform.position;
-        tween = wallToMove.DOMove(newPosition, movementDuration).SetDelay<Tween>(WaitTime).SetEase(Curve).SetAutoKill<Tween>(false).SetRelative();            
+        tween = wallToMove.DOMove(newPosition, movementDuration).SetDelay<Tween>(WaitTime).SetEase(Curve).SetAutoKill<Tween>(false).SetRelative();
+        tween.onPlay += Sound;
     }
 
     public void spawn()
@@ -67,5 +68,11 @@ public class ArenaMovement : MonoBehaviour
         tween.Pause();
         tween.Rewind(true);        
         transform.position = oldPosition;
+        tween.onPlay -= Sound;
+    }
+
+    public void Sound()
+    {
+        FindObjectOfType<AudioManager>().Play("MovementArena");
     }
 }

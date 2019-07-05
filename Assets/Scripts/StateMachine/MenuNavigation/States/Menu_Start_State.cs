@@ -19,7 +19,7 @@ namespace StateMachine.Menu
         {
             base.Enter();
          //   FindObjectOfType<AudioManager>().Pause();
-         //   FindObjectOfType<AudioManager>().Play("SottofondoMenu");
+            FindObjectOfType<AudioManager>().Play("StartMenu");
             context.LuceAnimator = context.LuceGO.GetComponent<Animator>();
         }
 
@@ -36,6 +36,7 @@ namespace StateMachine.Menu
         public override void Exit()
         {
             base.Exit();
+            FindObjectOfType<AudioManager>().Pause("StartMenu");
             context.LuceAnimator.SetTrigger("Exit");
         }
     }
