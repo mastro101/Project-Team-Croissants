@@ -271,6 +271,7 @@ public class PlayerController : MonoBehaviour
                 abilityReady.SetActive(true);
                 abilityUIAnimator.gameObject.SetActive(true);
                 abilityUIAnimator.SetTrigger("Anim");
+                //FindObjectOfType<AudioManager>().Play("AbilityReady");
 
                 canAbility = true;
                 break;
