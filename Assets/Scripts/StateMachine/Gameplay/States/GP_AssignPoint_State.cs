@@ -34,6 +34,7 @@ namespace StateMachine.Gameplay
                 {
                     context.WinCheckImageP1[i].SetActive(true);
                     context.WinCheckImageP1[i].GetComponent<Animator>().SetTrigger("Next");
+                    context.Scorebase[0].GetComponent<Animator>().SetTrigger("Next");
                 }
                 //context.WinPointImageP1[i].SetActive(true);
                 context.WinCheckImageP1[i].transform.DOScale(1, 1).SetEase(Ease.OutBack);
@@ -46,6 +47,7 @@ namespace StateMachine.Gameplay
                     {
                         context.WinCheckImageP2[i].SetActive(true);
                         context.WinCheckImageP2[i].GetComponent<Animator>().SetTrigger("Next");
+                        context.Scorebase[1].GetComponent<Animator>().SetTrigger("Next");
                     }
                     // context.WinPointImageP2[i].SetActive(true);
                     context.WinCheckImageP2[i].transform.DOScale(1, 1).SetEase(Ease.OutBack);
@@ -59,6 +61,7 @@ namespace StateMachine.Gameplay
                     {
                         context.WinCheckImageP3[i].SetActive(true);
                         context.WinCheckImageP3[i].GetComponent<Animator>().SetTrigger("Next");
+                        context.Scorebase[2].GetComponent<Animator>().SetTrigger("Next");
                     }
                     context.WinCheckImageP3[i].transform.DOScale(1, 1).SetEase(Ease.OutBack);
                     pointP3++;
@@ -72,6 +75,7 @@ namespace StateMachine.Gameplay
                     {
                         context.WinCheckImageP4[i].SetActive(true);
                         context.WinCheckImageP4[i].GetComponent<Animator>().SetTrigger("Next");
+                        context.Scorebase[3].GetComponent<Animator>().SetTrigger("Next");
                     }
                     context.WinCheckImageP4[i].transform.DOScale(1, 1).SetEase(Ease.OutBack);
                     pointP4++;
