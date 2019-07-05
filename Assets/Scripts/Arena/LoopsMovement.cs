@@ -66,14 +66,14 @@ public class LoopsMovement : MonoBehaviour
         tween.Complete();
         tween.Rewind(true);
         tween.Kill();
-        tween.onPlay -= Sound;
+        //tween.onPlay -= Sound;
     }
 
     public void PathMovements()
     {
         if (Paths.Length > 0)
             tween = wallToMove.DOPath(Paths, MovementDuration).SetLoops<Tweener>(Looptimes, LoopType).SetDelay(WaitTime).SetRelative().SetEase(Curve);
-        tween.onPlay += Sound;
+        //tween.onPlay += Sound;
         //tween.onComplete += Sound;
     }
 
