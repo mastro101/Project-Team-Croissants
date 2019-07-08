@@ -59,6 +59,7 @@ public class Pause : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = normalTime;
         FindObjectOfType<MenuSM>().goNext(0);
     }
 
