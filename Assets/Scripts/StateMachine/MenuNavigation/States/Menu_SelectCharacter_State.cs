@@ -12,10 +12,24 @@ namespace StateMachine.Menu
             }
         }
 
+        SetController setController;
+
         public override void Enter()
         {
             base.Enter();
+            setController = null;
             SceneManager.LoadScene("B_CharacterSelect");
+        }
+
+        public override void Tick()
+        {
+            base.Tick();
+            /*if (setController == null)
+            {
+                setController = FindObjectOfType<SetController>();
+                setController.AssignedController = new System.Collections.Generic.List<int>();
+                setController.NPlayer = 0;
+            }*/
         }
     }
 }

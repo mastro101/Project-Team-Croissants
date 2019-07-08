@@ -19,5 +19,11 @@ namespace StateMachine.Menu
             FindObjectOfType<AudioManager>().Pause();
             FindObjectOfType<AudioManager>().Play("SottofondoArena");
         }
+
+        public override void Exit()
+        {
+            base.Exit();
+            Destroy(FindObjectOfType<SetController>());
+        }
     }
 }
