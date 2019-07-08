@@ -93,6 +93,10 @@ namespace StateMachine.Gameplay
             base.Exit();
             context.EndRoundPanel.SetActive(false);
             context.SetPoint(0);
+            foreach (GameObject gameObject in context.DeathImage)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

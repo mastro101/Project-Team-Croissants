@@ -89,12 +89,22 @@ namespace StateMachine.Gameplay
             player.IsGameOver = true;
             player.Aim.SetActive(false);
             NPlayerInGameOver = 0;
+            int intero = 0;
             foreach (IPlayer p in context.Players)
             {
+                if (player != null)
+                {
+                    if (player == p)
+                    {
+                        context.DeathImage[intero].SetActive(true);
+                    }
+                }
+
                 if (p != null && p.IsGameOver)
                 {
                     NPlayerInGameOver++;
                 }
+                intero++;
             }
 
             if (NPlayerInGameOver >= context.Players.Count - 1)
