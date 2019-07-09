@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 
@@ -73,10 +72,24 @@ public class SelectCharacterMenu : MonoBehaviour
             else if (Input.GetAxis("J" + setController.AssignedController[playerInt - 1].ToString() + "H") < 0.7f && Input.GetAxis("J" + setController.AssignedController[playerInt - 1].ToString() + "H") > -0.7f)
                 b = false;
         }
-        else if (!choosed && (playerInt == 1 && Input.GetKeyDown(KeyCode.Space)) || (playerInt == 2 && Input.GetKeyDown(KeyCode.RightControl)))
+        else if (setController.AssignedController.Count >= playerInt && choosed)
         {
-            choose();
-            
+            if (Input.GetButtonDown("J" + setController.AssignedController[playerInt - 1].ToString() + "B"))
+            {
+                cancel();
+            }
+        }
+        else
+        {
+            if (!choosed && (playerInt == 1 && Input.GetKeyDown(KeyCode.Space)) || (playerInt == 2 && Input.GetKeyDown(KeyCode.RightControl)))
+            {
+                choose();
+            }
+
+            if (choosed && (playerInt == 1 && Input.GetKeyDown(KeyCode.Q)) || (playerInt == 2 && Input.GetKeyDown(KeyCode.RightShift)))
+            {
+                cancel();
+            }
         }
     }
 
@@ -90,5 +103,14 @@ public class SelectCharacterMenu : MonoBehaviour
         gameManager.PlayersGO[playerInt - 1] = selectCharacter.currentPlayer;
         choosed = true;
         currentCharacterImage.sprite = selectCharacter.currentPlayer.GetComponent<IPlayer>().SelectedCharacterSprite;
+    }
+
+    void cancel()
+    {
+        FindObjectOfType<AudioManager>().Play("MenuBack");
+        SelectedVFX.gameObject.SetActive(false);
+        gameManager.PlayersGO[playerInt - 1] = null;
+        choosed = false;
+        currentCharacterImage.sprite = selectCharacter.currentPlayer.GetComponent<IPlayer>().SelectCharacterSprite;
     }
 }

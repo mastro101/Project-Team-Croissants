@@ -82,7 +82,9 @@ public class SelectPlayer : MonoBehaviour
         set.NPlayer++;
         onePressed = true;
         pressA1.SetActive(false);
+        selectCMenu1.GetComponent<SelectCharacter>().Init();
         selectCMenu1.SetActive(true);
+        selectCMenu1.GetComponent<SelectCharacter>().angolini[0].gameObject.SetActive(true);
         FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
         //Player1Text.text = "Ok";
         //check();
@@ -93,7 +95,9 @@ public class SelectPlayer : MonoBehaviour
         set.NPlayer++;
         twoPressed = true;
         pressA2.SetActive(false);
+        selectCMenu2.GetComponent<SelectCharacter>().Init();
         selectCMenu2.SetActive(true);
+        selectCMenu2.GetComponent<SelectCharacter>().angolini[0].gameObject.SetActive(true);
         FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
         //Player2Text.text = "Ok";
         //check();
@@ -104,7 +108,9 @@ public class SelectPlayer : MonoBehaviour
         set.NPlayer++;
         threePressed = true;
         pressA3.SetActive(false);
+        selectCMenu3.GetComponent<SelectCharacter>().Init();
         selectCMenu3.SetActive(true);
+        selectCMenu3.GetComponent<SelectCharacter>().angolini[0].gameObject.SetActive(true);
         FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
     }
 
@@ -113,7 +119,9 @@ public class SelectPlayer : MonoBehaviour
         set.NPlayer++;
         fourPressed = true;
         pressA4.SetActive(false);
+        selectCMenu4.GetComponent<SelectCharacter>().Init();
         selectCMenu4.SetActive(true);
+        selectCMenu4.GetComponent<SelectCharacter>().angolini[0].gameObject.SetActive(true);
         FindObjectOfType<AudioManager>().Play("MenuFinalSelection");
     }
 

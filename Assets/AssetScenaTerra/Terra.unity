@@ -3443,6 +3443,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368468518}
     m_Modifications:
+    - target: {fileID: 764697017876246259, guid: 2cc1ac7e594757042bd16e69a4267881,
+        type: 3}
+      propertyPath: m_Name
+      value: Start (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 764697017876246258, guid: 2cc1ac7e594757042bd16e69a4267881,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3548,11 +3553,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 764697017876246259, guid: 2cc1ac7e594757042bd16e69a4267881,
-        type: 3}
-      propertyPath: m_Name
-      value: Start (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 764697017111491743, guid: 2cc1ac7e594757042bd16e69a4267881,
         type: 3}
       propertyPath: m_fontColor.r
@@ -3576,12 +3576,12 @@ PrefabInstance:
     - target: {fileID: 764697017111491743, guid: 2cc1ac7e594757042bd16e69a4267881,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 764697017111491743, guid: 2cc1ac7e594757042bd16e69a4267881,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 4160749567
       objectReference: {fileID: 0}
     - target: {fileID: 764697017111491743, guid: 2cc1ac7e594757042bd16e69a4267881,
         type: 3}
@@ -3596,7 +3596,7 @@ PrefabInstance:
     - target: {fileID: 764697017111491743, guid: 2cc1ac7e594757042bd16e69a4267881,
         type: 3}
       propertyPath: m_fontSize
-      value: 50.1
+      value: 87.6
       objectReference: {fileID: 0}
     - target: {fileID: 764697017111491743, guid: 2cc1ac7e594757042bd16e69a4267881,
         type: 3}
@@ -3607,6 +3607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 764697017111491743, guid: 2cc1ac7e594757042bd16e69a4267881,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 764697017111491736, guid: 2cc1ac7e594757042bd16e69a4267881,
         type: 3}
@@ -3650,6 +3655,31 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2088368171}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1930434947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 764697017111491737, guid: 2cc1ac7e594757042bd16e69a4267881,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845110378}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1930434951
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930434947}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26284fcb187671f47b6a5af85d1252d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1994781798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3818,6 +3848,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1395126969}
     m_Modifications:
+    - target: {fileID: 8450586664297075749, guid: 1d995af6ea14b0443969a0ed4604bb2c,
+        type: 3}
+      propertyPath: m_Name
+      value: FascioDiLuce
+      objectReference: {fileID: 0}
     - target: {fileID: 8450586664297075748, guid: 1d995af6ea14b0443969a0ed4604bb2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3922,11 +3957,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8450586664297075749, guid: 1d995af6ea14b0443969a0ed4604bb2c,
-        type: 3}
-      propertyPath: m_Name
-      value: FascioDiLuce
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d995af6ea14b0443969a0ed4604bb2c, type: 3}
