@@ -25,7 +25,7 @@ namespace StateMachine.Menu
         public override void Tick()
         {
             base.Tick();
-            if (Input.anyKeyDown)
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton1))
             {
                 context.GenericGoNext();
             }
