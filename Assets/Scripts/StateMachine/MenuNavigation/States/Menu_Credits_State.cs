@@ -18,7 +18,7 @@ namespace StateMachine.Menu
         {
             base.Enter();
             FindObjectOfType<AudioManager>().Pause();
-            FindObjectOfType<AudioManager>().Play("SottofondoMenu");
+            FindObjectOfType<AudioManager>().Play("SottofondoArena");
             SceneManager.LoadScene("Credits");
         }
 
