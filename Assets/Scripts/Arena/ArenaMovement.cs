@@ -25,13 +25,13 @@ public class ArenaMovement : MonoBehaviour
     Vector3 oldPosition;
 
     //MEGA PROVVISORIO
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            MoveArena();
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.F1))
+    //    {
+    //        MoveArena();
+    //    }
+    //}
 
     private void Awake()
     {

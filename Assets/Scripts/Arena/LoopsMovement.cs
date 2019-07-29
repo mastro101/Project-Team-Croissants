@@ -25,11 +25,11 @@ public class LoopsMovement : MonoBehaviour
     Tween tween;
 
     //MEGA PROVVISORIO
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F1))
-            PathMovements();
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.F1))
+    //        PathMovements();
+    //}
 
     private void Awake()
     {

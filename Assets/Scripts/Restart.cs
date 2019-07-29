@@ -20,13 +20,13 @@ public class Restart : MonoBehaviour
         }
     }
 
-    private void Update()
+    /*private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            FindObjectOfType<MenuSM>().goNext(0);
-            FindObjectOfType<AudioManager>().Pause();
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha0))
+        //{
+        //    FindObjectOfType<MenuSM>().goNext(0);
+        //    FindObjectOfType<AudioManager>().Pause();
+        //}
 
         //if (Input.GetKeyDown(KeyCode.Alpha0))
         //{
@@ -40,18 +40,18 @@ public class Restart : MonoBehaviour
         //    }
 
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            FindObjectOfType<AudioManager>().Pause();
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //    FindObjectOfType<AudioManager>().Pause();
+        //}
 
         //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SceneManager.LoadSceneAsync("BaseScene", LoadSceneMode.Additive);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    SceneManager.LoadSceneAsync("BaseScene", LoadSceneMode.Additive);
+        //}
 
         //if (Input.GetKeyDown(KeyCode.Alpha2))
         //{
@@ -78,11 +78,11 @@ public class Restart : MonoBehaviour
         //    SceneManager.LoadScene(6);
         //}
 
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            FindObjectOfType<MenuSM>().goNext(0);
-            FindObjectOfType<AudioManager>().Pause();
-        }
+        //if (Input.GetKeyDown(KeyCode.Backspace))
+        //{
+        //    FindObjectOfType<MenuSM>().goNext(0);
+        //    FindObjectOfType<AudioManager>().Pause();
+        //}
 
-    }
+    }*/
 }
